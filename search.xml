@@ -138,9 +138,11 @@ d = \frac{1}{||\pmb{w}||} |\pmb{w}\pmb{x}|
 \]</span></p>
 <p>ps：为什么<span class="math inline">\(\pmb{w}\)</span>是超平面<span class="math inline">\(\pmb{w}\pmb{x}=0\)</span>的法向量？</p>
 <p>设<span class="math inline">\(\pmb{x_1}\)</span> ,<span class="math inline">\(\pmb{x_2}\)</span>是超平面内的两个不同向量 <span class="math display">\[
-\pmb{w}\pmb{x_1}=0 \\
+\pmb{w}\pmb{x_1}=0
+\]</span> <span class="math display">\[
 \pmb{w}\pmb{x_2}=0
-\]</span> 相消后得 <span class="math display">\[
+\]</span></p>
+<p>相消后得 <span class="math display">\[
 \pmb{w}(\pmb{x_1}-\pmb{x_2})=0
 \]</span> 由于<span class="math inline">\(\pmb{x_1}-\pmb{x_2}\)</span>是超平面内的向量，于是<span class="math inline">\(\pmb{w}\)</span>是超平面的法向量</p>
 <p>对于每一个误分类的点，均有： <span class="math display">\[
@@ -239,7 +241,7 @@ Neural Networks)</h2>
 <p>CNN只连接一块一块的<strong>局部感受野</strong>，感受野中的像素<strong>共享权重</strong></p>
 <p><img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/11.png" alt="11" style="zoom:50%;"></p>
 <p>在数学上，卷积(Convolution)能够很好的反映两个函数之间的相似性 <span class="math display">\[
-(f*g)(t) = \int_{-\infin}^{\infin}f(\tau)g(t-\tau)d\tau
+(f*g)(t) = \int_{-\infty}^{\infty}f(\tau)g(t-\tau)d\tau
 \]</span></p>
 <p>对图像的卷积操作(利用卷积核)</p>
 <p><img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/12.png" alt="12" style="zoom:50%;"></p>
