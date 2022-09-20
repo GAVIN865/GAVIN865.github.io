@@ -16,26 +16,26 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   线性回归  1.分类(Classification)与回归(Regression) 共同点：  学习一个从输入x到输出y的映射  分类：  y是一个分类变量  回">
+    <meta name="description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   神经网络  1.监督学习(Supervised Learning) Learning from experience(training data), and build mo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="线性回归">
-<meta property="og:url" content="http://example.com/2022/09/19/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1/index.html">
+<meta property="og:title" content="神经网络">
+<meta property="og:url" content="http://example.com/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   线性回归  1.分类(Classification)与回归(Regression) 共同点：  学习一个从输入x到输出y的映射  分类：  y是一个分类变量  回">
+<meta property="og:description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   神经网络  1.监督学习(Supervised Learning) Learning from experience(training data), and build mo">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/4.png">
-<meta property="article:published_time" content="2022-09-18T16:29:32.000Z">
-<meta property="article:modified_time" content="2022-09-20T08:29:15.787Z">
+<meta property="og:image" content="http://example.com/img/5.jpg">
+<meta property="article:published_time" content="2022-09-20T08:28:23.000Z">
+<meta property="article:modified_time" content="2022-09-20T15:51:34.442Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="机器学习">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/4.png">
+<meta name="twitter:image" content="http://example.com/img/5.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>线性回归 - Hexo</title>
+  <title>神经网络 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -212,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="线性回归"></span>
+            <span id="subtitle" data-typed-text="神经网络"></span>
           
         </div>
 
@@ -223,8 +223,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-09-19 00:29" pubdate>
-          2022年9月19日 凌晨
+        <time datetime="2022-09-20 16:28" pubdate>
+          2022年9月20日 下午
         </time>
       </span>
     
@@ -235,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.6k 字
+          2k 字
         
       </span>
     
@@ -246,7 +246,7 @@
         
         
         
-          22 分钟
+          17 分钟
         
       </span>
     
@@ -292,7 +292,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">线性回归</h1>
+            <h1 style="display: none">神经网络</h1>
             
             
               <div class="markdown-body">
@@ -304,160 +304,166 @@
     }
 </style>
 <h1 align="center">
-线性回归
+神经网络
 </h1>
-<h2 id="分类classification与回归regression">1.分类(Classification)与回归(Regression)</h2>
-<p>共同点：</p>
+<h2 id="监督学习supervised-learning">1.监督学习(Supervised
+Learning)</h2>
+<p>Learning from <font color="red">experience</font>(training data), and
+build <font color="red">model</font> to <font color="red">predict</font> the
+future</p>
+<p>步骤：</p>
 <ul>
-<li>学习一个从<code>输入x</code>到<code>输出y</code>的<font color="red">映射</font></li>
+<li>Collect training samples</li>
+<li><font color="red">Define features</font></li>
+<li><font color="red">Design &amp; Train Model</font></li>
+<li>Make prediction</li>
 </ul>
-<p>分类：</p>
-<ul>
-<li>y是一个分类变量</li>
-</ul>
-<p>回归：</p>
-<ul>
-<li>y是一个实际的数值</li>
-</ul>
-<h2 id="线性模型linear-model">2.线性模型(Linear Model)</h2>
-<p>Linear Function: <span class="math display">\[
-f(x) = \pmb{w}^T\pmb{x} + b
-\]</span></p>
-<blockquote>
-<p><span class="math inline">\(\pmb{x} = [x_1,x_2,...,x_d]^T \in
-R^d\)</span></p>
-<p><span class="math inline">\(\pmb{w} = [w_1,w_2,...,w_d]^T \in
-R^d\)</span></p>
-</blockquote>
-<p>进一步简化表示为： <span class="math display">\[
-f(x) = \pmb{w}^T\pmb{x}
-\]</span></p>
-<blockquote>
-<p><span class="math inline">\(\pmb{x} = [x_1,x_2,...,x_d,1]^T \in
-R^{d+1}\)</span></p>
-<p><span class="math inline">\(\pmb{w} = [w_1,w_2,...,w_d,b]^T \in
-R^{d+1}\)</span></p>
-</blockquote>
-<h2 id="多项式曲线拟合polynomial-curve-fitting">3.多项式曲线拟合(Polynomial
-Curve Fitting)</h2>
-<p>用多项式去拟合若干给定的数据点</p>
+<h2 id="感知机perceptron">2.感知机(Perceptron)</h2>
 <figure>
-<img src="/2022/09/19/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1/1.png" srcset="/img/loading.gif" lazyload alt="1">
+<img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/1.png" srcset="/img/loading.gif" lazyload alt="1">
 <figcaption aria-hidden="true">1</figcaption>
 </figure>
-<p><span class="math display">\[
-f(x,\pmb{w}) = w_0 + w_1x + w_2x + ... +w_Mx^M = \sum_{j=0}^{M}w_jx^j
+<p>感知机用于对数据进行二分类，输出只有 1 和
+-1，分别代表两种数据类别</p>
+<p>对加权求和后的结果应用一个符号函数，若输入正数则输出1，否则输出-1</p>
+<p>感知机模型的函数定义： <span class="math display">\[
+f(x) = sign(\pmb{w}\pmb{x}+b)
+\]</span> 其中： <span class="math display">\[
+sign(x) = \left\{\begin{matrix} 1,x&gt;0 \\
+-1,x&lt;0 \end{matrix}\right.
 \]</span></p>
-<p>一些例子:</p>
-<p><span class="math inline">\(0^{th} Order Polynomial\)</span></p>
+<p><img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/2.png" srcset="/img/loading.gif" lazyload alt="2" style="zoom:50%;"></p>
+<p>定义损失函数：</p>
+<p>我们希望两边的数据点到超平面的距离总和越小越好</p>
+<p>距离公式：(<span class="math inline">\(\pmb{w}\)</span>是超平面的法向量，该公式可以理解为$
+cos$，即为点到平面距离) <span class="math display">\[
+d = \frac{1}{||\pmb{w}||} |\pmb{w}\pmb{x}|
+\]</span></p>
+<p>ps：为什么<span class="math inline">\(\pmb{w}\)</span>是超平面<span class="math inline">\(\pmb{w}\pmb{x}=0\)</span>的法向量？</p>
+<p>设<span class="math inline">\(\pmb{x_1}\)</span> ,<span class="math inline">\(\pmb{x_2}\)</span>是超平面内的两个不同向量 <span class="math display">\[
+\pmb{w}\pmb{x_1}=0 \\
+\pmb{w}\pmb{x_2}=0
+\]</span> 相消后得 <span class="math display">\[
+\pmb{w}(\pmb{x_1}-\pmb{x_2})=0
+\]</span> 由于<span class="math inline">\(\pmb{x_1}-\pmb{x_2}\)</span>是超平面内的向量，于是<span class="math inline">\(\pmb{w}\)</span>是超平面的法向量</p>
+<p>对于每一个误分类的点，均有： <span class="math display">\[
+-y_i(\pmb{w}\pmb{x}_i+b) &gt; 0
+\]</span> 可以借此去掉距离公式中的绝对值</p>
+<p>ps：为什么不考虑<span class="math inline">\(\frac{1}{||\pmb{w}||}\)</span></p>
+<p>因为感知机由最终的正负号来决定结果，去掉此部分不影响结果，且便于后续的求导。</p>
+<p>最终得到损失函数： <span class="math display">\[
+J(\pmb{w}) = -\sum_{i}\pmb{w}^T\pmb{x}_iy_i
+\]</span> 求解梯度： <span class="math display">\[
+\nabla J =-\sum_{i}\pmb{x}_iy_i
+\]</span> 于是得到更新参数策略： <span class="math display">\[
+\pmb{w}(k+1) = \pmb{w}(k) + \eta(k)\sum_{i}\pmb{x}_iy_i
+\]</span></p>
+<h2 id="deep-learning发展中遇到的问题">3.Deep
+Learning发展中遇到的问题</h2>
+<ul>
+<li>很难训练一个深层次的网络(梯度消失问题)</li>
+<li>计算资源耗费巨大</li>
+<li>当时数据集较小，没有训练深度网络的需求</li>
+</ul>
+<h2 id="反向传播算法backpropagation-algorithm">4.反向传播算法(Backpropagation
+Algorithm)</h2>
+<p>过程如下：</p>
 <figure>
-<img src="/2022/09/19/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1/2.png" srcset="/img/loading.gif" lazyload alt="2">
-<figcaption aria-hidden="true">2</figcaption>
-</figure>
-<p><span class="math inline">\(1^{st} Order Polynomial\)</span></p>
-<figure>
-<img src="/2022/09/19/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1/3.png" srcset="/img/loading.gif" lazyload alt="3">
-<figcaption aria-hidden="true">3</figcaption>
-</figure>
-<p><span class="math inline">\(3^{rd} Order Polynomial\)</span></p>
-<figure>
-<img src="/2022/09/19/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1/4.png" srcset="/img/loading.gif" lazyload alt="4">
-<figcaption aria-hidden="true">4</figcaption>
-</figure>
-<p>多项式拟合是一种线性模型</p>
-<blockquote>
-<p><span class="math inline">\(\pmb{x} =
-[1,x,x^2,...,x^M]^T\)</span></p>
-<p><span class="math inline">\(\pmb{w} =
-[w_1,w_2,...,w_M]^T\)</span></p>
-<p><span class="math inline">\(f(x,\pmb{w}) =
-\pmb{w}^T\pmb{x}\)</span></p>
-</blockquote>
-<h2 id="损失函数error-function">4.损失函数(Error Function)</h2>
-<figure>
-<img src="/2022/09/19/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1/5.png" srcset="/img/loading.gif" lazyload alt="5">
+<img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/5.png" srcset="/img/loading.gif" lazyload alt="5">
 <figcaption aria-hidden="true">5</figcaption>
 </figure>
+<h2 id="激活函数activation-function">5.激活函数(Activation
+Function)</h2>
+<p>一些特征与要求：</p>
+<ul>
+<li>必须是<font color="red">非线性</font>的而且<font color="red">有上下界</font>的</li>
+<li>激活函数及其导数必须是<font color="red">连续的、光滑的、单调的</font></li>
+<li>根据问题有针对性地选择</li>
+</ul>
 <blockquote>
-<p>空心点为训练数据(training data)</p>
-<p>实线为训练所得函数 <span class="math inline">\(f(x) = y\)</span></p>
-</blockquote>
-<p>均方差损失函数(MSE,Mean Square Error) <span class="math display">\[
-MSE(\pmb{w})=\frac{1}{n}\sum_{i=1}^{n}(y_i-f(x_i,\pmb{w}))^2
-\]</span> 用来评价训练所得函数与训练数据的吻合程度</p>
-<p>训练目标是<font color="red">最小化</font>均方差损失(n可以看作一个常数暂时抛开不看)</p>
-<p>化简得： <span class="math display">\[
-J_n = \sum_{i=1}^{n}(y_i - \pmb{w}^T\pmb{x}_i)^2
-\]</span> 使用矩阵相关记号:</p>
-<blockquote>
-<p><span class="math inline">\(X =
-[\pmb{x}_1,...,\pmb{x}_n]\)</span></p>
-<p><span class="math inline">\(y =
-[\pmb{y}_1,...,\pmb{y}_n]^T\)</span></p>
+<p><span class="math inline">\(sigmoid \space function \space(logistic
+\space function)\)</span></p>
 </blockquote>
 <p><span class="math display">\[
-J_n(\pmb{w})=(\pmb{y}-X^T\pmb{w})^T(\pmb{y}-X^T\pmb{w})
+\sigma(x) = \frac{1}{1+e^{-x}}
 \]</span></p>
-<p>梯度为0时损失值下降最快</p>
-<p>先计算梯度： <span class="math display">\[
-\nabla J_n = -2X(\pmb{y}-X^T\pmb{w})
-\]</span> 令梯度为0： <span class="math display">\[
-XX^T \pmb{w} = X \pmb{y} \\
-\pmb{w} = (XX^T)^{-1}X\pmb{y}
-\]</span> 于是得到了参数<span class="math inline">\(\pmb{w}\)</span>的修正后的数值</p>
-<h2 id="统计模型statistical-model">5.统计模型(Statistical Model)</h2>
-<p>给定一个生成模型: <span class="math display">\[
-y = f(\pmb{x},\pmb{w}) + \epsilon
-\]</span> 假设: <span class="math display">\[
-\epsilon  \sim N(0,\sigma^2)
-\]</span> 于是: <span class="math display">\[
-p(y|\pmb{x},\pmb{w},\sigma) = \frac{1}{\sigma \sqrt{2\pi}}
-e^{-\frac{1}{2\sigma^2}}(y-f(\pmb{x},\pmb{w}))^2
-\]</span></p>
-<p>先介绍一下argmax函数</p>
+<p><img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/3.png" srcset="/img/loading.gif" lazyload alt="3" style="zoom:50%;"></p>
 <blockquote>
-<p>有一个函数 <span class="math inline">\(y = f(x)\)</span> 时</p>
-<p>若有 <span class="math inline">\(x_0 = argmax(f(x))\)</span></p>
-<p>则表示当 <span class="math inline">\(x = x_0\)</span> 时，函数 <span class="math inline">\(f(x)\)</span> 取到最大值</p>
+<p><span class="math inline">\(tanh \space function\)</span></p>
 </blockquote>
-<p>极大似然估计(Maximum Likelihood Estimation) <span class="math display">\[
-L(\pmb{D},\pmb{w},\sigma)=\prod_{i=1}^{n}
-p(y_i|\pmb{x}_i,\pmb{w},\sigma) \\
-\pmb{w}^* = argmax \prod_{i=1}^{n} p(y_i|\pmb{x}_i,\pmb{w},\sigma)
-\]</span> 由于log函数单调不影响结果,于是取对数为Log-likelihood <span class="math display">\[
-l(\pmb{D},\pmb{w},\sigma) = log(L(\pmb{D},\pmb{w},\sigma)) =
-log\prod_{i=1}^{n} p(y_i|\pmb{x}_i,\pmb{w},\sigma) \\
-=\sum_{i=1}^{n}log \space p(y_i|\pmb{x}_i,\pmb{w},\sigma)\\
-= -\frac{1}{2\sigma^2}\sum_{i=1}^{n}(y-f(\pmb{x,\pmb{w}}))^2+c(\sigma)
-\]</span> 忽略常数后得到: <span class="math display">\[
-RSS(f) = \sum_{i=1}^{n}(y_i-f(\pmb{x}_i,\pmb{w}))^2
-\]</span></p>
-<p><strong>线性回归模型 <span class="math inline">\(\Leftrightarrow\)</span>
-具有高斯噪声的生成模型的极大似然估计</strong></p>
-<hr>
-<p>为了解决模型过拟合(Over-fitting)的问题，在原来基础上加入惩罚项，参数越多(模型越复杂)惩罚越大。</p>
-<hr>
-<h2 id="岭回归ridge-regressionl2正则化">6.岭回归(Ridge
-Regression)(L2正则化)</h2>
 <p><span class="math display">\[
-w^* = argmin\sum_{i=1}^{n}(y_i-\pmb{x}_i^T\pmb{w})^2  \textcolor{red}{ +
-\lambda\sum^{p}_{j=1}w_j^2}
+t(x) = \frac{e^x - e^{-x}}{e^{x}+e^{-x}} \\
+t(x) = 2 \sigma(2x)-1
 \]</span></p>
-<p>其对参数的限制方式可以表示为: <span class="math display">\[
-\textcolor{red}{\sum^{p}_{j=1}w_j^2 \le t}
-\]</span></p>
-<p>经过矩阵表示、梯度计算、化简等步骤后得到: <span class="math display">\[
-\pmb{w}^* = (XX^T+\lambda\pmb{I})^{-1}X\pmb{y}
-\]</span> 可以人为调节<span class="math inline">\(\lambda\)</span>的大小来得到更好效果的模型参数</p>
-<h2 id="lasso回归least-absolute-selection-and-shrinkage-operatorl1正则化">7.LASSO回归(Least
-Absolute Selection and Shrinkage Operator)(L1正则化)</h2>
+<p><img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/4.png" srcset="/img/loading.gif" lazyload alt="4" style="zoom:50%;"></p>
+<p>以tanh函数为例，其一阶导数形如：</p>
+<figure>
+<img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/6.png" srcset="/img/loading.gif" lazyload alt="6">
+<figcaption aria-hidden="true">6</figcaption>
+</figure>
+<p><strong><font color="red">可见其取值均小于1</font></strong></p>
+<p><strong>反向传播时会出现<font color="red">梯度消失</font>问题！！！</strong></p>
+<figure>
+<img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/7.png" srcset="/img/loading.gif" lazyload alt="7">
+<figcaption aria-hidden="true">7</figcaption>
+</figure>
+<p>直到2011年，ReLU被提出</p>
+<blockquote>
+<p><span class="math inline">\(ReLU \space function\)</span></p>
+</blockquote>
 <p><span class="math display">\[
-w^* = argmin\sum_{i=1}^{n}(y_i-\pmb{x}_i^T\pmb{w})^2  \textcolor{red}{ +
-\lambda\sum^{p}_{j=1}|w_j|}
+ReLU(x) = max(0,x)
 \]</span></p>
-<p>其对参数的限制方式为: <span class="math display">\[
-\textcolor{red}{\sum^{p}_{j=1}|w_j| \le t}
+<figure>
+<img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/8.png" srcset="/img/loading.gif" lazyload alt="8">
+<figcaption aria-hidden="true">8</figcaption>
+</figure>
+<p>ReLU的优点：</p>
+<ul>
+<li>统计上有一半的神经元是静默的，ReLU更加<strong>贴合生物学规律</strong></li>
+<li>ReLU相较于sigmoid通常具有<strong>更好的表现</strong>,且<strong>对预训练不敏感</strong></li>
+<li><strong>计算资源的消耗更少</strong></li>
+<li>ReLU的导数只能为0或1，<strong>不必担心梯度消失问题</strong></li>
+<li>用<strong>更少</strong>激活的神经元就能灵活而稳定地表示特征</li>
+</ul>
+<h2 id="dropout-算法">6.Dropout 算法</h2>
+<p>每个神经元以一定概率(e.g. p =
+0.5)被激活，以减小大型神经网络的训练难度</p>
+<figure>
+<img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/9.png" srcset="/img/loading.gif" lazyload alt="9">
+<figcaption aria-hidden="true">9</figcaption>
+</figure>
+<h2 id="卷积神经网络cnnconvolutional-neural-networks">7.卷积神经网络(CNN,Convolutional
+Neural Networks)</h2>
+<p>图片中有大量的像素点</p>
+<p>若是采用全连接神经网络将会需要巨量的参数</p>
+<p><img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/10.png" srcset="/img/loading.gif" lazyload alt="10" style="zoom:50%;"></p>
+<p>图像具有很好的<strong>局部性</strong>(在时间上和空间上相近的像素高度相关)</p>
+<p>CNN只连接一块一块的<strong>局部感受野</strong>，感受野中的像素<strong>共享权重</strong></p>
+<p><img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/11.png" srcset="/img/loading.gif" lazyload alt="11" style="zoom:50%;"></p>
+<p>在数学上，卷积(Convolution)能够很好的反映两个函数之间的相似性 <span class="math display">\[
+(f*g)(t) = \int_{-\infin}^{\infin}f(\tau)g(t-\tau)d\tau
 \]</span></p>
+<p>对图像的卷积操作(利用卷积核)</p>
+<p><img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/12.png" srcset="/img/loading.gif" lazyload alt="12" style="zoom:50%;"></p>
+<p>不同的卷积核会带来不同的效果</p>
+<figure>
+<img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/13.png" srcset="/img/loading.gif" lazyload alt="13">
+<figcaption aria-hidden="true">13</figcaption>
+</figure>
+<p>CNN的一般结构</p>
+<figure>
+<img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/14.png" srcset="/img/loading.gif" lazyload alt="14">
+<figcaption aria-hidden="true">14</figcaption>
+</figure>
+<p><strong>有时可以没有池化层和全连接层</strong></p>
+<p>池化(Pooling)</p>
+<p>举个例子,MAX POOLING</p>
+<figure>
+<img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/15.png" srcset="/img/loading.gif" lazyload alt="15">
+<figcaption aria-hidden="true">15</figcaption>
+</figure>
+<p>取每个区域内的最大值作为新的值</p>
 
                 
               </div>
@@ -503,8 +509,8 @@ w^* = argmin\sum_{i=1}^{n}(y_i-\pmb{x}_i^T\pmb{w})^2  \textcolor{red}{ +
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>线性回归</div>
-      <div>http://example.com/2022/09/19/线性回归-1/</div>
+      <div>神经网络</div>
+      <div>http://example.com/2022/09/20/神经网络/</div>
     </div>
     <div class="license-meta">
       
@@ -516,7 +522,7 @@ w^* = argmin\sum_{i=1}^{n}(y_i-\pmb{x}_i^T\pmb{w})^2  \textcolor{red}{ +
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年9月19日</div>
+          <div>2022年9月20日</div>
         </div>
       
       
@@ -546,18 +552,12 @@ w^* = argmin\sum_{i=1}^{n}(y_i-\pmb{x}_i^T\pmb{w})^2  \textcolor{red}{ +
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" title="神经网络">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">神经网络</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/09/13/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%86%B3%E7%AD%96%E7%90%86%E8%AE%BA/" title="贝叶斯决策理论">
-                        <span class="hidden-mobile">贝叶斯决策理论</span>
+                      <a href="/2022/09/19/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1/" title="线性回归">
+                        <span class="hidden-mobile">线性回归</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -578,7 +578,7 @@ w^* = argmin\sum_{i=1}^{n}(y_i-\pmb{x}_i^T\pmb{w})^2  \textcolor{red}{ +
         var options = Object.assign(
           {"clientID":"4d9ed24c845ff8d68ff4","clientSecret":"b24a20f67727cff018c72f5025855b17b65e5bd7","repo":"GAVIN865.github.io","owner":"GAVIN865","admin":["GAVIN865"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
           {
-            id: '65457bc24f811457c9bd6972d933c982'
+            id: 'cc693a4805b47c3124e8071e5bb5c92e'
           }
         )
         var gitalk = new Gitalk(options);
