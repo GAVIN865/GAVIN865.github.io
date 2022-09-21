@@ -72,29 +72,6 @@ Architecture</h2>
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/08/18/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
-first post. Check <a href="https://hexo.io/docs/">documentation</a> for
-more info. If you get any problems when using Hexo, you can find the
-answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
-you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>放学后</title>
     <url>/2022/08/27/%E6%94%BE%E5%AD%A6%E5%90%8E/</url>
     <content><![CDATA[<style>
@@ -163,184 +140,27 @@ you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p
       </tags>
   </entry>
   <entry>
-    <title>神经网络</title>
-    <url>/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</url>
-    <content><![CDATA[<style> 
-    .markdown-body {
-      font-family: Microsoft JhengHei, SimHei;
-      font-size: 16px;
-    }
-</style>
-<h1 align="center">
-神经网络
-</h1>
-<h2 id="监督学习supervised-learning">1.监督学习(Supervised
-Learning)</h2>
-<p>Learning from <font color="red">experience</font>(training data), and
-build <font color="red">model</font> to <font color="red">predict</font> the
-future</p>
-<p>步骤：</p>
-<ul>
-<li>Collect training samples</li>
-<li><font color="red">Define features</font></li>
-<li><font color="red">Design &amp; Train Model</font></li>
-<li>Make prediction</li>
-</ul>
-<h2 id="感知机perceptron">2.感知机(Perceptron)</h2>
-<figure>
-<img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/1.png" alt="1">
-<figcaption aria-hidden="true">1</figcaption>
-</figure>
-<p>感知机用于对数据进行二分类，输出只有 1 和
--1，分别代表两种数据类别</p>
-<p>对加权求和后的结果应用一个符号函数，若输入正数则输出1，否则输出-1</p>
-<p>感知机模型的函数定义： <span class="math display">\[
-f(x) = sign(\pmb{w}\pmb{x}+b)
-\]</span> 其中： <span class="math display">\[
-sign(x) = \left\{\begin{matrix} 1,x&gt;0 \\
--1,x&lt;0 \end{matrix}\right.
-\]</span></p>
-<p><img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/2.png" alt="2" style="zoom:50%;"></p>
-<p>定义损失函数：</p>
-<p>我们希望两边的数据点到超平面的距离总和越小越好</p>
-<p>距离公式：(<span class="math inline">\(\pmb{w}\)</span>是超平面的法向量，该公式可以理解为$
-cos$，即为点到平面距离) <span class="math display">\[
-d = \frac{1}{||\pmb{w}||} |\pmb{w}\pmb{x}|
-\]</span></p>
-<p>ps：为什么<span class="math inline">\(\pmb{w}\)</span>是超平面<span class="math inline">\(\pmb{w}\pmb{x}=0\)</span>的法向量？</p>
-<p>设<span class="math inline">\(\pmb{x_1}\)</span> ,<span class="math inline">\(\pmb{x_2}\)</span>是超平面内的两个不同向量 <span class="math display">\[
-\pmb{w}\pmb{x_1}=0
-\]</span> <span class="math display">\[
-\pmb{w}\pmb{x_2}=0
-\]</span></p>
-<p>相消后得 <span class="math display">\[
-\pmb{w}(\pmb{x_1}-\pmb{x_2})=0
-\]</span> 由于<span class="math inline">\(\pmb{x_1}-\pmb{x_2}\)</span>是超平面内的向量，于是<span class="math inline">\(\pmb{w}\)</span>是超平面的法向量</p>
-<p>对于每一个误分类的点，均有： <span class="math display">\[
--y_i(\pmb{w}\pmb{x}_i+b) &gt; 0
-\]</span> 可以借此去掉距离公式中的绝对值</p>
-<p>ps：为什么不考虑<span class="math inline">\(\frac{1}{||\pmb{w}||}\)</span></p>
-<p>因为感知机由最终的正负号来决定结果，去掉此部分不影响结果，且便于后续的求导。</p>
-<p>最终得到损失函数： <span class="math display">\[
-J(\pmb{w}) = -\sum_{i}\pmb{w}^T\pmb{x}_iy_i
-\]</span> 求解梯度： <span class="math display">\[
-\nabla J =-\sum_{i}\pmb{x}_iy_i
-\]</span> 于是得到更新参数策略： <span class="math display">\[
-\pmb{w}(k+1) = \pmb{w}(k) + \eta(k)\sum_{i}\pmb{x}_iy_i
-\]</span></p>
-<h2 id="deep-learning发展中遇到的问题">3.Deep
-Learning发展中遇到的问题</h2>
-<ul>
-<li>很难训练一个深层次的网络(梯度消失问题)</li>
-<li>计算资源耗费巨大</li>
-<li>当时数据集较小，没有训练深度网络的需求</li>
-</ul>
-<h2 id="反向传播算法backpropagation-algorithm">4.反向传播算法(Backpropagation
-Algorithm)</h2>
-<p>过程如下：</p>
-<figure>
-<img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/5.png" alt="5">
-<figcaption aria-hidden="true">5</figcaption>
-</figure>
-<h2 id="激活函数activation-function">5.激活函数(Activation
-Function)</h2>
-<p>一些特征与要求：</p>
-<ul>
-<li>必须是<font color="red">非线性</font>的而且<font color="red">有上下界</font>的</li>
-<li>激活函数及其导数必须是<font color="red">连续的、光滑的、单调的</font></li>
-<li>根据问题有针对性地选择</li>
-</ul>
-<blockquote>
-<p><span class="math inline">\(sigmoid \space function \space(logistic
-\space function)\)</span></p>
-</blockquote>
-<p><span class="math display">\[
-\sigma(x) = \frac{1}{1+e^{-x}}
-\]</span></p>
-<p><img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/3.png" alt="3" style="zoom:50%;"></p>
-<blockquote>
-<p><span class="math inline">\(tanh \space function\)</span></p>
-</blockquote>
-<p><span class="math display">\[
-t(x) = \frac{e^x - e^{-x}}{e^{x}+e^{-x}} \\
-t(x) = 2 \sigma(2x)-1
-\]</span></p>
-<p><img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/4.png" alt="4" style="zoom:50%;"></p>
-<p>以tanh函数为例，其一阶导数形如：</p>
-<figure>
-<img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/6.png" alt="6">
-<figcaption aria-hidden="true">6</figcaption>
-</figure>
-<p><strong><font color="red">可见其取值均小于1</font></strong></p>
-<p><strong>反向传播时会出现<font color="red">梯度消失</font>问题！！！</strong></p>
-<figure>
-<img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/7.png" alt="7">
-<figcaption aria-hidden="true">7</figcaption>
-</figure>
-<p>直到2011年，ReLU被提出</p>
-<blockquote>
-<p><span class="math inline">\(ReLU \space function\)</span></p>
-</blockquote>
-<p><span class="math display">\[
-ReLU(x) = max(0,x)
-\]</span></p>
-<figure>
-<img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/8.png" alt="8">
-<figcaption aria-hidden="true">8</figcaption>
-</figure>
-<p>ReLU的优点：</p>
-<ul>
-<li>统计上有一半的神经元是静默的，ReLU更加<strong>贴合生物学规律</strong></li>
-<li>ReLU相较于sigmoid通常具有<strong>更好的表现</strong>,且<strong>对预训练不敏感</strong></li>
-<li><strong>计算资源的消耗更少</strong></li>
-<li>ReLU的导数只能为0或1，<strong>不必担心梯度消失问题</strong></li>
-<li>用<strong>更少</strong>激活的神经元就能灵活而稳定地表示特征</li>
-</ul>
-<h2 id="dropout-算法">6.Dropout 算法</h2>
-<p>每个神经元以一定概率(e.g. p =
-0.5)被激活，以减小大型神经网络的训练难度</p>
-<figure>
-<img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/9.png" alt="9">
-<figcaption aria-hidden="true">9</figcaption>
-</figure>
-<h2 id="卷积神经网络cnnconvolutional-neural-networks">7.卷积神经网络(CNN,Convolutional
-Neural Networks)</h2>
-<p>图片中有大量的像素点</p>
-<p>若是采用全连接神经网络将会需要巨量的参数</p>
-<p><img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/10.png" alt="10" style="zoom:50%;"></p>
-<p>图像具有很好的<strong>局部性</strong>(在时间上和空间上相近的像素高度相关)</p>
-<p>CNN只连接一块一块的<strong>局部感受野</strong>，感受野中的像素<strong>共享权重</strong></p>
-<p><img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/11.png" alt="11" style="zoom:50%;"></p>
-<p>在数学上，卷积(Convolution)能够很好的反映两个函数之间的相似性 <span class="math display">\[
-(f*g)(t) = \int_{-\infty}^{\infty}f(\tau)g(t-\tau)d\tau
-\]</span></p>
-<p>对图像的卷积操作(利用卷积核)</p>
-<p><img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/12.png" alt="12" style="zoom:50%;"></p>
-<p>不同的卷积核会带来不同的效果</p>
-<figure>
-<img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/13.png" alt="13">
-<figcaption aria-hidden="true">13</figcaption>
-</figure>
-<p>CNN的一般结构</p>
-<figure>
-<img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/14.png" alt="14">
-<figcaption aria-hidden="true">14</figcaption>
-</figure>
-<p><strong>有时可以没有池化层和全连接层</strong></p>
-<p>池化(Pooling)</p>
-<p>举个例子,MAX POOLING</p>
-<figure>
-<img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/15.png" alt="15">
-<figcaption aria-hidden="true">15</figcaption>
-</figure>
-<p>取每个区域内的最大值作为新的值</p>
+    <title>Hello World</title>
+    <url>/2022/08/18/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
+first post. Check <a href="https://hexo.io/docs/">documentation</a> for
+more info. If you get any problems when using Hexo, you can find the
+answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
+you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-      </tags>
   </entry>
   <entry>
     <title>线性回归</title>
@@ -627,6 +447,186 @@ R(\alpha_i|x) = \sum_{j=1}^{c} \lambda(\alpha_i|\omega_j)P(\omega_j | x)
 = \sum_{j{\neq}i} P(\omega_j | x) = 1-P(\omega_i | x)
 \]</span>
 需要风险最小化，由上述式子可知需要后验概率最大化，选择后验概率最大的即可</p>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>神经网络</title>
+    <url>/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+神经网络
+</h1>
+<h2 id="监督学习supervised-learning">1.监督学习(Supervised
+Learning)</h2>
+<p>Learning from <font color="red">experience</font>(training data), and
+build <font color="red">model</font> to <font color="red">predict</font> the
+future</p>
+<p>步骤：</p>
+<ul>
+<li>Collect training samples</li>
+<li><font color="red">Define features</font></li>
+<li><font color="red">Design &amp; Train Model</font></li>
+<li>Make prediction</li>
+</ul>
+<h2 id="感知机perceptron">2.感知机(Perceptron)</h2>
+<figure>
+<img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/1.png" alt="1">
+<figcaption aria-hidden="true">1</figcaption>
+</figure>
+<p>感知机用于对数据进行二分类，输出只有 1 和
+-1，分别代表两种数据类别</p>
+<p>对加权求和后的结果应用一个符号函数，若输入正数则输出1，否则输出-1</p>
+<p>感知机模型的函数定义： <span class="math display">\[
+f(x) = sign(\pmb{w}\pmb{x}+b)
+\]</span> 其中： <span class="math display">\[
+sign(x) = \left\{\begin{matrix} 1,x&gt;0 \\
+-1,x&lt;0 \end{matrix}\right.
+\]</span></p>
+<p><img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/2.png" alt="2" style="zoom:50%;"></p>
+<p>定义损失函数：</p>
+<p>我们希望两边的数据点到超平面的距离总和越小越好</p>
+<p>距离公式：(<span class="math inline">\(\pmb{w}\)</span>是超平面的法向量，该公式可以理解为$
+cos$，即为点到平面距离) <span class="math display">\[
+d = \frac{1}{||\pmb{w}||} |\pmb{w}\pmb{x}|
+\]</span></p>
+<p>ps：为什么<span class="math inline">\(\pmb{w}\)</span>是超平面<span class="math inline">\(\pmb{w}\pmb{x}=0\)</span>的法向量？</p>
+<p>设<span class="math inline">\(\pmb{x_1}\)</span> ,<span class="math inline">\(\pmb{x_2}\)</span>是超平面内的两个不同向量 <span class="math display">\[
+\pmb{w}\pmb{x_1}=0
+\]</span> <span class="math display">\[
+\pmb{w}\pmb{x_2}=0
+\]</span></p>
+<p>相消后得 <span class="math display">\[
+\pmb{w}(\pmb{x_1}-\pmb{x_2})=0
+\]</span> 由于<span class="math inline">\(\pmb{x_1}-\pmb{x_2}\)</span>是超平面内的向量，于是<span class="math inline">\(\pmb{w}\)</span>是超平面的法向量</p>
+<p>对于每一个误分类的点，均有： <span class="math display">\[
+-y_i(\pmb{w}\pmb{x}_i+b) &gt; 0
+\]</span> 可以借此去掉距离公式中的绝对值</p>
+<p>ps：为什么不考虑<span class="math inline">\(\frac{1}{||\pmb{w}||}\)</span></p>
+<p>因为感知机由最终的正负号来决定结果，去掉此部分不影响结果，且便于后续的求导。</p>
+<p>最终得到损失函数： <span class="math display">\[
+J(\pmb{w}) = -\sum_{i}\pmb{w}^T\pmb{x}_iy_i
+\]</span> 求解梯度： <span class="math display">\[
+\nabla J =-\sum_{i}\pmb{x}_iy_i
+\]</span> 于是得到更新参数策略： <span class="math display">\[
+\pmb{w}(k+1) = \pmb{w}(k) + \eta(k)\sum_{i}\pmb{x}_iy_i
+\]</span></p>
+<h2 id="deep-learning发展中遇到的问题">3.Deep
+Learning发展中遇到的问题</h2>
+<ul>
+<li>很难训练一个深层次的网络(梯度消失问题)</li>
+<li>计算资源耗费巨大</li>
+<li>当时数据集较小，没有训练深度网络的需求</li>
+</ul>
+<h2 id="反向传播算法backpropagation-algorithm">4.反向传播算法(Backpropagation
+Algorithm)</h2>
+<p>过程如下：</p>
+<figure>
+<img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/5.png" alt="5">
+<figcaption aria-hidden="true">5</figcaption>
+</figure>
+<h2 id="激活函数activation-function">5.激活函数(Activation
+Function)</h2>
+<p>一些特征与要求：</p>
+<ul>
+<li>必须是<font color="red">非线性</font>的而且<font color="red">有上下界</font>的</li>
+<li>激活函数及其导数必须是<font color="red">连续的、光滑的、单调的</font></li>
+<li>根据问题有针对性地选择</li>
+</ul>
+<blockquote>
+<p><span class="math inline">\(sigmoid \space function \space(logistic
+\space function)\)</span></p>
+</blockquote>
+<p><span class="math display">\[
+\sigma(x) = \frac{1}{1+e^{-x}}
+\]</span></p>
+<p><img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/3.png" alt="3" style="zoom:50%;"></p>
+<blockquote>
+<p><span class="math inline">\(tanh \space function\)</span></p>
+</blockquote>
+<p><span class="math display">\[
+t(x) = \frac{e^x - e^{-x}}{e^{x}+e^{-x}} \\
+t(x) = 2 \sigma(2x)-1
+\]</span></p>
+<p><img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/4.png" alt="4" style="zoom:50%;"></p>
+<p>以tanh函数为例，其一阶导数形如：</p>
+<figure>
+<img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/6.png" alt="6">
+<figcaption aria-hidden="true">6</figcaption>
+</figure>
+<p><strong><font color="red">可见其取值均小于1</font></strong></p>
+<p><strong>反向传播时会出现<font color="red">梯度消失</font>问题！！！</strong></p>
+<figure>
+<img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/7.png" alt="7">
+<figcaption aria-hidden="true">7</figcaption>
+</figure>
+<p>直到2011年，ReLU被提出</p>
+<blockquote>
+<p><span class="math inline">\(ReLU \space function\)</span></p>
+</blockquote>
+<p><span class="math display">\[
+ReLU(x) = max(0,x)
+\]</span></p>
+<figure>
+<img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/8.png" alt="8">
+<figcaption aria-hidden="true">8</figcaption>
+</figure>
+<p>ReLU的优点：</p>
+<ul>
+<li>统计上有一半的神经元是静默的，ReLU更加<strong>贴合生物学规律</strong></li>
+<li>ReLU相较于sigmoid通常具有<strong>更好的表现</strong>,且<strong>对预训练不敏感</strong></li>
+<li><strong>计算资源的消耗更少</strong></li>
+<li>ReLU的导数只能为0或1，<strong>不必担心梯度消失问题</strong></li>
+<li>用<strong>更少</strong>激活的神经元就能灵活而稳定地表示特征</li>
+</ul>
+<h2 id="dropout-算法">6.Dropout 算法</h2>
+<p>每个神经元以一定概率(e.g. p =
+0.5)被激活，以减小大型神经网络的训练难度</p>
+<figure>
+<img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/9.png" alt="9">
+<figcaption aria-hidden="true">9</figcaption>
+</figure>
+<h2 id="卷积神经网络cnnconvolutional-neural-networks">7.卷积神经网络(CNN,Convolutional
+Neural Networks)</h2>
+<p>图片中有大量的像素点</p>
+<p>若是采用全连接神经网络将会需要巨量的参数</p>
+<p><img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/10.png" alt="10" style="zoom:50%;"></p>
+<p>图像具有很好的<strong>局部性</strong>(在时间上和空间上相近的像素高度相关)</p>
+<p>CNN只连接一块一块的<strong>局部感受野</strong>，感受野中的像素<strong>共享权重</strong></p>
+<p><img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/11.png" alt="11" style="zoom:50%;"></p>
+<p>在数学上，卷积(Convolution)能够很好的反映两个函数之间的相似性 <span class="math display">\[
+(f*g)(t) = \int_{-\infty}^{\infty}f(\tau)g(t-\tau)d\tau
+\]</span></p>
+<p>对图像的卷积操作(利用卷积核)</p>
+<p><img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/12.png" alt="12" style="zoom:50%;"></p>
+<p>不同的卷积核会带来不同的效果</p>
+<figure>
+<img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/13.png" alt="13">
+<figcaption aria-hidden="true">13</figcaption>
+</figure>
+<p>CNN的一般结构</p>
+<figure>
+<img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/14.png" alt="14">
+<figcaption aria-hidden="true">14</figcaption>
+</figure>
+<p><strong>有时可以没有池化层和全连接层</strong></p>
+<p>池化(Pooling)</p>
+<p>举个例子,MAX POOLING</p>
+<figure>
+<img src="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/15.png" alt="15">
+<figcaption aria-hidden="true">15</figcaption>
+</figure>
+<p>取每个区域内的最大值作为新的值</p>
 ]]></content>
       <categories>
         <category>机器学习</category>
