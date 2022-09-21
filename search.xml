@@ -1,6 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Introduction to Operating System</title>
+    <url>/2022/09/21/Introduction-to-Operating-System/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+Introduction to Operating System
+</h1>
+<h2 id="what-operating-systems-do">1.What Operating Systems Do</h2>
+<p>A computer system can be divided roughly into four components:</p>
+<ul>
+<li>the <font color="red"><strong>hardware</strong></font></li>
+<li>the <font color="red"><strong>operating system</strong></font></li>
+<li>the <font color="red"><strong>application
+programs</strong></font></li>
+<li>a <font color="red"><strong>user</strong></font></li>
+</ul>
+<p><img src="/2022/09/21/Introduction-to-Operating-System/1.png" alt="1" style="zoom: 67%;"></p>
+<p>The operating system <font color="red"><strong>controls the
+hardware</strong></font> <br>and <font color="red"><strong>coordinates
+its use among the various application programs</strong></font> <br>for
+the various users.</p>
+<p>For Users:</p>
+<ul>
+<li>the operating system is designed mostly for
+<font color="red"><strong>ease of use</strong></font>,<br>with some
+attention paid to <font color="red"><strong>performance and
+security</strong></font></li>
+</ul>
+<p>For System:</p>
+<ul>
+<li>we can view an operating system as a
+<font color="red"><strong>resource allocator</strong></font></li>
+</ul>
+<h2 id="computer-system-organization">2.Computer System
+Organization</h2>
+<p>Computer System consists of:<br><font color="red"><strong>one or more
+CPUs</strong></font> and <font color="red"><strong>a number of device
+controllers</strong></font><br>connected through
+<font color="red"><strong>a commom bus</strong></font><br>that provides
+access between components and shared memory</p>
+<p><img src="/2022/09/21/Introduction-to-Operating-System/2.png" alt="2" style="zoom:67%;"></p>
+<p><strong>Device Driver</strong>:</p>
+<ul>
+<li>unserstands the device controller.</li>
+<li>provides the rest of the operating system with
+<font color="red"><strong>a uniform interface</strong></font> to the
+device.</li>
+</ul>
+<p><strong>Interrupts</strong>:</p>
+<p>When the CPU is interrupted, it stops what it is doing and
+immediately transfers execution to a fixed location.</p>
+<h2 id="computer-system-architecture">3.Computer System
+Architecture</h2>
+<ul>
+<li>Single-Processor Systems</li>
+<li>Multiprocessor Systems</li>
+<li>Clustered Systems</li>
+</ul>
+]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2022/08/18/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very

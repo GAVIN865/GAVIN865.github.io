@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Introduction to Operating System</title>
+    <link href="/2022/09/21/Introduction-to-Operating-System/"/>
+    <url>/2022/09/21/Introduction-to-Operating-System/</url>
+    
+    <content type="html"><![CDATA[<style>     .markdown-body {      font-family: Microsoft JhengHei, SimHei;      font-size: 16px;    }</style><h1 align="center">Introduction to Operating System</h1><h2 id="what-operating-systems-do">1.What Operating Systems Do</h2><p>A computer system can be divided roughly into four components:</p><ul><li>the <font color="red"><strong>hardware</strong></font></li><li>the <font color="red"><strong>operating system</strong></font></li><li>the <font color="red"><strong>applicationprograms</strong></font></li><li>a <font color="red"><strong>user</strong></font></li></ul><p><img src="/2022/09/21/Introduction-to-Operating-System/1.png" alt="1" style="zoom: 67%;"></p><p>The operating system <font color="red"><strong>controls thehardware</strong></font> <br>and <font color="red"><strong>coordinatesits use among the various application programs</strong></font> <br>forthe various users.</p><p>For Users:</p><ul><li>the operating system is designed mostly for<font color="red"><strong>ease of use</strong></font>,<br>with someattention paid to <font color="red"><strong>performance andsecurity</strong></font></li></ul><p>For System:</p><ul><li>we can view an operating system as a<font color="red"><strong>resource allocator</strong></font></li></ul><h2 id="computer-system-organization">2.Computer SystemOrganization</h2><p>Computer System consists of:<br><font color="red"><strong>one or moreCPUs</strong></font> and <font color="red"><strong>a number of devicecontrollers</strong></font><br>connected through<font color="red"><strong>a commom bus</strong></font><br>that providesaccess between components and shared memory</p><p><img src="/2022/09/21/Introduction-to-Operating-System/2.png" alt="2" style="zoom:67%;"></p><p><strong>Device Driver</strong>:</p><ul><li>unserstands the device controller.</li><li>provides the rest of the operating system with<font color="red"><strong>a uniform interface</strong></font> to thedevice.</li></ul><p><strong>Interrupts</strong>:</p><p>When the CPU is interrupted, it stops what it is doing andimmediately transfers execution to a fixed location.</p><h2 id="computer-system-architecture">3.Computer SystemArchitecture</h2><ul><li>Single-Processor Systems</li><li>Multiprocessor Systems</li><li>Clustered Systems</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>操作系统</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>操作系统</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>神经网络</title>
     <link href="/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
     <url>/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</url>
