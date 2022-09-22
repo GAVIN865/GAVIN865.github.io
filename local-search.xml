@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Complexity bounds for global optimization</title>
+    <link href="/2022/09/22/Complexity-bounds-for-global-optimization/"/>
+    <url>/2022/09/22/Complexity-bounds-for-global-optimization/</url>
+    
+    <content type="html"><![CDATA[<style>     .markdown-body {      font-family: Microsoft JhengHei, SimHei;      font-size: 16px;    }</style><h1 align="center">Complexity bounds for global optimization</h1><h2 id="提出问题">1.提出问题</h2><p>一个约束最小化问题： <span class="math display">\[\underset{x \in B_n}{min} f(x)\]</span> 其中： <span class="math display">\[B_n = \{ x \in R^n | 0 \le x^{(i)} \le1,i=1 ... n \}\]</span> <span class="math inline">\(x\)</span>为<span class="math inline">\(n\)</span>维向量，<span class="math inline">\(x^{(i)}\)</span>为<span class="math inline">\(x\)</span>向量中的每一个分量</p><p>给出以下记号： <span class="math display">\[||x||_{\infty} = \underset{1 \le i \le n}{max}|x^{(i)}|\]</span></p><h2 id="利普希茨连续lipschitz-continuity">2.<strong>利普希茨连续</strong>(Lipschitzcontinuity)</h2><p>一个函数是利普希茨连续的时有 <span class="math display">\[|f(x)-f(y)| \le L ||x-y||_{\infty} \space \space \space \space \space\space \space \space \forall x,y \in B_n\]</span> 其中<span class="math inline">\(L\)</span>为利普希茨常数(Lipschitz constant)</p><h2 id="均格法uniform-grid-method解决">3.均格法(uniform gridmethod)解决</h2><p><span class="math display">\[Method \space \space  \mathscr{G}(p)\]</span></p><ul><li>构造<span class="math inline">\((p+1)^n\)</span>个点</li></ul><p><span class="math display">\[x_{(i_1,...,i_n)} = (\frac{i_1}{p},\frac{i_2}{p},...,\frac{i_n}{p})^T\]</span></p><p>​ 其中<span class="math inline">\((i_1,...,i_n) \in \{0,...,p\}^n\)</span></p><ul><li>在所有的点中找到一个点<span class="math inline">\(\bar{x}\)</span>,其对应的目标函数的值最小</li><li>返回<span class="math inline">\((\bar{x},f(\bar{x}))\)</span>作为结果</li></ul><p><font color="red">该方法找到的是近似解(approximatesolution)!!!</font></p><h2 id="评估结果">4.评估结果</h2><p><font color="red">定理</font>： 令<span class="math inline">\(f^*\)</span>作为该问题的<font color="red">全局最优解</font>,于是<span class="math display">\[f(\bar{x})  - f^* \le \frac{L}{2p}\]</span></p><p><font color="red">直观理解</font>：</p><p>这些点均匀分布于边长为1的空间中，任意相邻两点之间距离为<span class="math inline">\(\frac{1}{p}\)</span>,于是全局最优解坐标距离近似解不超过<span class="math inline">\(\frac{1}{2p}\)</span>,对应到值域乘上一个斜率系数<span class="math inline">\(L\)</span>即可。</p><p><font color="red">严格证明</font>：</p><p>令<span class="math inline">\(x_*\)</span>为全局最优解对应的点，于是存在 <span class="math display">\[x \equiv x_{(i_1,...,i_n)} \le x_* \le x_{(i_1+1,...,i_n+1)} \equiv y\]</span></p><blockquote><p>ps: 对于n维向量，当且仅当任意<span class="math inline">\(x^{(i)} \ley^{(i)}\)</span>时，写作<span class="math inline">\(x \le y\)</span></p></blockquote><p>其中<span class="math inline">\(y^{(i)} - x^{(i)} =\frac{1}{p}\)</span>且 <span class="math display">\[x_*^{(i)} \in [x^{(i)},y^{(i)}]\]</span> 令<span class="math inline">\(\hat{x} =(x+y)/2\)</span>.构造一个点<span class="math inline">\(\tilde{x}\)</span>如下： <span class="math display">\[\tilde{x}^{(i)} =  \begin{cases}  y^{(i)} &amp; if \space\tilde{x}^{(i)} \le x_*^{(i)} \\ x^{(i)} &amp; otherwise\end{cases}\]</span> 显然<span class="math inline">\(|\tilde{x}^{(i)}-x_*^{(i)}|\le\frac{1}{2p}\)</span>,因此 <span class="math display">\[||\tilde{x}-x_*||_{\infty} = \underset{1\le i \len}{max}|\tilde{x}^{(i)}-x_*^{(i)}|\le \frac{1}{2p}\]</span> 由于<span class="math inline">\(\tilde{x}\)</span>属于网格，于是 <span class="math display">\[f(\bar{x})-f(x_*) \le f(\tilde{x})-f(x_*) \leL||\tilde{x}-x_*||_{\infty} \le \frac{L}{2p}\]</span> 得证！</p><p>于是可以写作 <span class="math display">\[Find \space \bar{x} \in B_n : f(\bar{x}) - f^* \le \epsilon\]</span></p><h2 id="推论">5.推论</h2><p><span class="math inline">\(Method \mathscr{G}\)</span>的复杂度为<span class="math display">\[\mathscr{A}(\mathscr{G}) = (\lfloor \frac{L}{2\epsilon} \rfloor+2)^n\]</span> 证明：</p><p>当<span class="math inline">\(p\)</span>取<span class="math inline">\(\lfloor \frac{L}{2\epsilon}\rfloor+1\)</span>时，有<span class="math inline">\(p \ge\frac{L}{2\epsilon}\)</span>，此时满足<span class="math inline">\(f(\bar{x}) - f^* \le \frac{L}{2p} \le\epsilon\)</span></p><p>于是由<span class="math inline">\((p+1)^n\)</span> 可以得出 <span class="math inline">\((\lfloor \frac{L}{2\epsilon} \rfloor+2)^n\)</span>.</p><p>这就是上界(upper complexitybound),仅代表最坏情况下的性能，无法展现更优情况下的性能，无法反映这是否是最优算法</p><p>由此引出下界(lower complexity bound) <span class="math display">\[for \space \epsilon &lt; \frac{1}{2}L,\space lower \space bound = \space(\lfloor \frac{L}{2\epsilon} \rfloor)^n\]</span></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>凸优化</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>凸优化</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Introduction to Operating System</title>
     <link href="/2022/09/21/Introduction-to-Operating-System/"/>
     <url>/2022/09/21/Introduction-to-Operating-System/</url>
