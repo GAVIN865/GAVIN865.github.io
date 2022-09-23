@@ -16,26 +16,26 @@
   <meta name="author" content="Gavin">
   <meta name="keywords" content="">
   
-    <meta name="description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   Complexity bounds for global optimization  1.提出问题 一个约束最小化问题： \[ \underset{x \in B_n}{min">
+    <meta name="description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   Relaxation and approximation  1.Relaxation(松弛) 定义relaxation sequence:  We call the sequ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Complexity bounds for global optimization">
-<meta property="og:url" content="http://gavinbowl.top/2022/09/22/Complexity-bounds-for-global-optimization/index.html">
+<meta property="og:title" content="Relaxation and approximation">
+<meta property="og:url" content="http://gavinbowl.top/2022/09/23/Relaxation-and-approximation/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   Complexity bounds for global optimization  1.提出问题 一个约束最小化问题： \[ \underset{x \in B_n}{min">
+<meta property="og:description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   Relaxation and approximation  1.Relaxation(松弛) 定义relaxation sequence:  We call the sequ">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://gavinbowl.top/img/7.png">
-<meta property="article:published_time" content="2022-09-22T15:03:23.000Z">
-<meta property="article:modified_time" content="2022-09-23T13:44:03.465Z">
+<meta property="og:image" content="http://gavinbowl.top/img/8.png">
+<meta property="article:published_time" content="2022-09-23T13:43:24.000Z">
+<meta property="article:modified_time" content="2022-09-23T16:51:40.419Z">
 <meta property="article:author" content="Gavin">
 <meta property="article:tag" content="凸优化">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://gavinbowl.top/img/7.png">
+<meta name="twitter:image" content="http://gavinbowl.top/img/8.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Complexity bounds for global optimization - Hexo</title>
+  <title>Relaxation and approximation - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -212,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Complexity bounds for global optimization"></span>
+            <span id="subtitle" data-typed-text="Relaxation and approximation"></span>
           
         </div>
 
@@ -223,8 +223,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-09-22 23:03" pubdate>
-          2022年9月22日 晚上
+        <time datetime="2022-09-23 21:43" pubdate>
+          2022年9月23日 晚上
         </time>
       </span>
     
@@ -235,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.1k 字
+          2.6k 字
         
       </span>
     
@@ -246,7 +246,7 @@
         
         
         
-          18 分钟
+          22 分钟
         
       </span>
     
@@ -292,7 +292,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Complexity bounds for global optimization</h1>
+            <h1 style="display: none">Relaxation and approximation</h1>
             
             
               <div class="markdown-body">
@@ -304,91 +304,93 @@
     }
 </style>
 <h1 align="center">
-Complexity bounds for global optimization
+Relaxation and approximation
 </h1>
-<h2 id="提出问题">1.提出问题</h2>
-<p>一个约束最小化问题： <span class="math display">\[
-\underset{x \in B_n}{min} f(x)
-\]</span> 其中： <span class="math display">\[
-B_n = \{ x \in R^n | 0 \le x^{(i)} \le1,i=1 ... n \}
-\]</span> <span class="math inline">\(x\)</span>为<span class="math inline">\(n\)</span>维向量，<span class="math inline">\(x^{(i)}\)</span>为<span class="math inline">\(x\)</span>向量中的每一个分量</p>
-<p>给出以下记号： <span class="math display">\[
-||x||_{\infty} = \underset{1 \le i \le n}{max}|x^{(i)}|
-\]</span></p>
-<h2 id="利普希茨连续lipschitz-continuity">2.<strong>利普希茨连续</strong>(Lipschitz
-continuity)</h2>
-<p>一个函数是利普希茨连续的时有 <span class="math display">\[
-|f(x)-f(y)| \le L ||x-y||_{\infty} \space \space \space \space \space
-\space \space \space \forall x,y \in B_n
-\]</span> 其中<span class="math inline">\(L\)</span>为利普希茨常数(Lipschitz constant)</p>
-<h2 id="均格法uniform-grid-method解决">3.均格法(uniform grid
-method)解决</h2>
-<p><span class="math display">\[
-Method \space \space  \mathscr{G}(p)
-\]</span></p>
-<ul>
-<li>构造<span class="math inline">\((p+1)^n\)</span>个点</li>
-</ul>
-<p><span class="math display">\[
-x_{(i_1,...,i_n)} = (\frac{i_1}{p},\frac{i_2}{p},...,\frac{i_n}{p})^T
-\]</span></p>
-<p>​ 其中<span class="math inline">\((i_1,...,i_n) \in \{0,...,p
-\}^n\)</span></p>
-<ul>
-<li>在所有的点中找到一个点<span class="math inline">\(\bar{x}\)</span>,其对应的目标函数的值最小</li>
-<li>返回<span class="math inline">\((\bar{x},f(\bar{x}))\)</span>作为结果</li>
-</ul>
-<p><font color="red">该方法找到的是近似解(approximate
-solution)!!!</font></p>
-<h2 id="评估结果">4.评估结果</h2>
-<p><font color="red">定理</font>： 令<span class="math inline">\(f^*\)</span>作为该问题的<font color="red">全局最优解</font>,于是
-<span class="math display">\[
-f(\bar{x})  - f^* \le \frac{L}{2p}
-\]</span></p>
-<p><font color="red">直观理解</font>：</p>
-<p>这些点均匀分布于边长为1的空间中，任意相邻两点之间距离为<span class="math inline">\(\frac{1}{p}\)</span>,于是全局最优解坐标距离近似解不超过<span class="math inline">\(\frac{1}{2p}\)</span>,对应到值域乘上一个斜率系数<span class="math inline">\(L\)</span>即可。</p>
-<p><font color="red">严格证明</font>：</p>
-<p>令<span class="math inline">\(x_*\)</span>为全局最优解对应的点，于是存在 <span class="math display">\[
-x \equiv x_{(i_1,...,i_n)} \le x_* \le x_{(i_1+1,...,i_n+1)} \equiv y
-\]</span></p>
+<h2 id="relaxation松弛">1.Relaxation(松弛)</h2>
+<p>定义relaxation sequence:</p>
 <blockquote>
-<p>ps: 对于n维向量，当且仅当任意<span class="math inline">\(x^{(i)} \le
-y^{(i)}\)</span>时，写作<span class="math inline">\(x \le y\)</span></p>
+<p>We call the sequence <span class="math inline">\(\{a_k
+\}^{\infty}_{k=0}\)</span> a relaxation sequence if</p>
+<p>​ <span class="math inline">\(a_{k+1} \le a_k\)</span> <span class="math inline">\(\forall k \ge 0\)</span></p>
 </blockquote>
-<p>其中<span class="math inline">\(y^{(i)} - x^{(i)} =
-\frac{1}{p}\)</span>且 <span class="math display">\[
-x_*^{(i)} \in [x^{(i)},y^{(i)}]
-\]</span> 令<span class="math inline">\(\hat{x} =
-(x+y)/2\)</span>.构造一个点<span class="math inline">\(\tilde{x}\)</span>如下： <span class="math display">\[
-\tilde{x}^{(i)} =  \begin{cases}  y^{(i)} &amp; if \space
-\tilde{x}^{(i)} \le x_*^{(i)} \\ x^{(i)} &amp; otherwise\end{cases}
-\]</span> 显然<span class="math inline">\(|\tilde{x}^{(i)}-x_*^{(i)}|\le
-\frac{1}{2p}\)</span>,因此 <span class="math display">\[
-||\tilde{x}-x_*||_{\infty} = \underset{1\le i \le
-n}{max}|\tilde{x}^{(i)}-x_*^{(i)}|\le \frac{1}{2p}
-\]</span> 由于<span class="math inline">\(\tilde{x}\)</span>属于网格，于是 <span class="math display">\[
-f(\bar{x})-f(x_*) \le f(\tilde{x})-f(x_*) \le
-L||\tilde{x}-x_*||_{\infty} \le \frac{L}{2p}
-\]</span> 得证！</p>
-<p>于是可以写作 <span class="math display">\[
-Find \space \bar{x} \in B_n : f(\bar{x}) - f^* \le \epsilon
-\]</span></p>
-<h2 id="推论">5.推论</h2>
-<p><span class="math inline">\(Method \mathscr{G}\)</span>的复杂度为
+<h2 id="approximation近似">2.Approximation(近似)</h2>
+<p>用简单的去替代复杂的，并保持原来相似的性质</p>
+<p>令<span class="math inline">\(f(x)\)</span>在<span class="math inline">\(\bar{x}\)</span>处可微，于是对于<span class="math inline">\(y \in
+R^n\)</span>我们有(<font color="red">泰勒展开</font>) <span class="math display">\[
+f(y)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y-\bar{x} \rangle +
+o(||y-\bar{x}||)
+\]</span> 其中<span class="math inline">\(o(r)\)</span>对于<span class="math inline">\(r \ge 0\)</span>有 <span class="math display">\[
+\underset{r \rightarrow 0}{lim} \frac{1}{r} o(r) = 0 , \space \space
+\space o(0)=0.
+\]</span> 同时给出<span class="math inline">\(|| \cdot
+||\)</span>在<span class="math inline">\(R^n\)</span>的欧几里得定义:
 <span class="math display">\[
-\mathscr{A}(\mathscr{G}) = (\lfloor \frac{L}{2\epsilon} \rfloor+2)^n
-\]</span> 证明：</p>
-<p>当<span class="math inline">\(p\)</span>取<span class="math inline">\(\lfloor \frac{L}{2\epsilon}
-\rfloor+1\)</span>时，有<span class="math inline">\(p \ge
-\frac{L}{2\epsilon}\)</span>，此时满足<span class="math inline">\(f(\bar{x}) - f^* \le \frac{L}{2p} \le
-\epsilon\)</span></p>
-<p>于是由<span class="math inline">\((p+1)^n\)</span> 可以得出 <span class="math inline">\((\lfloor \frac{L}{2\epsilon} \rfloor+2)^n\)</span>
-.</p>
-<p>这就是上界(upper complexity
-bound),仅代表最坏情况下的性能，无法展现更优情况下的性能，无法反映这是否是最优算法</p>
-<p>由此引出下界(lower complexity bound) <span class="math display">\[
-for \space \epsilon &lt; \frac{1}{2}L,\space lower \space bound = \space
-(\lfloor \frac{L}{2\epsilon} \rfloor)^n
+||x|| = [\sum_{i=1}^{n}(x^{(i)})^2]^{1/2}
+\]</span> 其中的<span class="math inline">\(f^{&#39;}(x)\)</span>是函数<span class="math inline">\(f\)</span>在<span class="math inline">\(x\)</span>处的梯度(gradient) <span class="math display">\[
+f&#39;(x) = (\frac{\partial f(x)}{\partial x^{(1)}},...,\frac{\partial
+f(x)}{\partial x^{(n)}})^T
+\]</span></p>
+<h2 id="引理1.2.1">3.引理1.2.1</h2>
+<p>定义level set为<span class="math inline">\(\mathscr{L}_f(\alpha)\)</span>: <span class="math display">\[
+\mathscr{L}_f(\alpha) = \{ x \in R^n | f(x) \le \alpha \}
+\]</span> 同时定义与<span class="math inline">\(\mathscr{L}_f(f(\bar{x}))\)</span>在<span class="math inline">\(\bar{x}\)</span>处<font color="red">相切</font>的方向向量集合:
+<span class="math display">\[
+S_f(\bar{x}) = \{s \in R^n | s = \underset{f(y_k) =
+f(\bar{x})}{\underset{y_k \rightarrow \bar{x}}{lim}}
+\frac{y_k-\bar{x}}{||y_k-\bar{x}||} \}
+\]</span></p>
+<p><font color="red">引理1.2.1</font>: 如果<span class="math inline">\(s
+\in S_f(\bar{x})\)</span>,那么<span class="math inline">\(\langle
+f&#39;(\bar{x}),s \rangle = 0\)</span>.</p>
+<p>证明: 由于<span class="math inline">\(f(y_k) =
+f(\bar{x})\)</span>,我们有 <span class="math display">\[
+f(y_k)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y_k-\bar{x} \rangle +
+o(||y_k-\bar{x}||) = f(\bar{x})
+\]</span> 因此只需证明<span class="math inline">\(\langle
+f^{&#39;}(\bar{x}),y_k-\bar{x} \rangle + o(||y_k-\bar{x}||) =
+0\)</span>即可</p>
+<p>取极限<span class="math inline">\(y_k \rightarrow
+\bar{x}\)</span>时即可得证</p>
+<h2 id="证明梯度反方向为局部下降最快方向">4.证明梯度反方向为局部下降最快方向</h2>
+<p>令<span class="math inline">\(s\)</span>为<span class="math inline">\(R^n\)</span>中的方向向量，<span class="math inline">\(||s|| = 1\)</span>，局部减小量为 <span class="math display">\[
+\Delta(s) = \underset{a \rightarrow 0}{lim} \frac{1}{\alpha}
+[f(\bar{x}+\alpha s)-f(\bar{x})]
+\]</span> 利用近似(泰勒展开)可以得到<span class="math inline">\(f(\bar{x}+\alpha s)-f(\bar{x})=\alpha \langle
+f&#39;(\bar{x}),s \rangle + o(\alpha)\)</span>.因此有 <span class="math display">\[
+\Delta (s) = \langle f&#39;(\bar{x}),s \rangle
+\]</span> ps: 柯西不等式 <span class="math display">\[
+-||x|| \cdot ||y|| \le \langle x,y \rangle \le ||x|| \cdot ||y||
+\]</span> 从而有<span class="math inline">\(\Delta(s) = \langle
+f&#39;(\bar{x}),s \rangle \ge -||f&#39;(\bar{x})||\)</span>.取 <span class="math display">\[
+\bar{s} = -f&#39;(\bar{x}) / ||f&#39;(\bar{x})||
+\]</span> 这时能够取到不等式的等号： <span class="math display">\[
+\Delta(\bar{s}) = - \langle f&#39;(\bar{x}),f&#39;(\bar{x}) \rangle /
+||f&#39;(\bar{x})|| = -||f&#39;(\bar{x})||
+\]</span> 因此方向<span class="math inline">\(-f&#39;(\bar{x})\)</span>(antigradient)是局部<font color="red">下降最快</font>的方向</p>
+<h2 id="定理1.2.1first-order-optimality-condition">5.定理1.2.1(First-order
+optimality condition)</h2>
+<p><font color="red">定理1.2.1</font>: 令<span class="math inline">\(x^*\)</span>是局部最小值对应向量，则 <span class="math display">\[
+f&#39;(x^*) = 0
+\]</span></p>
+<h2 id="定理1.2.2second-order-optimality-condition">6.定理1.2.2(Second-order
+optimality condition)</h2>
+<p>二阶近似 <span class="math display">\[
+f(y)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y-\bar{x} \rangle +
+\frac{1}{2}\langle  f^{&#39;&#39;}(\bar{x})(y-\bar{x}),y-\bar{x}
+\rangle   + o(||y-\bar{x}||^2)
+\]</span> 其中<span class="math inline">\(n \times n\)</span>矩阵<span class="math inline">\(f&#39;&#39;(x)\)</span>称为<font color="red">黑塞矩阵</font>(Hessian)：
+<span class="math display">\[
+(f&#39;&#39;(x))^{(i,j)} =
+\frac{\partial^2f(x)}{\partial{x}^{(i)}\partial{x}^{(j)}}
+\]</span> 黑塞矩阵是对称矩阵: <span class="math display">\[
+f&#39;&#39;(x) = [f&#39;&#39;(x)]^T
+\]</span> 对称矩阵A是<font color="red">半正定</font>的: <span class="math display">\[
+\langle Ax,x \rangle \ge 0 \space \space \space \forall x \in R^n
+\]</span> 符号记为 <span class="math display">\[
+A \succeq 0
+\]</span></p>
+<p><font color="red">定理1.2.2</font>: 令<span class="math inline">\(x^*\)</span>是局部最小值对应向量，则 <span class="math display">\[
+f&#39;(x^*) = 0, \space \space \space    f&#39;&#39;(x^*) \succeq  0.
 \]</span></p>
 
                 
@@ -435,8 +437,8 @@ for \space \epsilon &lt; \frac{1}{2}L,\space lower \space bound = \space
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Complexity bounds for global optimization</div>
-      <div>http://gavinbowl.top/2022/09/22/Complexity-bounds-for-global-optimization/</div>
+      <div>Relaxation and approximation</div>
+      <div>http://gavinbowl.top/2022/09/23/Relaxation-and-approximation/</div>
     </div>
     <div class="license-meta">
       
@@ -448,7 +450,7 @@ for \space \epsilon &lt; \frac{1}{2}L,\space lower \space bound = \space
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年9月22日</div>
+          <div>2022年9月23日</div>
         </div>
       
       
@@ -478,18 +480,12 @@ for \space \epsilon &lt; \frac{1}{2}L,\space lower \space bound = \space
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/09/23/Relaxation-and-approximation/" title="Relaxation and approximation">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Relaxation and approximation</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/09/21/Introduction-to-Operating-System/" title="Introduction to Operating System">
-                        <span class="hidden-mobile">Introduction to Operating System</span>
+                      <a href="/2022/09/22/Complexity-bounds-for-global-optimization/" title="Complexity bounds for global optimization">
+                        <span class="hidden-mobile">Complexity bounds for global optimization</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -510,7 +506,7 @@ for \space \epsilon &lt; \frac{1}{2}L,\space lower \space bound = \space
         var options = Object.assign(
           {"clientID":"4d9ed24c845ff8d68ff4","clientSecret":"b24a20f67727cff018c72f5025855b17b65e5bd7","repo":"GAVIN865.github.io","owner":"GAVIN865","admin":["GAVIN865"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
           {
-            id: 'fec172b6faa554aebc88942473abfa06'
+            id: '54cff6c89a7bab0b5f7f3d36c5e985fe'
           }
         )
         var gitalk = new Gitalk(options);
