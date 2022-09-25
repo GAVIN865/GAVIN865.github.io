@@ -176,6 +176,281 @@ Architecture</h2>
       </tags>
   </entry>
   <entry>
+    <title>OS Structures</title>
+    <url>/2022/09/25/OS-Structures/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+OS Structures
+</h1>
+<h2 id="a-view-of-os-services">1.A View of OS Services</h2>
+<figure>
+<img src="/2022/09/25/OS-Structures/1.png" alt="1">
+<figcaption aria-hidden="true">1</figcaption>
+</figure>
+<p><code>program execution:</code></p>
+<ul>
+<li>Load and run a program</li>
+<li>Allow a program to end in multiple ways(e.g. with error codes)</li>
+</ul>
+<p><code>I/O operations:</code></p>
+<ul>
+<li>Allow programs access to I/O devices</li>
+</ul>
+<p><code>file systems:</code></p>
+<ul>
+<li>Provides file/directory abstractions</li>
+<li>Allow programs to create/delete/read/write</li>
+<li>Implements permissions</li>
+</ul>
+<p><code>communication:</code></p>
+<ul>
+<li>Provides abstractions for processes to exchange information(Shared
+memory, Message passing)</li>
+</ul>
+<p><code>error detection:</code></p>
+<ul>
+<li>The OS needs to be aware of all errors</li>
+<li>The OS needs to take action</li>
+</ul>
+<p><code>resource allocation:</code></p>
+<ul>
+<li>Decides which process gets which resource when</li>
+</ul>
+<p><code>accounting:</code></p>
+<ul>
+<li>Keeps track of how much is used by each user</li>
+</ul>
+<p><code>protection and security:</code></p>
+<ul>
+<li>Controls access to resources</li>
+<li>Enforces authentication of all users</li>
+<li>Allow users to protect their content</li>
+</ul>
+<h2 id="user-operating-system-interface">2.User Operating System
+Interface</h2>
+<ul>
+<li>CLI, Command Line Interfaces</li>
+<li>GUI, Graphical User Interfaces</li>
+<li>Touchscreen Interfaces</li>
+</ul>
+<h2 id="system-calls">3.System Calls</h2>
+<p>In <a href="https://en.wikipedia.org/wiki/Computing">computing</a>, a
+<strong>system call</strong> (commonly abbreviated to
+<strong>syscall</strong>) is the programmatic way in which a <a href="https://en.wikipedia.org/wiki/Computer_program">computer
+program</a> requests a service from the <a href="https://en.wikipedia.org/wiki/Kernel_(operating_system)">kernel</a>
+of the <a href="https://en.wikipedia.org/wiki/Operating_system">operating
+system</a> on which it is executed.</p>
+<p>Two ways to write a program</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;hello world\n&quot;</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;unistd.h&gt;</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> &#123;<br>    write(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;hello world\n&quot;</span>, <span class="hljs-number">13</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<ul>
+<li><code>printf</code> is a <font color="red">wrapper</font> of the
+<code>write</code> system call</li>
+<li>C program invoking <code>printf()</code> library call, which calls
+<code>write()</code> system call</li>
+</ul>
+<p>x86_64 system call</p>
+<table>
+<thead>
+<tr class="header">
+<th>NO.</th>
+<th>Name</th>
+<th>Entry point</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>read</td>
+<td>sys_read</td>
+<td>fs/read_write.c</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>write</td>
+<td>sys_write</td>
+<td>fs/read_write.c</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>open</td>
+<td>sys_open</td>
+<td>fs/open.c</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>close</td>
+<td>sys_close</td>
+<td>fs/open.c</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>stat</td>
+<td>sys_newstat</td>
+<td>fs/stat.c</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>fstat</td>
+<td>sys_newfstat</td>
+<td>fs/stat.c</td>
+</tr>
+</tbody>
+</table>
+<p><code>write()</code> system call go through</p>
+<ul>
+<li><code>syscall</code> instruction on x86_64
+<br>(<code>int $0x80</code> on 32-bit x86; <code>svc</code> on
+arm64)</li>
+<li>Move syscall number <code>0x1</code> to <code>%eax</code></li>
+<li><code>syscall</code> will <font color="red">transfer the control flow
+from user to kernel</font></li>
+</ul>
+<p>Kernel space</p>
+<ul>
+<li><code>kernel_entry</code> code will be called (<font color="red">saved
+all user space registers</font>)</li>
+<li>Calls <code>write</code> syscall handler (get from
+syscall_table,which is an array)</li>
+<li>After write finish, call
+<code>ret_to_user</code><br>(<font color="red">restore all saved user
+space registers,  transfer control flow to user space</font>)</li>
+</ul>
+<figure>
+<img src="/2022/09/25/OS-Structures/2.png" alt="2">
+<figcaption aria-hidden="true">2</figcaption>
+</figure>
+<p>Time Spent in System Calls</p>
+<ul>
+<li><code>real time:</code> wall-clock time (elapsed time, execution
+time, run time)</li>
+<li><code>user time:</code> time spent in user code (user mode)</li>
+<li><code>system time:</code> time spent in system calls (kernel
+mode)</li>
+</ul>
+<p>System Call Parameter Passing</p>
+<ul>
+<li>pass the parameters in <font color="red">registers</font></li>
+<li>parameters stored in a block, or table, in
+<font color="red">memory</font>, and address of block passed as a
+parameter in a register</li>
+<li>parameters placed in the <font color="red">stack</font></li>
+</ul>
+<p>Types of System Calls</p>
+<p><code>Process cotrol</code></p>
+<ul>
+<li>create process, terminate process</li>
+<li>end, abort</li>
+<li>load, execute</li>
+<li>get process attributes, set process attributes</li>
+<li>wait for time</li>
+<li>wait event, signal event</li>
+<li>allocate and free memory</li>
+<li>Dump memory if error</li>
+<li>Debugger for determining bugs, single step execution</li>
+<li>Locks for managing access to shared data between processes</li>
+</ul>
+<p><code>File management</code></p>
+<ul>
+<li>create file, delete file</li>
+<li>open, close file</li>
+<li>read, write, reposition</li>
+<li>get and set file attributes</li>
+</ul>
+<p><code>Device management</code></p>
+<ul>
+<li>request device, release device</li>
+<li>read, write, reposition</li>
+<li>get device attributes, set device attributes</li>
+<li>logically attach or detach devices</li>
+</ul>
+<p><code>Information maintenance</code></p>
+<ul>
+<li>get time or date, set time or date</li>
+<li>get system data, set system data</li>
+<li>get and set process, file, or device attributes</li>
+</ul>
+<p><code>Communications</code></p>
+<ul>
+<li>create, delete communication connection</li>
+<li>send, receive messages if message passing model to host name or
+process name</li>
+<li>Shared-memory model create and gain access to memory regions</li>
+<li>transfer status information</li>
+<li>attach and detach remote devices</li>
+</ul>
+<p><code>Protection</code></p>
+<ul>
+<li>Control access to resources</li>
+<li>Get and set permissions</li>
+<li>Allow and deny user access</li>
+</ul>
+<h2 id="linkers-and-loaders">4.Linkers and Loaders</h2>
+<figure>
+<img src="/2022/09/25/OS-Structures/3.png" alt="3">
+<figcaption aria-hidden="true">3</figcaption>
+</figure>
+<h2 id="elfexecutable-and-linkable-format">5.ELF(Executable and Linkable
+Format)</h2>
+<p><img src="/2022/09/25/OS-Structures/4.png" alt="4" style="zoom: 80%;"></p>
+<ul>
+<li><code>Program header table</code> and
+<code>section header table</code>: for linker and loader</li>
+<li><code>.text</code>: code</li>
+<li><code>.rodata</code>: initialized read-only data</li>
+<li><code>.data</code>: initialized data</li>
+<li><code>.bss</code>: uninitialized data</li>
+</ul>
+<p>Static link</p>
+<ul>
+<li>All code are packed in single binary, leading to large binary</li>
+<li>Does not require dynamic loader</li>
+<li>_start is executed after execve system call</li>
+</ul>
+<p>Dynamic link</p>
+<ul>
+<li>Reuse libraries to reduce ELF file size</li>
+<li>Call more system calls</li>
+</ul>
+<p>Some facts</p>
+<blockquote>
+<p>Statically-linked ELF has no .interp section</p>
+<p>Dynamically-linked ELF has .interp section</p>
+</blockquote>
+<blockquote>
+<p>Statically-linked ELF, entry points to _start</p>
+<p>Dynamically-linked ELF, entry points to loader</p>
+</blockquote>
+<blockquote>
+<p>Kernel setups stack and heap</p>
+<p>Loader setups libraries</p>
+</blockquote>
+<p>Running ELF</p>
+<p><code>Statically-linked</code></p>
+<figure>
+<img src="/2022/09/25/OS-Structures/5.png" alt="5">
+<figcaption aria-hidden="true">5</figcaption>
+</figure>
+<p><code>Dynamically-linked</code></p>
+<figure>
+<img src="/2022/09/25/OS-Structures/6.png" alt="6">
+<figcaption aria-hidden="true">6</figcaption>
+</figure>
+]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Relaxation and approximation</title>
     <url>/2022/09/23/Relaxation-and-approximation/</url>
     <content><![CDATA[<style> 
@@ -282,38 +557,27 @@ f&#39;(x^*) = 0, \space \space \space    f&#39;&#39;(x^*) \succeq  0.
       </tags>
   </entry>
   <entry>
-    <title>白夜行</title>
-    <url>/2022/09/04/%E7%99%BD%E5%A4%9C%E8%A1%8C/</url>
-    <content><![CDATA[<style>
-  .markdown-body {
-    font-family: Microsoft JhengHei, SimHei;
-    font-size: 16px;
-  }
-</style>
-<h1 align="center">
-《白夜行》
-</h1>
-<ol type="1">
-<li><p>雪穗，生活在一个贫苦的单亲家庭，在母亲的策划下，即使还是个上小学的幼女却被迫出卖身体。</p></li>
-<li><p>亮司，多次目睹母亲和雇佣的店员偷腥，甚至发现了父亲玷污自己的好朋友雪穗。</p></li>
-<li><p>两人都有着极其不幸的童年，他们一同杀害了亮司的父亲，也间接谋害了雪穗的母亲，从此，雪穗投靠了亲戚步步向上走，而亮司也离开了母亲，一直生活在阴暗的世界里，帮助雪穗。</p></li>
-<li><p>他们谋划了一起又一起犯罪事件，所有影响到雪穗人生的人物无一例外都遭到了他们的毒手。</p></li>
-<li><p>最终他们都变成了自己最讨厌的模样：在雪穗的谋划下，自己女儿遭到了强暴，亮司正是强暴幼女的凶手。</p></li>
-<li><p>不幸的童年造成了层出不穷的悲剧，但这并不是他们作恶多端的借口，他们不值得同情，那些他们手下的受害者又由谁去同情</p></li>
-<li><blockquote>
-<p>"我的人生就像在白夜里走路"</p>
-</blockquote></li>
-<li><blockquote>
-<p>"一天当中，有太阳升起的时候，也有下沉的时候。人生也一样，有白天和黑夜，只是不会像真正的太阳那样，有定时的日出和日落。看个人，有些人一辈子都活在太阳的照耀下，也有些人不得不一直活在漆黑的深夜里。人害怕的，就是本来一直存在的太阳落下不再升起，也就是非常害怕原本照在身上的光芒消失"</p>
-</blockquote></li>
-</ol>
+    <title>Hello World</title>
+    <url>/2022/08/18/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
+first post. Check <a href="https://hexo.io/docs/">documentation</a> for
+more info. If you get any problems when using Hexo, you can find the
+answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
+you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-      <categories>
-        <category>阅读</category>
-      </categories>
-      <tags>
-        <tag>阅读</tag>
-      </tags>
   </entry>
   <entry>
     <title>放学后</title>
@@ -350,27 +614,38 @@ f&#39;(x^*) = 0, \space \space \space    f&#39;&#39;(x^*) \succeq  0.
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/08/18/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
-first post. Check <a href="https://hexo.io/docs/">documentation</a> for
-more info. If you get any problems when using Hexo, you can find the
-answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
-you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <title>白夜行</title>
+    <url>/2022/09/04/%E7%99%BD%E5%A4%9C%E8%A1%8C/</url>
+    <content><![CDATA[<style>
+  .markdown-body {
+    font-family: Microsoft JhengHei, SimHei;
+    font-size: 16px;
+  }
+</style>
+<h1 align="center">
+《白夜行》
+</h1>
+<ol type="1">
+<li><p>雪穗，生活在一个贫苦的单亲家庭，在母亲的策划下，即使还是个上小学的幼女却被迫出卖身体。</p></li>
+<li><p>亮司，多次目睹母亲和雇佣的店员偷腥，甚至发现了父亲玷污自己的好朋友雪穗。</p></li>
+<li><p>两人都有着极其不幸的童年，他们一同杀害了亮司的父亲，也间接谋害了雪穗的母亲，从此，雪穗投靠了亲戚步步向上走，而亮司也离开了母亲，一直生活在阴暗的世界里，帮助雪穗。</p></li>
+<li><p>他们谋划了一起又一起犯罪事件，所有影响到雪穗人生的人物无一例外都遭到了他们的毒手。</p></li>
+<li><p>最终他们都变成了自己最讨厌的模样：在雪穗的谋划下，自己女儿遭到了强暴，亮司正是强暴幼女的凶手。</p></li>
+<li><p>不幸的童年造成了层出不穷的悲剧，但这并不是他们作恶多端的借口，他们不值得同情，那些他们手下的受害者又由谁去同情</p></li>
+<li><blockquote>
+<p>"我的人生就像在白夜里走路"</p>
+</blockquote></li>
+<li><blockquote>
+<p>"一天当中，有太阳升起的时候，也有下沉的时候。人生也一样，有白天和黑夜，只是不会像真正的太阳那样，有定时的日出和日落。看个人，有些人一辈子都活在太阳的照耀下，也有些人不得不一直活在漆黑的深夜里。人害怕的，就是本来一直存在的太阳落下不再升起，也就是非常害怕原本照在身上的光芒消失"</p>
+</blockquote></li>
+</ol>
 ]]></content>
+      <categories>
+        <category>阅读</category>
+      </categories>
+      <tags>
+        <tag>阅读</tag>
+      </tags>
   </entry>
   <entry>
     <title>神经网络</title>
