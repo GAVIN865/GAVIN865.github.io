@@ -176,6 +176,29 @@ Architecture</h2>
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2022/08/18/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
+first post. Check <a href="https://hexo.io/docs/">documentation</a> for
+more info. If you get any problems when using Hexo, you can find the
+answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
+you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>OS Structures</title>
     <url>/2022/09/25/OS-Structures/</url>
     <content><![CDATA[<style> 
@@ -557,29 +580,6 @@ f&#39;(x^*) = 0, \space \space \space    f&#39;&#39;(x^*) \succeq  0.
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/08/18/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
-first post. Check <a href="https://hexo.io/docs/">documentation</a> for
-more info. If you get any problems when using Hexo, you can find the
-answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
-you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>放学后</title>
     <url>/2022/08/27/%E6%94%BE%E5%AD%A6%E5%90%8E/</url>
     <content><![CDATA[<style>
@@ -645,6 +645,127 @@ you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p
       </categories>
       <tags>
         <tag>阅读</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>贝叶斯决策理论</title>
+    <url>/2022/09/13/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%86%B3%E7%AD%96%E7%90%86%E8%AE%BA/</url>
+    <content><![CDATA[<style>
+  .markdown-body {
+    font-family: Microsoft JhengHei, SimHei;
+    font-size: 16px;
+  }
+</style>
+<h1 align="center">
+贝叶斯决策理论
+</h1>
+<h2 id="basics-of-probability概率论基础知识">1. Basics of
+Probability(概率论基础知识)</h2>
+<ul>
+<li>$ A独立于B时,P(A|B) = P(A) $</li>
+<li>$ P(A|B)= $</li>
+<li>$ A、B相互独立 当且仅当 P(A,B)=P(A)P(B) $</li>
+</ul>
+<h2 id="bayes-theorem贝叶斯理论">2. Bayes' Theorem(贝叶斯理论)</h2>
+<p><span class="math display">\[
+P(\omega|x) = \frac{p(x|\omega)p(\omega)}{p(x)}\\
+Posterior = (Likelihood \times Prior) / Evidence\\
+p(x) = \sum_{i=1}^{k}p(x|\omega_i)p(\omega_i)
+\]</span></p>
+<ul>
+<li><span class="math inline">\(P(\omega|x)\)</span> :
+posterior,后验概率,<font color="red">已发生事件</font>出于某种因素引发的概率</li>
+<li><span class="math inline">\(p(x|\omega)\)</span> :
+likelihood,似然,数据符合<font color="red">某种分布</font>的概率大小</li>
+<li><span class="math inline">\(p(\omega)\)</span> :
+prior,先验概率,<font color="red">未发生事件</font>依据以往经验得知的概率</li>
+<li><span class="math inline">\(p(x)\)</span> :
+evidence,往往作为一个<font color="red">常数</font></li>
+</ul>
+<blockquote>
+<p>其中 x为样本</p>
+</blockquote>
+<h2 id="optimal-bayes-decision-rule最优贝叶斯决策规则">3. Optimal Bayes
+Decision Rule(最优贝叶斯决策规则)</h2>
+<p><strong>一个物体选择后验概率大的作为其分类可以最小化决策误差</strong></p>
+<p><span class="math inline">\(P(\omega_1|x) &gt;
+P(\omega_2|x)\)</span>时认为它是<span class="math inline">\(\omega_1\)</span></p>
+<p><span class="math inline">\(P(\omega_1|x) &lt;
+P(\omega_2|x)\)</span>时认为它是<span class="math inline">\(\omega_2\)</span></p>
+<blockquote>
+<p>同理或者选择风险R小的</p>
+</blockquote>
+<p>特殊情况：</p>
+<ul>
+<li><p><span class="math inline">\(p(\omega_1)=p(\omega_2)\)</span> :
+<span class="math inline">\(p(x|\omega_1)&gt;p(x|\omega_2)\)</span>时认为是<span class="math inline">\({\omega}_1\)</span></p>
+<blockquote>
+<p>最大似然决策法</p>
+<p>本质上和一般情况没有区别，只是先验概率相同可以同时约去，不加入比较，直接比较似然度</p>
+</blockquote></li>
+<li><p><span class="math inline">\(p(x|\omega_1)=p(x|\omega_2)\)</span>
+: <span class="math inline">\(p(\omega_1)&gt;p(\omega_2)\)</span>时认为是<span class="math inline">\({\omega}_1\)</span></p>
+<blockquote>
+<p>同上</p>
+</blockquote></li>
+</ul>
+<h2 id="bayes-risk">4. Bayes Risk</h2>
+<p>Conditional Risk <span class="math display">\[
+R(\alpha_i|x)=\sum_{j=1}^{c}\lambda(\alpha_i|\omega_j)P(\omega_j|x)
+\]</span></p>
+<blockquote>
+<p><span class="math inline">\(\alpha\)</span> 代表 采取的行为</p>
+</blockquote>
+<p>Overall Risk <span class="math display">\[
+R = \int R(\alpha_i|x)p(x)dx
+\]</span> Bayes Risk</p>
+<ul>
+<li>风险最小时的R</li>
+</ul>
+<h2 id="example-1two-category-classification">Example 1：Two-category
+classification</h2>
+<p>给定： <span class="math display">\[
+\alpha_1 = deciding \space \omega_1 \\
+\alpha_2 = deciding \space \omega_2 \\
+\lambda_{ij} = \lambda(\alpha_i | \omega_j)
+\]</span> 于是条件风险： <span class="math display">\[
+R(\alpha_1 | x) = \lambda_{11}P(\omega_1 | x) + \lambda_{12}P(\omega_2 |
+x) \\
+R(\alpha_2 | x) = \lambda_{21}P(\omega_1 | x) + \lambda_{22}P(\omega_2 |
+x)
+\]</span> 如何找到贝叶斯风险？？？</p>
+<p>认为是<span class="math inline">\({\omega}_1\)</span>当 <span class="math display">\[
+R(\alpha_1 | x) &lt; R(\alpha_2 | x)
+\]</span> 展开并移项化简得到(认为是<span class="math inline">\({\omega}_1\)</span>的情况) <span class="math display">\[
+\frac{P(x|\omega_1)}{P(x|\omega_2)} &gt;
+\frac{\lambda_{12}-\lambda_{22}}{\lambda_{21}-\lambda_{11}} \times
+\frac{P(\omega_2)}{P(\omega_1)}
+\]</span></p>
+<h2 id="example-2-minimum-error-rate-classification">Example 2:
+Minimum-Error-Rate Classification</h2>
+<p>给定</p>
+<ul>
+<li>对于动作<span class="math inline">\(\alpha_i\)</span>和事实上的类别<span class="math inline">\(\omega_j\)</span> ,如果<span class="math inline">\(i=j\)</span>就是正确的，否则错误</li>
+</ul>
+<p>找到最小损失的分类</p>
+<p>写出损失函数(Zero-one loss function): <span class="math display">\[
+\lambda(\alpha_i | \omega_j) =
+\begin{cases}
+0&amp; \text{i = j}\\
+1&amp; \text{i} \neq \text{j}
+\end{cases}
+\]</span> 于是可以计算条件风险 <span class="math display">\[
+R(\alpha_i|x) = \sum_{j=1}^{c} \lambda(\alpha_i|\omega_j)P(\omega_j | x)
+\\
+= \sum_{j{\neq}i} P(\omega_j | x) = 1-P(\omega_i | x)
+\]</span>
+需要风险最小化，由上述式子可知需要后验概率最大化，选择后验概率最大的即可</p>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -819,127 +940,6 @@ Neural Networks)</h2>
 <figcaption aria-hidden="true">15</figcaption>
 </figure>
 <p>取每个区域内的最大值作为新的值</p>
-]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>贝叶斯决策理论</title>
-    <url>/2022/09/13/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%86%B3%E7%AD%96%E7%90%86%E8%AE%BA/</url>
-    <content><![CDATA[<style>
-  .markdown-body {
-    font-family: Microsoft JhengHei, SimHei;
-    font-size: 16px;
-  }
-</style>
-<h1 align="center">
-贝叶斯决策理论
-</h1>
-<h2 id="basics-of-probability概率论基础知识">1. Basics of
-Probability(概率论基础知识)</h2>
-<ul>
-<li>$ A独立于B时,P(A|B) = P(A) $</li>
-<li>$ P(A|B)= $</li>
-<li>$ A、B相互独立 当且仅当 P(A,B)=P(A)P(B) $</li>
-</ul>
-<h2 id="bayes-theorem贝叶斯理论">2. Bayes' Theorem(贝叶斯理论)</h2>
-<p><span class="math display">\[
-P(\omega|x) = \frac{p(x|\omega)p(\omega)}{p(x)}\\
-Posterior = (Likelihood \times Prior) / Evidence\\
-p(x) = \sum_{i=1}^{k}p(x|\omega_i)p(\omega_i)
-\]</span></p>
-<ul>
-<li><span class="math inline">\(P(\omega|x)\)</span> :
-posterior,后验概率,<font color="red">已发生事件</font>出于某种因素引发的概率</li>
-<li><span class="math inline">\(p(x|\omega)\)</span> :
-likelihood,似然,数据符合<font color="red">某种分布</font>的概率大小</li>
-<li><span class="math inline">\(p(\omega)\)</span> :
-prior,先验概率,<font color="red">未发生事件</font>依据以往经验得知的概率</li>
-<li><span class="math inline">\(p(x)\)</span> :
-evidence,往往作为一个<font color="red">常数</font></li>
-</ul>
-<blockquote>
-<p>其中 x为样本</p>
-</blockquote>
-<h2 id="optimal-bayes-decision-rule最优贝叶斯决策规则">3. Optimal Bayes
-Decision Rule(最优贝叶斯决策规则)</h2>
-<p><strong>一个物体选择后验概率大的作为其分类可以最小化决策误差</strong></p>
-<p><span class="math inline">\(P(\omega_1|x) &gt;
-P(\omega_2|x)\)</span>时认为它是<span class="math inline">\(\omega_1\)</span></p>
-<p><span class="math inline">\(P(\omega_1|x) &lt;
-P(\omega_2|x)\)</span>时认为它是<span class="math inline">\(\omega_2\)</span></p>
-<blockquote>
-<p>同理或者选择风险R小的</p>
-</blockquote>
-<p>特殊情况：</p>
-<ul>
-<li><p><span class="math inline">\(p(\omega_1)=p(\omega_2)\)</span> :
-<span class="math inline">\(p(x|\omega_1)&gt;p(x|\omega_2)\)</span>时认为是<span class="math inline">\({\omega}_1\)</span></p>
-<blockquote>
-<p>最大似然决策法</p>
-<p>本质上和一般情况没有区别，只是先验概率相同可以同时约去，不加入比较，直接比较似然度</p>
-</blockquote></li>
-<li><p><span class="math inline">\(p(x|\omega_1)=p(x|\omega_2)\)</span>
-: <span class="math inline">\(p(\omega_1)&gt;p(\omega_2)\)</span>时认为是<span class="math inline">\({\omega}_1\)</span></p>
-<blockquote>
-<p>同上</p>
-</blockquote></li>
-</ul>
-<h2 id="bayes-risk">4. Bayes Risk</h2>
-<p>Conditional Risk <span class="math display">\[
-R(\alpha_i|x)=\sum_{j=1}^{c}\lambda(\alpha_i|\omega_j)P(\omega_j|x)
-\]</span></p>
-<blockquote>
-<p><span class="math inline">\(\alpha\)</span> 代表 采取的行为</p>
-</blockquote>
-<p>Overall Risk <span class="math display">\[
-R = \int R(\alpha_i|x)p(x)dx
-\]</span> Bayes Risk</p>
-<ul>
-<li>风险最小时的R</li>
-</ul>
-<h2 id="example-1two-category-classification">Example 1：Two-category
-classification</h2>
-<p>给定： <span class="math display">\[
-\alpha_1 = deciding \space \omega_1 \\
-\alpha_2 = deciding \space \omega_2 \\
-\lambda_{ij} = \lambda(\alpha_i | \omega_j)
-\]</span> 于是条件风险： <span class="math display">\[
-R(\alpha_1 | x) = \lambda_{11}P(\omega_1 | x) + \lambda_{12}P(\omega_2 |
-x) \\
-R(\alpha_2 | x) = \lambda_{21}P(\omega_1 | x) + \lambda_{22}P(\omega_2 |
-x)
-\]</span> 如何找到贝叶斯风险？？？</p>
-<p>认为是<span class="math inline">\({\omega}_1\)</span>当 <span class="math display">\[
-R(\alpha_1 | x) &lt; R(\alpha_2 | x)
-\]</span> 展开并移项化简得到(认为是<span class="math inline">\({\omega}_1\)</span>的情况) <span class="math display">\[
-\frac{P(x|\omega_1)}{P(x|\omega_2)} &gt;
-\frac{\lambda_{12}-\lambda_{22}}{\lambda_{21}-\lambda_{11}} \times
-\frac{P(\omega_2)}{P(\omega_1)}
-\]</span></p>
-<h2 id="example-2-minimum-error-rate-classification">Example 2:
-Minimum-Error-Rate Classification</h2>
-<p>给定</p>
-<ul>
-<li>对于动作<span class="math inline">\(\alpha_i\)</span>和事实上的类别<span class="math inline">\(\omega_j\)</span> ,如果<span class="math inline">\(i=j\)</span>就是正确的，否则错误</li>
-</ul>
-<p>找到最小损失的分类</p>
-<p>写出损失函数(Zero-one loss function): <span class="math display">\[
-\lambda(\alpha_i | \omega_j) =
-\begin{cases}
-0&amp; \text{i = j}\\
-1&amp; \text{i} \neq \text{j}
-\end{cases}
-\]</span> 于是可以计算条件风险 <span class="math display">\[
-R(\alpha_i|x) = \sum_{j=1}^{c} \lambda(\alpha_i|\omega_j)P(\omega_j | x)
-\\
-= \sum_{j{\neq}i} P(\omega_j | x) = 1-P(\omega_i | x)
-\]</span>
-需要风险最小化，由上述式子可知需要后验概率最大化，选择后验概率最大的即可</p>
 ]]></content>
       <categories>
         <category>机器学习</category>
