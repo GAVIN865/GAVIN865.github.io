@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>LaTex符号对照表</title>
+    <link href="/2022/09/26/LaTex%E7%AC%A6%E5%8F%B7%E5%AF%B9%E7%85%A7%E8%A1%A8/"/>
+    <url>/2022/09/26/LaTex%E7%AC%A6%E5%8F%B7%E5%AF%B9%E7%85%A7%E8%A1%A8/</url>
+    
+    <content type="html"><![CDATA[<style>     .markdown-body {      font-family: Microsoft JhengHei, SimHei;      font-size: 16px;    }</style><h1 align="center">LaTex符号对照表</h1><h2 id="不同字体">1.不同字体</h2><table><thead><tr class="header"><th>字体</th><th>代码</th></tr></thead><tbody><tr class="odd"><td><span class="math inline">\(\mathscr{L}\)</span></td><td>\<span class="math inline">\(mathscr\{\}\)</span></td></tr><tr class="even"><td><span class="math inline">\(\mathbb{L}\)</span></td><td>\<span class="math inline">\(mathbb\{\}\)</span></td></tr><tr class="odd"><td><span class="math inline">\(\mathcal{L}\)</span></td><td>\<span class="math inline">\(mathcal \{\}\)</span></td></tr><tr class="even"><td><span class="math inline">\(\rm{L}\)</span></td><td>\<span class="math inline">\(rm\{\}\)</span></td></tr><tr class="odd"><td><span class="math inline">\(\mathfrak{L}\)</span></td><td>\<span class="math inline">\(mathfrak\{\}\)</span></td></tr><tr class="even"><td><span class="math inline">\(\mathbf{L}\)</span></td><td>\<span class="math inline">\(mathbf\{\}\)</span></td></tr></tbody></table>]]></content>
+    
+    
+    <categories>
+      
+      <category>LaTex</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>LaTex</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>OS Structures</title>
     <link href="/2022/09/25/OS-Structures/"/>
     <url>/2022/09/25/OS-Structures/</url>

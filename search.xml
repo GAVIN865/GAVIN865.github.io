@@ -1,6 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Introduction to Operating System</title>
+    <url>/2022/09/21/Introduction-to-Operating-System/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+Introduction to Operating System
+</h1>
+<h2 id="what-operating-systems-do">1.What Operating Systems Do</h2>
+<p>A computer system can be divided roughly into four components:</p>
+<ul>
+<li>the <font color="red"><strong>hardware</strong></font></li>
+<li>the <font color="red"><strong>operating system</strong></font></li>
+<li>the <font color="red"><strong>application
+programs</strong></font></li>
+<li>a <font color="red"><strong>user</strong></font></li>
+</ul>
+<p><img src="/2022/09/21/Introduction-to-Operating-System/1.png" alt="1" style="zoom: 67%;"></p>
+<p>The operating system <font color="red"><strong>controls the
+hardware</strong></font> <br>and <font color="red"><strong>coordinates
+its use among the various application programs</strong></font> <br>for
+the various users.</p>
+<p>For Users:</p>
+<ul>
+<li>the operating system is designed mostly for
+<font color="red"><strong>ease of use</strong></font>,<br>with some
+attention paid to <font color="red"><strong>performance and
+security</strong></font></li>
+</ul>
+<p>For System:</p>
+<ul>
+<li>we can view an operating system as a
+<font color="red"><strong>resource allocator</strong></font></li>
+</ul>
+<h2 id="computer-system-organization">2.Computer System
+Organization</h2>
+<p>Computer System consists of:<br><font color="red"><strong>one or more
+CPUs</strong></font> and <font color="red"><strong>a number of device
+controllers</strong></font><br>connected through
+<font color="red"><strong>a commom bus</strong></font><br>that provides
+access between components and shared memory</p>
+<p><img src="/2022/09/21/Introduction-to-Operating-System/2.png" alt="2" style="zoom:67%;"></p>
+<p><strong>Device Driver</strong>:</p>
+<ul>
+<li>unserstands the device controller.</li>
+<li>provides the rest of the operating system with
+<font color="red"><strong>a uniform interface</strong></font> to the
+device.</li>
+</ul>
+<p><strong>Interrupts</strong>:</p>
+<p>When the CPU is interrupted, it stops what it is doing and
+immediately transfers execution to a fixed location.</p>
+<h2 id="computer-system-architecture">3.Computer System
+Architecture</h2>
+<ul>
+<li>Single-Processor Systems</li>
+<li>Multiprocessor Systems</li>
+<li>Clustered Systems</li>
+</ul>
+]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Complexity bounds for global optimization</title>
     <url>/2022/09/22/Complexity-bounds-for-global-optimization/</url>
     <content><![CDATA[<style> 
@@ -105,8 +176,8 @@ for \space \epsilon &lt; \frac{1}{2}L,\space lower \space bound = \space
       </tags>
   </entry>
   <entry>
-    <title>Introduction to Operating System</title>
-    <url>/2022/09/21/Introduction-to-Operating-System/</url>
+    <title>LaTex符号对照表</title>
+    <url>/2022/09/26/LaTex%E7%AC%A6%E5%8F%B7%E5%AF%B9%E7%85%A7%E8%A1%A8/</url>
     <content><![CDATA[<style> 
     .markdown-body {
       font-family: Microsoft JhengHei, SimHei;
@@ -114,65 +185,49 @@ for \space \epsilon &lt; \frac{1}{2}L,\space lower \space bound = \space
     }
 </style>
 <h1 align="center">
-Introduction to Operating System
+LaTex符号对照表
 </h1>
-<h2 id="what-operating-systems-do">1.What Operating Systems Do</h2>
-<p>A computer system can be divided roughly into four components:</p>
-<ul>
-<li>the <font color="red"><strong>hardware</strong></font></li>
-<li>the <font color="red"><strong>operating system</strong></font></li>
-<li>the <font color="red"><strong>application
-programs</strong></font></li>
-<li>a <font color="red"><strong>user</strong></font></li>
-</ul>
-<p><img src="/2022/09/21/Introduction-to-Operating-System/1.png" alt="1" style="zoom: 67%;"></p>
-<p>The operating system <font color="red"><strong>controls the
-hardware</strong></font> <br>and <font color="red"><strong>coordinates
-its use among the various application programs</strong></font> <br>for
-the various users.</p>
-<p>For Users:</p>
-<ul>
-<li>the operating system is designed mostly for
-<font color="red"><strong>ease of use</strong></font>,<br>with some
-attention paid to <font color="red"><strong>performance and
-security</strong></font></li>
-</ul>
-<p>For System:</p>
-<ul>
-<li>we can view an operating system as a
-<font color="red"><strong>resource allocator</strong></font></li>
-</ul>
-<h2 id="computer-system-organization">2.Computer System
-Organization</h2>
-<p>Computer System consists of:<br><font color="red"><strong>one or more
-CPUs</strong></font> and <font color="red"><strong>a number of device
-controllers</strong></font><br>connected through
-<font color="red"><strong>a commom bus</strong></font><br>that provides
-access between components and shared memory</p>
-<p><img src="/2022/09/21/Introduction-to-Operating-System/2.png" alt="2" style="zoom:67%;"></p>
-<p><strong>Device Driver</strong>:</p>
-<ul>
-<li>unserstands the device controller.</li>
-<li>provides the rest of the operating system with
-<font color="red"><strong>a uniform interface</strong></font> to the
-device.</li>
-</ul>
-<p><strong>Interrupts</strong>:</p>
-<p>When the CPU is interrupted, it stops what it is doing and
-immediately transfers execution to a fixed location.</p>
-<h2 id="computer-system-architecture">3.Computer System
-Architecture</h2>
-<ul>
-<li>Single-Processor Systems</li>
-<li>Multiprocessor Systems</li>
-<li>Clustered Systems</li>
-</ul>
+<h2 id="不同字体">1.不同字体</h2>
+<table>
+<thead>
+<tr class="header">
+<th>字体</th>
+<th>代码</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\mathscr{L}\)</span></td>
+<td>\<span class="math inline">\(mathscr\{\}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mathbb{L}\)</span></td>
+<td>\<span class="math inline">\(mathbb\{\}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mathcal{L}\)</span></td>
+<td>\<span class="math inline">\(mathcal \{\}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\rm{L}\)</span></td>
+<td>\<span class="math inline">\(rm\{\}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mathfrak{L}\)</span></td>
+<td>\<span class="math inline">\(mathfrak\{\}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mathbf{L}\)</span></td>
+<td>\<span class="math inline">\(mathbf\{\}\)</span></td>
+</tr>
+</tbody>
+</table>
 ]]></content>
       <categories>
-        <category>操作系统</category>
+        <category>LaTex</category>
       </categories>
       <tags>
-        <tag>操作系统</tag>
+        <tag>LaTex</tag>
       </tags>
   </entry>
   <entry>
@@ -197,6 +252,112 @@ you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p
 <figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Relaxation and approximation</title>
+    <url>/2022/09/23/Relaxation-and-approximation/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+Relaxation and approximation
+</h1>
+<h2 id="relaxation松弛">1.Relaxation(松弛)</h2>
+<p>定义relaxation sequence:</p>
+<blockquote>
+<p>We call the sequence <span class="math inline">\(\{a_k
+\}^{\infty}_{k=0}\)</span> a relaxation sequence if</p>
+<p>​ <span class="math inline">\(a_{k+1} \le a_k\)</span> <span class="math inline">\(\forall k \ge 0\)</span></p>
+</blockquote>
+<h2 id="approximation近似">2.Approximation(近似)</h2>
+<p>用简单的去替代复杂的，并保持原来相似的性质</p>
+<p>令<span class="math inline">\(f(x)\)</span>在<span class="math inline">\(\bar{x}\)</span>处可微，于是对于<span class="math inline">\(y \in
+R^n\)</span>我们有(<font color="red">泰勒展开</font>) <span class="math display">\[
+f(y)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y-\bar{x} \rangle +
+o(||y-\bar{x}||)
+\]</span> 其中<span class="math inline">\(o(r)\)</span>对于<span class="math inline">\(r \ge 0\)</span>有 <span class="math display">\[
+\underset{r \rightarrow 0}{lim} \frac{1}{r} o(r) = 0 , \space \space
+\space o(0)=0.
+\]</span> 同时给出<span class="math inline">\(|| \cdot
+||\)</span>在<span class="math inline">\(R^n\)</span>的欧几里得定义:
+<span class="math display">\[
+||x|| = [\sum_{i=1}^{n}(x^{(i)})^2]^{1/2}
+\]</span> 其中的<span class="math inline">\(f^{&#39;}(x)\)</span>是函数<span class="math inline">\(f\)</span>在<span class="math inline">\(x\)</span>处的梯度(gradient) <span class="math display">\[
+f&#39;(x) = (\frac{\partial f(x)}{\partial x^{(1)}},...,\frac{\partial
+f(x)}{\partial x^{(n)}})^T
+\]</span></p>
+<h2 id="引理1.2.1">3.引理1.2.1</h2>
+<p>定义level set为<span class="math inline">\(\mathscr{L}_f(\alpha)\)</span>: <span class="math display">\[
+\mathscr{L}_f(\alpha) = \{ x \in R^n | f(x) \le \alpha \}
+\]</span> 同时定义与<span class="math inline">\(\mathscr{L}_f(f(\bar{x}))\)</span>在<span class="math inline">\(\bar{x}\)</span>处<font color="red">相切</font>的方向向量集合:
+<span class="math display">\[
+S_f(\bar{x}) = \{s \in R^n | s = \underset{f(y_k) =
+f(\bar{x})}{\underset{y_k \rightarrow \bar{x}}{lim}}
+\frac{y_k-\bar{x}}{||y_k-\bar{x}||} \}
+\]</span></p>
+<p><font color="red">引理1.2.1</font>: 如果<span class="math inline">\(s
+\in S_f(\bar{x})\)</span>,那么<span class="math inline">\(\langle
+f&#39;(\bar{x}),s \rangle = 0\)</span>.</p>
+<p>证明: 由于<span class="math inline">\(f(y_k) =
+f(\bar{x})\)</span>,我们有 <span class="math display">\[
+f(y_k)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y_k-\bar{x} \rangle +
+o(||y_k-\bar{x}||) = f(\bar{x})
+\]</span> 因此只需证明<span class="math inline">\(\langle
+f^{&#39;}(\bar{x}),y_k-\bar{x} \rangle + o(||y_k-\bar{x}||) =
+0\)</span>即可</p>
+<p>取极限<span class="math inline">\(y_k \rightarrow
+\bar{x}\)</span>时即可得证</p>
+<h2 id="证明梯度反方向为局部下降最快方向">4.证明梯度反方向为局部下降最快方向</h2>
+<p>令<span class="math inline">\(s\)</span>为<span class="math inline">\(R^n\)</span>中的方向向量，<span class="math inline">\(||s|| = 1\)</span>，局部减小量为 <span class="math display">\[
+\Delta(s) = \underset{a \rightarrow 0}{lim} \frac{1}{\alpha}
+[f(\bar{x}+\alpha s)-f(\bar{x})]
+\]</span> 利用近似(泰勒展开)可以得到<span class="math inline">\(f(\bar{x}+\alpha s)-f(\bar{x})=\alpha \langle
+f&#39;(\bar{x}),s \rangle + o(\alpha)\)</span>.因此有 <span class="math display">\[
+\Delta (s) = \langle f&#39;(\bar{x}),s \rangle
+\]</span> ps: 柯西不等式 <span class="math display">\[
+-||x|| \cdot ||y|| \le \langle x,y \rangle \le ||x|| \cdot ||y||
+\]</span> 从而有<span class="math inline">\(\Delta(s) = \langle
+f&#39;(\bar{x}),s \rangle \ge -||f&#39;(\bar{x})||\)</span>.取 <span class="math display">\[
+\bar{s} = -f&#39;(\bar{x}) / ||f&#39;(\bar{x})||
+\]</span> 这时能够取到不等式的等号： <span class="math display">\[
+\Delta(\bar{s}) = - \langle f&#39;(\bar{x}),f&#39;(\bar{x}) \rangle /
+||f&#39;(\bar{x})|| = -||f&#39;(\bar{x})||
+\]</span> 因此方向<span class="math inline">\(-f&#39;(\bar{x})\)</span>(antigradient)是局部<font color="red">下降最快</font>的方向</p>
+<h2 id="定理1.2.1first-order-optimality-condition">5.定理1.2.1(First-order
+optimality condition)</h2>
+<p><font color="red">定理1.2.1</font>: 令<span class="math inline">\(x^*\)</span>是局部最小值对应向量，则 <span class="math display">\[
+f&#39;(x^*) = 0
+\]</span></p>
+<h2 id="定理1.2.2second-order-optimality-condition">6.定理1.2.2(Second-order
+optimality condition)</h2>
+<p>二阶近似 <span class="math display">\[
+f(y)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y-\bar{x} \rangle +
+\frac{1}{2}\langle  f^{&#39;&#39;}(\bar{x})(y-\bar{x}),y-\bar{x}
+\rangle   + o(||y-\bar{x}||^2)
+\]</span> 其中<span class="math inline">\(n \times n\)</span>矩阵<span class="math inline">\(f&#39;&#39;(x)\)</span>称为<font color="red">黑塞矩阵</font>(Hessian)：
+<span class="math display">\[
+(f&#39;&#39;(x))^{(i,j)} =
+\frac{\partial^2f(x)}{\partial{x}^{(i)}\partial{x}^{(j)}}
+\]</span> 黑塞矩阵是对称矩阵: <span class="math display">\[
+f&#39;&#39;(x) = [f&#39;&#39;(x)]^T
+\]</span> 对称矩阵A是<font color="red">半正定</font>的: <span class="math display">\[
+\langle Ax,x \rangle \ge 0 \space \space \space \forall x \in R^n
+\]</span> 符号记为 <span class="math display">\[
+A \succeq 0
+\]</span></p>
+<p><font color="red">定理1.2.2</font>: 令<span class="math inline">\(x^*\)</span>是局部最小值对应向量，则 <span class="math display">\[
+f&#39;(x^*) = 0, \space \space \space    f&#39;&#39;(x^*) \succeq  0.
+\]</span></p>
+]]></content>
+      <categories>
+        <category>凸优化</category>
+      </categories>
+      <tags>
+        <tag>凸优化</tag>
+      </tags>
   </entry>
   <entry>
     <title>OS Structures</title>
@@ -474,146 +635,6 @@ Format)</h2>
       </tags>
   </entry>
   <entry>
-    <title>Relaxation and approximation</title>
-    <url>/2022/09/23/Relaxation-and-approximation/</url>
-    <content><![CDATA[<style> 
-    .markdown-body {
-      font-family: Microsoft JhengHei, SimHei;
-      font-size: 16px;
-    }
-</style>
-<h1 align="center">
-Relaxation and approximation
-</h1>
-<h2 id="relaxation松弛">1.Relaxation(松弛)</h2>
-<p>定义relaxation sequence:</p>
-<blockquote>
-<p>We call the sequence <span class="math inline">\(\{a_k
-\}^{\infty}_{k=0}\)</span> a relaxation sequence if</p>
-<p>​ <span class="math inline">\(a_{k+1} \le a_k\)</span> <span class="math inline">\(\forall k \ge 0\)</span></p>
-</blockquote>
-<h2 id="approximation近似">2.Approximation(近似)</h2>
-<p>用简单的去替代复杂的，并保持原来相似的性质</p>
-<p>令<span class="math inline">\(f(x)\)</span>在<span class="math inline">\(\bar{x}\)</span>处可微，于是对于<span class="math inline">\(y \in
-R^n\)</span>我们有(<font color="red">泰勒展开</font>) <span class="math display">\[
-f(y)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y-\bar{x} \rangle +
-o(||y-\bar{x}||)
-\]</span> 其中<span class="math inline">\(o(r)\)</span>对于<span class="math inline">\(r \ge 0\)</span>有 <span class="math display">\[
-\underset{r \rightarrow 0}{lim} \frac{1}{r} o(r) = 0 , \space \space
-\space o(0)=0.
-\]</span> 同时给出<span class="math inline">\(|| \cdot
-||\)</span>在<span class="math inline">\(R^n\)</span>的欧几里得定义:
-<span class="math display">\[
-||x|| = [\sum_{i=1}^{n}(x^{(i)})^2]^{1/2}
-\]</span> 其中的<span class="math inline">\(f^{&#39;}(x)\)</span>是函数<span class="math inline">\(f\)</span>在<span class="math inline">\(x\)</span>处的梯度(gradient) <span class="math display">\[
-f&#39;(x) = (\frac{\partial f(x)}{\partial x^{(1)}},...,\frac{\partial
-f(x)}{\partial x^{(n)}})^T
-\]</span></p>
-<h2 id="引理1.2.1">3.引理1.2.1</h2>
-<p>定义level set为<span class="math inline">\(\mathscr{L}_f(\alpha)\)</span>: <span class="math display">\[
-\mathscr{L}_f(\alpha) = \{ x \in R^n | f(x) \le \alpha \}
-\]</span> 同时定义与<span class="math inline">\(\mathscr{L}_f(f(\bar{x}))\)</span>在<span class="math inline">\(\bar{x}\)</span>处<font color="red">相切</font>的方向向量集合:
-<span class="math display">\[
-S_f(\bar{x}) = \{s \in R^n | s = \underset{f(y_k) =
-f(\bar{x})}{\underset{y_k \rightarrow \bar{x}}{lim}}
-\frac{y_k-\bar{x}}{||y_k-\bar{x}||} \}
-\]</span></p>
-<p><font color="red">引理1.2.1</font>: 如果<span class="math inline">\(s
-\in S_f(\bar{x})\)</span>,那么<span class="math inline">\(\langle
-f&#39;(\bar{x}),s \rangle = 0\)</span>.</p>
-<p>证明: 由于<span class="math inline">\(f(y_k) =
-f(\bar{x})\)</span>,我们有 <span class="math display">\[
-f(y_k)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y_k-\bar{x} \rangle +
-o(||y_k-\bar{x}||) = f(\bar{x})
-\]</span> 因此只需证明<span class="math inline">\(\langle
-f^{&#39;}(\bar{x}),y_k-\bar{x} \rangle + o(||y_k-\bar{x}||) =
-0\)</span>即可</p>
-<p>取极限<span class="math inline">\(y_k \rightarrow
-\bar{x}\)</span>时即可得证</p>
-<h2 id="证明梯度反方向为局部下降最快方向">4.证明梯度反方向为局部下降最快方向</h2>
-<p>令<span class="math inline">\(s\)</span>为<span class="math inline">\(R^n\)</span>中的方向向量，<span class="math inline">\(||s|| = 1\)</span>，局部减小量为 <span class="math display">\[
-\Delta(s) = \underset{a \rightarrow 0}{lim} \frac{1}{\alpha}
-[f(\bar{x}+\alpha s)-f(\bar{x})]
-\]</span> 利用近似(泰勒展开)可以得到<span class="math inline">\(f(\bar{x}+\alpha s)-f(\bar{x})=\alpha \langle
-f&#39;(\bar{x}),s \rangle + o(\alpha)\)</span>.因此有 <span class="math display">\[
-\Delta (s) = \langle f&#39;(\bar{x}),s \rangle
-\]</span> ps: 柯西不等式 <span class="math display">\[
--||x|| \cdot ||y|| \le \langle x,y \rangle \le ||x|| \cdot ||y||
-\]</span> 从而有<span class="math inline">\(\Delta(s) = \langle
-f&#39;(\bar{x}),s \rangle \ge -||f&#39;(\bar{x})||\)</span>.取 <span class="math display">\[
-\bar{s} = -f&#39;(\bar{x}) / ||f&#39;(\bar{x})||
-\]</span> 这时能够取到不等式的等号： <span class="math display">\[
-\Delta(\bar{s}) = - \langle f&#39;(\bar{x}),f&#39;(\bar{x}) \rangle /
-||f&#39;(\bar{x})|| = -||f&#39;(\bar{x})||
-\]</span> 因此方向<span class="math inline">\(-f&#39;(\bar{x})\)</span>(antigradient)是局部<font color="red">下降最快</font>的方向</p>
-<h2 id="定理1.2.1first-order-optimality-condition">5.定理1.2.1(First-order
-optimality condition)</h2>
-<p><font color="red">定理1.2.1</font>: 令<span class="math inline">\(x^*\)</span>是局部最小值对应向量，则 <span class="math display">\[
-f&#39;(x^*) = 0
-\]</span></p>
-<h2 id="定理1.2.2second-order-optimality-condition">6.定理1.2.2(Second-order
-optimality condition)</h2>
-<p>二阶近似 <span class="math display">\[
-f(y)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y-\bar{x} \rangle +
-\frac{1}{2}\langle  f^{&#39;&#39;}(\bar{x})(y-\bar{x}),y-\bar{x}
-\rangle   + o(||y-\bar{x}||^2)
-\]</span> 其中<span class="math inline">\(n \times n\)</span>矩阵<span class="math inline">\(f&#39;&#39;(x)\)</span>称为<font color="red">黑塞矩阵</font>(Hessian)：
-<span class="math display">\[
-(f&#39;&#39;(x))^{(i,j)} =
-\frac{\partial^2f(x)}{\partial{x}^{(i)}\partial{x}^{(j)}}
-\]</span> 黑塞矩阵是对称矩阵: <span class="math display">\[
-f&#39;&#39;(x) = [f&#39;&#39;(x)]^T
-\]</span> 对称矩阵A是<font color="red">半正定</font>的: <span class="math display">\[
-\langle Ax,x \rangle \ge 0 \space \space \space \forall x \in R^n
-\]</span> 符号记为 <span class="math display">\[
-A \succeq 0
-\]</span></p>
-<p><font color="red">定理1.2.2</font>: 令<span class="math inline">\(x^*\)</span>是局部最小值对应向量，则 <span class="math display">\[
-f&#39;(x^*) = 0, \space \space \space    f&#39;&#39;(x^*) \succeq  0.
-\]</span></p>
-]]></content>
-      <categories>
-        <category>凸优化</category>
-      </categories>
-      <tags>
-        <tag>凸优化</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>放学后</title>
-    <url>/2022/08/27/%E6%94%BE%E5%AD%A6%E5%90%8E/</url>
-    <content><![CDATA[<style>
-  .markdown-body {
-    font-family: Microsoft JhengHei, SimHei;
-    font-size: 16px;
-  }
-</style>
-<h1 align="center">
-《放学后》
-</h1>
-<p>1.一口气看完了东野圭吾的《放学后》，作为一篇的悬疑推理小说，不论是情节的组织、细节的设计铺垫方面都是很不错的，也有东野圭吾一贯擅长的反转再反转，结局出人意料，回味前文的细节又觉得在情理之中，读完之后觉得深感震撼。</p>
-<p>2.主角前岛是清华女中的一位数学老师，同时担任射箭社的指导老师，他不擅长上课，不擅长和学生互动，只是本分地完成自身的教学工作，被学生们叫做“机器”。就是这样一个不太和他人有交集以及过节的人，一次又一次险些遭人陷害，从天而降的花盆、泳池中的插电板、被人推向飞驰而过的列车……一次又一次险些丧命。这让他很是小心，急迫想要找出陷害他的人。而在他找到答案之前，同为数学老师的村桥老师在更衣室中被人杀害，警方介入调查。一波未平一波又起，在化装表演时，扮成小丑的竹井老师因为喝下道具酒瓶中的液体当场倒地身亡。</p>
-<p>3.一切都是因为射箭社的惠子和惠美遭到了村桥和竹井的“视线强暴”，于是萌生了杀人的想法。她们用箭将男更衣室的门抵住，并且在男更衣室与女更衣室间隔的墙上留下痕迹，伪造了一幅凶手从女更衣室逃走的假象，误导警方断案。而在村桥的衣服中也发现了麻生老师的不雅照片，这是村桥老师逼迫麻生老师和他继续维持关系的砝码，后来却成了惠子和惠美威胁麻生协助杀害竹井老师的手段。那些让前岛一次又一次险些丧命的事件原来是她们伪造出来的假象，让警方误认为凶手想杀害的是前岛而不是竹井。</p>
-<p>4.故事最后，前岛和妻子通过话后准备回家，却被一个陌生男子用刀捅死，故事戛然而止。委婉地叙述了妻子杀害前岛这一事实，让人大受震撼，但是转念回想前文，前岛和妻子意外有了孩子，前岛执意打掉了孩子，妻子因此也落寞了许久。这样结尾又在情理之中，妻子积怨已久，最终动手杀害了前岛。</p>
-<p>5.一些书摘：</p>
-<blockquote>
-<p>成年人的案件倒不见得会那么复杂。报纸社会新闻版总有各种闹得沸沸扬扬的事件，几乎都能用色、欲、财这三要素来概括</p>
-</blockquote>
-<blockquote>
-<p>但高中女生，就不能拿着几点来套了</p>
-<p>对她们来说，最重要的应该是美丽、纯粹、真实的东西，比如友情、爱情，也可能是自己的身体或容貌。很多时候，更抽象的回忆或梦想对她们来说也很重要。反过来说，她们最憎恨企图破坏或从她们手中夺走这些重要东西的人</p>
-</blockquote>
-<p>6.处于青春期的孩子，自尊心是高于一切的，而成年人们最容易忽视的往往就是自尊心。有意无意间践踏了她们的自尊心却不自知，最终酿成悲剧。小说中还有一位女生叫阳子，她没有直接参与到几次谋杀案中。她母亲很早离世，父亲是位企业家，也无暇顾及女儿。阳子曾邀请前岛一同旅行，前岛最终是放了格子，阳子一人在车站苦苦等待了几个小时。在此之后，阳子也走向了堕落，同小混混飙车麻痹自己。没有人生来就是坏孩子，她们的成长也需要作为成年人的家长、老师的呵护。</p>
-<p>7.主角前岛的死也是一出悲剧，忽视了妻子的感受，让负面的情绪在不断积攒，最终上演了悲剧。</p>
-]]></content>
-      <categories>
-        <category>阅读</category>
-      </categories>
-      <tags>
-        <tag>阅读</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>白夜行</title>
     <url>/2022/09/04/%E7%99%BD%E5%A4%9C%E8%A1%8C/</url>
     <content><![CDATA[<style>
@@ -648,8 +669,8 @@ f&#39;(x^*) = 0, \space \space \space    f&#39;&#39;(x^*) \succeq  0.
       </tags>
   </entry>
   <entry>
-    <title>贝叶斯决策理论</title>
-    <url>/2022/09/13/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%86%B3%E7%AD%96%E7%90%86%E8%AE%BA/</url>
+    <title>放学后</title>
+    <url>/2022/08/27/%E6%94%BE%E5%AD%A6%E5%90%8E/</url>
     <content><![CDATA[<style>
   .markdown-body {
     font-family: Microsoft JhengHei, SimHei;
@@ -657,115 +678,28 @@ f&#39;(x^*) = 0, \space \space \space    f&#39;&#39;(x^*) \succeq  0.
   }
 </style>
 <h1 align="center">
-贝叶斯决策理论
+《放学后》
 </h1>
-<h2 id="basics-of-probability概率论基础知识">1. Basics of
-Probability(概率论基础知识)</h2>
-<ul>
-<li>$ A独立于B时,P(A|B) = P(A) $</li>
-<li>$ P(A|B)= $</li>
-<li>$ A、B相互独立 当且仅当 P(A,B)=P(A)P(B) $</li>
-</ul>
-<h2 id="bayes-theorem贝叶斯理论">2. Bayes' Theorem(贝叶斯理论)</h2>
-<p><span class="math display">\[
-P(\omega|x) = \frac{p(x|\omega)p(\omega)}{p(x)}\\
-Posterior = (Likelihood \times Prior) / Evidence\\
-p(x) = \sum_{i=1}^{k}p(x|\omega_i)p(\omega_i)
-\]</span></p>
-<ul>
-<li><span class="math inline">\(P(\omega|x)\)</span> :
-posterior,后验概率,<font color="red">已发生事件</font>出于某种因素引发的概率</li>
-<li><span class="math inline">\(p(x|\omega)\)</span> :
-likelihood,似然,数据符合<font color="red">某种分布</font>的概率大小</li>
-<li><span class="math inline">\(p(\omega)\)</span> :
-prior,先验概率,<font color="red">未发生事件</font>依据以往经验得知的概率</li>
-<li><span class="math inline">\(p(x)\)</span> :
-evidence,往往作为一个<font color="red">常数</font></li>
-</ul>
+<p>1.一口气看完了东野圭吾的《放学后》，作为一篇的悬疑推理小说，不论是情节的组织、细节的设计铺垫方面都是很不错的，也有东野圭吾一贯擅长的反转再反转，结局出人意料，回味前文的细节又觉得在情理之中，读完之后觉得深感震撼。</p>
+<p>2.主角前岛是清华女中的一位数学老师，同时担任射箭社的指导老师，他不擅长上课，不擅长和学生互动，只是本分地完成自身的教学工作，被学生们叫做“机器”。就是这样一个不太和他人有交集以及过节的人，一次又一次险些遭人陷害，从天而降的花盆、泳池中的插电板、被人推向飞驰而过的列车……一次又一次险些丧命。这让他很是小心，急迫想要找出陷害他的人。而在他找到答案之前，同为数学老师的村桥老师在更衣室中被人杀害，警方介入调查。一波未平一波又起，在化装表演时，扮成小丑的竹井老师因为喝下道具酒瓶中的液体当场倒地身亡。</p>
+<p>3.一切都是因为射箭社的惠子和惠美遭到了村桥和竹井的“视线强暴”，于是萌生了杀人的想法。她们用箭将男更衣室的门抵住，并且在男更衣室与女更衣室间隔的墙上留下痕迹，伪造了一幅凶手从女更衣室逃走的假象，误导警方断案。而在村桥的衣服中也发现了麻生老师的不雅照片，这是村桥老师逼迫麻生老师和他继续维持关系的砝码，后来却成了惠子和惠美威胁麻生协助杀害竹井老师的手段。那些让前岛一次又一次险些丧命的事件原来是她们伪造出来的假象，让警方误认为凶手想杀害的是前岛而不是竹井。</p>
+<p>4.故事最后，前岛和妻子通过话后准备回家，却被一个陌生男子用刀捅死，故事戛然而止。委婉地叙述了妻子杀害前岛这一事实，让人大受震撼，但是转念回想前文，前岛和妻子意外有了孩子，前岛执意打掉了孩子，妻子因此也落寞了许久。这样结尾又在情理之中，妻子积怨已久，最终动手杀害了前岛。</p>
+<p>5.一些书摘：</p>
 <blockquote>
-<p>其中 x为样本</p>
+<p>成年人的案件倒不见得会那么复杂。报纸社会新闻版总有各种闹得沸沸扬扬的事件，几乎都能用色、欲、财这三要素来概括</p>
 </blockquote>
-<h2 id="optimal-bayes-decision-rule最优贝叶斯决策规则">3. Optimal Bayes
-Decision Rule(最优贝叶斯决策规则)</h2>
-<p><strong>一个物体选择后验概率大的作为其分类可以最小化决策误差</strong></p>
-<p><span class="math inline">\(P(\omega_1|x) &gt;
-P(\omega_2|x)\)</span>时认为它是<span class="math inline">\(\omega_1\)</span></p>
-<p><span class="math inline">\(P(\omega_1|x) &lt;
-P(\omega_2|x)\)</span>时认为它是<span class="math inline">\(\omega_2\)</span></p>
 <blockquote>
-<p>同理或者选择风险R小的</p>
+<p>但高中女生，就不能拿着几点来套了</p>
+<p>对她们来说，最重要的应该是美丽、纯粹、真实的东西，比如友情、爱情，也可能是自己的身体或容貌。很多时候，更抽象的回忆或梦想对她们来说也很重要。反过来说，她们最憎恨企图破坏或从她们手中夺走这些重要东西的人</p>
 </blockquote>
-<p>特殊情况：</p>
-<ul>
-<li><p><span class="math inline">\(p(\omega_1)=p(\omega_2)\)</span> :
-<span class="math inline">\(p(x|\omega_1)&gt;p(x|\omega_2)\)</span>时认为是<span class="math inline">\({\omega}_1\)</span></p>
-<blockquote>
-<p>最大似然决策法</p>
-<p>本质上和一般情况没有区别，只是先验概率相同可以同时约去，不加入比较，直接比较似然度</p>
-</blockquote></li>
-<li><p><span class="math inline">\(p(x|\omega_1)=p(x|\omega_2)\)</span>
-: <span class="math inline">\(p(\omega_1)&gt;p(\omega_2)\)</span>时认为是<span class="math inline">\({\omega}_1\)</span></p>
-<blockquote>
-<p>同上</p>
-</blockquote></li>
-</ul>
-<h2 id="bayes-risk">4. Bayes Risk</h2>
-<p>Conditional Risk <span class="math display">\[
-R(\alpha_i|x)=\sum_{j=1}^{c}\lambda(\alpha_i|\omega_j)P(\omega_j|x)
-\]</span></p>
-<blockquote>
-<p><span class="math inline">\(\alpha\)</span> 代表 采取的行为</p>
-</blockquote>
-<p>Overall Risk <span class="math display">\[
-R = \int R(\alpha_i|x)p(x)dx
-\]</span> Bayes Risk</p>
-<ul>
-<li>风险最小时的R</li>
-</ul>
-<h2 id="example-1two-category-classification">Example 1：Two-category
-classification</h2>
-<p>给定： <span class="math display">\[
-\alpha_1 = deciding \space \omega_1 \\
-\alpha_2 = deciding \space \omega_2 \\
-\lambda_{ij} = \lambda(\alpha_i | \omega_j)
-\]</span> 于是条件风险： <span class="math display">\[
-R(\alpha_1 | x) = \lambda_{11}P(\omega_1 | x) + \lambda_{12}P(\omega_2 |
-x) \\
-R(\alpha_2 | x) = \lambda_{21}P(\omega_1 | x) + \lambda_{22}P(\omega_2 |
-x)
-\]</span> 如何找到贝叶斯风险？？？</p>
-<p>认为是<span class="math inline">\({\omega}_1\)</span>当 <span class="math display">\[
-R(\alpha_1 | x) &lt; R(\alpha_2 | x)
-\]</span> 展开并移项化简得到(认为是<span class="math inline">\({\omega}_1\)</span>的情况) <span class="math display">\[
-\frac{P(x|\omega_1)}{P(x|\omega_2)} &gt;
-\frac{\lambda_{12}-\lambda_{22}}{\lambda_{21}-\lambda_{11}} \times
-\frac{P(\omega_2)}{P(\omega_1)}
-\]</span></p>
-<h2 id="example-2-minimum-error-rate-classification">Example 2:
-Minimum-Error-Rate Classification</h2>
-<p>给定</p>
-<ul>
-<li>对于动作<span class="math inline">\(\alpha_i\)</span>和事实上的类别<span class="math inline">\(\omega_j\)</span> ,如果<span class="math inline">\(i=j\)</span>就是正确的，否则错误</li>
-</ul>
-<p>找到最小损失的分类</p>
-<p>写出损失函数(Zero-one loss function): <span class="math display">\[
-\lambda(\alpha_i | \omega_j) =
-\begin{cases}
-0&amp; \text{i = j}\\
-1&amp; \text{i} \neq \text{j}
-\end{cases}
-\]</span> 于是可以计算条件风险 <span class="math display">\[
-R(\alpha_i|x) = \sum_{j=1}^{c} \lambda(\alpha_i|\omega_j)P(\omega_j | x)
-\\
-= \sum_{j{\neq}i} P(\omega_j | x) = 1-P(\omega_i | x)
-\]</span>
-需要风险最小化，由上述式子可知需要后验概率最大化，选择后验概率最大的即可</p>
+<p>6.处于青春期的孩子，自尊心是高于一切的，而成年人们最容易忽视的往往就是自尊心。有意无意间践踏了她们的自尊心却不自知，最终酿成悲剧。小说中还有一位女生叫阳子，她没有直接参与到几次谋杀案中。她母亲很早离世，父亲是位企业家，也无暇顾及女儿。阳子曾邀请前岛一同旅行，前岛最终是放了格子，阳子一人在车站苦苦等待了几个小时。在此之后，阳子也走向了堕落，同小混混飙车麻痹自己。没有人生来就是坏孩子，她们的成长也需要作为成年人的家长、老师的呵护。</p>
+<p>7.主角前岛的死也是一出悲剧，忽视了妻子的感受，让负面的情绪在不断积攒，最终上演了悲剧。</p>
 ]]></content>
       <categories>
-        <category>机器学习</category>
+        <category>阅读</category>
       </categories>
       <tags>
-        <tag>机器学习</tag>
+        <tag>阅读</tag>
       </tags>
   </entry>
   <entry>
@@ -1112,6 +1046,127 @@ w^* = argmin\sum_{i=1}^{n}(y_i-\pmb{x}_i^T\pmb{w})^2  \textcolor{red}{ +
 <p>其对参数的限制方式为: <span class="math display">\[
 \textcolor{red}{\sum^{p}_{j=1}|w_j| \le t}
 \]</span></p>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>贝叶斯决策理论</title>
+    <url>/2022/09/13/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%86%B3%E7%AD%96%E7%90%86%E8%AE%BA/</url>
+    <content><![CDATA[<style>
+  .markdown-body {
+    font-family: Microsoft JhengHei, SimHei;
+    font-size: 16px;
+  }
+</style>
+<h1 align="center">
+贝叶斯决策理论
+</h1>
+<h2 id="basics-of-probability概率论基础知识">1. Basics of
+Probability(概率论基础知识)</h2>
+<ul>
+<li>$ A独立于B时,P(A|B) = P(A) $</li>
+<li>$ P(A|B)= $</li>
+<li>$ A、B相互独立 当且仅当 P(A,B)=P(A)P(B) $</li>
+</ul>
+<h2 id="bayes-theorem贝叶斯理论">2. Bayes' Theorem(贝叶斯理论)</h2>
+<p><span class="math display">\[
+P(\omega|x) = \frac{p(x|\omega)p(\omega)}{p(x)}\\
+Posterior = (Likelihood \times Prior) / Evidence\\
+p(x) = \sum_{i=1}^{k}p(x|\omega_i)p(\omega_i)
+\]</span></p>
+<ul>
+<li><span class="math inline">\(P(\omega|x)\)</span> :
+posterior,后验概率,<font color="red">已发生事件</font>出于某种因素引发的概率</li>
+<li><span class="math inline">\(p(x|\omega)\)</span> :
+likelihood,似然,数据符合<font color="red">某种分布</font>的概率大小</li>
+<li><span class="math inline">\(p(\omega)\)</span> :
+prior,先验概率,<font color="red">未发生事件</font>依据以往经验得知的概率</li>
+<li><span class="math inline">\(p(x)\)</span> :
+evidence,往往作为一个<font color="red">常数</font></li>
+</ul>
+<blockquote>
+<p>其中 x为样本</p>
+</blockquote>
+<h2 id="optimal-bayes-decision-rule最优贝叶斯决策规则">3. Optimal Bayes
+Decision Rule(最优贝叶斯决策规则)</h2>
+<p><strong>一个物体选择后验概率大的作为其分类可以最小化决策误差</strong></p>
+<p><span class="math inline">\(P(\omega_1|x) &gt;
+P(\omega_2|x)\)</span>时认为它是<span class="math inline">\(\omega_1\)</span></p>
+<p><span class="math inline">\(P(\omega_1|x) &lt;
+P(\omega_2|x)\)</span>时认为它是<span class="math inline">\(\omega_2\)</span></p>
+<blockquote>
+<p>同理或者选择风险R小的</p>
+</blockquote>
+<p>特殊情况：</p>
+<ul>
+<li><p><span class="math inline">\(p(\omega_1)=p(\omega_2)\)</span> :
+<span class="math inline">\(p(x|\omega_1)&gt;p(x|\omega_2)\)</span>时认为是<span class="math inline">\({\omega}_1\)</span></p>
+<blockquote>
+<p>最大似然决策法</p>
+<p>本质上和一般情况没有区别，只是先验概率相同可以同时约去，不加入比较，直接比较似然度</p>
+</blockquote></li>
+<li><p><span class="math inline">\(p(x|\omega_1)=p(x|\omega_2)\)</span>
+: <span class="math inline">\(p(\omega_1)&gt;p(\omega_2)\)</span>时认为是<span class="math inline">\({\omega}_1\)</span></p>
+<blockquote>
+<p>同上</p>
+</blockquote></li>
+</ul>
+<h2 id="bayes-risk">4. Bayes Risk</h2>
+<p>Conditional Risk <span class="math display">\[
+R(\alpha_i|x)=\sum_{j=1}^{c}\lambda(\alpha_i|\omega_j)P(\omega_j|x)
+\]</span></p>
+<blockquote>
+<p><span class="math inline">\(\alpha\)</span> 代表 采取的行为</p>
+</blockquote>
+<p>Overall Risk <span class="math display">\[
+R = \int R(\alpha_i|x)p(x)dx
+\]</span> Bayes Risk</p>
+<ul>
+<li>风险最小时的R</li>
+</ul>
+<h2 id="example-1two-category-classification">Example 1：Two-category
+classification</h2>
+<p>给定： <span class="math display">\[
+\alpha_1 = deciding \space \omega_1 \\
+\alpha_2 = deciding \space \omega_2 \\
+\lambda_{ij} = \lambda(\alpha_i | \omega_j)
+\]</span> 于是条件风险： <span class="math display">\[
+R(\alpha_1 | x) = \lambda_{11}P(\omega_1 | x) + \lambda_{12}P(\omega_2 |
+x) \\
+R(\alpha_2 | x) = \lambda_{21}P(\omega_1 | x) + \lambda_{22}P(\omega_2 |
+x)
+\]</span> 如何找到贝叶斯风险？？？</p>
+<p>认为是<span class="math inline">\({\omega}_1\)</span>当 <span class="math display">\[
+R(\alpha_1 | x) &lt; R(\alpha_2 | x)
+\]</span> 展开并移项化简得到(认为是<span class="math inline">\({\omega}_1\)</span>的情况) <span class="math display">\[
+\frac{P(x|\omega_1)}{P(x|\omega_2)} &gt;
+\frac{\lambda_{12}-\lambda_{22}}{\lambda_{21}-\lambda_{11}} \times
+\frac{P(\omega_2)}{P(\omega_1)}
+\]</span></p>
+<h2 id="example-2-minimum-error-rate-classification">Example 2:
+Minimum-Error-Rate Classification</h2>
+<p>给定</p>
+<ul>
+<li>对于动作<span class="math inline">\(\alpha_i\)</span>和事实上的类别<span class="math inline">\(\omega_j\)</span> ,如果<span class="math inline">\(i=j\)</span>就是正确的，否则错误</li>
+</ul>
+<p>找到最小损失的分类</p>
+<p>写出损失函数(Zero-one loss function): <span class="math display">\[
+\lambda(\alpha_i | \omega_j) =
+\begin{cases}
+0&amp; \text{i = j}\\
+1&amp; \text{i} \neq \text{j}
+\end{cases}
+\]</span> 于是可以计算条件风险 <span class="math display">\[
+R(\alpha_i|x) = \sum_{j=1}^{c} \lambda(\alpha_i|\omega_j)P(\omega_j | x)
+\\
+= \sum_{j{\neq}i} P(\omega_j | x) = 1-P(\omega_i | x)
+\]</span>
+需要风险最小化，由上述式子可知需要后验概率最大化，选择后验概率最大的即可</p>
 ]]></content>
       <categories>
         <category>机器学习</category>

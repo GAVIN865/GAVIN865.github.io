@@ -16,26 +16,26 @@
   <meta name="author" content="Gavin">
   <meta name="keywords" content="">
   
-    <meta name="description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   OS Structures  1.A View of OS Services   1  program execution:  Load and run a prog">
+    <meta name="description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   LaTex符号对照表  1.不同字体    字体 代码     \(\mathscr{L}\) \\(mathscr\{\}\)   \(\mathbb">
 <meta property="og:type" content="article">
-<meta property="og:title" content="OS Structures">
-<meta property="og:url" content="http://gavinbowl.top/2022/09/25/OS-Structures/index.html">
+<meta property="og:title" content="LaTex符号对照表">
+<meta property="og:url" content="http://gavinbowl.top/2022/09/26/LaTex%E7%AC%A6%E5%8F%B7%E5%AF%B9%E7%85%A7%E8%A1%A8/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   OS Structures  1.A View of OS Services   1  program execution:  Load and run a prog">
+<meta property="og:description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   LaTex符号对照表  1.不同字体    字体 代码     \(\mathscr{L}\) \\(mathscr\{\}\)   \(\mathbb">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://gavinbowl.top/img/9.jpg">
-<meta property="article:published_time" content="2022-09-25T02:49:18.000Z">
-<meta property="article:modified_time" content="2022-09-26T02:51:58.563Z">
+<meta property="og:image" content="http://gavinbowl.top/img/10.png">
+<meta property="article:published_time" content="2022-09-26T02:50:29.000Z">
+<meta property="article:modified_time" content="2022-09-26T03:08:48.148Z">
 <meta property="article:author" content="Gavin">
-<meta property="article:tag" content="操作系统">
+<meta property="article:tag" content="LaTex">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://gavinbowl.top/img/9.jpg">
+<meta name="twitter:image" content="http://gavinbowl.top/img/10.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>OS Structures - 0</title>
+  <title>LaTex符号对照表 - 0</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -212,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="OS Structures"></span>
+            <span id="subtitle" data-typed-text="LaTex符号对照表"></span>
           
         </div>
 
@@ -223,8 +223,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-09-25 10:49" pubdate>
-          2022年9月25日 上午
+        <time datetime="2022-09-26 10:50" pubdate>
+          2022年9月26日 上午
         </time>
       </span>
     
@@ -235,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.8k 字
+          262 字
         
       </span>
     
@@ -246,7 +246,7 @@
         
         
         
-          32 分钟
+          3 分钟
         
       </span>
     
@@ -292,7 +292,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">OS Structures</h1>
+            <h1 style="display: none">LaTex符号对照表</h1>
             
             
               <div class="markdown-body">
@@ -304,263 +304,43 @@
     }
 </style>
 <h1 align="center">
-OS Structures
+LaTex符号对照表
 </h1>
-<h2 id="a-view-of-os-services">1.A View of OS Services</h2>
-<figure>
-<img src="/2022/09/25/OS-Structures/1.png" srcset="/img/loading.gif" lazyload alt="1">
-<figcaption aria-hidden="true">1</figcaption>
-</figure>
-<p><code>program execution:</code></p>
-<ul>
-<li>Load and run a program</li>
-<li>Allow a program to end in multiple ways(e.g. with error codes)</li>
-</ul>
-<p><code>I/O operations:</code></p>
-<ul>
-<li>Allow programs access to I/O devices</li>
-</ul>
-<p><code>file systems:</code></p>
-<ul>
-<li>Provides file/directory abstractions</li>
-<li>Allow programs to create/delete/read/write</li>
-<li>Implements permissions</li>
-</ul>
-<p><code>communication:</code></p>
-<ul>
-<li>Provides abstractions for processes to exchange information(Shared
-memory, Message passing)</li>
-</ul>
-<p><code>error detection:</code></p>
-<ul>
-<li>The OS needs to be aware of all errors</li>
-<li>The OS needs to take action</li>
-</ul>
-<p><code>resource allocation:</code></p>
-<ul>
-<li>Decides which process gets which resource when</li>
-</ul>
-<p><code>accounting:</code></p>
-<ul>
-<li>Keeps track of how much is used by each user</li>
-</ul>
-<p><code>protection and security:</code></p>
-<ul>
-<li>Controls access to resources</li>
-<li>Enforces authentication of all users</li>
-<li>Allow users to protect their content</li>
-</ul>
-<h2 id="user-operating-system-interface">2.User Operating System
-Interface</h2>
-<ul>
-<li>CLI, Command Line Interfaces</li>
-<li>GUI, Graphical User Interfaces</li>
-<li>Touchscreen Interfaces</li>
-</ul>
-<h2 id="system-calls">3.System Calls</h2>
-<p>In <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Computing">computing</a>, a
-<strong>system call</strong> (commonly abbreviated to
-<strong>syscall</strong>) is the programmatic way in which a <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Computer_program">computer
-program</a> requests a service from the <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Kernel_(operating_system)">kernel</a>
-of the <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Operating_system">operating
-system</a> on which it is executed.</p>
-<p>Two ways to write a program</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;hello world\n&quot;</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;unistd.h&gt;</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> &#123;<br>    write(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;hello world\n&quot;</span>, <span class="hljs-number">13</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<ul>
-<li><code>printf</code> is a <font color="red">wrapper</font> of the
-<code>write</code> system call</li>
-<li>C program invoking <code>printf()</code> library call, which calls
-<code>write()</code> system call</li>
-</ul>
-<p>x86_64 system call</p>
+<h2 id="不同字体">1.不同字体</h2>
 <table>
 <thead>
 <tr class="header">
-<th>NO.</th>
-<th>Name</th>
-<th>Entry point</th>
-<th>Implementation</th>
+<th>字体</th>
+<th>代码</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>0</td>
-<td>read</td>
-<td>sys_read</td>
-<td>fs/read_write.c</td>
+<td><span class="math inline">\(\mathscr{L}\)</span></td>
+<td>\<span class="math inline">\(mathscr\{\}\)</span></td>
 </tr>
 <tr class="even">
-<td>1</td>
-<td>write</td>
-<td>sys_write</td>
-<td>fs/read_write.c</td>
+<td><span class="math inline">\(\mathbb{L}\)</span></td>
+<td>\<span class="math inline">\(mathbb\{\}\)</span></td>
 </tr>
 <tr class="odd">
-<td>2</td>
-<td>open</td>
-<td>sys_open</td>
-<td>fs/open.c</td>
+<td><span class="math inline">\(\mathcal{L}\)</span></td>
+<td>\<span class="math inline">\(mathcal \{\}\)</span></td>
 </tr>
 <tr class="even">
-<td>3</td>
-<td>close</td>
-<td>sys_close</td>
-<td>fs/open.c</td>
+<td><span class="math inline">\(\rm{L}\)</span></td>
+<td>\<span class="math inline">\(rm\{\}\)</span></td>
 </tr>
 <tr class="odd">
-<td>4</td>
-<td>stat</td>
-<td>sys_newstat</td>
-<td>fs/stat.c</td>
+<td><span class="math inline">\(\mathfrak{L}\)</span></td>
+<td>\<span class="math inline">\(mathfrak\{\}\)</span></td>
 </tr>
 <tr class="even">
-<td>5</td>
-<td>fstat</td>
-<td>sys_newfstat</td>
-<td>fs/stat.c</td>
+<td><span class="math inline">\(\mathbf{L}\)</span></td>
+<td>\<span class="math inline">\(mathbf\{\}\)</span></td>
 </tr>
 </tbody>
 </table>
-<p><code>write()</code> system call go through</p>
-<ul>
-<li><code>syscall</code> instruction on x86_64
-<br>(<code>int $0x80</code> on 32-bit x86; <code>svc</code> on
-arm64)</li>
-<li>Move syscall number <code>0x1</code> to <code>%eax</code></li>
-<li><code>syscall</code> will <font color="red">transfer the control flow
-from user to kernel</font></li>
-</ul>
-<p>Kernel space</p>
-<ul>
-<li><code>kernel_entry</code> code will be called (<font color="red">saved
-all user space registers</font>)</li>
-<li>Calls <code>write</code> syscall handler (get from
-syscall_table,which is an array)</li>
-<li>After write finish, call
-<code>ret_to_user</code><br>(<font color="red">restore all saved user
-space registers,  transfer control flow to user space</font>)</li>
-</ul>
-<figure>
-<img src="/2022/09/25/OS-Structures/2.png" srcset="/img/loading.gif" lazyload alt="2">
-<figcaption aria-hidden="true">2</figcaption>
-</figure>
-<p>Time Spent in System Calls</p>
-<ul>
-<li><code>real time:</code> wall-clock time (elapsed time, execution
-time, run time)</li>
-<li><code>user time:</code> time spent in user code (user mode)</li>
-<li><code>system time:</code> time spent in system calls (kernel
-mode)</li>
-</ul>
-<p>System Call Parameter Passing</p>
-<ul>
-<li>pass the parameters in <font color="red">registers</font></li>
-<li>parameters stored in a block, or table, in
-<font color="red">memory</font>, and address of block passed as a
-parameter in a register</li>
-<li>parameters placed in the <font color="red">stack</font></li>
-</ul>
-<p>Types of System Calls</p>
-<p><code>Process cotrol</code></p>
-<ul>
-<li>create process, terminate process</li>
-<li>end, abort</li>
-<li>load, execute</li>
-<li>get process attributes, set process attributes</li>
-<li>wait for time</li>
-<li>wait event, signal event</li>
-<li>allocate and free memory</li>
-<li>Dump memory if error</li>
-<li>Debugger for determining bugs, single step execution</li>
-<li>Locks for managing access to shared data between processes</li>
-</ul>
-<p><code>File management</code></p>
-<ul>
-<li>create file, delete file</li>
-<li>open, close file</li>
-<li>read, write, reposition</li>
-<li>get and set file attributes</li>
-</ul>
-<p><code>Device management</code></p>
-<ul>
-<li>request device, release device</li>
-<li>read, write, reposition</li>
-<li>get device attributes, set device attributes</li>
-<li>logically attach or detach devices</li>
-</ul>
-<p><code>Information maintenance</code></p>
-<ul>
-<li>get time or date, set time or date</li>
-<li>get system data, set system data</li>
-<li>get and set process, file, or device attributes</li>
-</ul>
-<p><code>Communications</code></p>
-<ul>
-<li>create, delete communication connection</li>
-<li>send, receive messages if message passing model to host name or
-process name</li>
-<li>Shared-memory model create and gain access to memory regions</li>
-<li>transfer status information</li>
-<li>attach and detach remote devices</li>
-</ul>
-<p><code>Protection</code></p>
-<ul>
-<li>Control access to resources</li>
-<li>Get and set permissions</li>
-<li>Allow and deny user access</li>
-</ul>
-<h2 id="linkers-and-loaders">4.Linkers and Loaders</h2>
-<figure>
-<img src="/2022/09/25/OS-Structures/3.png" srcset="/img/loading.gif" lazyload alt="3">
-<figcaption aria-hidden="true">3</figcaption>
-</figure>
-<h2 id="elfexecutable-and-linkable-format">5.ELF(Executable and Linkable
-Format)</h2>
-<p><img src="/2022/09/25/OS-Structures/4.png" srcset="/img/loading.gif" lazyload alt="4" style="zoom: 80%;"></p>
-<ul>
-<li><code>Program header table</code> and
-<code>section header table</code>: for linker and loader</li>
-<li><code>.text</code>: code</li>
-<li><code>.rodata</code>: initialized read-only data</li>
-<li><code>.data</code>: initialized data</li>
-<li><code>.bss</code>: uninitialized data</li>
-</ul>
-<p>Static link</p>
-<ul>
-<li>All code are packed in single binary, leading to large binary</li>
-<li>Does not require dynamic loader</li>
-<li>_start is executed after execve system call</li>
-</ul>
-<p>Dynamic link</p>
-<ul>
-<li>Reuse libraries to reduce ELF file size</li>
-<li>Call more system calls</li>
-</ul>
-<p>Some facts</p>
-<blockquote>
-<p>Statically-linked ELF has no .interp section</p>
-<p>Dynamically-linked ELF has .interp section</p>
-</blockquote>
-<blockquote>
-<p>Statically-linked ELF, entry points to _start</p>
-<p>Dynamically-linked ELF, entry points to loader</p>
-</blockquote>
-<blockquote>
-<p>Kernel setups stack and heap</p>
-<p>Loader setups libraries</p>
-</blockquote>
-<p>Running ELF</p>
-<p><code>Statically-linked</code></p>
-<figure>
-<img src="/2022/09/25/OS-Structures/5.png" srcset="/img/loading.gif" lazyload alt="5">
-<figcaption aria-hidden="true">5</figcaption>
-</figure>
-<p><code>Dynamically-linked</code></p>
-<figure>
-<img src="/2022/09/25/OS-Structures/6.png" srcset="/img/loading.gif" lazyload alt="6">
-<figcaption aria-hidden="true">6</figcaption>
-</figure>
 
                 
               </div>
@@ -579,7 +359,7 @@ Format)</h2>
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="category-chain-item">操作系统</a>
+  <a href="/categories/LaTex/" class="category-chain-item">LaTex</a>
   
   
 
@@ -594,7 +374,7 @@ Format)</h2>
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">#操作系统</a>
+        <a href="/tags/LaTex/">#LaTex</a>
       
     </div>
   
@@ -606,8 +386,8 @@ Format)</h2>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>OS Structures</div>
-      <div>http://gavinbowl.top/2022/09/25/OS-Structures/</div>
+      <div>LaTex符号对照表</div>
+      <div>http://gavinbowl.top/2022/09/26/LaTex符号对照表/</div>
     </div>
     <div class="license-meta">
       
@@ -619,7 +399,7 @@ Format)</h2>
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年9月25日</div>
+          <div>2022年9月26日</div>
         </div>
       
       
@@ -649,18 +429,12 @@ Format)</h2>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/09/26/LaTex%E7%AC%A6%E5%8F%B7%E5%AF%B9%E7%85%A7%E8%A1%A8/" title="LaTex符号对照表">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LaTex符号对照表</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/09/23/Relaxation-and-approximation/" title="Relaxation and approximation">
-                        <span class="hidden-mobile">Relaxation and approximation</span>
+                      <a href="/2022/09/25/OS-Structures/" title="OS Structures">
+                        <span class="hidden-mobile">OS Structures</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -681,7 +455,7 @@ Format)</h2>
         var options = Object.assign(
           {"clientID":"4d9ed24c845ff8d68ff4","clientSecret":"b24a20f67727cff018c72f5025855b17b65e5bd7","repo":"GAVIN865.github.io","owner":"GAVIN865","admin":["GAVIN865"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
           {
-            id: '52c4075263c2b112ae5024144e5ede8d'
+            id: 'c451c05266179acb2c41feb5487dbeb3'
           }
         )
         var gitalk = new Gitalk(options);
