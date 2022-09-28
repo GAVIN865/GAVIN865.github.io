@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>聚类</title>
+    <link href="/2022/09/28/%E8%81%9A%E7%B1%BB/"/>
+    <url>/2022/09/28/%E8%81%9A%E7%B1%BB/</url>
+    
+    <content type="html"><![CDATA[<style>     .markdown-body {      font-family: Microsoft JhengHei, SimHei;      font-size: 16px;    }</style><h1 align="center">聚类</h1><h2 id="简介">1.简介</h2><p><code>Cluster</code>: A collection of data objects</p><p><code>Clustering</code>: <font color="red">Finding similarities</font>between data according to the characteristics found in the data and<font color="red">grouping</font> similar data objects into clusters</p><p>采用的方法：<strong>Unsupervised Learning</strong></p><p>一些典型的应用：</p><ul><li>作为独立的工具，用作图像分割、新闻分类等</li><li>作为其他算法的预处理步骤</li></ul><h2 id="k-means算法">2.K-Means算法</h2><p>对于给定的K，该算法步骤如下：</p><ul><li><p>随机选取<span class="math inline">\(K\)</span>个数据点作为每个类别的聚类中心<span class="math inline">\(\mu_k\)</span></p></li><li><p>对每一个点计算到每一个聚类中心的距离，并将其归类于最近的一个聚类中心同种类别<span class="math display">\[z_i = arg \space \underset{k}{min} ||\pmb{x}_i - \pmb{\mu} _k||^2\]</span></p></li><li><p>对于每一个聚类依据如下公式重新计算聚类中心(即质心) <span class="math display">\[\mu_k = \frac{1}{N_k} \sum_{i=1}^{N_k}\pmb{x}_i^{(k)}\]</span></p></li><li><p>重复上述过程直到收敛</p></li></ul><p>一些细节：</p><blockquote><p>初始的<span class="math inline">\(\mu_k\)</span>不一定需要选取真实的数据点</p></blockquote><blockquote><p>可能会有空的聚类出现</p></blockquote><blockquote><p>算法时间复杂度<span class="math inline">\(O(tNKd)\)</span>,其中t为递归次数，d为点的维数</p></blockquote><p><img src="/2022/09/28/%E8%81%9A%E7%B1%BB/1.png" alt="1" style="zoom:50%;"></p><p>损失函数： <span class="math display">\[\mathcal{L}_{TSD}(\pmb{z},\pmb{\mu}) = \sum_{i=1}^{N}||\pmb{x}_i -\pmb{\mu}_{z_i}||^2\]</span> 贪心算法最终得到的是一个<font color="red">局部最优解</font></p><h2 id="k-medoids算法pam">3.K-Medoids算法(PAM)</h2><p>由于K-Means算法容易受到个别<font color="red">极端点</font>的影响，于是加以改进</p><p>不再选用质心作为中心点，而选取同一聚类中其他所有点到该点距离和最小的点为中心点<span class="math display">\[\pmb{\mu} = arg \space \underset{\pmb{x}_k}{min}\sum_j ||\pmb{x}_j -\pmb{x}_k||^2\]</span></p><h2 id="gaussian-mixture-modelgmm">4.Gaussian Mixture Model(GMM)</h2><p><img src="/2022/09/28/%E8%81%9A%E7%B1%BB/3.png" alt="3" style="zoom:67%;"> <span class="math display">\[p(\pmb{x};\pmb{\Theta})=  \sum_{k=1}^{K}p(k)p(\pmb{x}|k)=\sum_{k=1}^{K}\pi_kp_k(\pmb{x};\pmb{\theta_k})\]</span></p><p><span class="math display">\[其中\pi_k是概率p(k),\sum_{k=1}^{K}\pi_k = 1\]</span></p><p><span class="math display">\[其中p_k(\pmb{x};\pmb{\theta_k})即为p(\pmb{x}|k),符合多维正态\mathcal{N}(\pmb{x};\pmb{\mu}_k,\pmb{\Sigma}_k)\]</span></p><p>log-likelihood function: <span class="math display">\[log \prod_{i=1}^{N}p(\pmb{x}^{(i)};\Theta) =\sum_{i=1}^{N}log(\sum_{k=1}^{K}\pi_k\mathcal{N}(\pmb{x}^{(i)};\pmb{\mu}_k,\pmb{\Sigma}_k))\]</span></p><p>需要估计的参数有：<span class="math inline">\(\pi_k,\pmb{\mu}_k,\pmb{\Sigma}_k\)</span></p><h2 id="expectation-maximization算法em">5.ExpectationMaximization算法(EM)</h2><p>凸函数(Convex Functions)： <span class="math display">\[f(\theta x + (1-\theta)y) \le \theta f(x) + (1-\theta ) f(y)\]</span> <img src="/2022/09/28/%E8%81%9A%E7%B1%BB/4.png" alt="4" style="zoom:50%;"></p><p>Jensen’s inequality: <span class="math display">\[f(\sum_{i=1}^{n}\lambda_i x_i) \le \sum_{i=1}^{n}\lambda_if(x_i) \space\space \space \space \lambda_i \ge 0, \sum_i \lambda_i = 1\]</span></p><p><span class="math display">\[f(E(X)) \le E[f(X)]\]</span></p><p>EM algorithm</p><p>每次EM算法的迭代包含两个步骤<code>Expectation-step</code> 和<code>Maximization-step</code></p><ol type="1"><li>E步骤：根据参数的假设值，给出未知变量的期望估计，应用于缺失值。</li><li>M步骤：根据未知变量的估计值，给出当前的参数的极大似然估计。</li></ol><p>根据图直观理解：</p><p><img src="/2022/09/28/%E8%81%9A%E7%B1%BB/5.png" alt="5" style="zoom: 50%;"></p><p>E: 根据参数<span class="math inline">\(\theta_1\)</span>给出估计，即图中小的凹函数</p><p>M: 进行极大似然估计，找到该函数的最大值处对应的参数<span class="math inline">\(\theta_2\)</span></p><p>不断进行迭代找到最优解</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>机器学习</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>机器学习</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>LaTex符号对照表</title>
     <link href="/2022/09/26/LaTex%E7%AC%A6%E5%8F%B7%E5%AF%B9%E7%85%A7%E8%A1%A8/"/>
     <url>/2022/09/26/LaTex%E7%AC%A6%E5%8F%B7%E5%AF%B9%E7%85%A7%E8%A1%A8/</url>
