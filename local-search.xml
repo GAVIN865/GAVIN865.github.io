@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>支持向量机</title>
+    <link href="/2022/09/29/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/"/>
+    <url>/2022/09/29/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/</url>
+    
+    <content type="html"><![CDATA[<style>     .markdown-body {      font-family: Microsoft JhengHei, SimHei;      font-size: 16px;    }</style><h1 align="center">支持向量机</h1><h2 id="两类别线性可分情形">1.两类别线性可分情形</h2><ul><li><span class="math inline">\(\pmb{w}^T\pmb{x} &gt;0\)</span>代表正类别</li><li><span class="math inline">\(\pmb{w}^T\pmb{x} &lt;0\)</span>代表负类别</li></ul><p><img src="/2022/09/29/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/2.png" alt="1" style="zoom:48%;"></p><p>此处的权重向量<span class="math inline">\(\pmb{w}\)</span>被称作<code>separating vector</code>或者<code>solution vector</code></p><p><font color="red">这样的向量不唯一！！！</font></p><p><img src="/2022/09/29/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/1.png" alt="1" style="zoom:50%;"></p><h2 id="几何间隔geometrical-margin">2.几何间隔(Geometrical Margin)</h2><figure><img src="/2022/09/29/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/3.png" alt="3"><figcaption aria-hidden="true">3</figcaption></figure><p><span class="math inline">\(\pmb{x}_0向量是\pmb{x}在超平面上的投影向量\)</span></p><p><span class="math inline">\(y \in \{-1,1\}\)</span>, <span class="math inline">\(\gamma 是向量\pmb{x}到超平面的几何距离\)</span><span class="math display">\[\pmb{x} = \pmb{x}_0 + y\gamma \frac{\pmb{w}}{||\pmb{w}||}\]</span></p><p><span class="math inline">\(\pmb{x}_0在超平面内，于是有\)</span><span class="math display">\[\pmb{w}^T(\pmb{x} - y\gamma \frac{\pmb{w}}{||\pmb{w}||})+b=0\]</span></p><p><span class="math display">\[\gamma = y \frac{\pmb{w}^T \pmb{x}+b}{||\pmb{w}||}\]</span></p><p><img src="/2022/09/29/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/4.png" alt="4" style="zoom: 67%;"></p><p><span class="math inline">\(\gamma\)</span>较大的受到超平面移动的影响较小！！！</p><h2 id="maximum-margin-classifier">3.Maximum Margin Classifier</h2><p>定义点集的margin是所有点中margin的<font color="red">最小值</font></p><p>目标：找到一个超平面以最大化margin <span class="math display">\[\underset{\pmb{w},b}{max}\gamma = \underset{\pmb{w},b}{max}\frac{y(\pmb{w}^T \pmb{x}+b)}{||\pmb{w}||}\]</span></p><p><span class="math display">\[s.t. , \gamma_i \ge \gamma\]</span></p><p>由于<span class="math inline">\(\pmb{x}\)</span>不是在超平面上的点，于是对于同一个超平面<span class="math inline">\(y(\pmb{w}^T\pmb{x}+b)\)</span>可以无限大，不妨令其为1，不影响结果 <span class="math display">\[\underset{\pmb{w},b}{max} \frac{y(\pmb{w}^T \pmb{x}+b)}{||\pmb{w}||}\Rightarrow \underset{\pmb{w},b}{max} \frac{1}{||\pmb{w}||} \Rightarrow\underset{\pmb{w},b}{min} ||\pmb{w}||\]</span></p><p><span class="math display">\[\gamma_i = \frac{y_i(\pmb{w}^T \pmb{x}_i+b)}{||\pmb{w}||} \ge \gamma =\frac{1}{||\pmb{w}||}\]</span></p><p>最终简化问题为(加上系数以及平方不影响最终结果但是方便中间过程求导):<span class="math display">\[\underset{\pmb{w},b}{min}\textcolor{red}{\frac{1}{2}}||\pmb{w}||\textcolor{red}{^2}\]</span></p><p><span class="math display">\[y_i(\pmb{w}^T \pmb{x}_i+b) \ge 1\]</span></p><p>一个含不等式约束的优化问题</p><h2 id="加入惩罚项">4.加入惩罚项</h2><p>新的方程: <span class="math display">\[\underset{\pmb{w},b}{min} {\frac{1}{2}}||\pmb{w}||{^2} \textcolor{red}{+C\sum_{i=1}^{n}\xi_i}\]</span></p><p><span class="math display">\[y_i(\pmb{w}^T \pmb{x}_i+b) \ge 1 \textcolor{red}{-\xi_i}\]</span></p><p>其中松弛变量<span class="math inline">\(\xi_i\)</span>: <span class="math display">\[\xi_i = max[0,1-y_i(\pmb{w}^T \pmb{x}_i+b)]\]</span> 于是得到</p><figure><img src="/2022/09/29/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/5.png" alt="5"><figcaption aria-hidden="true">5</figcaption></figure><h2 id="一般化的分类器方程">5.一般化的分类器方程</h2><p>A General formulation of classifiers： <span class="math display">\[\underset{f}{min} \{  \sum_{i=1}^{n} \mathscr{l}(f) + \lambda R(f) \}\]</span></p><p><code>Loss function</code>：<span class="math inline">\(\mathscr{l}(f)\)</span></p><ul><li><code>Square loss (Ordinary regression)</code>：<span class="math inline">\(\mathscr{l}(f) = (1-yf)^2\)</span></li><li><code>Logistic loss (Logistic regression)</code>：<span class="math inline">\(\mathscr{l}(f) = log(1 + e^{-yf})\)</span></li><li><code>Hinge loss (SVM)</code>：<span class="math inline">\(\mathscr{l}(f) = max[1-yf,0]\)</span></li></ul><p><code>Regularizer</code>：<span class="math inline">\(R(f)\)</span></p><ul><li><code>L1-regularizer</code></li><li><code>L2-regularizer</code></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>机器学习</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>机器学习</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>聚类</title>
     <link href="/2022/09/28/%E8%81%9A%E7%B1%BB/"/>
     <url>/2022/09/28/%E8%81%9A%E7%B1%BB/</url>

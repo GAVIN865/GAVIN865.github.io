@@ -16,26 +16,26 @@
   <meta name="author" content="Gavin">
   <meta name="keywords" content="">
   
-    <meta name="description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   聚类  1.简介 Cluster: A collection of data objects Clustering: Finding similarities between">
+    <meta name="description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   支持向量机  1.两类别线性可分情形  \(\pmb{w}^T\pmb{x} &gt; 0\)代表正类别 \(\pmb{w}^T\pmb{x} &lt; 0\)代表负类别">
 <meta property="og:type" content="article">
-<meta property="og:title" content="聚类">
-<meta property="og:url" content="http://gavinbowl.top/2022/09/28/%E8%81%9A%E7%B1%BB/index.html">
+<meta property="og:title" content="支持向量机">
+<meta property="og:url" content="http://gavinbowl.top/2022/09/29/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   聚类  1.简介 Cluster: A collection of data objects Clustering: Finding similarities between">
+<meta property="og:description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   支持向量机  1.两类别线性可分情形  \(\pmb{w}^T\pmb{x} &gt; 0\)代表正类别 \(\pmb{w}^T\pmb{x} &lt; 0\)代表负类别">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://gavinbowl.top/img/11.jpg">
-<meta property="article:published_time" content="2022-09-28T11:31:09.000Z">
-<meta property="article:modified_time" content="2022-09-29T00:17:29.216Z">
+<meta property="og:image" content="http://gavinbowl.top/img/12.jpg">
+<meta property="article:published_time" content="2022-09-29T00:16:44.000Z">
+<meta property="article:modified_time" content="2022-09-29T01:29:14.999Z">
 <meta property="article:author" content="Gavin">
 <meta property="article:tag" content="机器学习">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://gavinbowl.top/img/11.jpg">
+<meta name="twitter:image" content="http://gavinbowl.top/img/12.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>聚类 - 0</title>
+  <title>支持向量机 - 0</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -212,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="聚类"></span>
+            <span id="subtitle" data-typed-text="支持向量机"></span>
           
         </div>
 
@@ -223,8 +223,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-09-28 19:31" pubdate>
-          2022年9月28日 晚上
+        <time datetime="2022-09-29 08:16" pubdate>
+          2022年9月29日 早上
         </time>
       </span>
     
@@ -292,7 +292,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">聚类</h1>
+            <h1 style="display: none">支持向量机</h1>
             
             
               <div class="markdown-body">
@@ -304,96 +304,96 @@
     }
 </style>
 <h1 align="center">
-聚类
+支持向量机
 </h1>
-<h2 id="简介">1.简介</h2>
-<p><code>Cluster</code>: A collection of data objects</p>
-<p><code>Clustering</code>: <font color="red">Finding similarities</font>
-between data according to the characteristics found in the data and
-<font color="red">grouping</font> similar data objects into clusters</p>
-<p>采用的方法：<strong>Unsupervised Learning</strong></p>
-<p>一些典型的应用：</p>
+<h2 id="两类别线性可分情形">1.两类别线性可分情形</h2>
 <ul>
-<li>作为独立的工具，用作图像分割、新闻分类等</li>
-<li>作为其他算法的预处理步骤</li>
+<li><span class="math inline">\(\pmb{w}^T\pmb{x} &gt;
+0\)</span>代表正类别</li>
+<li><span class="math inline">\(\pmb{w}^T\pmb{x} &lt;
+0\)</span>代表负类别</li>
 </ul>
-<h2 id="k-means算法">2.K-Means算法</h2>
-<p>对于给定的K，该算法步骤如下：</p>
+<p><img src="/2022/09/29/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/2.png" srcset="/img/loading.gif" lazyload alt="1" style="zoom:48%;"></p>
+<p>此处的权重向量<span class="math inline">\(\pmb{w}\)</span>被称作<code>separating vector</code>或者<code>solution vector</code></p>
+<p><font color="red">这样的向量不唯一！！！</font></p>
+<p><img src="/2022/09/29/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/1.png" srcset="/img/loading.gif" lazyload alt="1" style="zoom:50%;"></p>
+<h2 id="几何间隔geometrical-margin">2.几何间隔(Geometrical Margin)</h2>
+<figure>
+<img src="/2022/09/29/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/3.png" srcset="/img/loading.gif" lazyload alt="3">
+<figcaption aria-hidden="true">3</figcaption>
+</figure>
+<p><span class="math inline">\(\pmb{x}_0向量是\pmb{x}在超平面上的投影向量\)</span></p>
+<p><span class="math inline">\(y \in \{-1,1\}\)</span>, <span class="math inline">\(\gamma 是向量\pmb{x}到超平面的几何距离\)</span>
+<span class="math display">\[
+\pmb{x} = \pmb{x}_0 + y\gamma \frac{\pmb{w}}{||\pmb{w}||}
+\]</span></p>
+<p><span class="math inline">\(\pmb{x}_0在超平面内，于是有\)</span>
+<span class="math display">\[
+\pmb{w}^T(\pmb{x} - y\gamma \frac{\pmb{w}}{||\pmb{w}||})+b=0
+\]</span></p>
+<p><span class="math display">\[
+\gamma = y \frac{\pmb{w}^T \pmb{x}+b}{||\pmb{w}||}
+\]</span></p>
+<p><img src="/2022/09/29/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/4.png" srcset="/img/loading.gif" lazyload alt="4" style="zoom: 67%;"></p>
+<p><span class="math inline">\(\gamma\)</span>较大的受到超平面移动的影响较小！！！</p>
+<h2 id="maximum-margin-classifier">3.Maximum Margin Classifier</h2>
+<p>定义点集的margin是所有点中margin的<font color="red">最小值</font></p>
+<p>目标：找到一个超平面以最大化margin <span class="math display">\[
+\underset{\pmb{w},b}{max}\gamma = \underset{\pmb{w},b}{max}
+\frac{y(\pmb{w}^T \pmb{x}+b)}{||\pmb{w}||}
+\]</span></p>
+<p><span class="math display">\[
+s.t. , \gamma_i \ge \gamma
+\]</span></p>
+<p>由于<span class="math inline">\(\pmb{x}\)</span>不是在超平面上的点，于是对于同一个超平面<span class="math inline">\(y(\pmb{w}^T
+\pmb{x}+b)\)</span>可以无限大，不妨令其为1，不影响结果 <span class="math display">\[
+\underset{\pmb{w},b}{max} \frac{y(\pmb{w}^T \pmb{x}+b)}{||\pmb{w}||}
+\Rightarrow \underset{\pmb{w},b}{max} \frac{1}{||\pmb{w}||} \Rightarrow
+\underset{\pmb{w},b}{min} ||\pmb{w}||
+\]</span></p>
+<p><span class="math display">\[
+\gamma_i = \frac{y_i(\pmb{w}^T \pmb{x}_i+b)}{||\pmb{w}||} \ge \gamma =
+\frac{1}{||\pmb{w}||}
+\]</span></p>
+<p>最终简化问题为(加上系数以及平方不影响最终结果但是方便中间过程求导):
+<span class="math display">\[
+\underset{\pmb{w},b}{min}
+\textcolor{red}{\frac{1}{2}}||\pmb{w}||\textcolor{red}{^2}
+\]</span></p>
+<p><span class="math display">\[
+y_i(\pmb{w}^T \pmb{x}_i+b) \ge 1
+\]</span></p>
+<p>一个含不等式约束的优化问题</p>
+<h2 id="加入惩罚项">4.加入惩罚项</h2>
+<p>新的方程: <span class="math display">\[
+\underset{\pmb{w},b}{min} {\frac{1}{2}}||\pmb{w}||{^2} \textcolor{red}{+
+C\sum_{i=1}^{n}\xi_i}
+\]</span></p>
+<p><span class="math display">\[
+y_i(\pmb{w}^T \pmb{x}_i+b) \ge 1 \textcolor{red}{-\xi_i}
+\]</span></p>
+<p>其中松弛变量<span class="math inline">\(\xi_i\)</span>: <span class="math display">\[
+\xi_i = max[0,1-y_i(\pmb{w}^T \pmb{x}_i+b)]
+\]</span> 于是得到</p>
+<figure>
+<img src="/2022/09/29/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/5.png" srcset="/img/loading.gif" lazyload alt="5">
+<figcaption aria-hidden="true">5</figcaption>
+</figure>
+<h2 id="一般化的分类器方程">5.一般化的分类器方程</h2>
+<p>A General formulation of classifiers： <span class="math display">\[
+\underset{f}{min} \{  \sum_{i=1}^{n} \mathscr{l}(f) + \lambda R(f) \}
+\]</span></p>
+<p><code>Loss function</code>：<span class="math inline">\(\mathscr{l}(f)\)</span></p>
 <ul>
-<li><p>随机选取<span class="math inline">\(K\)</span>个数据点作为每个类别的聚类中心<span class="math inline">\(\mu_k\)</span></p></li>
-<li><p>对每一个点计算到每一个聚类中心的距离，并将其归类于最近的一个聚类中心同种类别
-<span class="math display">\[
-z_i = arg \space \underset{k}{min} ||\pmb{x}_i - \pmb{\mu} _k||^2
-\]</span></p></li>
-<li><p>对于每一个聚类依据如下公式重新计算聚类中心(即质心) <span class="math display">\[
-\mu_k = \frac{1}{N_k} \sum_{i=1}^{N_k}\pmb{x}_i^{(k)}
-\]</span></p></li>
-<li><p>重复上述过程直到收敛</p></li>
+<li><code>Square loss (Ordinary regression)</code>：<span class="math inline">\(\mathscr{l}(f) = (1-yf)^2\)</span></li>
+<li><code>Logistic loss (Logistic regression)</code>：<span class="math inline">\(\mathscr{l}(f) = log(1 + e^{-yf})\)</span></li>
+<li><code>Hinge loss (SVM)</code>：<span class="math inline">\(\mathscr{l}(f) = max[1-yf,0]\)</span></li>
 </ul>
-<p>一些细节：</p>
-<blockquote>
-<p>初始的<span class="math inline">\(\mu_k\)</span>不一定需要选取真实的数据点</p>
-</blockquote>
-<blockquote>
-<p>可能会有空的聚类出现</p>
-</blockquote>
-<blockquote>
-<p>算法时间复杂度<span class="math inline">\(O(tNKd)\)</span>,其中
-t为递归次数，d为点的维数</p>
-</blockquote>
-<p><img src="/2022/09/28/%E8%81%9A%E7%B1%BB/1.png" srcset="/img/loading.gif" lazyload alt="1" style="zoom:50%;"></p>
-<p>损失函数： <span class="math display">\[
-\mathcal{L}_{TSD}(\pmb{z},\pmb{\mu}) = \sum_{i=1}^{N}||\pmb{x}_i -
-\pmb{\mu}_{z_i}||^2
-\]</span> 贪心算法最终得到的是一个<font color="red">局部最优解</font></p>
-<h2 id="k-medoids算法pam">3.K-Medoids算法(PAM)</h2>
-<p>由于K-Means算法容易受到个别<font color="red">极端点</font>的影响，于是加以改进</p>
-<p>不再选用质心作为中心点，而选取同一聚类中其他所有点到该点距离和最小的点为中心点
-<span class="math display">\[
-\pmb{\mu} = arg \space \underset{\pmb{x}_k}{min}\sum_j ||\pmb{x}_j -
-\pmb{x}_k||^2
-\]</span></p>
-<h2 id="gaussian-mixture-modelgmm">4.Gaussian Mixture Model(GMM)</h2>
-<p><img src="/2022/09/28/%E8%81%9A%E7%B1%BB/3.png" srcset="/img/loading.gif" lazyload alt="3" style="zoom:67%;"> <span class="math display">\[
-p(\pmb{x};\pmb{\Theta})
-=  \sum_{k=1}^{K}p(k)p(\pmb{x}|k)=\sum_{k=1}^{K}\pi_kp_k(\pmb{x};\pmb{\theta_k})
-\]</span></p>
-<p><span class="math display">\[
-其中\pi_k是概率p(k),\sum_{k=1}^{K}\pi_k = 1
-\]</span></p>
-<p><span class="math display">\[
-其中p_k(\pmb{x};\pmb{\theta_k})即为p(\pmb{x}|k),符合多维正态\mathcal{N}(\pmb{x};\pmb{\mu}_k,\pmb{\Sigma}_k)
-\]</span></p>
-<p>log-likelihood function: <span class="math display">\[
-log \prod_{i=1}^{N}p(\pmb{x}^{(i)};\Theta) =
-\sum_{i=1}^{N}log(\sum_{k=1}^{K}\pi_k
-\mathcal{N}(\pmb{x}^{(i)};\pmb{\mu}_k,\pmb{\Sigma}_k))
-\]</span></p>
-<p>需要估计的参数有：<span class="math inline">\(\pi_k,\pmb{\mu}_k,\pmb{\Sigma}_k\)</span></p>
-<h2 id="expectation-maximization算法em">5.Expectation
-Maximization算法(EM)</h2>
-<p>凸函数(Convex Functions)： <span class="math display">\[
-f(\theta x + (1-\theta)y) \le \theta f(x) + (1-\theta ) f(y)
-\]</span> <img src="/2022/09/28/%E8%81%9A%E7%B1%BB/4.png" srcset="/img/loading.gif" lazyload alt="4" style="zoom:50%;"></p>
-<p>Jensen’s inequality: <span class="math display">\[
-f(\sum_{i=1}^{n}\lambda_i x_i) \le \sum_{i=1}^{n}\lambda_if(x_i) \space
-\space \space \space \lambda_i \ge 0, \sum_i \lambda_i = 1
-\]</span></p>
-<p><span class="math display">\[
-f(E(X)) \le E[f(X)]
-\]</span></p>
-<p>EM algorithm</p>
-<p>每次EM算法的迭代包含两个步骤<code>Expectation-step</code> 和
-<code>Maximization-step</code></p>
-<ol type="1">
-<li>E步骤：根据参数的假设值，给出未知变量的期望估计，应用于缺失值。</li>
-<li>M步骤：根据未知变量的估计值，给出当前的参数的极大似然估计。</li>
-</ol>
-<p>根据图直观理解：</p>
-<p><img src="/2022/09/28/%E8%81%9A%E7%B1%BB/5.png" srcset="/img/loading.gif" lazyload alt="5" style="zoom: 50%;"></p>
-<p>E: 根据参数<span class="math inline">\(\theta_1\)</span>给出估计，即图中小的凹函数</p>
-<p>M: 进行极大似然估计，找到该函数的最大值处对应的参数<span class="math inline">\(\theta_2\)</span></p>
-<p>不断进行迭代找到最优解</p>
+<p><code>Regularizer</code>：<span class="math inline">\(R(f)\)</span></p>
+<ul>
+<li><code>L1-regularizer</code></li>
+<li><code>L2-regularizer</code></li>
+</ul>
 
                 
               </div>
@@ -439,8 +439,8 @@ f(E(X)) \le E[f(X)]
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>聚类</div>
-      <div>http://gavinbowl.top/2022/09/28/聚类/</div>
+      <div>支持向量机</div>
+      <div>http://gavinbowl.top/2022/09/29/支持向量机/</div>
     </div>
     <div class="license-meta">
       
@@ -452,7 +452,7 @@ f(E(X)) \le E[f(X)]
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年9月28日</div>
+          <div>2022年9月29日</div>
         </div>
       
       
@@ -482,18 +482,12 @@ f(E(X)) \le E[f(X)]
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/09/29/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" title="支持向量机">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">支持向量机</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/09/26/LaTex%E7%AC%A6%E5%8F%B7%E5%AF%B9%E7%85%A7%E8%A1%A8/" title="LaTex符号对照表">
-                        <span class="hidden-mobile">LaTex符号对照表</span>
+                      <a href="/2022/09/28/%E8%81%9A%E7%B1%BB/" title="聚类">
+                        <span class="hidden-mobile">聚类</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -514,7 +508,7 @@ f(E(X)) \le E[f(X)]
         var options = Object.assign(
           {"clientID":"4d9ed24c845ff8d68ff4","clientSecret":"b24a20f67727cff018c72f5025855b17b65e5bd7","repo":"GAVIN865.github.io","owner":"GAVIN865","admin":["GAVIN865"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
           {
-            id: 'df238b10c248486d792f999bc59a2517'
+            id: '5b44f1eac739cd2506033ea6a98856b6'
           }
         )
         var gitalk = new Gitalk(options);
