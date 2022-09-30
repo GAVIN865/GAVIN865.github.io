@@ -16,26 +16,26 @@
   <meta name="author" content="Gavin">
   <meta name="keywords" content="">
   
-    <meta name="description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   支持向量机  1.两类别线性可分情形  \(\pmb{w}^T\pmb{x} &gt; 0\)代表正类别 \(\pmb{w}^T\pmb{x} &lt; 0\)代表负类别">
+    <meta name="description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   Processes  1.Process Concept A process is a program in execution  program: bytes stored">
 <meta property="og:type" content="article">
-<meta property="og:title" content="支持向量机">
-<meta property="og:url" content="http://gavinbowl.top/2022/09/29/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/index.html">
+<meta property="og:title" content="Processes">
+<meta property="og:url" content="http://gavinbowl.top/2022/09/30/Processes/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   支持向量机  1.两类别线性可分情形  \(\pmb{w}^T\pmb{x} &gt; 0\)代表正类别 \(\pmb{w}^T\pmb{x} &lt; 0\)代表负类别">
+<meta property="og:description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   Processes  1.Process Concept A process is a program in execution  program: bytes stored">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://gavinbowl.top/img/12.jpg">
-<meta property="article:published_time" content="2022-09-29T00:16:44.000Z">
-<meta property="article:modified_time" content="2022-09-29T01:29:14.999Z">
+<meta property="og:image" content="http://gavinbowl.top/img/13.jpg">
+<meta property="article:published_time" content="2022-09-30T05:52:01.000Z">
+<meta property="article:modified_time" content="2022-09-30T07:10:48.755Z">
 <meta property="article:author" content="Gavin">
-<meta property="article:tag" content="机器学习">
+<meta property="article:tag" content="操作系统">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://gavinbowl.top/img/12.jpg">
+<meta name="twitter:image" content="http://gavinbowl.top/img/13.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>支持向量机 - 0</title>
+  <title>Processes - 0</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -212,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="支持向量机"></span>
+            <span id="subtitle" data-typed-text="Processes"></span>
           
         </div>
 
@@ -223,8 +223,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-09-29 08:16" pubdate>
-          2022年9月29日 早上
+        <time datetime="2022-09-30 13:52" pubdate>
+          2022年9月30日 下午
         </time>
       </span>
     
@@ -235,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.8k 字
+          2.8k 字
         
       </span>
     
@@ -246,7 +246,7 @@
         
         
         
-          16 分钟
+          24 分钟
         
       </span>
     
@@ -292,7 +292,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">支持向量机</h1>
+            <h1 style="display: none">Processes</h1>
             
             
               <div class="markdown-body">
@@ -304,95 +304,211 @@
     }
 </style>
 <h1 align="center">
-支持向量机
+Processes
 </h1>
-<h2 id="两类别线性可分情形">1.两类别线性可分情形</h2>
+<h2 id="process-concept">1.Process Concept</h2>
+<p><font color="red">A process is a program in execution</font></p>
 <ul>
-<li><span class="math inline">\(\pmb{w}^T\pmb{x} &gt;
-0\)</span>代表正类别</li>
-<li><span class="math inline">\(\pmb{w}^T\pmb{x} &lt;
-0\)</span>代表负类别</li>
+<li><code>program</code>: bytes stored on <font color="red">disk</font> as
+part of an executable file</li>
+<li>becomes a process when it’s loaded in
+<font color="red">memory</font></li>
+<li>a unit of <font color="red">resource allocation and
+protection</font></li>
 </ul>
-<p><img src="/2022/09/29/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/2.png" srcset="/img/loading.gif" lazyload alt="1" style="zoom:48%;"></p>
-<p>此处的权重向量<span class="math inline">\(\pmb{w}\)</span>被称作<code>separating vector</code>或者<code>solution vector</code></p>
-<p><font color="red">这样的向量不唯一！！！</font></p>
-<p><img src="/2022/09/29/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/1.png" srcset="/img/loading.gif" lazyload alt="1" style="zoom:50%;"></p>
-<h2 id="几何间隔geometrical-margin">2.几何间隔(Geometrical Margin)</h2>
+<p>Process =</p>
+<ul>
+<li><font color="red">code</font> (also called the
+<font color="red">text</font>)</li>
+<li><font color="red">data section</font> (global variables)</li>
+<li><font color="red">program counter</font> (points to the next
+instruction to execute)</li>
+<li>content of the processor’s <font color="red">registers</font></li>
+<li>a <font color="red">stack</font></li>
+<li>a <font color="red">heap</font></li>
+</ul>
+<p>Process Address Space</p>
+<p><img src="/2022/09/30/Processes/1.png" srcset="/img/loading.gif" lazyload alt="1" style="zoom:50%;"></p>
+<p>Memory Layout of a C Program</p>
 <figure>
-<img src="/2022/09/29/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/3.png" srcset="/img/loading.gif" lazyload alt="3">
+<img src="/2022/09/30/Processes/2.png" srcset="/img/loading.gif" lazyload alt="2">
+<figcaption aria-hidden="true">2</figcaption>
+</figure>
+<h2 id="process-state">2.Process State</h2>
+<p>Some states:</p>
+<ul>
+<li><code>New</code>: The process is being created</li>
+<li><code>Running</code>: Instructions are being executed</li>
+<li><code>Waiting</code>: The process is waiting for some events to
+occur</li>
+<li><code>Ready</code>: The process is waiting to be assigned to a
+processor</li>
+<li><code>Terminated</code>: The process has finished execution</li>
+</ul>
+<figure>
+<img src="/2022/09/30/Processes/3.png" srcset="/img/loading.gif" lazyload alt="3">
 <figcaption aria-hidden="true">3</figcaption>
 </figure>
-<p><span class="math inline">\(\pmb{x}_0向量是\pmb{x}在超平面上的投影向量\)</span></p>
-<p><span class="math inline">\(y \in \{-1,1\}\)</span>, <span class="math inline">\(\gamma 是向量\pmb{x}到超平面的几何距离\)</span>
-<span class="math display">\[
-\pmb{x} = \pmb{x}_0 + y\gamma \frac{\pmb{w}}{||\pmb{w}||}
-\]</span></p>
-<p><span class="math inline">\(\pmb{x}_0在超平面内，于是有\)</span>
-<span class="math display">\[
-\pmb{w}^T(\pmb{x} - y\gamma \frac{\pmb{w}}{||\pmb{w}||})+b=0
-\]</span></p>
-<p><span class="math display">\[
-\gamma = y \frac{\pmb{w}^T \pmb{x}+b}{||\pmb{w}||}
-\]</span></p>
-<p><img src="/2022/09/29/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/4.png" srcset="/img/loading.gif" lazyload alt="4" style="zoom: 67%;"></p>
-<p><span class="math inline">\(\gamma\)</span>较大的受到超平面移动的影响较小！！！</p>
-<h2 id="maximum-margin-classifier">3.Maximum Margin Classifier</h2>
-<p>定义点集的margin是所有点中margin的<font color="red">最小值</font></p>
-<p>目标：找到一个超平面以最大化margin <span class="math display">\[
-\underset{\pmb{w},b}{max}\gamma = \underset{\pmb{w},b}{max}
-\frac{y(\pmb{w}^T \pmb{x}+b)}{||\pmb{w}||}
-\]</span></p>
-<p><span class="math display">\[
-s.t. , \gamma_i \ge \gamma
-\]</span></p>
-<p>由于<span class="math inline">\(\pmb{x}\)</span>不是在超平面上的点，于是对于同一个超平面<span class="math inline">\(y(\pmb{w}^T
-\pmb{x}+b)\)</span>可以无限大，不妨令其为1，不影响结果 <span class="math display">\[
-\underset{\pmb{w},b}{max} \frac{y(\pmb{w}^T \pmb{x}+b)}{||\pmb{w}||}
-\Rightarrow \underset{\pmb{w},b}{max} \frac{1}{||\pmb{w}||} \Rightarrow
-\underset{\pmb{w},b}{min} ||\pmb{w}||
-\]</span></p>
-<p><span class="math display">\[
-\gamma_i = \frac{y_i(\pmb{w}^T \pmb{x}_i+b)}{||\pmb{w}||} \ge \gamma =
-\frac{1}{||\pmb{w}||}
-\]</span></p>
-<p>最终简化问题为(加上系数以及平方不影响最终结果但是方便中间过程求导):
-<span class="math display">\[
-\underset{\pmb{w},b}{min}
-\textcolor{red}{\frac{1}{2}}||\pmb{w}||\textcolor{red}{^2}
-\]</span></p>
-<p><span class="math display">\[
-y_i(\pmb{w}^T \pmb{x}_i+b) \ge 1
-\]</span></p>
-<p>一个含不等式约束的优化问题</p>
-<h2 id="加入惩罚项">4.加入惩罚项</h2>
-<p>新的方程: <span class="math display">\[
-\underset{\pmb{w},b}{min} {\frac{1}{2}}||\pmb{w}||{^2} \textcolor{red}{+
-C\sum_{i=1}^{n}\xi_i}
-\]</span></p>
-<p><span class="math display">\[
-y_i(\pmb{w}^T \pmb{x}_i+b) \ge 1 \textcolor{red}{-\xi_i}
-\]</span></p>
-<p>其中松弛变量<span class="math inline">\(\xi_i\)</span>: <span class="math display">\[
-\xi_i = max[0,1-y_i(\pmb{w}^T \pmb{x}_i+b)]
-\]</span> 于是得到</p>
+<h2 id="process-control-block-pcb">3.Process Control Block (PCB)</h2>
+<p><font color="red">Each process has and only has a PCB</font></p>
+<ul>
+<li>Allocate a PCB on new process creation</li>
+<li>free the PCB on process termination</li>
+</ul>
+<p><img src="/2022/09/30/Processes/4.png" srcset="/img/loading.gif" lazyload alt="4" style="zoom:50%;"></p>
+<h2 id="process-creation">4.Process Creation</h2>
+<ul>
+<li><p>A process may create new processes, in which case it becomes a
+parent</p></li>
+<li><p>We obtain a tree of processes</p></li>
+<li><p>Each process has a pid</p>
+<blockquote>
+<p>ppid refers to the parent’s pid</p>
+</blockquote></li>
+</ul>
+<p>Example tree:</p>
 <figure>
-<img src="/2022/09/29/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/5.png" srcset="/img/loading.gif" lazyload alt="5">
+<img src="/2022/09/30/Processes/5.png" srcset="/img/loading.gif" lazyload alt="5">
 <figcaption aria-hidden="true">5</figcaption>
 </figure>
-<h2 id="一般化的分类器方程">5.一般化的分类器方程</h2>
-<p>A General formulation of classifiers： <span class="math display">\[
-\underset{f}{min} \{  \sum_{i=1}^{n} \mathscr{l}(f) + \lambda R(f) \}
-\]</span></p>
-<p><code>Loss function</code>：<span class="math inline">\(\mathscr{l}(f)\)</span></p>
 <ul>
-<li><code>Square loss (Ordinary regression)</code>：<span class="math inline">\(\mathscr{l}(f) = (1-yf)^2\)</span></li>
-<li><code>Logistic loss (Logistic regression)</code>：<span class="math inline">\(\mathscr{l}(f) = log(1 + e^{-yf})\)</span></li>
-<li><code>Hinge loss (SVM)</code>：<span class="math inline">\(\mathscr{l}(f) = max[1-yf,0]\)</span></li>
+<li><p>The child may inherit/share some of the resources of its parent,
+or may have entirely new ones</p></li>
+<li><p>A parent can also pass input to a child</p></li>
+<li><p>Upon creation of a child, the parent can either</p>
+<blockquote>
+<p>continue execution, or</p>
+<p>wait for the child’s completion</p>
+</blockquote></li>
+<li><p>The child could be either</p>
+<blockquote>
+<p>a clone of the parent (i.e., have a copy of the address space),
+or</p>
+<p>be an entirely new program</p>
+</blockquote></li>
 </ul>
-<p><code>Regularizer</code>：<span class="math inline">\(R(f)\)</span></p>
+<p>The <code>fork()</code> System Call</p>
 <ul>
-<li><code>L1-regularizer</code></li>
-<li><code>L2-regularizer</code></li>
+<li><p><code>fork()</code> creates a new process</p></li>
+<li><p>The child is is a copy of the parent, but...</p>
+<blockquote>
+<p>It has a different pid (and thus ppid)</p>
+<p>Its resource utilization (so far) is set to 0</p>
+</blockquote></li>
+<li><p><code>fork()</code> returns the child’s pid to the parent, and 0
+to the child</p>
+<blockquote>
+<p>Each process can find its own pid with the getpid() call, and its
+ppid with the getppid() call</p>
+</blockquote></li>
+<li><p>Both processes continue execution after the call to
+<code>fork()</code></p></li>
+</ul>
+<p>A Typical Example</p>
+<figure>
+<img src="/2022/09/30/Processes/6.png" srcset="/img/loading.gif" lazyload alt="6">
+<figcaption aria-hidden="true">6</figcaption>
+</figure>
+<figure>
+<img src="/2022/09/30/Processes/7.png" srcset="/img/loading.gif" lazyload alt="7">
+<figcaption aria-hidden="true">7</figcaption>
+</figure>
+<figure>
+<img src="/2022/09/30/Processes/8.png" srcset="/img/loading.gif" lazyload alt="8">
+<figcaption aria-hidden="true">8</figcaption>
+</figure>
+<figure>
+<img src="/2022/09/30/Processes/9.png" srcset="/img/loading.gif" lazyload alt="9">
+<figcaption aria-hidden="true">9</figcaption>
+</figure>
+<figure>
+<img src="/2022/09/30/Processes/10.png" srcset="/img/loading.gif" lazyload alt="10">
+<figcaption aria-hidden="true">10</figcaption>
+</figure>
+<figure>
+<img src="/2022/09/30/Processes/11.png" srcset="/img/loading.gif" lazyload alt="11">
+<figcaption aria-hidden="true">11</figcaption>
+</figure>
+<figure>
+<img src="/2022/09/30/Processes/12.png" srcset="/img/loading.gif" lazyload alt="12">
+<figcaption aria-hidden="true">12</figcaption>
+</figure>
+<hr>
+<p>(Cont.)</p>
+<ul>
+<li><p>Address space</p>
+<blockquote>
+<p>Child duplicate of parent</p>
+<p>Child has a program loaded into it</p>
+</blockquote></li>
+<li><p>UNIX examples</p>
+<blockquote>
+<p><code>fork()</code> system call creates new process</p>
+<p><code>exec()</code> system call used after a fork() to replace the
+process’ memory space with a new program</p>
+<p>Parent process calls <code>wait()</code> for the child to
+terminate</p>
+</blockquote></li>
+</ul>
+<h2 id="process-terminations">5.Process Terminations</h2>
+<ul>
+<li><p>A process terminates itself with the <code>exit()</code> system
+call</p>
+<blockquote>
+<p>This call takes as argument an integer that is called the process’
+exit/return/error code</p>
+</blockquote></li>
+<li><p>All resources of a process are deallocated by the OS</p>
+<blockquote>
+<p>physical and virtual memory, open files, I/O buffers, ...</p>
+</blockquote></li>
+<li><p>A process can cause the termination of another process</p>
+<blockquote>
+<p>Using something called “signals” and the <code>kill()</code> system
+call</p>
+</blockquote></li>
+</ul>
+<h2 id="processes-and-signals">6.Processes and Signals</h2>
+<ul>
+<li><p>A process can receive signals, i.e., <font color="red">software
+interrupts</font></p>
+<blockquote>
+<p>It is an asynchronous event that the program must act upon, in some
+way</p>
+</blockquote></li>
+<li><p>Signals have many usages, including process synchronization</p>
+<blockquote>
+<p>We’ll see other, more powerful and flexible process synchronization
+tools</p>
+</blockquote></li>
+<li><p>The OS defines a number of signals, each with a name and a
+number, and some meaning</p></li>
+<li><p>Signals happen for various reasons</p>
+<blockquote>
+<p>^C on the command-line sends a SIGINT signal to the running
+command</p>
+<p>A segmentation violation sends a SIGBUS signal to the running
+process</p>
+<p>A process sends a SIGKILL signal to another</p>
+</blockquote></li>
+</ul>
+<p>Kill Command</p>
+<figure>
+<img src="/2022/09/30/Processes/13.png" srcset="/img/loading.gif" lazyload alt="13">
+<figcaption aria-hidden="true">13</figcaption>
+</figure>
+<h2 id="process-scheduling">7.Process Scheduling</h2>
+<ul>
+<li><p>Maximize CPU use, quickly switch processes onto CPU core</p></li>
+<li><p><font color="red">Process scheduler</font> selects among
+<font color="red">ready processes</font> for next execution on CPU
+core</p></li>
+<li><p>Maintains <font color="red">scheduling queues</font> of
+processes</p>
+<blockquote>
+<p>Ready queue</p>
+<p>Wait queues</p>
+</blockquote></li>
 </ul>
 
                 
@@ -412,7 +528,7 @@ y_i(\pmb{w}^T \pmb{x}_i+b) \ge 1 \textcolor{red}{-\xi_i}
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="category-chain-item">机器学习</a>
+  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="category-chain-item">操作系统</a>
   
   
 
@@ -427,7 +543,7 @@ y_i(\pmb{w}^T \pmb{x}_i+b) \ge 1 \textcolor{red}{-\xi_i}
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">#机器学习</a>
+        <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">#操作系统</a>
       
     </div>
   
@@ -439,8 +555,8 @@ y_i(\pmb{w}^T \pmb{x}_i+b) \ge 1 \textcolor{red}{-\xi_i}
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>支持向量机</div>
-      <div>http://gavinbowl.top/2022/09/29/支持向量机/</div>
+      <div>Processes</div>
+      <div>http://gavinbowl.top/2022/09/30/Processes/</div>
     </div>
     <div class="license-meta">
       
@@ -452,7 +568,7 @@ y_i(\pmb{w}^T \pmb{x}_i+b) \ge 1 \textcolor{red}{-\xi_i}
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年9月29日</div>
+          <div>2022年9月30日</div>
         </div>
       
       
@@ -482,18 +598,12 @@ y_i(\pmb{w}^T \pmb{x}_i+b) \ge 1 \textcolor{red}{-\xi_i}
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/09/30/Processes/" title="Processes">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Processes</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/09/28/%E8%81%9A%E7%B1%BB/" title="聚类">
-                        <span class="hidden-mobile">聚类</span>
+                      <a href="/2022/09/29/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" title="支持向量机">
+                        <span class="hidden-mobile">支持向量机</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -514,7 +624,7 @@ y_i(\pmb{w}^T \pmb{x}_i+b) \ge 1 \textcolor{red}{-\xi_i}
         var options = Object.assign(
           {"clientID":"4d9ed24c845ff8d68ff4","clientSecret":"b24a20f67727cff018c72f5025855b17b65e5bd7","repo":"GAVIN865.github.io","owner":"GAVIN865","admin":["GAVIN865"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
           {
-            id: '5b44f1eac739cd2506033ea6a98856b6'
+            id: '4d2835b2d25719f98d8f1a296c2d8eaf'
           }
         )
         var gitalk = new Gitalk(options);

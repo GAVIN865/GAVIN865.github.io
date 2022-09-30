@@ -506,6 +506,230 @@ Format)</h2>
       </tags>
   </entry>
   <entry>
+    <title>Processes</title>
+    <url>/2022/09/30/Processes/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+Processes
+</h1>
+<h2 id="process-concept">1.Process Concept</h2>
+<p><font color="red">A process is a program in execution</font></p>
+<ul>
+<li><code>program</code>: bytes stored on <font color="red">disk</font> as
+part of an executable file</li>
+<li>becomes a process when it’s loaded in
+<font color="red">memory</font></li>
+<li>a unit of <font color="red">resource allocation and
+protection</font></li>
+</ul>
+<p>Process =</p>
+<ul>
+<li><font color="red">code</font> (also called the
+<font color="red">text</font>)</li>
+<li><font color="red">data section</font> (global variables)</li>
+<li><font color="red">program counter</font> (points to the next
+instruction to execute)</li>
+<li>content of the processor’s <font color="red">registers</font></li>
+<li>a <font color="red">stack</font></li>
+<li>a <font color="red">heap</font></li>
+</ul>
+<p>Process Address Space</p>
+<p><img src="/2022/09/30/Processes/1.png" alt="1" style="zoom:50%;"></p>
+<p>Memory Layout of a C Program</p>
+<figure>
+<img src="/2022/09/30/Processes/2.png" alt="2">
+<figcaption aria-hidden="true">2</figcaption>
+</figure>
+<h2 id="process-state">2.Process State</h2>
+<p>Some states:</p>
+<ul>
+<li><code>New</code>: The process is being created</li>
+<li><code>Running</code>: Instructions are being executed</li>
+<li><code>Waiting</code>: The process is waiting for some events to
+occur</li>
+<li><code>Ready</code>: The process is waiting to be assigned to a
+processor</li>
+<li><code>Terminated</code>: The process has finished execution</li>
+</ul>
+<figure>
+<img src="/2022/09/30/Processes/3.png" alt="3">
+<figcaption aria-hidden="true">3</figcaption>
+</figure>
+<h2 id="process-control-block-pcb">3.Process Control Block (PCB)</h2>
+<p><font color="red">Each process has and only has a PCB</font></p>
+<ul>
+<li>Allocate a PCB on new process creation</li>
+<li>free the PCB on process termination</li>
+</ul>
+<p><img src="/2022/09/30/Processes/4.png" alt="4" style="zoom:50%;"></p>
+<h2 id="process-creation">4.Process Creation</h2>
+<ul>
+<li><p>A process may create new processes, in which case it becomes a
+parent</p></li>
+<li><p>We obtain a tree of processes</p></li>
+<li><p>Each process has a pid</p>
+<blockquote>
+<p>ppid refers to the parent’s pid</p>
+</blockquote></li>
+</ul>
+<p>Example tree:</p>
+<figure>
+<img src="/2022/09/30/Processes/5.png" alt="5">
+<figcaption aria-hidden="true">5</figcaption>
+</figure>
+<ul>
+<li><p>The child may inherit/share some of the resources of its parent,
+or may have entirely new ones</p></li>
+<li><p>A parent can also pass input to a child</p></li>
+<li><p>Upon creation of a child, the parent can either</p>
+<blockquote>
+<p>continue execution, or</p>
+<p>wait for the child’s completion</p>
+</blockquote></li>
+<li><p>The child could be either</p>
+<blockquote>
+<p>a clone of the parent (i.e., have a copy of the address space),
+or</p>
+<p>be an entirely new program</p>
+</blockquote></li>
+</ul>
+<p>The <code>fork()</code> System Call</p>
+<ul>
+<li><p><code>fork()</code> creates a new process</p></li>
+<li><p>The child is is a copy of the parent, but...</p>
+<blockquote>
+<p>It has a different pid (and thus ppid)</p>
+<p>Its resource utilization (so far) is set to 0</p>
+</blockquote></li>
+<li><p><code>fork()</code> returns the child’s pid to the parent, and 0
+to the child</p>
+<blockquote>
+<p>Each process can find its own pid with the getpid() call, and its
+ppid with the getppid() call</p>
+</blockquote></li>
+<li><p>Both processes continue execution after the call to
+<code>fork()</code></p></li>
+</ul>
+<p>A Typical Example</p>
+<figure>
+<img src="/2022/09/30/Processes/6.png" alt="6">
+<figcaption aria-hidden="true">6</figcaption>
+</figure>
+<figure>
+<img src="/2022/09/30/Processes/7.png" alt="7">
+<figcaption aria-hidden="true">7</figcaption>
+</figure>
+<figure>
+<img src="/2022/09/30/Processes/8.png" alt="8">
+<figcaption aria-hidden="true">8</figcaption>
+</figure>
+<figure>
+<img src="/2022/09/30/Processes/9.png" alt="9">
+<figcaption aria-hidden="true">9</figcaption>
+</figure>
+<figure>
+<img src="/2022/09/30/Processes/10.png" alt="10">
+<figcaption aria-hidden="true">10</figcaption>
+</figure>
+<figure>
+<img src="/2022/09/30/Processes/11.png" alt="11">
+<figcaption aria-hidden="true">11</figcaption>
+</figure>
+<figure>
+<img src="/2022/09/30/Processes/12.png" alt="12">
+<figcaption aria-hidden="true">12</figcaption>
+</figure>
+<hr>
+<p>(Cont.)</p>
+<ul>
+<li><p>Address space</p>
+<blockquote>
+<p>Child duplicate of parent</p>
+<p>Child has a program loaded into it</p>
+</blockquote></li>
+<li><p>UNIX examples</p>
+<blockquote>
+<p><code>fork()</code> system call creates new process</p>
+<p><code>exec()</code> system call used after a fork() to replace the
+process’ memory space with a new program</p>
+<p>Parent process calls <code>wait()</code> for the child to
+terminate</p>
+</blockquote></li>
+</ul>
+<h2 id="process-terminations">5.Process Terminations</h2>
+<ul>
+<li><p>A process terminates itself with the <code>exit()</code> system
+call</p>
+<blockquote>
+<p>This call takes as argument an integer that is called the process’
+exit/return/error code</p>
+</blockquote></li>
+<li><p>All resources of a process are deallocated by the OS</p>
+<blockquote>
+<p>physical and virtual memory, open files, I/O buffers, ...</p>
+</blockquote></li>
+<li><p>A process can cause the termination of another process</p>
+<blockquote>
+<p>Using something called “signals” and the <code>kill()</code> system
+call</p>
+</blockquote></li>
+</ul>
+<h2 id="processes-and-signals">6.Processes and Signals</h2>
+<ul>
+<li><p>A process can receive signals, i.e., <font color="red">software
+interrupts</font></p>
+<blockquote>
+<p>It is an asynchronous event that the program must act upon, in some
+way</p>
+</blockquote></li>
+<li><p>Signals have many usages, including process synchronization</p>
+<blockquote>
+<p>We’ll see other, more powerful and flexible process synchronization
+tools</p>
+</blockquote></li>
+<li><p>The OS defines a number of signals, each with a name and a
+number, and some meaning</p></li>
+<li><p>Signals happen for various reasons</p>
+<blockquote>
+<p>^C on the command-line sends a SIGINT signal to the running
+command</p>
+<p>A segmentation violation sends a SIGBUS signal to the running
+process</p>
+<p>A process sends a SIGKILL signal to another</p>
+</blockquote></li>
+</ul>
+<p>Kill Command</p>
+<figure>
+<img src="/2022/09/30/Processes/13.png" alt="13">
+<figcaption aria-hidden="true">13</figcaption>
+</figure>
+<h2 id="process-scheduling">7.Process Scheduling</h2>
+<ul>
+<li><p>Maximize CPU use, quickly switch processes onto CPU core</p></li>
+<li><p><font color="red">Process scheduler</font> selects among
+<font color="red">ready processes</font> for next execution on CPU
+core</p></li>
+<li><p>Maintains <font color="red">scheduling queues</font> of
+processes</p>
+<blockquote>
+<p>Ready queue</p>
+<p>Wait queues</p>
+</blockquote></li>
+</ul>
+]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Relaxation and approximation</title>
     <url>/2022/09/23/Relaxation-and-approximation/</url>
     <content><![CDATA[<style> 
