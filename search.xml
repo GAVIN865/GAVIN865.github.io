@@ -506,6 +506,112 @@ Format)</h2>
       </tags>
   </entry>
   <entry>
+    <title>Relaxation and approximation</title>
+    <url>/2022/09/23/Relaxation-and-approximation/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+Relaxation and approximation
+</h1>
+<h2 id="relaxation松弛">1.Relaxation(松弛)</h2>
+<p>定义relaxation sequence:</p>
+<blockquote>
+<p>We call the sequence <span class="math inline">\(\{a_k
+\}^{\infty}_{k=0}\)</span> a relaxation sequence if</p>
+<p>​ <span class="math inline">\(a_{k+1} \le a_k\)</span> <span class="math inline">\(\forall k \ge 0\)</span></p>
+</blockquote>
+<h2 id="approximation近似">2.Approximation(近似)</h2>
+<p>用简单的去替代复杂的，并保持原来相似的性质</p>
+<p>令<span class="math inline">\(f(x)\)</span>在<span class="math inline">\(\bar{x}\)</span>处可微，于是对于<span class="math inline">\(y \in
+R^n\)</span>我们有(<font color="red">泰勒展开</font>) <span class="math display">\[
+f(y)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y-\bar{x} \rangle +
+o(||y-\bar{x}||)
+\]</span> 其中<span class="math inline">\(o(r)\)</span>对于<span class="math inline">\(r \ge 0\)</span>有 <span class="math display">\[
+\underset{r \rightarrow 0}{lim} \frac{1}{r} o(r) = 0 , \space \space
+\space o(0)=0.
+\]</span> 同时给出<span class="math inline">\(|| \cdot
+||\)</span>在<span class="math inline">\(R^n\)</span>的欧几里得定义:
+<span class="math display">\[
+||x|| = [\sum_{i=1}^{n}(x^{(i)})^2]^{1/2}
+\]</span> 其中的<span class="math inline">\(f^{&#39;}(x)\)</span>是函数<span class="math inline">\(f\)</span>在<span class="math inline">\(x\)</span>处的梯度(gradient) <span class="math display">\[
+f&#39;(x) = (\frac{\partial f(x)}{\partial x^{(1)}},...,\frac{\partial
+f(x)}{\partial x^{(n)}})^T
+\]</span></p>
+<h2 id="引理1.2.1">3.引理1.2.1</h2>
+<p>定义level set为<span class="math inline">\(\mathscr{L}_f(\alpha)\)</span>: <span class="math display">\[
+\mathscr{L}_f(\alpha) = \{ x \in R^n | f(x) \le \alpha \}
+\]</span> 同时定义与<span class="math inline">\(\mathscr{L}_f(f(\bar{x}))\)</span>在<span class="math inline">\(\bar{x}\)</span>处<font color="red">相切</font>的方向向量集合:
+<span class="math display">\[
+S_f(\bar{x}) = \{s \in R^n | s = \underset{f(y_k) =
+f(\bar{x})}{\underset{y_k \rightarrow \bar{x}}{lim}}
+\frac{y_k-\bar{x}}{||y_k-\bar{x}||} \}
+\]</span></p>
+<p><font color="red">引理1.2.1</font>: 如果<span class="math inline">\(s
+\in S_f(\bar{x})\)</span>,那么<span class="math inline">\(\langle
+f&#39;(\bar{x}),s \rangle = 0\)</span>.</p>
+<p>证明: 由于<span class="math inline">\(f(y_k) =
+f(\bar{x})\)</span>,我们有 <span class="math display">\[
+f(y_k)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y_k-\bar{x} \rangle +
+o(||y_k-\bar{x}||) = f(\bar{x})
+\]</span> 因此只需证明<span class="math inline">\(\langle
+f^{&#39;}(\bar{x}),y_k-\bar{x} \rangle + o(||y_k-\bar{x}||) =
+0\)</span>即可</p>
+<p>取极限<span class="math inline">\(y_k \rightarrow
+\bar{x}\)</span>时即可得证</p>
+<h2 id="证明梯度反方向为局部下降最快方向">4.证明梯度反方向为局部下降最快方向</h2>
+<p>令<span class="math inline">\(s\)</span>为<span class="math inline">\(R^n\)</span>中的方向向量，<span class="math inline">\(||s|| = 1\)</span>，局部减小量为 <span class="math display">\[
+\Delta(s) = \underset{a \rightarrow 0}{lim} \frac{1}{\alpha}
+[f(\bar{x}+\alpha s)-f(\bar{x})]
+\]</span> 利用近似(泰勒展开)可以得到<span class="math inline">\(f(\bar{x}+\alpha s)-f(\bar{x})=\alpha \langle
+f&#39;(\bar{x}),s \rangle + o(\alpha)\)</span>.因此有 <span class="math display">\[
+\Delta (s) = \langle f&#39;(\bar{x}),s \rangle
+\]</span> ps: 柯西不等式 <span class="math display">\[
+-||x|| \cdot ||y|| \le \langle x,y \rangle \le ||x|| \cdot ||y||
+\]</span> 从而有<span class="math inline">\(\Delta(s) = \langle
+f&#39;(\bar{x}),s \rangle \ge -||f&#39;(\bar{x})||\)</span>.取 <span class="math display">\[
+\bar{s} = -f&#39;(\bar{x}) / ||f&#39;(\bar{x})||
+\]</span> 这时能够取到不等式的等号： <span class="math display">\[
+\Delta(\bar{s}) = - \langle f&#39;(\bar{x}),f&#39;(\bar{x}) \rangle /
+||f&#39;(\bar{x})|| = -||f&#39;(\bar{x})||
+\]</span> 因此方向<span class="math inline">\(-f&#39;(\bar{x})\)</span>(antigradient)是局部<font color="red">下降最快</font>的方向</p>
+<h2 id="定理1.2.1first-order-optimality-condition">5.定理1.2.1(First-order
+optimality condition)</h2>
+<p><font color="red">定理1.2.1</font>: 令<span class="math inline">\(x^*\)</span>是局部最小值对应向量，则 <span class="math display">\[
+f&#39;(x^*) = 0
+\]</span></p>
+<h2 id="定理1.2.2second-order-optimality-condition">6.定理1.2.2(Second-order
+optimality condition)</h2>
+<p>二阶近似 <span class="math display">\[
+f(y)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y-\bar{x} \rangle +
+\frac{1}{2}\langle  f^{&#39;&#39;}(\bar{x})(y-\bar{x}),y-\bar{x}
+\rangle   + o(||y-\bar{x}||^2)
+\]</span> 其中<span class="math inline">\(n \times n\)</span>矩阵<span class="math inline">\(f&#39;&#39;(x)\)</span>称为<font color="red">黑塞矩阵</font>(Hessian)：
+<span class="math display">\[
+(f&#39;&#39;(x))^{(i,j)} =
+\frac{\partial^2f(x)}{\partial{x}^{(i)}\partial{x}^{(j)}}
+\]</span> 黑塞矩阵是对称矩阵: <span class="math display">\[
+f&#39;&#39;(x) = [f&#39;&#39;(x)]^T
+\]</span> 对称矩阵A是<font color="red">半正定</font>的: <span class="math display">\[
+\langle Ax,x \rangle \ge 0 \space \space \space \forall x \in R^n
+\]</span> 符号记为 <span class="math display">\[
+A \succeq 0
+\]</span></p>
+<p><font color="red">定理1.2.2</font>: 令<span class="math inline">\(x^*\)</span>是局部最小值对应向量，则 <span class="math display">\[
+f&#39;(x^*) = 0, \space \space \space    f&#39;&#39;(x^*) \succeq  0.
+\]</span></p>
+]]></content>
+      <categories>
+        <category>凸优化</category>
+      </categories>
+      <tags>
+        <tag>凸优化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Processes</title>
     <url>/2022/09/30/Processes/</url>
     <content><![CDATA[<style> 
@@ -730,112 +836,6 @@ processes</p>
       </tags>
   </entry>
   <entry>
-    <title>Relaxation and approximation</title>
-    <url>/2022/09/23/Relaxation-and-approximation/</url>
-    <content><![CDATA[<style> 
-    .markdown-body {
-      font-family: Microsoft JhengHei, SimHei;
-      font-size: 16px;
-    }
-</style>
-<h1 align="center">
-Relaxation and approximation
-</h1>
-<h2 id="relaxation松弛">1.Relaxation(松弛)</h2>
-<p>定义relaxation sequence:</p>
-<blockquote>
-<p>We call the sequence <span class="math inline">\(\{a_k
-\}^{\infty}_{k=0}\)</span> a relaxation sequence if</p>
-<p>​ <span class="math inline">\(a_{k+1} \le a_k\)</span> <span class="math inline">\(\forall k \ge 0\)</span></p>
-</blockquote>
-<h2 id="approximation近似">2.Approximation(近似)</h2>
-<p>用简单的去替代复杂的，并保持原来相似的性质</p>
-<p>令<span class="math inline">\(f(x)\)</span>在<span class="math inline">\(\bar{x}\)</span>处可微，于是对于<span class="math inline">\(y \in
-R^n\)</span>我们有(<font color="red">泰勒展开</font>) <span class="math display">\[
-f(y)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y-\bar{x} \rangle +
-o(||y-\bar{x}||)
-\]</span> 其中<span class="math inline">\(o(r)\)</span>对于<span class="math inline">\(r \ge 0\)</span>有 <span class="math display">\[
-\underset{r \rightarrow 0}{lim} \frac{1}{r} o(r) = 0 , \space \space
-\space o(0)=0.
-\]</span> 同时给出<span class="math inline">\(|| \cdot
-||\)</span>在<span class="math inline">\(R^n\)</span>的欧几里得定义:
-<span class="math display">\[
-||x|| = [\sum_{i=1}^{n}(x^{(i)})^2]^{1/2}
-\]</span> 其中的<span class="math inline">\(f^{&#39;}(x)\)</span>是函数<span class="math inline">\(f\)</span>在<span class="math inline">\(x\)</span>处的梯度(gradient) <span class="math display">\[
-f&#39;(x) = (\frac{\partial f(x)}{\partial x^{(1)}},...,\frac{\partial
-f(x)}{\partial x^{(n)}})^T
-\]</span></p>
-<h2 id="引理1.2.1">3.引理1.2.1</h2>
-<p>定义level set为<span class="math inline">\(\mathscr{L}_f(\alpha)\)</span>: <span class="math display">\[
-\mathscr{L}_f(\alpha) = \{ x \in R^n | f(x) \le \alpha \}
-\]</span> 同时定义与<span class="math inline">\(\mathscr{L}_f(f(\bar{x}))\)</span>在<span class="math inline">\(\bar{x}\)</span>处<font color="red">相切</font>的方向向量集合:
-<span class="math display">\[
-S_f(\bar{x}) = \{s \in R^n | s = \underset{f(y_k) =
-f(\bar{x})}{\underset{y_k \rightarrow \bar{x}}{lim}}
-\frac{y_k-\bar{x}}{||y_k-\bar{x}||} \}
-\]</span></p>
-<p><font color="red">引理1.2.1</font>: 如果<span class="math inline">\(s
-\in S_f(\bar{x})\)</span>,那么<span class="math inline">\(\langle
-f&#39;(\bar{x}),s \rangle = 0\)</span>.</p>
-<p>证明: 由于<span class="math inline">\(f(y_k) =
-f(\bar{x})\)</span>,我们有 <span class="math display">\[
-f(y_k)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y_k-\bar{x} \rangle +
-o(||y_k-\bar{x}||) = f(\bar{x})
-\]</span> 因此只需证明<span class="math inline">\(\langle
-f^{&#39;}(\bar{x}),y_k-\bar{x} \rangle + o(||y_k-\bar{x}||) =
-0\)</span>即可</p>
-<p>取极限<span class="math inline">\(y_k \rightarrow
-\bar{x}\)</span>时即可得证</p>
-<h2 id="证明梯度反方向为局部下降最快方向">4.证明梯度反方向为局部下降最快方向</h2>
-<p>令<span class="math inline">\(s\)</span>为<span class="math inline">\(R^n\)</span>中的方向向量，<span class="math inline">\(||s|| = 1\)</span>，局部减小量为 <span class="math display">\[
-\Delta(s) = \underset{a \rightarrow 0}{lim} \frac{1}{\alpha}
-[f(\bar{x}+\alpha s)-f(\bar{x})]
-\]</span> 利用近似(泰勒展开)可以得到<span class="math inline">\(f(\bar{x}+\alpha s)-f(\bar{x})=\alpha \langle
-f&#39;(\bar{x}),s \rangle + o(\alpha)\)</span>.因此有 <span class="math display">\[
-\Delta (s) = \langle f&#39;(\bar{x}),s \rangle
-\]</span> ps: 柯西不等式 <span class="math display">\[
--||x|| \cdot ||y|| \le \langle x,y \rangle \le ||x|| \cdot ||y||
-\]</span> 从而有<span class="math inline">\(\Delta(s) = \langle
-f&#39;(\bar{x}),s \rangle \ge -||f&#39;(\bar{x})||\)</span>.取 <span class="math display">\[
-\bar{s} = -f&#39;(\bar{x}) / ||f&#39;(\bar{x})||
-\]</span> 这时能够取到不等式的等号： <span class="math display">\[
-\Delta(\bar{s}) = - \langle f&#39;(\bar{x}),f&#39;(\bar{x}) \rangle /
-||f&#39;(\bar{x})|| = -||f&#39;(\bar{x})||
-\]</span> 因此方向<span class="math inline">\(-f&#39;(\bar{x})\)</span>(antigradient)是局部<font color="red">下降最快</font>的方向</p>
-<h2 id="定理1.2.1first-order-optimality-condition">5.定理1.2.1(First-order
-optimality condition)</h2>
-<p><font color="red">定理1.2.1</font>: 令<span class="math inline">\(x^*\)</span>是局部最小值对应向量，则 <span class="math display">\[
-f&#39;(x^*) = 0
-\]</span></p>
-<h2 id="定理1.2.2second-order-optimality-condition">6.定理1.2.2(Second-order
-optimality condition)</h2>
-<p>二阶近似 <span class="math display">\[
-f(y)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y-\bar{x} \rangle +
-\frac{1}{2}\langle  f^{&#39;&#39;}(\bar{x})(y-\bar{x}),y-\bar{x}
-\rangle   + o(||y-\bar{x}||^2)
-\]</span> 其中<span class="math inline">\(n \times n\)</span>矩阵<span class="math inline">\(f&#39;&#39;(x)\)</span>称为<font color="red">黑塞矩阵</font>(Hessian)：
-<span class="math display">\[
-(f&#39;&#39;(x))^{(i,j)} =
-\frac{\partial^2f(x)}{\partial{x}^{(i)}\partial{x}^{(j)}}
-\]</span> 黑塞矩阵是对称矩阵: <span class="math display">\[
-f&#39;&#39;(x) = [f&#39;&#39;(x)]^T
-\]</span> 对称矩阵A是<font color="red">半正定</font>的: <span class="math display">\[
-\langle Ax,x \rangle \ge 0 \space \space \space \forall x \in R^n
-\]</span> 符号记为 <span class="math display">\[
-A \succeq 0
-\]</span></p>
-<p><font color="red">定理1.2.2</font>: 令<span class="math inline">\(x^*\)</span>是局部最小值对应向量，则 <span class="math display">\[
-f&#39;(x^*) = 0, \space \space \space    f&#39;&#39;(x^*) \succeq  0.
-\]</span></p>
-]]></content>
-      <categories>
-        <category>凸优化</category>
-      </categories>
-      <tags>
-        <tag>凸优化</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2022/08/18/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
@@ -857,6 +857,513 @@ you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p
 <figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>transformation</title>
+    <url>/2022/10/03/transformation/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+Transformation
+</h1>
+<h2 id="d-transformation">2D Transformation</h2>
+<hr>
+<h2 id="scale-transformation">1.Scale Transformation</h2>
+<p><img src="/2022/10/03/transformation/1.png" alt="1"> <span class="math display">\[
+x&#39; = s x
+\]</span></p>
+<p><span class="math display">\[
+y&#39;=sy
+\]</span></p>
+<p><span class="math display">\[
+\begin{bmatrix}
+   x&#39; \\
+   y&#39;
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+   s &amp; 0 \\
+   0 &amp; s
+  \end{bmatrix}
+  \begin{bmatrix}
+   x \\
+   y
+  \end{bmatrix}
+\]</span></p>
+<h2 id="scale-non-uniform">2.Scale (Non-Uniform)</h2>
+<p><img src="/2022/10/03/transformation/2.png" alt="2"> <span class="math display">\[
+\begin{bmatrix}
+   x&#39; \\
+   y&#39;
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+   s_x &amp; 0 \\
+   0 &amp; s_y
+  \end{bmatrix}
+  \begin{bmatrix}
+   x \\
+   y
+  \end{bmatrix}
+\]</span></p>
+<h2 id="reflection-transformation">3.Reflection Transformation</h2>
+<p><img src="/2022/10/03/transformation/3.png" alt="3"> <span class="math display">\[
+x&#39; = -x
+\]</span></p>
+<p><span class="math display">\[
+y&#39; = y
+\]</span></p>
+<p><span class="math display">\[
+\begin{bmatrix}
+   x&#39; \\
+   y&#39;
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+   -1 &amp; 0 \\
+   0 &amp; 1
+  \end{bmatrix}
+  \begin{bmatrix}
+   x \\
+   y
+  \end{bmatrix}
+\]</span></p>
+<h2 id="shear-matrix">4.Shear Matrix</h2>
+<p><img src="/2022/10/03/transformation/4.png" alt="4"> <span class="math display">\[
+\begin{bmatrix}   x&#39;
+\\   y&#39;  \end{bmatrix}  =  \begin{bmatrix}   1 &amp; a \\   0 &amp;
+1  \end{bmatrix}  \begin{bmatrix}   x \\   y  \end{bmatrix}
+\]</span></p>
+<h2 id="rotateabout-the-origin-0-0-ccw-by-default">5.Rotate(about the
+origin (0, 0), CCW by default)</h2>
+<p><img src="/2022/10/03/transformation/5.png" alt="5"> <span class="math display">\[
+\begin{bmatrix}
+   x&#39; \\
+   y&#39;
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+   cos \theta &amp; -sin \theta \\
+   sin \theta &amp; cos \theta
+  \end{bmatrix}
+  \begin{bmatrix}
+   x \\
+   y
+  \end{bmatrix}
+\]</span></p>
+<h2 id="linear-transforms-matrices">6.Linear Transforms = Matrices</h2>
+<p><span class="math display">\[
+x&#39; = ax + by
+\]</span></p>
+<p><span class="math display">\[
+y&#39; = cx + dy
+\]</span></p>
+<p><span class="math display">\[
+\begin{bmatrix}
+   x&#39; \\
+   y&#39;
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+   a &amp; b \\
+   c &amp; d
+  \end{bmatrix}
+  \begin{bmatrix}
+   x \\
+   y
+  \end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\pmb{X&#39;} = \pmb{M}\pmb{X}
+\]</span></p>
+<h2 id="homogeneous-coordinates">Homogeneous coordinates</h2>
+<hr>
+<h2 id="translation">7.Translation</h2>
+<p><img src="/2022/10/03/transformation/6.png" alt="6"> <span class="math display">\[
+x&#39; = x + t_x
+\]</span></p>
+<p><span class="math display">\[
+y&#39; = y+t_y
+\]</span></p>
+<p><span class="math display">\[
+\begin{bmatrix}
+   x&#39; \\
+   y&#39;
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+   a &amp; b \\
+   c &amp; d
+  \end{bmatrix}
+  \begin{bmatrix}
+   x \\
+   y
+  \end{bmatrix}
+  +
+  \begin{bmatrix}
+   t_x \\
+   t_y
+  \end{bmatrix}
+\]</span></p>
+<h2 id="homogenous-coordinates">8.Homogenous Coordinates</h2>
+<p><font color="red">Translation do nothing to vectors, so use
+0</font></p>
+<ul>
+<li><span class="math inline">\(2D \space Point =
+(x,y,\textcolor{orange}{1})^T\)</span></li>
+<li><span class="math inline">\(2D \space Vector =
+(x,y,\textcolor{orange}{0})^T\)</span></li>
+</ul>
+<p>Matrix Representation <span class="math display">\[
+\begin{bmatrix}
+   x&#39; \\
+   y&#39; \\
+   1
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+   a &amp; b &amp; t_x \\
+   c &amp; d &amp; t_y \\
+   0 &amp; 0 &amp; 1
+  \end{bmatrix}
+  \begin{bmatrix}
+   x \\
+   y \\
+   1
+  \end{bmatrix}
+\]</span> <span class="math inline">\(\textcolor{red}{Affine \space map
+= linear map + translation}\)</span></p>
+<p>Valid operation if w-coordinate of result is 1 or 0</p>
+<ul>
+<li>vector + vector = vector</li>
+<li>point – point = vector</li>
+<li>point + vector = point</li>
+<li>point + point = ??</li>
+</ul>
+<p>In homogeneous coordinates, <span class="math display">\[
+\begin {bmatrix}
+x \\
+y \\
+w
+\end {bmatrix}
+is \space the \space 2D \space point \space
+\begin {bmatrix}
+x/w \\
+y/w \\
+1
+\end {bmatrix}
+\]</span></p>
+<h2 id="d-transformations-summary">9.2D Transformations Summary</h2>
+<p>Scale <span class="math display">\[
+\pmb{S}(s_x,s_y) =
+\begin{bmatrix}
+s_x &amp; 0 &amp; 0 \\
+0 &amp; s_y &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</span> Rotation <span class="math display">\[
+\pmb{R}(\alpha) =
+\begin{bmatrix}
+cos \alpha &amp; -sin\alpha &amp; 0 \\
+sin \alpha &amp; cos \alpha &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</span> Translation <span class="math display">\[
+\pmb{T}(t_x,t_y) =
+\begin{bmatrix}
+1 &amp; 0 &amp; t_x \\
+0 &amp; 1 &amp; t_y \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</span></p>
+<h2 id="inverse-transform">10.Inverse Transform</h2>
+<p><span class="math display">\[
+\pmb{M}^{-1}
+\]</span></p>
+<figure>
+<img src="/2022/10/03/transformation/7.png" alt="7">
+<figcaption aria-hidden="true">7</figcaption>
+</figure>
+<h2 id="composing-transforms">11.Composing Transforms</h2>
+<p>Sequence of affine transforms A1, A2, A3, ...</p>
+<figure>
+<img src="/2022/10/03/transformation/8.png" alt="8">
+<figcaption aria-hidden="true">8</figcaption>
+</figure>
+<hr>
+<h2 id="d-transformations">3D Transformations</h2>
+<hr>
+<h2 id="d-transformations-1">1.3D Transformations</h2>
+<ul>
+<li><span class="math inline">\(3D \space Point =
+(x,y,z,\textcolor{orange}{1})^T\)</span></li>
+<li><span class="math inline">\(3D \space Vector =
+(x,y,z,\textcolor{orange}{0})^T\)</span></li>
+</ul>
+<p>Matrix Representation <span class="math display">\[
+\begin{bmatrix}
+   x&#39; \\
+   y&#39; \\
+   z&#39; \\
+   1
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+   a &amp; b &amp; c &amp; t_x \\
+   d &amp; e &amp; f &amp; t_y \\
+   g &amp; h &amp; i &amp; t_z \\
+   0 &amp; 0 &amp; 0 &amp; 1
+  \end{bmatrix}
+  \begin{bmatrix}
+   x \\
+   y \\
+   z \\
+   1
+  \end{bmatrix}
+\]</span></p>
+<h2 id="d-rotation">2.3D Rotation</h2>
+<p><span class="math display">\[
+\pmb{R}_x(\alpha)
+  =
+  \begin{bmatrix}
+   1 &amp; 0 &amp; 0 &amp; 0 \\
+   0 &amp; cos \alpha &amp; -sin \alpha &amp; 0 \\
+   0 &amp; sin \alpha &amp; cos \alpha &amp; 0 \\
+   0 &amp; 0 &amp; 0 &amp; 1
+  \end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\pmb{R}_y(\alpha)
+  =
+  \begin{bmatrix}
+   cos \alpha &amp; 0 &amp; sin \alpha &amp; 0  \\
+   0 &amp; 1 &amp; 0 &amp; 0 \\
+   -sin \alpha &amp; 0 &amp; cos \alpha &amp; 0 \\
+   0 &amp; 0 &amp; 0 &amp; 1
+  \end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\pmb{R}_z(\alpha)
+  =
+  \begin{bmatrix}
+   cos \alpha &amp; -sin \alpha &amp; 0 &amp; 0  \\
+   sin \alpha &amp; cos \alpha &amp; 0 &amp; 0 \\
+   0 &amp; 0 &amp; 1 &amp; 0 \\
+   0 &amp; 0 &amp; 0 &amp; 1
+  \end{bmatrix}
+\]</span></p>
+<p>Be Careful!!! <span class="math inline">\(\pmb{R}_y\)</span> is a
+little different!!!</p>
+<p><span class="math inline">\(\overrightarrow{x} \times
+\overrightarrow{y} = \overrightarrow{z}\)</span></p>
+<p><span class="math inline">\(\overrightarrow{y} \times
+\overrightarrow{z} = \overrightarrow{x}\)</span></p>
+<p><span class="math inline">\(\overrightarrow{x} \times
+\overrightarrow{z} = \textcolor{orange}{-
+\overrightarrow{y}}\)</span></p>
+<p>Compose any 3D rotation <span class="math display">\[
+\pmb{R}_{xyz}(\alpha,\beta,\gamma) =
+\pmb{R}_{x}(\alpha)\pmb{R}_{y}(\beta)\pmb{R}_{z}(\gamma)
+\]</span></p>
+<h2 id="rodrigues-rotation-formula">3.Rodrigues' Rotation Formula</h2>
+<p>Rotation by angle <span class="math inline">\(\pmb{\alpha}\)</span>
+aroud axis <span class="math inline">\(\pmb{n}\)</span> <span class="math display">\[
+\pmb{R}(\pmb{n},\alpha) =
+cos(\alpha)\pmb{I}+(1-cos(\alpha))\pmb{n}\pmb{n}^T + sin(\alpha)
+\begin{bmatrix}
+0 &amp; -n_z &amp; n_y \\
+n_z &amp; 0 &amp; -n_x \\
+-n_y &amp; n_x &amp; 0
+\end{bmatrix}
+\]</span></p>
+<hr>
+<h2 id="viewing-transformation">Viewing Transformation</h2>
+<hr>
+<h2 id="view-camera-transformation">1.View / Camera Transformation</h2>
+<p>Define the camera</p>
+<ul>
+<li>Position <span class="math inline">\(\overrightarrow{e}\)</span></li>
+<li>Look-at / gaze direction <span class="math inline">\(\hat{g}\)</span></li>
+<li>Up direction <span class="math inline">\(\hat{t}\)</span></li>
+</ul>
+<p><img src="/2022/10/03/transformation/9.png" alt="9" style="zoom:50%;"></p>
+<p>We always define a camera:</p>
+<p>​ ---- <font color="orange">The origin, up at Y, look at -Z </font></p>
+<p><img src="/2022/10/03/transformation/10.png" alt="10" style="zoom:50%;"></p>
+<p>Transform the camera by <span class="math inline">\(M_{view}\)</span></p>
+<ul>
+<li>Translate e to origin</li>
+<li>Rotate g to -Z</li>
+<li>Rotate t to Y</li>
+<li>Rotate (g <span class="math inline">\(\times\)</span> t) to X</li>
+</ul>
+<p><img src="/2022/10/03/transformation/11.png" alt="11" style="zoom:50%;"></p>
+<p><font color="red">For Rotate Matrix: <span class="math inline">\(R^{-1} = R^T\)</span></font></p>
+<p>$M_{view} = R_{view}T_{view} $ <span class="math display">\[
+T_{view} =
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; -x_e \\
+0 &amp; 1 &amp; 0 &amp; -y_e \\
+0 &amp; 0 &amp; 1 &amp; -z_e \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+R_{view}^{-1} =
+\begin{bmatrix}
+x_{\hat{g} \times \hat{t}} &amp; x_t &amp; x_{-g} &amp; 0 \\
+y_{\hat{g} \times \hat{t}} &amp; y_t &amp; y_{-g} &amp; 0 \\
+z_{\hat{g} \times \hat{t}} &amp; z_t &amp; z_{-g} &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\Rightarrow
+R_{view} = (R_{view}^{-1})^T =
+\begin{bmatrix}
+x_{\hat{g} \times \hat{t}} &amp; y_{\hat{g} \times \hat{t}} &amp;
+z_{\hat{g} \times \hat{t}} &amp; 0 \\
+x_t &amp; y_t &amp; z_t &amp; 0 \\
+x_{-g} &amp; y_{-g} &amp; z_{-g} &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</span></p>
+<h2 id="orthographic-projection">2.Orthographic Projection</h2>
+<p>We want to map a cuboid [l, r] x [b, t] x [f, n] to <br>the
+“canonical (正则、规范、标准)” cube <span class="math inline">\([-1,
+1]^3\)</span></p>
+<figure>
+<img src="/2022/10/03/transformation/12.png" alt="12">
+<figcaption aria-hidden="true">12</figcaption>
+</figure>
+<p>So <span class="math display">\[
+M_{ortho} =
+\begin{bmatrix}
+\frac{2}{r-l} &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; \frac{2}{t-b} &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; \frac{2}{n-f} &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; -\frac{r+l}{2} \\
+0 &amp; 1 &amp; 0 &amp; -\frac{t+b}{2} \\
+0 &amp; 0 &amp; 1 &amp; -\frac{n+f}{2} \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</span></p>
+<h2 id="perspective-projection">3.Perspective Projection</h2>
+<figure>
+<img src="/2022/10/03/transformation/13.png" alt="13">
+<figcaption aria-hidden="true">13</figcaption>
+</figure>
+<p><span class="math inline">\(M_{persp} =
+M_{ortho}M_{ortho-&gt;persp}\)</span></p>
+<p>similar triangle:</p>
+<figure>
+<img src="/2022/10/03/transformation/14.png" alt="14">
+<figcaption aria-hidden="true">14</figcaption>
+</figure>
+<p>the same as y', we have <span class="math display">\[
+x&#39; = \frac{n}{z}x
+\]</span> so, in homogeneous coordinates <span class="math display">\[
+M_{ortho-&gt;persp}
+\begin{bmatrix}
+x \\
+y \\
+z \\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+nx/z \\
+ny/z \\
+? \\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+nx \\
+ny \\
+? \\
+z
+\end{bmatrix}
+\]</span> Already good enough to figure out part of <span class="math inline">\(M_{ortho-&gt;persp}\)</span> <span class="math display">\[
+M_{ortho-&gt;persp} =
+\begin{bmatrix}
+n &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; n &amp; 0 &amp; 0  \\
+? &amp; ? &amp; ? &amp; ?  \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</span> <font color="red">Any point on the near plane will not
+change</font> <span class="math display">\[
+\begin{bmatrix}
+x \\
+y \\
+n \\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+nx \\
+ny \\
+n^2 \\
+n
+\end{bmatrix}
+\]</span></p>
+<p>then <span class="math display">\[
+\begin{bmatrix}
+0 &amp; 0 &amp; A &amp; B
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+n \\
+1
+\end{bmatrix}
+=
+n^2
+\]</span> then <span class="math display">\[
+An+B=n^2
+\]</span></p>
+<p><font color="red">Any point’s z on the far plane will not change</font>
+<span class="math display">\[
+\begin{bmatrix}
+0 \\
+0 \\
+f \\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 \\
+0 \\
+f^2 \\
+f
+\end{bmatrix}
+\]</span> then <span class="math display">\[
+Af+B=f^2
+\]</span></p>
+<p>As a result <span class="math display">\[
+A = n+f \space \space ; \space \space B = -nf
+\]</span> Finally <span class="math display">\[
+M_{ortho-&gt;persp} =
+\begin{bmatrix}
+n &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; n &amp; 0 &amp; 0  \\
+0 &amp; 0 &amp; n+f &amp; -nf  \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</span></p>
+]]></content>
+      <categories>
+        <category>GAMES101</category>
+      </categories>
+      <tags>
+        <tag>GAMES101</tag>
+      </tags>
   </entry>
   <entry>
     <title>支持向量机</title>

@@ -16,26 +16,26 @@
   <meta name="author" content="Gavin">
   <meta name="keywords" content="">
   
-    <meta name="description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   Processes  1.Process Concept A process is a program in execution  program: bytes stored">
+    <meta name="description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   Transformation  2D Transformation  1.Scale Transformation  \[ x&#39; &#x3D; s x \] \[ y&amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Processes">
-<meta property="og:url" content="http://gavinbowl.top/2022/09/30/Processes/index.html">
+<meta property="og:title" content="transformation">
+<meta property="og:url" content="http://gavinbowl.top/2022/10/03/transformation/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   Processes  1.Process Concept A process is a program in execution  program: bytes stored">
+<meta property="og:description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   Transformation  2D Transformation  1.Scale Transformation  \[ x&#39; &#x3D; s x \] \[ y&amp;">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://gavinbowl.top/img/13.jpg">
-<meta property="article:published_time" content="2022-09-30T05:52:01.000Z">
-<meta property="article:modified_time" content="2022-10-03T11:29:55.478Z">
+<meta property="og:image" content="http://gavinbowl.top/img/14.jpg">
+<meta property="article:published_time" content="2022-10-03T11:28:48.000Z">
+<meta property="article:modified_time" content="2022-10-03T16:10:14.293Z">
 <meta property="article:author" content="Gavin">
-<meta property="article:tag" content="操作系统">
+<meta property="article:tag" content="GAMES101">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://gavinbowl.top/img/13.jpg">
+<meta name="twitter:image" content="http://gavinbowl.top/img/14.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Processes - 0</title>
+  <title>transformation - 0</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -212,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Processes"></span>
+            <span id="subtitle" data-typed-text="transformation"></span>
           
         </div>
 
@@ -223,8 +223,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-09-30 13:52" pubdate>
-          2022年9月30日 下午
+        <time datetime="2022-10-03 19:28" pubdate>
+          2022年10月3日 晚上
         </time>
       </span>
     
@@ -235,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.8k 字
+          6.4k 字
         
       </span>
     
@@ -246,7 +246,7 @@
         
         
         
-          24 分钟
+          54 分钟
         
       </span>
     
@@ -292,7 +292,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Processes</h1>
+            <h1 style="display: none">transformation</h1>
             
             
               <div class="markdown-body">
@@ -304,212 +304,495 @@
     }
 </style>
 <h1 align="center">
-Processes
+Transformation
 </h1>
-<h2 id="process-concept">1.Process Concept</h2>
-<p><font color="red">A process is a program in execution</font></p>
+<h2 id="d-transformation">2D Transformation</h2>
+<hr>
+<h2 id="scale-transformation">1.Scale Transformation</h2>
+<p><img src="/2022/10/03/transformation/1.png" srcset="/img/loading.gif" lazyload alt="1"> <span class="math display">\[
+x&#39; = s x
+\]</span></p>
+<p><span class="math display">\[
+y&#39;=sy
+\]</span></p>
+<p><span class="math display">\[
+\begin{bmatrix}
+   x&#39; \\
+   y&#39;
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+   s &amp; 0 \\
+   0 &amp; s
+  \end{bmatrix}
+  \begin{bmatrix}
+   x \\
+   y
+  \end{bmatrix}
+\]</span></p>
+<h2 id="scale-non-uniform">2.Scale (Non-Uniform)</h2>
+<p><img src="/2022/10/03/transformation/2.png" srcset="/img/loading.gif" lazyload alt="2"> <span class="math display">\[
+\begin{bmatrix}
+   x&#39; \\
+   y&#39;
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+   s_x &amp; 0 \\
+   0 &amp; s_y
+  \end{bmatrix}
+  \begin{bmatrix}
+   x \\
+   y
+  \end{bmatrix}
+\]</span></p>
+<h2 id="reflection-transformation">3.Reflection Transformation</h2>
+<p><img src="/2022/10/03/transformation/3.png" srcset="/img/loading.gif" lazyload alt="3"> <span class="math display">\[
+x&#39; = -x
+\]</span></p>
+<p><span class="math display">\[
+y&#39; = y
+\]</span></p>
+<p><span class="math display">\[
+\begin{bmatrix}
+   x&#39; \\
+   y&#39;
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+   -1 &amp; 0 \\
+   0 &amp; 1
+  \end{bmatrix}
+  \begin{bmatrix}
+   x \\
+   y
+  \end{bmatrix}
+\]</span></p>
+<h2 id="shear-matrix">4.Shear Matrix</h2>
+<p><img src="/2022/10/03/transformation/4.png" srcset="/img/loading.gif" lazyload alt="4"> <span class="math display">\[
+\begin{bmatrix}   x&#39;
+\\   y&#39;  \end{bmatrix}  =  \begin{bmatrix}   1 &amp; a \\   0 &amp;
+1  \end{bmatrix}  \begin{bmatrix}   x \\   y  \end{bmatrix}
+\]</span></p>
+<h2 id="rotateabout-the-origin-0-0-ccw-by-default">5.Rotate(about the
+origin (0, 0), CCW by default)</h2>
+<p><img src="/2022/10/03/transformation/5.png" srcset="/img/loading.gif" lazyload alt="5"> <span class="math display">\[
+\begin{bmatrix}
+   x&#39; \\
+   y&#39;
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+   cos \theta &amp; -sin \theta \\
+   sin \theta &amp; cos \theta
+  \end{bmatrix}
+  \begin{bmatrix}
+   x \\
+   y
+  \end{bmatrix}
+\]</span></p>
+<h2 id="linear-transforms-matrices">6.Linear Transforms = Matrices</h2>
+<p><span class="math display">\[
+x&#39; = ax + by
+\]</span></p>
+<p><span class="math display">\[
+y&#39; = cx + dy
+\]</span></p>
+<p><span class="math display">\[
+\begin{bmatrix}
+   x&#39; \\
+   y&#39;
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+   a &amp; b \\
+   c &amp; d
+  \end{bmatrix}
+  \begin{bmatrix}
+   x \\
+   y
+  \end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\pmb{X&#39;} = \pmb{M}\pmb{X}
+\]</span></p>
+<h2 id="homogeneous-coordinates">Homogeneous coordinates</h2>
+<hr>
+<h2 id="translation">7.Translation</h2>
+<p><img src="/2022/10/03/transformation/6.png" srcset="/img/loading.gif" lazyload alt="6"> <span class="math display">\[
+x&#39; = x + t_x
+\]</span></p>
+<p><span class="math display">\[
+y&#39; = y+t_y
+\]</span></p>
+<p><span class="math display">\[
+\begin{bmatrix}
+   x&#39; \\
+   y&#39;
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+   a &amp; b \\
+   c &amp; d
+  \end{bmatrix}
+  \begin{bmatrix}
+   x \\
+   y
+  \end{bmatrix}
+  +
+  \begin{bmatrix}
+   t_x \\
+   t_y
+  \end{bmatrix}
+\]</span></p>
+<h2 id="homogenous-coordinates">8.Homogenous Coordinates</h2>
+<p><font color="red">Translation do nothing to vectors, so use
+0</font></p>
 <ul>
-<li><code>program</code>: bytes stored on <font color="red">disk</font> as
-part of an executable file</li>
-<li>becomes a process when it’s loaded in
-<font color="red">memory</font></li>
-<li>a unit of <font color="red">resource allocation and
-protection</font></li>
+<li><span class="math inline">\(2D \space Point =
+(x,y,\textcolor{orange}{1})^T\)</span></li>
+<li><span class="math inline">\(2D \space Vector =
+(x,y,\textcolor{orange}{0})^T\)</span></li>
 </ul>
-<p>Process =</p>
+<p>Matrix Representation <span class="math display">\[
+\begin{bmatrix}
+   x&#39; \\
+   y&#39; \\
+   1
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+   a &amp; b &amp; t_x \\
+   c &amp; d &amp; t_y \\
+   0 &amp; 0 &amp; 1
+  \end{bmatrix}
+  \begin{bmatrix}
+   x \\
+   y \\
+   1
+  \end{bmatrix}
+\]</span> <span class="math inline">\(\textcolor{red}{Affine \space map
+= linear map + translation}\)</span></p>
+<p>Valid operation if w-coordinate of result is 1 or 0</p>
 <ul>
-<li><font color="red">code</font> (also called the
-<font color="red">text</font>)</li>
-<li><font color="red">data section</font> (global variables)</li>
-<li><font color="red">program counter</font> (points to the next
-instruction to execute)</li>
-<li>content of the processor’s <font color="red">registers</font></li>
-<li>a <font color="red">stack</font></li>
-<li>a <font color="red">heap</font></li>
+<li>vector + vector = vector</li>
+<li>point – point = vector</li>
+<li>point + vector = point</li>
+<li>point + point = ??</li>
 </ul>
-<p>Process Address Space</p>
-<p><img src="/2022/09/30/Processes/1.png" srcset="/img/loading.gif" lazyload alt="1" style="zoom:50%;"></p>
-<p>Memory Layout of a C Program</p>
+<p>In homogeneous coordinates, <span class="math display">\[
+\begin {bmatrix}
+x \\
+y \\
+w
+\end {bmatrix}
+is \space the \space 2D \space point \space
+\begin {bmatrix}
+x/w \\
+y/w \\
+1
+\end {bmatrix}
+\]</span></p>
+<h2 id="d-transformations-summary">9.2D Transformations Summary</h2>
+<p>Scale <span class="math display">\[
+\pmb{S}(s_x,s_y) =
+\begin{bmatrix}
+s_x &amp; 0 &amp; 0 \\
+0 &amp; s_y &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</span> Rotation <span class="math display">\[
+\pmb{R}(\alpha) =
+\begin{bmatrix}
+cos \alpha &amp; -sin\alpha &amp; 0 \\
+sin \alpha &amp; cos \alpha &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</span> Translation <span class="math display">\[
+\pmb{T}(t_x,t_y) =
+\begin{bmatrix}
+1 &amp; 0 &amp; t_x \\
+0 &amp; 1 &amp; t_y \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</span></p>
+<h2 id="inverse-transform">10.Inverse Transform</h2>
+<p><span class="math display">\[
+\pmb{M}^{-1}
+\]</span></p>
 <figure>
-<img src="/2022/09/30/Processes/2.png" srcset="/img/loading.gif" lazyload alt="2">
-<figcaption aria-hidden="true">2</figcaption>
-</figure>
-<h2 id="process-state">2.Process State</h2>
-<p>Some states:</p>
-<ul>
-<li><code>New</code>: The process is being created</li>
-<li><code>Running</code>: Instructions are being executed</li>
-<li><code>Waiting</code>: The process is waiting for some events to
-occur</li>
-<li><code>Ready</code>: The process is waiting to be assigned to a
-processor</li>
-<li><code>Terminated</code>: The process has finished execution</li>
-</ul>
-<figure>
-<img src="/2022/09/30/Processes/3.png" srcset="/img/loading.gif" lazyload alt="3">
-<figcaption aria-hidden="true">3</figcaption>
-</figure>
-<h2 id="process-control-block-pcb">3.Process Control Block (PCB)</h2>
-<p><font color="red">Each process has and only has a PCB</font></p>
-<ul>
-<li>Allocate a PCB on new process creation</li>
-<li>free the PCB on process termination</li>
-</ul>
-<p><img src="/2022/09/30/Processes/4.png" srcset="/img/loading.gif" lazyload alt="4" style="zoom:50%;"></p>
-<h2 id="process-creation">4.Process Creation</h2>
-<ul>
-<li><p>A process may create new processes, in which case it becomes a
-parent</p></li>
-<li><p>We obtain a tree of processes</p></li>
-<li><p>Each process has a pid</p>
-<blockquote>
-<p>ppid refers to the parent’s pid</p>
-</blockquote></li>
-</ul>
-<p>Example tree:</p>
-<figure>
-<img src="/2022/09/30/Processes/5.png" srcset="/img/loading.gif" lazyload alt="5">
-<figcaption aria-hidden="true">5</figcaption>
-</figure>
-<ul>
-<li><p>The child may inherit/share some of the resources of its parent,
-or may have entirely new ones</p></li>
-<li><p>A parent can also pass input to a child</p></li>
-<li><p>Upon creation of a child, the parent can either</p>
-<blockquote>
-<p>continue execution, or</p>
-<p>wait for the child’s completion</p>
-</blockquote></li>
-<li><p>The child could be either</p>
-<blockquote>
-<p>a clone of the parent (i.e., have a copy of the address space),
-or</p>
-<p>be an entirely new program</p>
-</blockquote></li>
-</ul>
-<p>The <code>fork()</code> System Call</p>
-<ul>
-<li><p><code>fork()</code> creates a new process</p></li>
-<li><p>The child is is a copy of the parent, but...</p>
-<blockquote>
-<p>It has a different pid (and thus ppid)</p>
-<p>Its resource utilization (so far) is set to 0</p>
-</blockquote></li>
-<li><p><code>fork()</code> returns the child’s pid to the parent, and 0
-to the child</p>
-<blockquote>
-<p>Each process can find its own pid with the getpid() call, and its
-ppid with the getppid() call</p>
-</blockquote></li>
-<li><p>Both processes continue execution after the call to
-<code>fork()</code></p></li>
-</ul>
-<p>A Typical Example</p>
-<figure>
-<img src="/2022/09/30/Processes/6.png" srcset="/img/loading.gif" lazyload alt="6">
-<figcaption aria-hidden="true">6</figcaption>
-</figure>
-<figure>
-<img src="/2022/09/30/Processes/7.png" srcset="/img/loading.gif" lazyload alt="7">
+<img src="/2022/10/03/transformation/7.png" srcset="/img/loading.gif" lazyload alt="7">
 <figcaption aria-hidden="true">7</figcaption>
 </figure>
+<h2 id="composing-transforms">11.Composing Transforms</h2>
+<p>Sequence of affine transforms A1, A2, A3, ...</p>
 <figure>
-<img src="/2022/09/30/Processes/8.png" srcset="/img/loading.gif" lazyload alt="8">
+<img src="/2022/10/03/transformation/8.png" srcset="/img/loading.gif" lazyload alt="8">
 <figcaption aria-hidden="true">8</figcaption>
 </figure>
+<hr>
+<h2 id="d-transformations">3D Transformations</h2>
+<hr>
+<h2 id="d-transformations-1">1.3D Transformations</h2>
+<ul>
+<li><span class="math inline">\(3D \space Point =
+(x,y,z,\textcolor{orange}{1})^T\)</span></li>
+<li><span class="math inline">\(3D \space Vector =
+(x,y,z,\textcolor{orange}{0})^T\)</span></li>
+</ul>
+<p>Matrix Representation <span class="math display">\[
+\begin{bmatrix}
+   x&#39; \\
+   y&#39; \\
+   z&#39; \\
+   1
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+   a &amp; b &amp; c &amp; t_x \\
+   d &amp; e &amp; f &amp; t_y \\
+   g &amp; h &amp; i &amp; t_z \\
+   0 &amp; 0 &amp; 0 &amp; 1
+  \end{bmatrix}
+  \begin{bmatrix}
+   x \\
+   y \\
+   z \\
+   1
+  \end{bmatrix}
+\]</span></p>
+<h2 id="d-rotation">2.3D Rotation</h2>
+<p><span class="math display">\[
+\pmb{R}_x(\alpha)
+  =
+  \begin{bmatrix}
+   1 &amp; 0 &amp; 0 &amp; 0 \\
+   0 &amp; cos \alpha &amp; -sin \alpha &amp; 0 \\
+   0 &amp; sin \alpha &amp; cos \alpha &amp; 0 \\
+   0 &amp; 0 &amp; 0 &amp; 1
+  \end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\pmb{R}_y(\alpha)
+  =
+  \begin{bmatrix}
+   cos \alpha &amp; 0 &amp; sin \alpha &amp; 0  \\
+   0 &amp; 1 &amp; 0 &amp; 0 \\
+   -sin \alpha &amp; 0 &amp; cos \alpha &amp; 0 \\
+   0 &amp; 0 &amp; 0 &amp; 1
+  \end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\pmb{R}_z(\alpha)
+  =
+  \begin{bmatrix}
+   cos \alpha &amp; -sin \alpha &amp; 0 &amp; 0  \\
+   sin \alpha &amp; cos \alpha &amp; 0 &amp; 0 \\
+   0 &amp; 0 &amp; 1 &amp; 0 \\
+   0 &amp; 0 &amp; 0 &amp; 1
+  \end{bmatrix}
+\]</span></p>
+<p>Be Careful!!! <span class="math inline">\(\pmb{R}_y\)</span> is a
+little different!!!</p>
+<p><span class="math inline">\(\overrightarrow{x} \times
+\overrightarrow{y} = \overrightarrow{z}\)</span></p>
+<p><span class="math inline">\(\overrightarrow{y} \times
+\overrightarrow{z} = \overrightarrow{x}\)</span></p>
+<p><span class="math inline">\(\overrightarrow{x} \times
+\overrightarrow{z} = \textcolor{orange}{-
+\overrightarrow{y}}\)</span></p>
+<p>Compose any 3D rotation <span class="math display">\[
+\pmb{R}_{xyz}(\alpha,\beta,\gamma) =
+\pmb{R}_{x}(\alpha)\pmb{R}_{y}(\beta)\pmb{R}_{z}(\gamma)
+\]</span></p>
+<h2 id="rodrigues-rotation-formula">3.Rodrigues' Rotation Formula</h2>
+<p>Rotation by angle <span class="math inline">\(\pmb{\alpha}\)</span>
+aroud axis <span class="math inline">\(\pmb{n}\)</span> <span class="math display">\[
+\pmb{R}(\pmb{n},\alpha) =
+cos(\alpha)\pmb{I}+(1-cos(\alpha))\pmb{n}\pmb{n}^T + sin(\alpha)
+\begin{bmatrix}
+0 &amp; -n_z &amp; n_y \\
+n_z &amp; 0 &amp; -n_x \\
+-n_y &amp; n_x &amp; 0
+\end{bmatrix}
+\]</span></p>
+<hr>
+<h2 id="viewing-transformation">Viewing Transformation</h2>
+<hr>
+<h2 id="view-camera-transformation">1.View / Camera Transformation</h2>
+<p>Define the camera</p>
+<ul>
+<li>Position <span class="math inline">\(\overrightarrow{e}\)</span></li>
+<li>Look-at / gaze direction <span class="math inline">\(\hat{g}\)</span></li>
+<li>Up direction <span class="math inline">\(\hat{t}\)</span></li>
+</ul>
+<p><img src="/2022/10/03/transformation/9.png" srcset="/img/loading.gif" lazyload alt="9" style="zoom:50%;"></p>
+<p>We always define a camera:</p>
+<p>​ ---- <font color="orange">The origin, up at Y, look at -Z </font></p>
+<p><img src="/2022/10/03/transformation/10.png" srcset="/img/loading.gif" lazyload alt="10" style="zoom:50%;"></p>
+<p>Transform the camera by <span class="math inline">\(M_{view}\)</span></p>
+<ul>
+<li>Translate e to origin</li>
+<li>Rotate g to -Z</li>
+<li>Rotate t to Y</li>
+<li>Rotate (g <span class="math inline">\(\times\)</span> t) to X</li>
+</ul>
+<p><img src="/2022/10/03/transformation/11.png" srcset="/img/loading.gif" lazyload alt="11" style="zoom:50%;"></p>
+<p><font color="red">For Rotate Matrix: <span class="math inline">\(R^{-1} = R^T\)</span></font></p>
+<p>$M_{view} = R_{view}T_{view} $ <span class="math display">\[
+T_{view} =
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; -x_e \\
+0 &amp; 1 &amp; 0 &amp; -y_e \\
+0 &amp; 0 &amp; 1 &amp; -z_e \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+R_{view}^{-1} =
+\begin{bmatrix}
+x_{\hat{g} \times \hat{t}} &amp; x_t &amp; x_{-g} &amp; 0 \\
+y_{\hat{g} \times \hat{t}} &amp; y_t &amp; y_{-g} &amp; 0 \\
+z_{\hat{g} \times \hat{t}} &amp; z_t &amp; z_{-g} &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\Rightarrow
+R_{view} = (R_{view}^{-1})^T =
+\begin{bmatrix}
+x_{\hat{g} \times \hat{t}} &amp; y_{\hat{g} \times \hat{t}} &amp;
+z_{\hat{g} \times \hat{t}} &amp; 0 \\
+x_t &amp; y_t &amp; z_t &amp; 0 \\
+x_{-g} &amp; y_{-g} &amp; z_{-g} &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</span></p>
+<h2 id="orthographic-projection">2.Orthographic Projection</h2>
+<p>We want to map a cuboid [l, r] x [b, t] x [f, n] to <br>the
+“canonical (正则、规范、标准)” cube <span class="math inline">\([-1,
+1]^3\)</span></p>
 <figure>
-<img src="/2022/09/30/Processes/9.png" srcset="/img/loading.gif" lazyload alt="9">
-<figcaption aria-hidden="true">9</figcaption>
-</figure>
-<figure>
-<img src="/2022/09/30/Processes/10.png" srcset="/img/loading.gif" lazyload alt="10">
-<figcaption aria-hidden="true">10</figcaption>
-</figure>
-<figure>
-<img src="/2022/09/30/Processes/11.png" srcset="/img/loading.gif" lazyload alt="11">
-<figcaption aria-hidden="true">11</figcaption>
-</figure>
-<figure>
-<img src="/2022/09/30/Processes/12.png" srcset="/img/loading.gif" lazyload alt="12">
+<img src="/2022/10/03/transformation/12.png" srcset="/img/loading.gif" lazyload alt="12">
 <figcaption aria-hidden="true">12</figcaption>
 </figure>
-<hr>
-<p>(Cont.)</p>
-<ul>
-<li><p>Address space</p>
-<blockquote>
-<p>Child duplicate of parent</p>
-<p>Child has a program loaded into it</p>
-</blockquote></li>
-<li><p>UNIX examples</p>
-<blockquote>
-<p><code>fork()</code> system call creates new process</p>
-<p><code>exec()</code> system call used after a fork() to replace the
-process’ memory space with a new program</p>
-<p>Parent process calls <code>wait()</code> for the child to
-terminate</p>
-</blockquote></li>
-</ul>
-<h2 id="process-terminations">5.Process Terminations</h2>
-<ul>
-<li><p>A process terminates itself with the <code>exit()</code> system
-call</p>
-<blockquote>
-<p>This call takes as argument an integer that is called the process’
-exit/return/error code</p>
-</blockquote></li>
-<li><p>All resources of a process are deallocated by the OS</p>
-<blockquote>
-<p>physical and virtual memory, open files, I/O buffers, ...</p>
-</blockquote></li>
-<li><p>A process can cause the termination of another process</p>
-<blockquote>
-<p>Using something called “signals” and the <code>kill()</code> system
-call</p>
-</blockquote></li>
-</ul>
-<h2 id="processes-and-signals">6.Processes and Signals</h2>
-<ul>
-<li><p>A process can receive signals, i.e., <font color="red">software
-interrupts</font></p>
-<blockquote>
-<p>It is an asynchronous event that the program must act upon, in some
-way</p>
-</blockquote></li>
-<li><p>Signals have many usages, including process synchronization</p>
-<blockquote>
-<p>We’ll see other, more powerful and flexible process synchronization
-tools</p>
-</blockquote></li>
-<li><p>The OS defines a number of signals, each with a name and a
-number, and some meaning</p></li>
-<li><p>Signals happen for various reasons</p>
-<blockquote>
-<p>^C on the command-line sends a SIGINT signal to the running
-command</p>
-<p>A segmentation violation sends a SIGBUS signal to the running
-process</p>
-<p>A process sends a SIGKILL signal to another</p>
-</blockquote></li>
-</ul>
-<p>Kill Command</p>
+<p>So <span class="math display">\[
+M_{ortho} =
+\begin{bmatrix}
+\frac{2}{r-l} &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; \frac{2}{t-b} &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; \frac{2}{n-f} &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; -\frac{r+l}{2} \\
+0 &amp; 1 &amp; 0 &amp; -\frac{t+b}{2} \\
+0 &amp; 0 &amp; 1 &amp; -\frac{n+f}{2} \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</span></p>
+<h2 id="perspective-projection">3.Perspective Projection</h2>
 <figure>
-<img src="/2022/09/30/Processes/13.png" srcset="/img/loading.gif" lazyload alt="13">
+<img src="/2022/10/03/transformation/13.png" srcset="/img/loading.gif" lazyload alt="13">
 <figcaption aria-hidden="true">13</figcaption>
 </figure>
-<h2 id="process-scheduling">7.Process Scheduling</h2>
-<ul>
-<li><p>Maximize CPU use, quickly switch processes onto CPU core</p></li>
-<li><p><font color="red">Process scheduler</font> selects among
-<font color="red">ready processes</font> for next execution on CPU
-core</p></li>
-<li><p>Maintains <font color="red">scheduling queues</font> of
-processes</p>
-<blockquote>
-<p>Ready queue</p>
-<p>Wait queues</p>
-</blockquote></li>
-</ul>
+<p><span class="math inline">\(M_{persp} =
+M_{ortho}M_{ortho-&gt;persp}\)</span></p>
+<p>similar triangle:</p>
+<figure>
+<img src="/2022/10/03/transformation/14.png" srcset="/img/loading.gif" lazyload alt="14">
+<figcaption aria-hidden="true">14</figcaption>
+</figure>
+<p>the same as y', we have <span class="math display">\[
+x&#39; = \frac{n}{z}x
+\]</span> so, in homogeneous coordinates <span class="math display">\[
+M_{ortho-&gt;persp}
+\begin{bmatrix}
+x \\
+y \\
+z \\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+nx/z \\
+ny/z \\
+? \\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+nx \\
+ny \\
+? \\
+z
+\end{bmatrix}
+\]</span> Already good enough to figure out part of <span class="math inline">\(M_{ortho-&gt;persp}\)</span> <span class="math display">\[
+M_{ortho-&gt;persp} =
+\begin{bmatrix}
+n &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; n &amp; 0 &amp; 0  \\
+? &amp; ? &amp; ? &amp; ?  \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</span> <font color="red">Any point on the near plane will not
+change</font> <span class="math display">\[
+\begin{bmatrix}
+x \\
+y \\
+n \\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+nx \\
+ny \\
+n^2 \\
+n
+\end{bmatrix}
+\]</span></p>
+<p>then <span class="math display">\[
+\begin{bmatrix}
+0 &amp; 0 &amp; A &amp; B
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+n \\
+1
+\end{bmatrix}
+=
+n^2
+\]</span> then <span class="math display">\[
+An+B=n^2
+\]</span></p>
+<p><font color="red">Any point’s z on the far plane will not change</font>
+<span class="math display">\[
+\begin{bmatrix}
+0 \\
+0 \\
+f \\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 \\
+0 \\
+f^2 \\
+f
+\end{bmatrix}
+\]</span> then <span class="math display">\[
+Af+B=f^2
+\]</span></p>
+<p>As a result <span class="math display">\[
+A = n+f \space \space ; \space \space B = -nf
+\]</span> Finally <span class="math display">\[
+M_{ortho-&gt;persp} =
+\begin{bmatrix}
+n &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; n &amp; 0 &amp; 0  \\
+0 &amp; 0 &amp; n+f &amp; -nf  \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</span></p>
 
                 
               </div>
@@ -528,7 +811,7 @@ processes</p>
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="category-chain-item">操作系统</a>
+  <a href="/categories/GAMES101/" class="category-chain-item">GAMES101</a>
   
   
 
@@ -543,7 +826,7 @@ processes</p>
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">#操作系统</a>
+        <a href="/tags/GAMES101/">#GAMES101</a>
       
     </div>
   
@@ -555,8 +838,8 @@ processes</p>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Processes</div>
-      <div>http://gavinbowl.top/2022/09/30/Processes/</div>
+      <div>transformation</div>
+      <div>http://gavinbowl.top/2022/10/03/transformation/</div>
     </div>
     <div class="license-meta">
       
@@ -568,7 +851,7 @@ processes</p>
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年9月30日</div>
+          <div>2022年10月3日</div>
         </div>
       
       
@@ -598,18 +881,12 @@ processes</p>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/10/03/transformation/" title="transformation">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">transformation</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/09/29/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" title="支持向量机">
-                        <span class="hidden-mobile">支持向量机</span>
+                      <a href="/2022/09/30/Processes/" title="Processes">
+                        <span class="hidden-mobile">Processes</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -630,7 +907,7 @@ processes</p>
         var options = Object.assign(
           {"clientID":"4d9ed24c845ff8d68ff4","clientSecret":"b24a20f67727cff018c72f5025855b17b65e5bd7","repo":"GAVIN865.github.io","owner":"GAVIN865","admin":["GAVIN865"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
           {
-            id: '4d2835b2d25719f98d8f1a296c2d8eaf'
+            id: 'ef86c9a3f34226da73286ccdb563cebe'
           }
         )
         var gitalk = new Gitalk(options);
