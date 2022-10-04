@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>waitKey</title>
+    <link href="/2022/10/04/waitKey/"/>
+    <url>/2022/10/04/waitKey/</url>
+    
+    <content type="html"><![CDATA[<style>     .markdown-body {      font-family: Microsoft JhengHei, SimHei;      font-size: 16px;    }</style><h1 align="center">Visual Studio中cv::waitKey无法读取键盘输入问题</h1><h2 id="问题">1.问题</h2><p>在Visual Studio2022中运行c++项目时，opencv库中的<code>cv::waitKey()</code>函数一直无法读取键盘的输入。</p><h2 id="原因">2.原因</h2><figure><img src="/2022/10/04/waitKey/1.png" alt="1"><figcaption aria-hidden="true">1</figcaption></figure><p>在Debug模式中动态链接库选择<font color="orange">含有d</font>的.lib文件</p><p>同理Release模式对应<font color="orange">不含d</font>的.lib文件</p><h2 id="解决方案">3.解决方案</h2><p>在工程<code>属性</code>--&gt;<code>链接器</code>--&gt;<code>输入</code>--&gt;<code>附加依赖项</code>中仅保留相关的含d的.lib文件即可</p><figure><img src="/2022/10/04/waitKey/2.png" alt="2"><figcaption aria-hidden="true">2</figcaption></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>踩坑记录</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>踩坑记录</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>transformation</title>
     <link href="/2022/10/03/transformation/"/>
     <url>/2022/10/03/transformation/</url>

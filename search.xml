@@ -105,61 +105,6 @@ for \space \epsilon &lt; \frac{1}{2}L,\space lower \space bound = \space
       </tags>
   </entry>
   <entry>
-    <title>LaTex符号对照表</title>
-    <url>/2022/09/26/LaTex%E7%AC%A6%E5%8F%B7%E5%AF%B9%E7%85%A7%E8%A1%A8/</url>
-    <content><![CDATA[<style> 
-    .markdown-body {
-      font-family: Microsoft JhengHei, SimHei;
-      font-size: 16px;
-    }
-</style>
-<h1 align="center">
-LaTex符号对照表
-</h1>
-<h2 id="不同字体">1.不同字体</h2>
-<table>
-<thead>
-<tr class="header">
-<th>字体</th>
-<th>代码</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">\(\mathscr{L}\)</span></td>
-<td>\<span class="math inline">\(mathscr\{\}\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(\mathbb{L}\)</span></td>
-<td>\<span class="math inline">\(mathbb\{\}\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(\mathcal{L}\)</span></td>
-<td>\<span class="math inline">\(mathcal \{\}\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(\rm{L}\)</span></td>
-<td>\<span class="math inline">\(rm\{\}\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(\mathfrak{L}\)</span></td>
-<td>\<span class="math inline">\(mathfrak\{\}\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(\mathbf{L}\)</span></td>
-<td>\<span class="math inline">\(mathbf\{\}\)</span></td>
-</tr>
-</tbody>
-</table>
-]]></content>
-      <categories>
-        <category>LaTex</category>
-      </categories>
-      <tags>
-        <tag>LaTex</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Introduction to Operating System</title>
     <url>/2022/09/21/Introduction-to-Operating-System/</url>
     <content><![CDATA[<style> 
@@ -228,6 +173,61 @@ Architecture</h2>
       </categories>
       <tags>
         <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LaTex符号对照表</title>
+    <url>/2022/09/26/LaTex%E7%AC%A6%E5%8F%B7%E5%AF%B9%E7%85%A7%E8%A1%A8/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+LaTex符号对照表
+</h1>
+<h2 id="不同字体">1.不同字体</h2>
+<table>
+<thead>
+<tr class="header">
+<th>字体</th>
+<th>代码</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\mathscr{L}\)</span></td>
+<td>\<span class="math inline">\(mathscr\{\}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mathbb{L}\)</span></td>
+<td>\<span class="math inline">\(mathbb\{\}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mathcal{L}\)</span></td>
+<td>\<span class="math inline">\(mathcal \{\}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\rm{L}\)</span></td>
+<td>\<span class="math inline">\(rm\{\}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mathfrak{L}\)</span></td>
+<td>\<span class="math inline">\(mathfrak\{\}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mathbf{L}\)</span></td>
+<td>\<span class="math inline">\(mathbf\{\}\)</span></td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <categories>
+        <category>LaTex</category>
+      </categories>
+      <tags>
+        <tag>LaTex</tag>
       </tags>
   </entry>
   <entry>
@@ -857,6 +857,42 @@ you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p
 <figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>waitKey</title>
+    <url>/2022/10/04/waitKey/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+Visual Studio中cv::waitKey无法读取键盘输入问题
+</h1>
+<h2 id="问题">1.问题</h2>
+<p>在Visual Studio
+2022中运行c++项目时，opencv库中的<code>cv::waitKey()</code>函数一直无法读取键盘的输入。</p>
+<h2 id="原因">2.原因</h2>
+<figure>
+<img src="/2022/10/04/waitKey/1.png" alt="1">
+<figcaption aria-hidden="true">1</figcaption>
+</figure>
+<p>在Debug模式中动态链接库选择<font color="orange">含有d</font>的.lib文件</p>
+<p>同理Release模式对应<font color="orange">不含d</font>的.lib文件</p>
+<h2 id="解决方案">3.解决方案</h2>
+<p>在工程<code>属性</code>--&gt;<code>链接器</code>--&gt;<code>输入</code>--&gt;<code>附加依赖项</code>中仅保留相关的含d的.lib文件即可</p>
+<figure>
+<img src="/2022/10/04/waitKey/2.png" alt="2">
+<figcaption aria-hidden="true">2</figcaption>
+</figure>
+]]></content>
+      <categories>
+        <category>踩坑记录</category>
+      </categories>
+      <tags>
+        <tag>踩坑记录</tag>
+      </tags>
   </entry>
   <entry>
     <title>transformation</title>
@@ -1542,178 +1578,6 @@ y_i(\pmb{w}^T \pmb{x}_i+b) \ge 1 \textcolor{red}{-\xi_i}
       </tags>
   </entry>
   <entry>
-    <title>线性回归</title>
-    <url>/2022/09/19/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1/</url>
-    <content><![CDATA[<style> 
-    .markdown-body {
-      font-family: Microsoft JhengHei, SimHei;
-      font-size: 16px;
-    }
-</style>
-<h1 align="center">
-线性回归
-</h1>
-<h2 id="分类classification与回归regression">1.分类(Classification)与回归(Regression)</h2>
-<p>共同点：</p>
-<ul>
-<li>学习一个从<code>输入x</code>到<code>输出y</code>的<font color="red">映射</font></li>
-</ul>
-<p>分类：</p>
-<ul>
-<li>y是一个分类变量</li>
-</ul>
-<p>回归：</p>
-<ul>
-<li>y是一个实际的数值</li>
-</ul>
-<h2 id="线性模型linear-model">2.线性模型(Linear Model)</h2>
-<p>Linear Function: <span class="math display">\[
-f(x) = \pmb{w}^T\pmb{x} + b
-\]</span></p>
-<blockquote>
-<p><span class="math inline">\(\pmb{x} = [x_1,x_2,...,x_d]^T \in
-R^d\)</span></p>
-<p><span class="math inline">\(\pmb{w} = [w_1,w_2,...,w_d]^T \in
-R^d\)</span></p>
-</blockquote>
-<p>进一步简化表示为： <span class="math display">\[
-f(x) = \pmb{w}^T\pmb{x}
-\]</span></p>
-<blockquote>
-<p><span class="math inline">\(\pmb{x} = [x_1,x_2,...,x_d,1]^T \in
-R^{d+1}\)</span></p>
-<p><span class="math inline">\(\pmb{w} = [w_1,w_2,...,w_d,b]^T \in
-R^{d+1}\)</span></p>
-</blockquote>
-<h2 id="多项式曲线拟合polynomial-curve-fitting">3.多项式曲线拟合(Polynomial
-Curve Fitting)</h2>
-<p>用多项式去拟合若干给定的数据点</p>
-<figure>
-<img src="/2022/09/19/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1/1.png" alt="1">
-<figcaption aria-hidden="true">1</figcaption>
-</figure>
-<p><span class="math display">\[
-f(x,\pmb{w}) = w_0 + w_1x + w_2x + ... +w_Mx^M = \sum_{j=0}^{M}w_jx^j
-\]</span></p>
-<p>一些例子:</p>
-<p><span class="math inline">\(0^{th} Order Polynomial\)</span></p>
-<figure>
-<img src="/2022/09/19/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1/2.png" alt="2">
-<figcaption aria-hidden="true">2</figcaption>
-</figure>
-<p><span class="math inline">\(1^{st} Order Polynomial\)</span></p>
-<figure>
-<img src="/2022/09/19/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1/3.png" alt="3">
-<figcaption aria-hidden="true">3</figcaption>
-</figure>
-<p><span class="math inline">\(3^{rd} Order Polynomial\)</span></p>
-<figure>
-<img src="/2022/09/19/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1/4.png" alt="4">
-<figcaption aria-hidden="true">4</figcaption>
-</figure>
-<p>多项式拟合是一种线性模型</p>
-<blockquote>
-<p><span class="math inline">\(\pmb{x} =
-[1,x,x^2,...,x^M]^T\)</span></p>
-<p><span class="math inline">\(\pmb{w} =
-[w_1,w_2,...,w_M]^T\)</span></p>
-<p><span class="math inline">\(f(x,\pmb{w}) =
-\pmb{w}^T\pmb{x}\)</span></p>
-</blockquote>
-<h2 id="损失函数error-function">4.损失函数(Error Function)</h2>
-<figure>
-<img src="/2022/09/19/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1/5.png" alt="5">
-<figcaption aria-hidden="true">5</figcaption>
-</figure>
-<blockquote>
-<p>空心点为训练数据(training data)</p>
-<p>实线为训练所得函数 <span class="math inline">\(f(x) = y\)</span></p>
-</blockquote>
-<p>均方差损失函数(MSE,Mean Square Error) <span class="math display">\[
-MSE(\pmb{w})=\frac{1}{n}\sum_{i=1}^{n}(y_i-f(x_i,\pmb{w}))^2
-\]</span> 用来评价训练所得函数与训练数据的吻合程度</p>
-<p>训练目标是<font color="red">最小化</font>均方差损失(n可以看作一个常数暂时抛开不看)</p>
-<p>化简得： <span class="math display">\[
-J_n = \sum_{i=1}^{n}(y_i - \pmb{w}^T\pmb{x}_i)^2
-\]</span> 使用矩阵相关记号:</p>
-<blockquote>
-<p><span class="math inline">\(X =
-[\pmb{x}_1,...,\pmb{x}_n]\)</span></p>
-<p><span class="math inline">\(y =
-[\pmb{y}_1,...,\pmb{y}_n]^T\)</span></p>
-</blockquote>
-<p><span class="math display">\[
-J_n(\pmb{w})=(\pmb{y}-X^T\pmb{w})^T(\pmb{y}-X^T\pmb{w})
-\]</span></p>
-<p>梯度为0时损失值下降最快</p>
-<p>先计算梯度： <span class="math display">\[
-\nabla J_n = -2X(\pmb{y}-X^T\pmb{w})
-\]</span> 令梯度为0： <span class="math display">\[
-XX^T \pmb{w} = X \pmb{y} \\
-\pmb{w} = (XX^T)^{-1}X\pmb{y}
-\]</span> 于是得到了参数<span class="math inline">\(\pmb{w}\)</span>的修正后的数值</p>
-<h2 id="统计模型statistical-model">5.统计模型(Statistical Model)</h2>
-<p>给定一个生成模型: <span class="math display">\[
-y = f(\pmb{x},\pmb{w}) + \epsilon
-\]</span> 假设: <span class="math display">\[
-\epsilon  \sim N(0,\sigma^2)
-\]</span> 于是: <span class="math display">\[
-p(y|\pmb{x},\pmb{w},\sigma) = \frac{1}{\sigma \sqrt{2\pi}}
-e^{-\frac{1}{2\sigma^2}}(y-f(\pmb{x},\pmb{w}))^2
-\]</span></p>
-<p>先介绍一下argmax函数</p>
-<blockquote>
-<p>有一个函数 <span class="math inline">\(y = f(x)\)</span> 时</p>
-<p>若有 <span class="math inline">\(x_0 = argmax(f(x))\)</span></p>
-<p>则表示当 <span class="math inline">\(x = x_0\)</span> 时，函数 <span class="math inline">\(f(x)\)</span> 取到最大值</p>
-</blockquote>
-<p>极大似然估计(Maximum Likelihood Estimation) <span class="math display">\[
-L(\pmb{D},\pmb{w},\sigma)=\prod_{i=1}^{n}
-p(y_i|\pmb{x}_i,\pmb{w},\sigma) \\
-\pmb{w}^* = argmax \prod_{i=1}^{n} p(y_i|\pmb{x}_i,\pmb{w},\sigma)
-\]</span> 由于log函数单调不影响结果,于是取对数为Log-likelihood <span class="math display">\[
-l(\pmb{D},\pmb{w},\sigma) = log(L(\pmb{D},\pmb{w},\sigma)) =
-log\prod_{i=1}^{n} p(y_i|\pmb{x}_i,\pmb{w},\sigma) \\
-=\sum_{i=1}^{n}log \space p(y_i|\pmb{x}_i,\pmb{w},\sigma)\\
-= -\frac{1}{2\sigma^2}\sum_{i=1}^{n}(y-f(\pmb{x,\pmb{w}}))^2+c(\sigma)
-\]</span> 忽略常数后得到: <span class="math display">\[
-RSS(f) = \sum_{i=1}^{n}(y_i-f(\pmb{x}_i,\pmb{w}))^2
-\]</span></p>
-<p><strong>线性回归模型 <span class="math inline">\(\Leftrightarrow\)</span>
-具有高斯噪声的生成模型的极大似然估计</strong></p>
-<hr>
-<p>为了解决模型过拟合(Over-fitting)的问题，在原来基础上加入惩罚项，参数越多(模型越复杂)惩罚越大。</p>
-<hr>
-<h2 id="岭回归ridge-regressionl2正则化">6.岭回归(Ridge
-Regression)(L2正则化)</h2>
-<p><span class="math display">\[
-w^* = argmin\sum_{i=1}^{n}(y_i-\pmb{x}_i^T\pmb{w})^2  \textcolor{red}{ +
-\lambda\sum^{p}_{j=1}w_j^2}
-\]</span></p>
-<p>其对参数的限制方式可以表示为: <span class="math display">\[
-\textcolor{red}{\sum^{p}_{j=1}w_j^2 \le t}
-\]</span></p>
-<p>经过矩阵表示、梯度计算、化简等步骤后得到: <span class="math display">\[
-\pmb{w}^* = (XX^T+\lambda\pmb{I})^{-1}X\pmb{y}
-\]</span> 可以人为调节<span class="math inline">\(\lambda\)</span>的大小来得到更好效果的模型参数</p>
-<h2 id="lasso回归least-absolute-selection-and-shrinkage-operatorl1正则化">7.LASSO回归(Least
-Absolute Selection and Shrinkage Operator)(L1正则化)</h2>
-<p><span class="math display">\[
-w^* = argmin\sum_{i=1}^{n}(y_i-\pmb{x}_i^T\pmb{w})^2  \textcolor{red}{ +
-\lambda\sum^{p}_{j=1}|w_j|}
-\]</span></p>
-<p>其对参数的限制方式为: <span class="math display">\[
-\textcolor{red}{\sum^{p}_{j=1}|w_j| \le t}
-\]</span></p>
-]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>神经网络</title>
     <url>/2022/09/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</url>
     <content><![CDATA[<style> 
@@ -1885,6 +1749,178 @@ Neural Networks)</h2>
 <figcaption aria-hidden="true">15</figcaption>
 </figure>
 <p>取每个区域内的最大值作为新的值</p>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>线性回归</title>
+    <url>/2022/09/19/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+线性回归
+</h1>
+<h2 id="分类classification与回归regression">1.分类(Classification)与回归(Regression)</h2>
+<p>共同点：</p>
+<ul>
+<li>学习一个从<code>输入x</code>到<code>输出y</code>的<font color="red">映射</font></li>
+</ul>
+<p>分类：</p>
+<ul>
+<li>y是一个分类变量</li>
+</ul>
+<p>回归：</p>
+<ul>
+<li>y是一个实际的数值</li>
+</ul>
+<h2 id="线性模型linear-model">2.线性模型(Linear Model)</h2>
+<p>Linear Function: <span class="math display">\[
+f(x) = \pmb{w}^T\pmb{x} + b
+\]</span></p>
+<blockquote>
+<p><span class="math inline">\(\pmb{x} = [x_1,x_2,...,x_d]^T \in
+R^d\)</span></p>
+<p><span class="math inline">\(\pmb{w} = [w_1,w_2,...,w_d]^T \in
+R^d\)</span></p>
+</blockquote>
+<p>进一步简化表示为： <span class="math display">\[
+f(x) = \pmb{w}^T\pmb{x}
+\]</span></p>
+<blockquote>
+<p><span class="math inline">\(\pmb{x} = [x_1,x_2,...,x_d,1]^T \in
+R^{d+1}\)</span></p>
+<p><span class="math inline">\(\pmb{w} = [w_1,w_2,...,w_d,b]^T \in
+R^{d+1}\)</span></p>
+</blockquote>
+<h2 id="多项式曲线拟合polynomial-curve-fitting">3.多项式曲线拟合(Polynomial
+Curve Fitting)</h2>
+<p>用多项式去拟合若干给定的数据点</p>
+<figure>
+<img src="/2022/09/19/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1/1.png" alt="1">
+<figcaption aria-hidden="true">1</figcaption>
+</figure>
+<p><span class="math display">\[
+f(x,\pmb{w}) = w_0 + w_1x + w_2x + ... +w_Mx^M = \sum_{j=0}^{M}w_jx^j
+\]</span></p>
+<p>一些例子:</p>
+<p><span class="math inline">\(0^{th} Order Polynomial\)</span></p>
+<figure>
+<img src="/2022/09/19/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1/2.png" alt="2">
+<figcaption aria-hidden="true">2</figcaption>
+</figure>
+<p><span class="math inline">\(1^{st} Order Polynomial\)</span></p>
+<figure>
+<img src="/2022/09/19/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1/3.png" alt="3">
+<figcaption aria-hidden="true">3</figcaption>
+</figure>
+<p><span class="math inline">\(3^{rd} Order Polynomial\)</span></p>
+<figure>
+<img src="/2022/09/19/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1/4.png" alt="4">
+<figcaption aria-hidden="true">4</figcaption>
+</figure>
+<p>多项式拟合是一种线性模型</p>
+<blockquote>
+<p><span class="math inline">\(\pmb{x} =
+[1,x,x^2,...,x^M]^T\)</span></p>
+<p><span class="math inline">\(\pmb{w} =
+[w_1,w_2,...,w_M]^T\)</span></p>
+<p><span class="math inline">\(f(x,\pmb{w}) =
+\pmb{w}^T\pmb{x}\)</span></p>
+</blockquote>
+<h2 id="损失函数error-function">4.损失函数(Error Function)</h2>
+<figure>
+<img src="/2022/09/19/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1/5.png" alt="5">
+<figcaption aria-hidden="true">5</figcaption>
+</figure>
+<blockquote>
+<p>空心点为训练数据(training data)</p>
+<p>实线为训练所得函数 <span class="math inline">\(f(x) = y\)</span></p>
+</blockquote>
+<p>均方差损失函数(MSE,Mean Square Error) <span class="math display">\[
+MSE(\pmb{w})=\frac{1}{n}\sum_{i=1}^{n}(y_i-f(x_i,\pmb{w}))^2
+\]</span> 用来评价训练所得函数与训练数据的吻合程度</p>
+<p>训练目标是<font color="red">最小化</font>均方差损失(n可以看作一个常数暂时抛开不看)</p>
+<p>化简得： <span class="math display">\[
+J_n = \sum_{i=1}^{n}(y_i - \pmb{w}^T\pmb{x}_i)^2
+\]</span> 使用矩阵相关记号:</p>
+<blockquote>
+<p><span class="math inline">\(X =
+[\pmb{x}_1,...,\pmb{x}_n]\)</span></p>
+<p><span class="math inline">\(y =
+[\pmb{y}_1,...,\pmb{y}_n]^T\)</span></p>
+</blockquote>
+<p><span class="math display">\[
+J_n(\pmb{w})=(\pmb{y}-X^T\pmb{w})^T(\pmb{y}-X^T\pmb{w})
+\]</span></p>
+<p>梯度为0时损失值下降最快</p>
+<p>先计算梯度： <span class="math display">\[
+\nabla J_n = -2X(\pmb{y}-X^T\pmb{w})
+\]</span> 令梯度为0： <span class="math display">\[
+XX^T \pmb{w} = X \pmb{y} \\
+\pmb{w} = (XX^T)^{-1}X\pmb{y}
+\]</span> 于是得到了参数<span class="math inline">\(\pmb{w}\)</span>的修正后的数值</p>
+<h2 id="统计模型statistical-model">5.统计模型(Statistical Model)</h2>
+<p>给定一个生成模型: <span class="math display">\[
+y = f(\pmb{x},\pmb{w}) + \epsilon
+\]</span> 假设: <span class="math display">\[
+\epsilon  \sim N(0,\sigma^2)
+\]</span> 于是: <span class="math display">\[
+p(y|\pmb{x},\pmb{w},\sigma) = \frac{1}{\sigma \sqrt{2\pi}}
+e^{-\frac{1}{2\sigma^2}}(y-f(\pmb{x},\pmb{w}))^2
+\]</span></p>
+<p>先介绍一下argmax函数</p>
+<blockquote>
+<p>有一个函数 <span class="math inline">\(y = f(x)\)</span> 时</p>
+<p>若有 <span class="math inline">\(x_0 = argmax(f(x))\)</span></p>
+<p>则表示当 <span class="math inline">\(x = x_0\)</span> 时，函数 <span class="math inline">\(f(x)\)</span> 取到最大值</p>
+</blockquote>
+<p>极大似然估计(Maximum Likelihood Estimation) <span class="math display">\[
+L(\pmb{D},\pmb{w},\sigma)=\prod_{i=1}^{n}
+p(y_i|\pmb{x}_i,\pmb{w},\sigma) \\
+\pmb{w}^* = argmax \prod_{i=1}^{n} p(y_i|\pmb{x}_i,\pmb{w},\sigma)
+\]</span> 由于log函数单调不影响结果,于是取对数为Log-likelihood <span class="math display">\[
+l(\pmb{D},\pmb{w},\sigma) = log(L(\pmb{D},\pmb{w},\sigma)) =
+log\prod_{i=1}^{n} p(y_i|\pmb{x}_i,\pmb{w},\sigma) \\
+=\sum_{i=1}^{n}log \space p(y_i|\pmb{x}_i,\pmb{w},\sigma)\\
+= -\frac{1}{2\sigma^2}\sum_{i=1}^{n}(y-f(\pmb{x,\pmb{w}}))^2+c(\sigma)
+\]</span> 忽略常数后得到: <span class="math display">\[
+RSS(f) = \sum_{i=1}^{n}(y_i-f(\pmb{x}_i,\pmb{w}))^2
+\]</span></p>
+<p><strong>线性回归模型 <span class="math inline">\(\Leftrightarrow\)</span>
+具有高斯噪声的生成模型的极大似然估计</strong></p>
+<hr>
+<p>为了解决模型过拟合(Over-fitting)的问题，在原来基础上加入惩罚项，参数越多(模型越复杂)惩罚越大。</p>
+<hr>
+<h2 id="岭回归ridge-regressionl2正则化">6.岭回归(Ridge
+Regression)(L2正则化)</h2>
+<p><span class="math display">\[
+w^* = argmin\sum_{i=1}^{n}(y_i-\pmb{x}_i^T\pmb{w})^2  \textcolor{red}{ +
+\lambda\sum^{p}_{j=1}w_j^2}
+\]</span></p>
+<p>其对参数的限制方式可以表示为: <span class="math display">\[
+\textcolor{red}{\sum^{p}_{j=1}w_j^2 \le t}
+\]</span></p>
+<p>经过矩阵表示、梯度计算、化简等步骤后得到: <span class="math display">\[
+\pmb{w}^* = (XX^T+\lambda\pmb{I})^{-1}X\pmb{y}
+\]</span> 可以人为调节<span class="math inline">\(\lambda\)</span>的大小来得到更好效果的模型参数</p>
+<h2 id="lasso回归least-absolute-selection-and-shrinkage-operatorl1正则化">7.LASSO回归(Least
+Absolute Selection and Shrinkage Operator)(L1正则化)</h2>
+<p><span class="math display">\[
+w^* = argmin\sum_{i=1}^{n}(y_i-\pmb{x}_i^T\pmb{w})^2  \textcolor{red}{ +
+\lambda\sum^{p}_{j=1}|w_j|}
+\]</span></p>
+<p>其对参数的限制方式为: <span class="math display">\[
+\textcolor{red}{\sum^{p}_{j=1}|w_j| \le t}
+\]</span></p>
 ]]></content>
       <categories>
         <category>机器学习</category>
