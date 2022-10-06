@@ -232,6 +232,149 @@ for \space \epsilon &lt; \frac{1}{2}L,\space lower \space bound = \space
       </tags>
   </entry>
   <entry>
+    <title>Convex Function</title>
+    <url>/2022/10/06/Convex-Function/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+Convex Function
+</h1>
+<h2 id="definition">1.Definition</h2>
+<p>Definition 15:</p>
+<p>A set <span class="math inline">\(\mathcal{Q} \subseteq
+\mathbb{R}^n\)</span> is called <font color="orange">convex</font> if for
+any <span class="math inline">\(\pmb{x},\pmb{y} \in \mathcal{Q}\)</span>
+and <span class="math inline">\(\alpha\)</span> from [0,1] we have <span class="math display">\[
+\alpha \pmb{x} + (1 - \alpha) \pmb{y} \in \mathcal{Q} \tag{10}
+\]</span></p>
+<hr>
+<p>Definition 16:</p>
+<p>A continuously differentiable function <span class="math inline">\(f
+(·)\)</span> is called <font color="orange">convex</font> on a convex set
+<span class="math inline">\(\mathcal{Q}\)</span> (notation <span class="math inline">\(f \in \mathcal{F}^1(\mathcal{Q}^n )\)</span> if
+for any <span class="math inline">\(x, y \in \mathcal{Q}\)</span> we
+have <span class="math display">\[
+f(\pmb{y}) \ge f(\pmb{x}) + \langle \nabla
+f(\pmb{x}),\pmb{y}-\pmb{x}\rangle \tag{11}
+\]</span> if <span class="math inline">\(-f(\pmb{x})\)</span> is convex,
+we call <span class="math inline">\(f(\pmb{x})\)</span>
+<font color="orange">concave</font>.</p>
+<hr>
+<h2 id="properties-of-the-convex-function">2.Properties of the Convex
+Function</h2>
+<p>Lemma 18:</p>
+<p>if <span class="math inline">\(f_1\)</span> and <span class="math inline">\(f_2\)</span> belong to <span class="math inline">\(\mathcal{F}^1(\mathbb{R}^n)\)</span>, and <span class="math inline">\(\alpha , \beta \ge 0\)</span>, then the function
+<span class="math inline">\(f = \alpha f_1 + \beta f_2\)</span> also
+belong to <span class="math inline">\(\mathcal{F}^1(\mathbb{R}^n
+)\)</span>.</p>
+<hr>
+<p>Proof.</p>
+<p>for any <span class="math inline">\(\pmb{x} ,\pmb{y} \in
+\mathbb{R}^n\)</span>, we have <span class="math display">\[
+f_1(\pmb{y}) \ge f_1(\pmb{x}) + \langle \nabla
+f_1(\pmb{x}),\pmb{y}-\pmb{x}\rangle \tag{①}
+\]</span></p>
+<p><span class="math display">\[
+f_2(\pmb{y}) \ge f_2(\pmb{x}) + \langle \nabla
+f_2(\pmb{x}),\pmb{y}-\pmb{x}\rangle \tag{②}
+\]</span></p>
+<p>then <span class="math inline">\(\alpha \cdot\)</span>① + <span class="math inline">\(\beta \cdot\)</span>② .</p>
+<hr>
+<p>Lemma 19:</p>
+<p>if <span class="math inline">\(f \in
+\mathcal{F}^1(\mathbb{R}^n)\)</span>. <span class="math inline">\(b \in
+\mathbb{R}^m\)</span>, and <span class="math inline">\(A : \mathbb{R}^n
+\rightarrow \mathbb{R}^m\)</span>, then <span class="math display">\[
+\phi(\pmb{x}) = f(A\pmb{x}+\pmb{b}) \in \mathcal{F}^1(\mathbb{R}^n)
+\]</span></p>
+<hr>
+<p>Proof.</p>
+<p>Define <span class="math inline">\(\overline{\pmb{x}} =
+A\pmb{x}+\pmb{b}\)</span>, <span class="math inline">\(\overline{\pmb{y}} = A\pmb{y}+\pmb{b}\)</span>.
+since <span class="math inline">\(\phi&#39;(\pmb{x}) = A^T \nabla
+f(A\pmb{x}+\pmb{b})\)</span>, we have <span class="math display">\[
+\begin{aligned}
+\phi(\pmb{y}) = f(\overline{\pmb{y}}) &amp;\ge f(\overline{\pmb{x}}) +
+\langle \nabla
+f(\overline{\pmb{x}}),\overline{\pmb{y}}-\overline{\pmb{x}}\rangle \\
+&amp; = \phi(\pmb{x}) + \langle \nabla
+f(\overline{\pmb{x}}),A(\pmb{y}-\pmb{x})\rangle \\
+&amp; = \phi(\pmb{x}) + \langle A^T \nabla
+f(\overline{\pmb{x}}),(\pmb{y}-\pmb{x})\rangle \\
+&amp; =\phi(\pmb{x}) + \langle \phi(\pmb{x}),(\pmb{y}-\pmb{x})\rangle
+\end{aligned}
+\]</span></p>
+<hr>
+<p>Lemma 20:</p>
+<p>If <span class="math inline">\(f_i(\pmb{x})\)</span>, <span class="math inline">\(i \in I\)</span>, are convex, then <span class="math display">\[
+g(\pmb{x}) = \underset{i \in I}{max}f_i(\pmb{x})
+\]</span> is also convex.</p>
+<hr>
+<p>Lemma 21:</p>
+<ul>
+<li><p>If <span class="math inline">\(f\)</span> is a convex function on
+<span class="math inline">\(\mathbb{R}^n\)</span> and <span class="math inline">\(F (·)\)</span> is a convex and
+<font color="orange">non­-decreasing</font> function on <span class="math inline">\(\mathbb{R}\)</span>, then <span class="math inline">\(g (x) = F (f (x))\)</span> is convex.</p></li>
+<li><p>If <span class="math inline">\(f_i , i = 1, . . . , m\)</span>
+are convex functions on <span class="math inline">\(\mathbb{R}^n\)</span> and <span class="math inline">\(F (y_1 , . . . , y_m )\)</span> is convex and
+<font color="orange">non-­decreasing</font> (component­wise) in each
+argument, then <span class="math display">\[
+g(\pmb{x}) = F(f_1(\pmb{x}),...,f_m(\pmb{x}))
+\]</span> is convex.</p></li>
+</ul>
+<hr>
+<p>Lemma 22:</p>
+<p>If <span class="math inline">\(f(\pmb{x},\pmb{y})\)</span> is convex
+in <span class="math inline">\((\pmb{x},\pmb{y}) \in
+\mathbb{R}^n\)</span> and <span class="math inline">\(Y\)</span> is a
+convex set, then <span class="math display">\[
+g(\pmb{x}) = \underset{\pmb{y} \in Y}{\rm{inf}} \space
+f(\pmb{x},\pmb{y})
+\]</span> is convex.</p>
+<hr>
+<h2 id="equivalent-definitions">3.Equivalent Definitions</h2>
+<p>Theorem 23</p>
+<p>A continuously <font color="orange">differentiable</font> function
+<span class="math inline">\(f\)</span> belongs to the class <span class="math inline">\(\mathcal{F}^1(\mathbb{R}^n)\)</span> if and only
+if for any <span class="math inline">\(\pmb{x},\pmb{y} \in
+\mathbb{R}^n\)</span> and <span class="math inline">\(\alpha \in
+[0,1]\)</span> we have <span class="math display">\[
+f(\alpha \pmb{x} + (1 - \alpha)\pmb{y}) \le \alpha f(\pmb{x}) + (1 -
+\alpha) f(\pmb{y}) \tag{12}
+\]</span></p>
+<hr>
+<p>Theorem 24</p>
+<p>A continuously <font color="orange">differentiable</font> function
+<span class="math inline">\(f\)</span> belongs to the class <span class="math inline">\(\mathcal{F}^1(\mathbb{R}^n)\)</span> if and only
+if for any <span class="math inline">\(\pmb{x},\pmb{y} \in
+\mathbb{R}^n\)</span> we have</p>
+<p><span class="math display">\[
+\langle \nabla f(\pmb{x}) - \nabla f(\pmb{y}),\pmb{x} - \pmb{y} \rangle
+\ge 0 \tag{13}
+\]</span></p>
+<hr>
+<p>Theorem 25</p>
+<p>A twice continuously <font color="orange">differentiable</font>
+function <span class="math inline">\(f\)</span> belongs to the class
+<span class="math inline">\(\mathcal{F}^2 (\mathbb{R}^n )\)</span> if
+and only if for any <span class="math inline">\(x \in
+\mathbb{R}^n\)</span> we have <span class="math display">\[
+\nabla ^2 f(\pmb{x}) \succeq 0 \tag{14}
+\]</span></p>
+<hr>
+]]></content>
+      <categories>
+        <category>凸优化</category>
+      </categories>
+      <tags>
+        <tag>凸优化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Introduction to Operating System</title>
     <url>/2022/09/21/Introduction-to-Operating-System/</url>
     <content><![CDATA[<style> 
@@ -300,6 +443,61 @@ Architecture</h2>
       </categories>
       <tags>
         <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LaTex符号对照表</title>
+    <url>/2022/09/26/LaTex%E7%AC%A6%E5%8F%B7%E5%AF%B9%E7%85%A7%E8%A1%A8/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+LaTex符号对照表
+</h1>
+<h2 id="不同字体">1.不同字体</h2>
+<table>
+<thead>
+<tr class="header">
+<th>字体</th>
+<th>代码</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\mathscr{L}\)</span></td>
+<td>\<span class="math inline">\(mathscr\{\}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mathbb{L}\)</span></td>
+<td>\<span class="math inline">\(mathbb\{\}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mathcal{L}\)</span></td>
+<td>\<span class="math inline">\(mathcal \{\}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\rm{L}\)</span></td>
+<td>\<span class="math inline">\(rm\{\}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mathfrak{L}\)</span></td>
+<td>\<span class="math inline">\(mathfrak\{\}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mathbf{L}\)</span></td>
+<td>\<span class="math inline">\(mathbf\{\}\)</span></td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <categories>
+        <category>LaTex</category>
+      </categories>
+      <tags>
+        <tag>LaTex</tag>
       </tags>
   </entry>
   <entry>
@@ -578,61 +776,6 @@ Format)</h2>
       </tags>
   </entry>
   <entry>
-    <title>LaTex符号对照表</title>
-    <url>/2022/09/26/LaTex%E7%AC%A6%E5%8F%B7%E5%AF%B9%E7%85%A7%E8%A1%A8/</url>
-    <content><![CDATA[<style> 
-    .markdown-body {
-      font-family: Microsoft JhengHei, SimHei;
-      font-size: 16px;
-    }
-</style>
-<h1 align="center">
-LaTex符号对照表
-</h1>
-<h2 id="不同字体">1.不同字体</h2>
-<table>
-<thead>
-<tr class="header">
-<th>字体</th>
-<th>代码</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">\(\mathscr{L}\)</span></td>
-<td>\<span class="math inline">\(mathscr\{\}\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(\mathbb{L}\)</span></td>
-<td>\<span class="math inline">\(mathbb\{\}\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(\mathcal{L}\)</span></td>
-<td>\<span class="math inline">\(mathcal \{\}\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(\rm{L}\)</span></td>
-<td>\<span class="math inline">\(rm\{\}\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(\mathfrak{L}\)</span></td>
-<td>\<span class="math inline">\(mathfrak\{\}\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(\mathbf{L}\)</span></td>
-<td>\<span class="math inline">\(mathbf\{\}\)</span></td>
-</tr>
-</tbody>
-</table>
-]]></content>
-      <categories>
-        <category>LaTex</category>
-      </categories>
-      <tags>
-        <tag>LaTex</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Processes</title>
     <url>/2022/09/30/Processes/</url>
     <content><![CDATA[<style> 
@@ -857,6 +1000,29 @@ processes</p>
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2022/08/18/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
+first post. Check <a href="https://hexo.io/docs/">documentation</a> for
+more info. If you get any problems when using Hexo, you can find the
+answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
+you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Relaxation and approximation</title>
     <url>/2022/09/23/Relaxation-and-approximation/</url>
     <content><![CDATA[<style> 
@@ -961,29 +1127,6 @@ f&#39;(x^*) = 0, \space \space \space    f&#39;&#39;(x^*) \succeq  0.
       <tags>
         <tag>凸优化</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/08/18/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
-first post. Check <a href="https://hexo.io/docs/">documentation</a> for
-more info. If you get any problems when using Hexo, you can find the
-answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
-you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>transformation</title>
@@ -2057,114 +2200,6 @@ w^* = argmin\sum_{i=1}^{n}(y_i-\pmb{x}_i^T\pmb{w})^2  \textcolor{red}{ +
       </tags>
   </entry>
   <entry>
-    <title>聚类</title>
-    <url>/2022/09/28/%E8%81%9A%E7%B1%BB/</url>
-    <content><![CDATA[<style> 
-    .markdown-body {
-      font-family: Microsoft JhengHei, SimHei;
-      font-size: 16px;
-    }
-</style>
-<h1 align="center">
-聚类
-</h1>
-<h2 id="简介">1.简介</h2>
-<p><code>Cluster</code>: A collection of data objects</p>
-<p><code>Clustering</code>: <font color="red">Finding similarities</font>
-between data according to the characteristics found in the data and
-<font color="red">grouping</font> similar data objects into clusters</p>
-<p>采用的方法：<strong>Unsupervised Learning</strong></p>
-<p>一些典型的应用：</p>
-<ul>
-<li>作为独立的工具，用作图像分割、新闻分类等</li>
-<li>作为其他算法的预处理步骤</li>
-</ul>
-<h2 id="k-means算法">2.K-Means算法</h2>
-<p>对于给定的K，该算法步骤如下：</p>
-<ul>
-<li><p>随机选取<span class="math inline">\(K\)</span>个数据点作为每个类别的聚类中心<span class="math inline">\(\mu_k\)</span></p></li>
-<li><p>对每一个点计算到每一个聚类中心的距离，并将其归类于最近的一个聚类中心同种类别
-<span class="math display">\[
-z_i = arg \space \underset{k}{min} ||\pmb{x}_i - \pmb{\mu} _k||^2
-\]</span></p></li>
-<li><p>对于每一个聚类依据如下公式重新计算聚类中心(即质心) <span class="math display">\[
-\mu_k = \frac{1}{N_k} \sum_{i=1}^{N_k}\pmb{x}_i^{(k)}
-\]</span></p></li>
-<li><p>重复上述过程直到收敛</p></li>
-</ul>
-<p>一些细节：</p>
-<blockquote>
-<p>初始的<span class="math inline">\(\mu_k\)</span>不一定需要选取真实的数据点</p>
-</blockquote>
-<blockquote>
-<p>可能会有空的聚类出现</p>
-</blockquote>
-<blockquote>
-<p>算法时间复杂度<span class="math inline">\(O(tNKd)\)</span>,其中
-t为递归次数，d为点的维数</p>
-</blockquote>
-<p><img src="/2022/09/28/%E8%81%9A%E7%B1%BB/1.png" alt="1" style="zoom:50%;"></p>
-<p>损失函数： <span class="math display">\[
-\mathcal{L}_{TSD}(\pmb{z},\pmb{\mu}) = \sum_{i=1}^{N}||\pmb{x}_i -
-\pmb{\mu}_{z_i}||^2
-\]</span> 贪心算法最终得到的是一个<font color="red">局部最优解</font></p>
-<h2 id="k-medoids算法pam">3.K-Medoids算法(PAM)</h2>
-<p>由于K-Means算法容易受到个别<font color="red">极端点</font>的影响，于是加以改进</p>
-<p>不再选用质心作为中心点，而选取同一聚类中其他所有点到该点距离和最小的点为中心点
-<span class="math display">\[
-\pmb{\mu} = arg \space \underset{\pmb{x}_k}{min}\sum_j ||\pmb{x}_j -
-\pmb{x}_k||^2
-\]</span></p>
-<h2 id="gaussian-mixture-modelgmm">4.Gaussian Mixture Model(GMM)</h2>
-<p><img src="/2022/09/28/%E8%81%9A%E7%B1%BB/3.png" alt="3" style="zoom:67%;"> <span class="math display">\[
-p(\pmb{x};\pmb{\Theta})
-=  \sum_{k=1}^{K}p(k)p(\pmb{x}|k)=\sum_{k=1}^{K}\pi_kp_k(\pmb{x};\pmb{\theta_k})
-\]</span></p>
-<p><span class="math display">\[
-其中\pi_k是概率p(k),\sum_{k=1}^{K}\pi_k = 1
-\]</span></p>
-<p><span class="math display">\[
-其中p_k(\pmb{x};\pmb{\theta_k})即为p(\pmb{x}|k),符合多维正态\mathcal{N}(\pmb{x};\pmb{\mu}_k,\pmb{\Sigma}_k)
-\]</span></p>
-<p>log-likelihood function: <span class="math display">\[
-log \prod_{i=1}^{N}p(\pmb{x}^{(i)};\Theta) =
-\sum_{i=1}^{N}log(\sum_{k=1}^{K}\pi_k
-\mathcal{N}(\pmb{x}^{(i)};\pmb{\mu}_k,\pmb{\Sigma}_k))
-\]</span></p>
-<p>需要估计的参数有：<span class="math inline">\(\pi_k,\pmb{\mu}_k,\pmb{\Sigma}_k\)</span></p>
-<h2 id="expectation-maximization算法em">5.Expectation
-Maximization算法(EM)</h2>
-<p>凸函数(Convex Functions)： <span class="math display">\[
-f(\theta x + (1-\theta)y) \le \theta f(x) + (1-\theta ) f(y)
-\]</span> <img src="/2022/09/28/%E8%81%9A%E7%B1%BB/4.png" alt="4" style="zoom:50%;"></p>
-<p>Jensen’s inequality: <span class="math display">\[
-f(\sum_{i=1}^{n}\lambda_i x_i) \le \sum_{i=1}^{n}\lambda_if(x_i) \space
-\space \space \space \lambda_i \ge 0, \sum_i \lambda_i = 1
-\]</span></p>
-<p><span class="math display">\[
-f(E(X)) \le E[f(X)]
-\]</span></p>
-<p>EM algorithm</p>
-<p>每次EM算法的迭代包含两个步骤<code>Expectation-step</code> 和
-<code>Maximization-step</code></p>
-<ol type="1">
-<li>E步骤：根据参数的假设值，给出未知变量的期望估计，应用于缺失值。</li>
-<li>M步骤：根据未知变量的估计值，给出当前的参数的极大似然估计。</li>
-</ol>
-<p>根据图直观理解：</p>
-<p><img src="/2022/09/28/%E8%81%9A%E7%B1%BB/5.png" alt="5" style="zoom: 50%;"></p>
-<p>E: 根据参数<span class="math inline">\(\theta_1\)</span>给出估计，即图中小的凹函数</p>
-<p>M: 进行极大似然估计，找到该函数的最大值处对应的参数<span class="math inline">\(\theta_2\)</span></p>
-<p>不断进行迭代找到最优解</p>
-]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>贝叶斯决策理论</title>
     <url>/2022/09/13/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%86%B3%E7%AD%96%E7%90%86%E8%AE%BA/</url>
     <content><![CDATA[<style>
@@ -2277,6 +2312,114 @@ R(\alpha_i|x) = \sum_{j=1}^{c} \lambda(\alpha_i|\omega_j)P(\omega_j | x)
 = \sum_{j{\neq}i} P(\omega_j | x) = 1-P(\omega_i | x)
 \]</span>
 需要风险最小化，由上述式子可知需要后验概率最大化，选择后验概率最大的即可</p>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>聚类</title>
+    <url>/2022/09/28/%E8%81%9A%E7%B1%BB/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+聚类
+</h1>
+<h2 id="简介">1.简介</h2>
+<p><code>Cluster</code>: A collection of data objects</p>
+<p><code>Clustering</code>: <font color="red">Finding similarities</font>
+between data according to the characteristics found in the data and
+<font color="red">grouping</font> similar data objects into clusters</p>
+<p>采用的方法：<strong>Unsupervised Learning</strong></p>
+<p>一些典型的应用：</p>
+<ul>
+<li>作为独立的工具，用作图像分割、新闻分类等</li>
+<li>作为其他算法的预处理步骤</li>
+</ul>
+<h2 id="k-means算法">2.K-Means算法</h2>
+<p>对于给定的K，该算法步骤如下：</p>
+<ul>
+<li><p>随机选取<span class="math inline">\(K\)</span>个数据点作为每个类别的聚类中心<span class="math inline">\(\mu_k\)</span></p></li>
+<li><p>对每一个点计算到每一个聚类中心的距离，并将其归类于最近的一个聚类中心同种类别
+<span class="math display">\[
+z_i = arg \space \underset{k}{min} ||\pmb{x}_i - \pmb{\mu} _k||^2
+\]</span></p></li>
+<li><p>对于每一个聚类依据如下公式重新计算聚类中心(即质心) <span class="math display">\[
+\mu_k = \frac{1}{N_k} \sum_{i=1}^{N_k}\pmb{x}_i^{(k)}
+\]</span></p></li>
+<li><p>重复上述过程直到收敛</p></li>
+</ul>
+<p>一些细节：</p>
+<blockquote>
+<p>初始的<span class="math inline">\(\mu_k\)</span>不一定需要选取真实的数据点</p>
+</blockquote>
+<blockquote>
+<p>可能会有空的聚类出现</p>
+</blockquote>
+<blockquote>
+<p>算法时间复杂度<span class="math inline">\(O(tNKd)\)</span>,其中
+t为递归次数，d为点的维数</p>
+</blockquote>
+<p><img src="/2022/09/28/%E8%81%9A%E7%B1%BB/1.png" alt="1" style="zoom:50%;"></p>
+<p>损失函数： <span class="math display">\[
+\mathcal{L}_{TSD}(\pmb{z},\pmb{\mu}) = \sum_{i=1}^{N}||\pmb{x}_i -
+\pmb{\mu}_{z_i}||^2
+\]</span> 贪心算法最终得到的是一个<font color="red">局部最优解</font></p>
+<h2 id="k-medoids算法pam">3.K-Medoids算法(PAM)</h2>
+<p>由于K-Means算法容易受到个别<font color="red">极端点</font>的影响，于是加以改进</p>
+<p>不再选用质心作为中心点，而选取同一聚类中其他所有点到该点距离和最小的点为中心点
+<span class="math display">\[
+\pmb{\mu} = arg \space \underset{\pmb{x}_k}{min}\sum_j ||\pmb{x}_j -
+\pmb{x}_k||^2
+\]</span></p>
+<h2 id="gaussian-mixture-modelgmm">4.Gaussian Mixture Model(GMM)</h2>
+<p><img src="/2022/09/28/%E8%81%9A%E7%B1%BB/3.png" alt="3" style="zoom:67%;"> <span class="math display">\[
+p(\pmb{x};\pmb{\Theta})
+=  \sum_{k=1}^{K}p(k)p(\pmb{x}|k)=\sum_{k=1}^{K}\pi_kp_k(\pmb{x};\pmb{\theta_k})
+\]</span></p>
+<p><span class="math display">\[
+其中\pi_k是概率p(k),\sum_{k=1}^{K}\pi_k = 1
+\]</span></p>
+<p><span class="math display">\[
+其中p_k(\pmb{x};\pmb{\theta_k})即为p(\pmb{x}|k),符合多维正态\mathcal{N}(\pmb{x};\pmb{\mu}_k,\pmb{\Sigma}_k)
+\]</span></p>
+<p>log-likelihood function: <span class="math display">\[
+log \prod_{i=1}^{N}p(\pmb{x}^{(i)};\Theta) =
+\sum_{i=1}^{N}log(\sum_{k=1}^{K}\pi_k
+\mathcal{N}(\pmb{x}^{(i)};\pmb{\mu}_k,\pmb{\Sigma}_k))
+\]</span></p>
+<p>需要估计的参数有：<span class="math inline">\(\pi_k,\pmb{\mu}_k,\pmb{\Sigma}_k\)</span></p>
+<h2 id="expectation-maximization算法em">5.Expectation
+Maximization算法(EM)</h2>
+<p>凸函数(Convex Functions)： <span class="math display">\[
+f(\theta x + (1-\theta)y) \le \theta f(x) + (1-\theta ) f(y)
+\]</span> <img src="/2022/09/28/%E8%81%9A%E7%B1%BB/4.png" alt="4" style="zoom:50%;"></p>
+<p>Jensen’s inequality: <span class="math display">\[
+f(\sum_{i=1}^{n}\lambda_i x_i) \le \sum_{i=1}^{n}\lambda_if(x_i) \space
+\space \space \space \lambda_i \ge 0, \sum_i \lambda_i = 1
+\]</span></p>
+<p><span class="math display">\[
+f(E(X)) \le E[f(X)]
+\]</span></p>
+<p>EM algorithm</p>
+<p>每次EM算法的迭代包含两个步骤<code>Expectation-step</code> 和
+<code>Maximization-step</code></p>
+<ol type="1">
+<li>E步骤：根据参数的假设值，给出未知变量的期望估计，应用于缺失值。</li>
+<li>M步骤：根据未知变量的估计值，给出当前的参数的极大似然估计。</li>
+</ol>
+<p>根据图直观理解：</p>
+<p><img src="/2022/09/28/%E8%81%9A%E7%B1%BB/5.png" alt="5" style="zoom: 50%;"></p>
+<p>E: 根据参数<span class="math inline">\(\theta_1\)</span>给出估计，即图中小的凹函数</p>
+<p>M: 进行极大似然估计，找到该函数的最大值处对应的参数<span class="math inline">\(\theta_2\)</span></p>
+<p>不断进行迭代找到最优解</p>
 ]]></content>
       <categories>
         <category>机器学习</category>
