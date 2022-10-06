@@ -16,26 +16,26 @@
   <meta name="author" content="Gavin">
   <meta name="keywords" content="">
   
-    <meta name="description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   Visual Studio中cv::waitKey无法读取键盘输入问题  1.问题 在Visual Studio 2022中运行c++项目时，opencv库中的cv::wait">
+    <meta name="description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   Classes of differentiable functions  1.Define class of functions \(Q\) is subset of \(R^n">
 <meta property="og:type" content="article">
-<meta property="og:title" content="waitKey">
-<meta property="og:url" content="http://gavinbowl.top/2022/10/04/waitKey/index.html">
+<meta property="og:title" content="Classes of differentiable functions">
+<meta property="og:url" content="http://gavinbowl.top/2022/10/06/Classes-of-differentiable-functions/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   Visual Studio中cv::waitKey无法读取键盘输入问题  1.问题 在Visual Studio 2022中运行c++项目时，opencv库中的cv::wait">
+<meta property="og:description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   Classes of differentiable functions  1.Define class of functions \(Q\) is subset of \(R^n">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://gavinbowl.top/img/15.jpg">
-<meta property="article:published_time" content="2022-10-04T15:21:25.000Z">
-<meta property="article:modified_time" content="2022-10-06T04:04:16.178Z">
+<meta property="og:image" content="http://gavinbowl.top/img/16.jpg">
+<meta property="article:published_time" content="2022-10-06T04:03:27.000Z">
+<meta property="article:modified_time" content="2022-10-06T05:25:16.925Z">
 <meta property="article:author" content="Gavin">
-<meta property="article:tag" content="踩坑记录">
+<meta property="article:tag" content="凸优化">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://gavinbowl.top/img/15.jpg">
+<meta name="twitter:image" content="http://gavinbowl.top/img/16.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>waitKey - 0</title>
+  <title>Classes of differentiable functions - 0</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -212,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="waitKey"></span>
+            <span id="subtitle" data-typed-text="Classes of differentiable functions"></span>
           
         </div>
 
@@ -223,8 +223,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-10-04 23:21" pubdate>
-          2022年10月4日 晚上
+        <time datetime="2022-10-06 12:03" pubdate>
+          2022年10月6日 中午
         </time>
       </span>
     
@@ -235,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          281 字
+          3k 字
         
       </span>
     
@@ -246,7 +246,7 @@
         
         
         
-          3 分钟
+          25 分钟
         
       </span>
     
@@ -292,7 +292,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">waitKey</h1>
+            <h1 style="display: none">Classes of differentiable functions</h1>
             
             
               <div class="markdown-body">
@@ -304,24 +304,115 @@
     }
 </style>
 <h1 align="center">
-Visual Studio中cv::waitKey无法读取键盘输入问题
+Classes of differentiable functions
 </h1>
-<h2 id="问题">1.问题</h2>
-<p>在Visual Studio
-2022中运行c++项目时，opencv库中的<code>cv::waitKey()</code>函数一直无法读取键盘的输入。</p>
-<h2 id="原因">2.原因</h2>
-<figure>
-<img src="/2022/10/04/waitKey/1.png" srcset="/img/loading.gif" lazyload alt="1">
-<figcaption aria-hidden="true">1</figcaption>
-</figure>
-<p>在Debug模式中动态链接库选择<font color="orange">含有d</font>的.lib文件</p>
-<p>同理Release模式对应<font color="orange">不含d</font>的.lib文件</p>
-<h2 id="解决方案">3.解决方案</h2>
-<p>在工程<code>属性</code>--&gt;<code>链接器</code>--&gt;<code>输入</code>--&gt;<code>附加依赖项</code>中仅保留相关的含d的.lib文件即可</p>
-<figure>
-<img src="/2022/10/04/waitKey/2.png" srcset="/img/loading.gif" lazyload alt="2">
-<figcaption aria-hidden="true">2</figcaption>
-</figure>
+<h2 id="define-class-of-functions">1.Define class of functions</h2>
+<p><span class="math inline">\(Q\)</span> is subset of <span class="math inline">\(R^n\)</span> , we denote <span class="math inline">\(C^{k,p}_L(Q)\)</span> the class of the
+functions</p>
+<p>properties:</p>
+<ul>
+<li><p>any <span class="math inline">\(f \in C^{k,p}_L(Q)\)</span> is
+<font color="orange"><span class="math inline">\(k\)</span> times
+continuesly differentiable</font> on <span class="math inline">\(Q\)</span>.</p></li>
+<li><p>Its <span class="math inline">\(p\)</span>th derivative is
+<font color="orange">Lipschitz colltinuous</font> on <span class="math inline">\(Q\)</span> with the constant <span class="math inline">\(L\)</span>: <span class="math display">\[
+||f^{(p)}(x) - f^{(p)}(y)|| \le L||x-y||
+\]</span></p></li>
+<li><p>if <span class="math inline">\(f_1 \in C^{k,p}_{L_1}(Q)\)</span>
+, <span class="math inline">\(f_2 \in C^{k,p}_{L_2}(Q)\)</span> and
+<span class="math inline">\(\alpha,\beta \in R^1\)</span>, then for
+<span class="math display">\[
+\textcolor{orange}{L_3 = |\alpha|L_1 + |\beta|L_2}
+\]</span> we have <span class="math inline">\(\alpha f_1 + \beta f_2 \in
+C^{k,p}_{L_3}(Q)\)</span></p></li>
+</ul>
+<p>Most important class of functions is <span class="math inline">\(C^{1,1}_L(R^n)\)</span>, which implies that <span class="math display">\[
+||f&#39;(x) - f&#39;(y)|| \le L||x-y|| \tag{1.2.3}
+\]</span></p>
+<h2 id="lemma-1.2.2">2.LEMMA 1.2.2</h2>
+<p><span class="math inline">\(\textcolor{orange}{LEMMA \space
+1.2.2}\)</span> Function <span class="math inline">\(f(x)\)</span>
+belongs to <span class="math inline">\(C^{2,1}_L(R^n) \subset
+C^{1,1}_L(R^n)\)</span> if and only if <span class="math display">\[
+||f^{&#39;&#39;}(x)|| \le L, \space \space \space \forall x \in R^{n}
+\tag{1.2.4}
+\]</span></p>
+<p>Proof.</p>
+<p><span class="math inline">\(\Leftarrow\)</span>:</p>
+<p>for any <span class="math inline">\(x,y \in R^n\)</span> we have
+<span class="math display">\[
+\begin{aligned}
+f&#39;(y) &amp;= f&#39;(x) + f&#39;(y) - f&#39;(x) \\
+      &amp;= f&#39;(x) + f&#39;(x + (y - x)) - f&#39;(x) \\
+      &amp;= f&#39;(x) + \int^{1}_{0}f&#39;&#39;(x +
+\tau(y-x))(y-x)d\tau \\
+      &amp;= f&#39;(x) + (\int^{1}_{0}f&#39;&#39;(x +
+\tau(y-x))d\tau)(y-x)
+\end{aligned}
+\]</span> therefore <span class="math display">\[
+\begin{aligned}
+||f&#39;(y) - f&#39;(x)|| &amp;= ||(\int^{1}_{0}f&#39;&#39;(x +
+\tau(y-x))d\tau)\cdot(y-x)|| \\
+&amp;\le ||(\int^{1}_{0}f&#39;&#39;(x + \tau(y-x))d\tau)||\cdot||(y-x)||
+\\
+&amp;\le \int^1_0||f&#39;&#39;(x+\tau(y-x))||d\tau \cdot ||y-x|| \\
+&amp;\le L||y-x|| \space \space (apply \space 1.2.4)
+\end{aligned}
+\]</span></p>
+<p><span class="math inline">\(\Rightarrow\)</span>:</p>
+<p>for any <span class="math inline">\(s \in R^n\)</span> , <span class="math inline">\(\alpha &gt; 0\)</span>: <span class="math display">\[
+||(\int_0^{\alpha}f&#39;&#39;(x + \tau s)d\tau) \cdot
+s||=||f&#39;(x+\alpha s) - f&#39;(x)|| \le L||\alpha s|| = \alpha L||s||
+\]</span> dividing by <span class="math inline">\(\alpha\)</span> and
+let <span class="math inline">\(\alpha \rightarrow 0\)</span>, then
+<span class="math display">\[
+||f&#39;&#39;(x)|| \le L
+\]</span></p>
+<h2 id="lemma-1.2.3">3.LEMMA 1.2.3</h2>
+<p><span class="math inline">\(\textcolor{orange}{LEMMA \space
+1.2.3}\)</span> Let <span class="math inline">\(f \in
+C^{1,1}_L(R^n)\)</span>. Then for any <span class="math inline">\(x,y\)</span> from <span class="math inline">\(R^n\)</span> we have <span class="math display">\[
+|f(y)-f(x)-\langle f&#39;(x),y-x \rangle| \le \frac{L}{2}||y-x||^2
+\tag{1.2.5}
+\]</span></p>
+<p>Proof.</p>
+<p>For all <span class="math inline">\(x,y \in R^n\)</span> we have
+<span class="math display">\[
+\begin {aligned}
+f(y) &amp;= f(x) + \int^{1}_{0}f&#39;(x + \tau(y-x))(y-x)d\tau \\
+     &amp;= f(x) + \langle f&#39;(x),y-x \rangle +
+\int^{1}_{0}f&#39;\langle x + \tau(y-x))-f&#39;(x),y-x\rangle d\tau
+\end{aligned}
+\]</span> therefore <span class="math display">\[
+\begin{aligned}
+|f(y)-f(x)-\langle f&#39;(x),y-x \rangle| &amp;=
+|\int^{1}_{0}f&#39;\langle x + \tau(y-x))-f&#39;(x),y-x\rangle d\tau |
+\\
+&amp; \le \int^{1}_{0}|f&#39;\langle x +
+\tau(y-x))-f&#39;(x),y-x\rangle| d\tau \\
+&amp; \le \int^{1}_{0} || f&#39;( x +
+\tau(y-x))-f&#39;(x))||\cdot||y-x|| d\tau \\
+&amp; \le \int_0^1 \tau L ||y-x||^2 d\tau =\frac{L}{2}||y-x||^2
+\end{aligned}
+\]</span></p>
+<h2 id="lemma-1.2.4">4.LEMMA 1.2.4</h2>
+<p>Similarly we have</p>
+<p><span class="math inline">\(\textcolor{orange}{LEMMA \space
+1.2.4}\)</span> Let <span class="math inline">\(f \in
+C^{2,2}_L(R^n)\)</span>. Then for any <span class="math inline">\(x,y\)</span> from <span class="math inline">\(R^n\)</span> we have <span class="math display">\[
+||f&#39;(y)-f&#39;(x)-f&#39;&#39;(x)(y-x)|| \le \frac{M}{2}||y-x||^2
+\]</span></p>
+<p><span class="math display">\[
+|f(y)-f(x)-\langle f&#39;(x),y-x\rangle -\frac{1}{2} \langle
+f&#39;&#39;(x)(y-x),y-x \rangle| \le \frac{M}{6} ||y-x||^3
+\]</span></p>
+<h2 id="corollary-1.2.2">5.COROLLARY 1.2.2</h2>
+<p><span class="math inline">\(\textcolor{orange}{COROLLARY \space
+1.2.2}\)</span> Let <span class="math inline">\(f \in
+C^{2,2}_M(R^n)\)</span> <span class="math display">\[
+f&#39;&#39;(x)-M||y-x||I_n \preceq f&#39;&#39;(y) \preceq f&#39;&#39;(x)
++ M||y-x||I_n
+\]</span></p>
 
                 
               </div>
@@ -340,7 +431,7 @@ Visual Studio中cv::waitKey无法读取键盘输入问题
     
       <span class="category-chain">
         
-  <a href="/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-chain-item">踩坑记录</a>
+  <a href="/categories/%E5%87%B8%E4%BC%98%E5%8C%96/" class="category-chain-item">凸优化</a>
   
   
 
@@ -355,7 +446,7 @@ Visual Studio中cv::waitKey无法读取键盘输入问题
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">#踩坑记录</a>
+        <a href="/tags/%E5%87%B8%E4%BC%98%E5%8C%96/">#凸优化</a>
       
     </div>
   
@@ -367,8 +458,8 @@ Visual Studio中cv::waitKey无法读取键盘输入问题
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>waitKey</div>
-      <div>http://gavinbowl.top/2022/10/04/waitKey/</div>
+      <div>Classes of differentiable functions</div>
+      <div>http://gavinbowl.top/2022/10/06/Classes-of-differentiable-functions/</div>
     </div>
     <div class="license-meta">
       
@@ -380,7 +471,7 @@ Visual Studio中cv::waitKey无法读取键盘输入问题
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年10月4日</div>
+          <div>2022年10月6日</div>
         </div>
       
       
@@ -410,18 +501,12 @@ Visual Studio中cv::waitKey无法读取键盘输入问题
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/10/06/Classes-of-differentiable-functions/" title="Classes of differentiable functions">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Classes of differentiable functions</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/10/03/transformation/" title="transformation">
-                        <span class="hidden-mobile">transformation</span>
+                      <a href="/2022/10/04/waitKey/" title="waitKey">
+                        <span class="hidden-mobile">waitKey</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -442,7 +527,7 @@ Visual Studio中cv::waitKey无法读取键盘输入问题
         var options = Object.assign(
           {"clientID":"4d9ed24c845ff8d68ff4","clientSecret":"b24a20f67727cff018c72f5025855b17b65e5bd7","repo":"GAVIN865.github.io","owner":"GAVIN865","admin":["GAVIN865"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
           {
-            id: '2776f4cbd2e8e2432fa844bb138e7fa9'
+            id: 'ac2a157a4e7b569b2bd4e237de3b6238'
           }
         )
         var gitalk = new Gitalk(options);
