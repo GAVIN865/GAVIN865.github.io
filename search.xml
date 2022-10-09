@@ -128,110 +128,6 @@ f&#39;&#39;(x)-M||y-x||I_n \preceq f&#39;&#39;(y) \preceq f&#39;&#39;(x)
       </tags>
   </entry>
   <entry>
-    <title>Complexity bounds for global optimization</title>
-    <url>/2022/09/22/Complexity-bounds-for-global-optimization/</url>
-    <content><![CDATA[<style> 
-    .markdown-body {
-      font-family: Microsoft JhengHei, SimHei;
-      font-size: 16px;
-    }
-</style>
-<h1 align="center">
-Complexity bounds for global optimization
-</h1>
-<h2 id="提出问题">1.提出问题</h2>
-<p>一个约束最小化问题： <span class="math display">\[
-\underset{x \in B_n}{min} f(x)
-\]</span> 其中： <span class="math display">\[
-B_n = \{ x \in R^n | 0 \le x^{(i)} \le1,i=1 ... n \}
-\]</span> <span class="math inline">\(x\)</span>为<span class="math inline">\(n\)</span>维向量，<span class="math inline">\(x^{(i)}\)</span>为<span class="math inline">\(x\)</span>向量中的每一个分量</p>
-<p>给出以下记号： <span class="math display">\[
-||x||_{\infty} = \underset{1 \le i \le n}{max}|x^{(i)}|
-\]</span></p>
-<h2 id="利普希茨连续lipschitz-continuity">2.<strong>利普希茨连续</strong>(Lipschitz
-continuity)</h2>
-<p>一个函数是利普希茨连续的时有 <span class="math display">\[
-|f(x)-f(y)| \le L ||x-y||_{\infty} \space \space \space \space \space
-\space \space \space \forall x,y \in B_n
-\]</span> 其中<span class="math inline">\(L\)</span>为利普希茨常数(Lipschitz constant)</p>
-<h2 id="均格法uniform-grid-method解决">3.均格法(uniform grid
-method)解决</h2>
-<p><span class="math display">\[
-Method \space \space  \mathscr{G}(p)
-\]</span></p>
-<ul>
-<li>构造<span class="math inline">\((p+1)^n\)</span>个点</li>
-</ul>
-<p><span class="math display">\[
-x_{(i_1,...,i_n)} = (\frac{i_1}{p},\frac{i_2}{p},...,\frac{i_n}{p})^T
-\]</span></p>
-<p>​ 其中<span class="math inline">\((i_1,...,i_n) \in \{0,...,p
-\}^n\)</span></p>
-<ul>
-<li>在所有的点中找到一个点<span class="math inline">\(\bar{x}\)</span>,其对应的目标函数的值最小</li>
-<li>返回<span class="math inline">\((\bar{x},f(\bar{x}))\)</span>作为结果</li>
-</ul>
-<p><font color="red">该方法找到的是近似解(approximate
-solution)!!!</font></p>
-<h2 id="评估结果">4.评估结果</h2>
-<p><font color="red">定理</font>： 令<span class="math inline">\(f^*\)</span>作为该问题的<font color="red">全局最优解</font>,于是
-<span class="math display">\[
-f(\bar{x})  - f^* \le \frac{L}{2p}
-\]</span></p>
-<p><font color="red">直观理解</font>：</p>
-<p>这些点均匀分布于边长为1的空间中，任意相邻两点之间距离为<span class="math inline">\(\frac{1}{p}\)</span>,于是全局最优解坐标距离近似解不超过<span class="math inline">\(\frac{1}{2p}\)</span>,对应到值域乘上一个斜率系数<span class="math inline">\(L\)</span>即可。</p>
-<p><font color="red">严格证明</font>：</p>
-<p>令<span class="math inline">\(x_*\)</span>为全局最优解对应的点，于是存在 <span class="math display">\[
-x \equiv x_{(i_1,...,i_n)} \le x_* \le x_{(i_1+1,...,i_n+1)} \equiv y
-\]</span></p>
-<blockquote>
-<p>ps: 对于n维向量，当且仅当任意<span class="math inline">\(x^{(i)} \le
-y^{(i)}\)</span>时，写作<span class="math inline">\(x \le y\)</span></p>
-</blockquote>
-<p>其中<span class="math inline">\(y^{(i)} - x^{(i)} =
-\frac{1}{p}\)</span>且 <span class="math display">\[
-x_*^{(i)} \in [x^{(i)},y^{(i)}]
-\]</span> 令<span class="math inline">\(\hat{x} =
-(x+y)/2\)</span>.构造一个点<span class="math inline">\(\tilde{x}\)</span>如下： <span class="math display">\[
-\tilde{x}^{(i)} =  \begin{cases}  y^{(i)} &amp; if \space
-\tilde{x}^{(i)} \le x_*^{(i)} \\ x^{(i)} &amp; otherwise\end{cases}
-\]</span> 显然<span class="math inline">\(|\tilde{x}^{(i)}-x_*^{(i)}|\le
-\frac{1}{2p}\)</span>,因此 <span class="math display">\[
-||\tilde{x}-x_*||_{\infty} = \underset{1\le i \le
-n}{max}|\tilde{x}^{(i)}-x_*^{(i)}|\le \frac{1}{2p}
-\]</span> 由于<span class="math inline">\(\tilde{x}\)</span>属于网格，于是 <span class="math display">\[
-f(\bar{x})-f(x_*) \le f(\tilde{x})-f(x_*) \le
-L||\tilde{x}-x_*||_{\infty} \le \frac{L}{2p}
-\]</span> 得证！</p>
-<p>于是可以写作 <span class="math display">\[
-Find \space \bar{x} \in B_n : f(\bar{x}) - f^* \le \epsilon
-\]</span></p>
-<h2 id="推论">5.推论</h2>
-<p><span class="math inline">\(Method \mathscr{G}\)</span>的复杂度为
-<span class="math display">\[
-\mathscr{A}(\mathscr{G}) = (\lfloor \frac{L}{2\epsilon} \rfloor+2)^n
-\]</span> 证明：</p>
-<p>当<span class="math inline">\(p\)</span>取<span class="math inline">\(\lfloor \frac{L}{2\epsilon}
-\rfloor+1\)</span>时，有<span class="math inline">\(p \ge
-\frac{L}{2\epsilon}\)</span>，此时满足<span class="math inline">\(f(\bar{x}) - f^* \le \frac{L}{2p} \le
-\epsilon\)</span></p>
-<p>于是由<span class="math inline">\((p+1)^n\)</span> 可以得出 <span class="math inline">\((\lfloor \frac{L}{2\epsilon} \rfloor+2)^n\)</span>
-.</p>
-<p>这就是上界(upper complexity
-bound),仅代表最坏情况下的性能，无法展现更优情况下的性能，无法反映这是否是最优算法</p>
-<p>由此引出下界(lower complexity bound) <span class="math display">\[
-for \space \epsilon &lt; \frac{1}{2}L,\space lower \space bound = \space
-(\lfloor \frac{L}{2\epsilon} \rfloor)^n
-\]</span></p>
-]]></content>
-      <categories>
-        <category>凸优化</category>
-      </categories>
-      <tags>
-        <tag>凸优化</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Convex Function</title>
     <url>/2022/10/06/Convex-Function/</url>
     <content><![CDATA[<style> 
@@ -366,6 +262,110 @@ and only if for any <span class="math inline">\(x \in
 \nabla ^2 f(\pmb{x}) \succeq 0 \tag{14}
 \]</span></p>
 <hr>
+]]></content>
+      <categories>
+        <category>凸优化</category>
+      </categories>
+      <tags>
+        <tag>凸优化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Complexity bounds for global optimization</title>
+    <url>/2022/09/22/Complexity-bounds-for-global-optimization/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+Complexity bounds for global optimization
+</h1>
+<h2 id="提出问题">1.提出问题</h2>
+<p>一个约束最小化问题： <span class="math display">\[
+\underset{x \in B_n}{min} f(x)
+\]</span> 其中： <span class="math display">\[
+B_n = \{ x \in R^n | 0 \le x^{(i)} \le1,i=1 ... n \}
+\]</span> <span class="math inline">\(x\)</span>为<span class="math inline">\(n\)</span>维向量，<span class="math inline">\(x^{(i)}\)</span>为<span class="math inline">\(x\)</span>向量中的每一个分量</p>
+<p>给出以下记号： <span class="math display">\[
+||x||_{\infty} = \underset{1 \le i \le n}{max}|x^{(i)}|
+\]</span></p>
+<h2 id="利普希茨连续lipschitz-continuity">2.<strong>利普希茨连续</strong>(Lipschitz
+continuity)</h2>
+<p>一个函数是利普希茨连续的时有 <span class="math display">\[
+|f(x)-f(y)| \le L ||x-y||_{\infty} \space \space \space \space \space
+\space \space \space \forall x,y \in B_n
+\]</span> 其中<span class="math inline">\(L\)</span>为利普希茨常数(Lipschitz constant)</p>
+<h2 id="均格法uniform-grid-method解决">3.均格法(uniform grid
+method)解决</h2>
+<p><span class="math display">\[
+Method \space \space  \mathscr{G}(p)
+\]</span></p>
+<ul>
+<li>构造<span class="math inline">\((p+1)^n\)</span>个点</li>
+</ul>
+<p><span class="math display">\[
+x_{(i_1,...,i_n)} = (\frac{i_1}{p},\frac{i_2}{p},...,\frac{i_n}{p})^T
+\]</span></p>
+<p>​ 其中<span class="math inline">\((i_1,...,i_n) \in \{0,...,p
+\}^n\)</span></p>
+<ul>
+<li>在所有的点中找到一个点<span class="math inline">\(\bar{x}\)</span>,其对应的目标函数的值最小</li>
+<li>返回<span class="math inline">\((\bar{x},f(\bar{x}))\)</span>作为结果</li>
+</ul>
+<p><font color="red">该方法找到的是近似解(approximate
+solution)!!!</font></p>
+<h2 id="评估结果">4.评估结果</h2>
+<p><font color="red">定理</font>： 令<span class="math inline">\(f^*\)</span>作为该问题的<font color="red">全局最优解</font>,于是
+<span class="math display">\[
+f(\bar{x})  - f^* \le \frac{L}{2p}
+\]</span></p>
+<p><font color="red">直观理解</font>：</p>
+<p>这些点均匀分布于边长为1的空间中，任意相邻两点之间距离为<span class="math inline">\(\frac{1}{p}\)</span>,于是全局最优解坐标距离近似解不超过<span class="math inline">\(\frac{1}{2p}\)</span>,对应到值域乘上一个斜率系数<span class="math inline">\(L\)</span>即可。</p>
+<p><font color="red">严格证明</font>：</p>
+<p>令<span class="math inline">\(x_*\)</span>为全局最优解对应的点，于是存在 <span class="math display">\[
+x \equiv x_{(i_1,...,i_n)} \le x_* \le x_{(i_1+1,...,i_n+1)} \equiv y
+\]</span></p>
+<blockquote>
+<p>ps: 对于n维向量，当且仅当任意<span class="math inline">\(x^{(i)} \le
+y^{(i)}\)</span>时，写作<span class="math inline">\(x \le y\)</span></p>
+</blockquote>
+<p>其中<span class="math inline">\(y^{(i)} - x^{(i)} =
+\frac{1}{p}\)</span>且 <span class="math display">\[
+x_*^{(i)} \in [x^{(i)},y^{(i)}]
+\]</span> 令<span class="math inline">\(\hat{x} =
+(x+y)/2\)</span>.构造一个点<span class="math inline">\(\tilde{x}\)</span>如下： <span class="math display">\[
+\tilde{x}^{(i)} =  \begin{cases}  y^{(i)} &amp; if \space
+\tilde{x}^{(i)} \le x_*^{(i)} \\ x^{(i)} &amp; otherwise\end{cases}
+\]</span> 显然<span class="math inline">\(|\tilde{x}^{(i)}-x_*^{(i)}|\le
+\frac{1}{2p}\)</span>,因此 <span class="math display">\[
+||\tilde{x}-x_*||_{\infty} = \underset{1\le i \le
+n}{max}|\tilde{x}^{(i)}-x_*^{(i)}|\le \frac{1}{2p}
+\]</span> 由于<span class="math inline">\(\tilde{x}\)</span>属于网格，于是 <span class="math display">\[
+f(\bar{x})-f(x_*) \le f(\tilde{x})-f(x_*) \le
+L||\tilde{x}-x_*||_{\infty} \le \frac{L}{2p}
+\]</span> 得证！</p>
+<p>于是可以写作 <span class="math display">\[
+Find \space \bar{x} \in B_n : f(\bar{x}) - f^* \le \epsilon
+\]</span></p>
+<h2 id="推论">5.推论</h2>
+<p><span class="math inline">\(Method \mathscr{G}\)</span>的复杂度为
+<span class="math display">\[
+\mathscr{A}(\mathscr{G}) = (\lfloor \frac{L}{2\epsilon} \rfloor+2)^n
+\]</span> 证明：</p>
+<p>当<span class="math inline">\(p\)</span>取<span class="math inline">\(\lfloor \frac{L}{2\epsilon}
+\rfloor+1\)</span>时，有<span class="math inline">\(p \ge
+\frac{L}{2\epsilon}\)</span>，此时满足<span class="math inline">\(f(\bar{x}) - f^* \le \frac{L}{2p} \le
+\epsilon\)</span></p>
+<p>于是由<span class="math inline">\((p+1)^n\)</span> 可以得出 <span class="math inline">\((\lfloor \frac{L}{2\epsilon} \rfloor+2)^n\)</span>
+.</p>
+<p>这就是上界(upper complexity
+bound),仅代表最坏情况下的性能，无法展现更优情况下的性能，无法反映这是否是最优算法</p>
+<p>由此引出下界(lower complexity bound) <span class="math display">\[
+for \space \epsilon &lt; \frac{1}{2}L,\space lower \space bound = \space
+(\lfloor \frac{L}{2\epsilon} \rfloor)^n
+\]</span></p>
 ]]></content>
       <categories>
         <category>凸优化</category>
@@ -1129,6 +1129,42 @@ you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p
 ]]></content>
   </entry>
   <entry>
+    <title>waitKey</title>
+    <url>/2022/10/04/waitKey/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+Visual Studio中cv::waitKey无法读取键盘输入问题
+</h1>
+<h2 id="问题">1.问题</h2>
+<p>在Visual Studio
+2022中运行c++项目时，opencv库中的<code>cv::waitKey()</code>函数一直无法读取键盘的输入。</p>
+<h2 id="原因">2.原因</h2>
+<figure>
+<img src="/2022/10/04/waitKey/1.png" alt="1">
+<figcaption aria-hidden="true">1</figcaption>
+</figure>
+<p>在Debug模式中动态链接库选择<font color="orange">含有d</font>的.lib文件</p>
+<p>同理Release模式对应<font color="orange">不含d</font>的.lib文件</p>
+<h2 id="解决方案">3.解决方案</h2>
+<p>在工程<code>属性</code>--&gt;<code>链接器</code>--&gt;<code>输入</code>--&gt;<code>附加依赖项</code>中仅保留相关的含d的.lib文件即可</p>
+<figure>
+<img src="/2022/10/04/waitKey/2.png" alt="2">
+<figcaption aria-hidden="true">2</figcaption>
+</figure>
+]]></content>
+      <categories>
+        <category>踩坑记录</category>
+      </categories>
+      <tags>
+        <tag>踩坑记录</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>transformation</title>
     <url>/2022/10/03/transformation/</url>
     <content><![CDATA[<style> 
@@ -1636,39 +1672,37 @@ n &amp; 0 &amp; 0 &amp; 0 \\
       </tags>
   </entry>
   <entry>
-    <title>waitKey</title>
-    <url>/2022/10/04/waitKey/</url>
-    <content><![CDATA[<style> 
-    .markdown-body {
-      font-family: Microsoft JhengHei, SimHei;
-      font-size: 16px;
-    }
+    <title>放学后</title>
+    <url>/2022/08/27/%E6%94%BE%E5%AD%A6%E5%90%8E/</url>
+    <content><![CDATA[<style>
+  .markdown-body {
+    font-family: Microsoft JhengHei, SimHei;
+    font-size: 16px;
+  }
 </style>
 <h1 align="center">
-Visual Studio中cv::waitKey无法读取键盘输入问题
+《放学后》
 </h1>
-<h2 id="问题">1.问题</h2>
-<p>在Visual Studio
-2022中运行c++项目时，opencv库中的<code>cv::waitKey()</code>函数一直无法读取键盘的输入。</p>
-<h2 id="原因">2.原因</h2>
-<figure>
-<img src="/2022/10/04/waitKey/1.png" alt="1">
-<figcaption aria-hidden="true">1</figcaption>
-</figure>
-<p>在Debug模式中动态链接库选择<font color="orange">含有d</font>的.lib文件</p>
-<p>同理Release模式对应<font color="orange">不含d</font>的.lib文件</p>
-<h2 id="解决方案">3.解决方案</h2>
-<p>在工程<code>属性</code>--&gt;<code>链接器</code>--&gt;<code>输入</code>--&gt;<code>附加依赖项</code>中仅保留相关的含d的.lib文件即可</p>
-<figure>
-<img src="/2022/10/04/waitKey/2.png" alt="2">
-<figcaption aria-hidden="true">2</figcaption>
-</figure>
+<p>1.一口气看完了东野圭吾的《放学后》，作为一篇的悬疑推理小说，不论是情节的组织、细节的设计铺垫方面都是很不错的，也有东野圭吾一贯擅长的反转再反转，结局出人意料，回味前文的细节又觉得在情理之中，读完之后觉得深感震撼。</p>
+<p>2.主角前岛是清华女中的一位数学老师，同时担任射箭社的指导老师，他不擅长上课，不擅长和学生互动，只是本分地完成自身的教学工作，被学生们叫做“机器”。就是这样一个不太和他人有交集以及过节的人，一次又一次险些遭人陷害，从天而降的花盆、泳池中的插电板、被人推向飞驰而过的列车……一次又一次险些丧命。这让他很是小心，急迫想要找出陷害他的人。而在他找到答案之前，同为数学老师的村桥老师在更衣室中被人杀害，警方介入调查。一波未平一波又起，在化装表演时，扮成小丑的竹井老师因为喝下道具酒瓶中的液体当场倒地身亡。</p>
+<p>3.一切都是因为射箭社的惠子和惠美遭到了村桥和竹井的“视线强暴”，于是萌生了杀人的想法。她们用箭将男更衣室的门抵住，并且在男更衣室与女更衣室间隔的墙上留下痕迹，伪造了一幅凶手从女更衣室逃走的假象，误导警方断案。而在村桥的衣服中也发现了麻生老师的不雅照片，这是村桥老师逼迫麻生老师和他继续维持关系的砝码，后来却成了惠子和惠美威胁麻生协助杀害竹井老师的手段。那些让前岛一次又一次险些丧命的事件原来是她们伪造出来的假象，让警方误认为凶手想杀害的是前岛而不是竹井。</p>
+<p>4.故事最后，前岛和妻子通过话后准备回家，却被一个陌生男子用刀捅死，故事戛然而止。委婉地叙述了妻子杀害前岛这一事实，让人大受震撼，但是转念回想前文，前岛和妻子意外有了孩子，前岛执意打掉了孩子，妻子因此也落寞了许久。这样结尾又在情理之中，妻子积怨已久，最终动手杀害了前岛。</p>
+<p>5.一些书摘：</p>
+<blockquote>
+<p>成年人的案件倒不见得会那么复杂。报纸社会新闻版总有各种闹得沸沸扬扬的事件，几乎都能用色、欲、财这三要素来概括</p>
+</blockquote>
+<blockquote>
+<p>但高中女生，就不能拿着几点来套了</p>
+<p>对她们来说，最重要的应该是美丽、纯粹、真实的东西，比如友情、爱情，也可能是自己的身体或容貌。很多时候，更抽象的回忆或梦想对她们来说也很重要。反过来说，她们最憎恨企图破坏或从她们手中夺走这些重要东西的人</p>
+</blockquote>
+<p>6.处于青春期的孩子，自尊心是高于一切的，而成年人们最容易忽视的往往就是自尊心。有意无意间践踏了她们的自尊心却不自知，最终酿成悲剧。小说中还有一位女生叫阳子，她没有直接参与到几次谋杀案中。她母亲很早离世，父亲是位企业家，也无暇顾及女儿。阳子曾邀请前岛一同旅行，前岛最终是放了格子，阳子一人在车站苦苦等待了几个小时。在此之后，阳子也走向了堕落，同小混混飙车麻痹自己。没有人生来就是坏孩子，她们的成长也需要作为成年人的家长、老师的呵护。</p>
+<p>7.主角前岛的死也是一出悲剧，忽视了妻子的感受，让负面的情绪在不断积攒，最终上演了悲剧。</p>
 ]]></content>
       <categories>
-        <category>踩坑记录</category>
+        <category>阅读</category>
       </categories>
       <tags>
-        <tag>踩坑记录</tag>
+        <tag>阅读</tag>
       </tags>
   </entry>
   <entry>
@@ -1777,40 +1811,6 @@ y_i(\pmb{w}^T \pmb{x}_i+b) \ge 1 \textcolor{red}{-\xi_i}
       </categories>
       <tags>
         <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>放学后</title>
-    <url>/2022/08/27/%E6%94%BE%E5%AD%A6%E5%90%8E/</url>
-    <content><![CDATA[<style>
-  .markdown-body {
-    font-family: Microsoft JhengHei, SimHei;
-    font-size: 16px;
-  }
-</style>
-<h1 align="center">
-《放学后》
-</h1>
-<p>1.一口气看完了东野圭吾的《放学后》，作为一篇的悬疑推理小说，不论是情节的组织、细节的设计铺垫方面都是很不错的，也有东野圭吾一贯擅长的反转再反转，结局出人意料，回味前文的细节又觉得在情理之中，读完之后觉得深感震撼。</p>
-<p>2.主角前岛是清华女中的一位数学老师，同时担任射箭社的指导老师，他不擅长上课，不擅长和学生互动，只是本分地完成自身的教学工作，被学生们叫做“机器”。就是这样一个不太和他人有交集以及过节的人，一次又一次险些遭人陷害，从天而降的花盆、泳池中的插电板、被人推向飞驰而过的列车……一次又一次险些丧命。这让他很是小心，急迫想要找出陷害他的人。而在他找到答案之前，同为数学老师的村桥老师在更衣室中被人杀害，警方介入调查。一波未平一波又起，在化装表演时，扮成小丑的竹井老师因为喝下道具酒瓶中的液体当场倒地身亡。</p>
-<p>3.一切都是因为射箭社的惠子和惠美遭到了村桥和竹井的“视线强暴”，于是萌生了杀人的想法。她们用箭将男更衣室的门抵住，并且在男更衣室与女更衣室间隔的墙上留下痕迹，伪造了一幅凶手从女更衣室逃走的假象，误导警方断案。而在村桥的衣服中也发现了麻生老师的不雅照片，这是村桥老师逼迫麻生老师和他继续维持关系的砝码，后来却成了惠子和惠美威胁麻生协助杀害竹井老师的手段。那些让前岛一次又一次险些丧命的事件原来是她们伪造出来的假象，让警方误认为凶手想杀害的是前岛而不是竹井。</p>
-<p>4.故事最后，前岛和妻子通过话后准备回家，却被一个陌生男子用刀捅死，故事戛然而止。委婉地叙述了妻子杀害前岛这一事实，让人大受震撼，但是转念回想前文，前岛和妻子意外有了孩子，前岛执意打掉了孩子，妻子因此也落寞了许久。这样结尾又在情理之中，妻子积怨已久，最终动手杀害了前岛。</p>
-<p>5.一些书摘：</p>
-<blockquote>
-<p>成年人的案件倒不见得会那么复杂。报纸社会新闻版总有各种闹得沸沸扬扬的事件，几乎都能用色、欲、财这三要素来概括</p>
-</blockquote>
-<blockquote>
-<p>但高中女生，就不能拿着几点来套了</p>
-<p>对她们来说，最重要的应该是美丽、纯粹、真实的东西，比如友情、爱情，也可能是自己的身体或容貌。很多时候，更抽象的回忆或梦想对她们来说也很重要。反过来说，她们最憎恨企图破坏或从她们手中夺走这些重要东西的人</p>
-</blockquote>
-<p>6.处于青春期的孩子，自尊心是高于一切的，而成年人们最容易忽视的往往就是自尊心。有意无意间践踏了她们的自尊心却不自知，最终酿成悲剧。小说中还有一位女生叫阳子，她没有直接参与到几次谋杀案中。她母亲很早离世，父亲是位企业家，也无暇顾及女儿。阳子曾邀请前岛一同旅行，前岛最终是放了格子，阳子一人在车站苦苦等待了几个小时。在此之后，阳子也走向了堕落，同小混混飙车麻痹自己。没有人生来就是坏孩子，她们的成长也需要作为成年人的家长、老师的呵护。</p>
-<p>7.主角前岛的死也是一出悲剧，忽视了妻子的感受，让负面的情绪在不断积攒，最终上演了悲剧。</p>
-]]></content>
-      <categories>
-        <category>阅读</category>
-      </categories>
-      <tags>
-        <tag>阅读</tag>
       </tags>
   </entry>
   <entry>
@@ -2200,6 +2200,114 @@ w^* = argmin\sum_{i=1}^{n}(y_i-\pmb{x}_i^T\pmb{w})^2  \textcolor{red}{ +
       </tags>
   </entry>
   <entry>
+    <title>聚类</title>
+    <url>/2022/09/28/%E8%81%9A%E7%B1%BB/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+聚类
+</h1>
+<h2 id="简介">1.简介</h2>
+<p><code>Cluster</code>: A collection of data objects</p>
+<p><code>Clustering</code>: <font color="red">Finding similarities</font>
+between data according to the characteristics found in the data and
+<font color="red">grouping</font> similar data objects into clusters</p>
+<p>采用的方法：<strong>Unsupervised Learning</strong></p>
+<p>一些典型的应用：</p>
+<ul>
+<li>作为独立的工具，用作图像分割、新闻分类等</li>
+<li>作为其他算法的预处理步骤</li>
+</ul>
+<h2 id="k-means算法">2.K-Means算法</h2>
+<p>对于给定的K，该算法步骤如下：</p>
+<ul>
+<li><p>随机选取<span class="math inline">\(K\)</span>个数据点作为每个类别的聚类中心<span class="math inline">\(\mu_k\)</span></p></li>
+<li><p>对每一个点计算到每一个聚类中心的距离，并将其归类于最近的一个聚类中心同种类别
+<span class="math display">\[
+z_i = arg \space \underset{k}{min} ||\pmb{x}_i - \pmb{\mu} _k||^2
+\]</span></p></li>
+<li><p>对于每一个聚类依据如下公式重新计算聚类中心(即质心) <span class="math display">\[
+\mu_k = \frac{1}{N_k} \sum_{i=1}^{N_k}\pmb{x}_i^{(k)}
+\]</span></p></li>
+<li><p>重复上述过程直到收敛</p></li>
+</ul>
+<p>一些细节：</p>
+<blockquote>
+<p>初始的<span class="math inline">\(\mu_k\)</span>不一定需要选取真实的数据点</p>
+</blockquote>
+<blockquote>
+<p>可能会有空的聚类出现</p>
+</blockquote>
+<blockquote>
+<p>算法时间复杂度<span class="math inline">\(O(tNKd)\)</span>,其中
+t为递归次数，d为点的维数</p>
+</blockquote>
+<p><img src="/2022/09/28/%E8%81%9A%E7%B1%BB/1.png" alt="1" style="zoom:50%;"></p>
+<p>损失函数： <span class="math display">\[
+\mathcal{L}_{TSD}(\pmb{z},\pmb{\mu}) = \sum_{i=1}^{N}||\pmb{x}_i -
+\pmb{\mu}_{z_i}||^2
+\]</span> 贪心算法最终得到的是一个<font color="red">局部最优解</font></p>
+<h2 id="k-medoids算法pam">3.K-Medoids算法(PAM)</h2>
+<p>由于K-Means算法容易受到个别<font color="red">极端点</font>的影响，于是加以改进</p>
+<p>不再选用质心作为中心点，而选取同一聚类中其他所有点到该点距离和最小的点为中心点
+<span class="math display">\[
+\pmb{\mu} = arg \space \underset{\pmb{x}_k}{min}\sum_j ||\pmb{x}_j -
+\pmb{x}_k||^2
+\]</span></p>
+<h2 id="gaussian-mixture-modelgmm">4.Gaussian Mixture Model(GMM)</h2>
+<p><img src="/2022/09/28/%E8%81%9A%E7%B1%BB/3.png" alt="3" style="zoom:67%;"> <span class="math display">\[
+p(\pmb{x};\pmb{\Theta})
+=  \sum_{k=1}^{K}p(k)p(\pmb{x}|k)=\sum_{k=1}^{K}\pi_kp_k(\pmb{x};\pmb{\theta_k})
+\]</span></p>
+<p><span class="math display">\[
+其中\pi_k是概率p(k),\sum_{k=1}^{K}\pi_k = 1
+\]</span></p>
+<p><span class="math display">\[
+其中p_k(\pmb{x};\pmb{\theta_k})即为p(\pmb{x}|k),符合多维正态\mathcal{N}(\pmb{x};\pmb{\mu}_k,\pmb{\Sigma}_k)
+\]</span></p>
+<p>log-likelihood function: <span class="math display">\[
+log \prod_{i=1}^{N}p(\pmb{x}^{(i)};\Theta) =
+\sum_{i=1}^{N}log(\sum_{k=1}^{K}\pi_k
+\mathcal{N}(\pmb{x}^{(i)};\pmb{\mu}_k,\pmb{\Sigma}_k))
+\]</span></p>
+<p>需要估计的参数有：<span class="math inline">\(\pi_k,\pmb{\mu}_k,\pmb{\Sigma}_k\)</span></p>
+<h2 id="expectation-maximization算法em">5.Expectation
+Maximization算法(EM)</h2>
+<p>凸函数(Convex Functions)： <span class="math display">\[
+f(\theta x + (1-\theta)y) \le \theta f(x) + (1-\theta ) f(y)
+\]</span> <img src="/2022/09/28/%E8%81%9A%E7%B1%BB/4.png" alt="4" style="zoom:50%;"></p>
+<p>Jensen’s inequality: <span class="math display">\[
+f(\sum_{i=1}^{n}\lambda_i x_i) \le \sum_{i=1}^{n}\lambda_if(x_i) \space
+\space \space \space \lambda_i \ge 0, \sum_i \lambda_i = 1
+\]</span></p>
+<p><span class="math display">\[
+f(E(X)) \le E[f(X)]
+\]</span></p>
+<p>EM algorithm</p>
+<p>每次EM算法的迭代包含两个步骤<code>Expectation-step</code> 和
+<code>Maximization-step</code></p>
+<ol type="1">
+<li>E步骤：根据参数的假设值，给出未知变量的期望估计，应用于缺失值。</li>
+<li>M步骤：根据未知变量的估计值，给出当前的参数的极大似然估计。</li>
+</ol>
+<p>根据图直观理解：</p>
+<p><img src="/2022/09/28/%E8%81%9A%E7%B1%BB/5.png" alt="5" style="zoom: 50%;"></p>
+<p>E: 根据参数<span class="math inline">\(\theta_1\)</span>给出估计，即图中小的凹函数</p>
+<p>M: 进行极大似然估计，找到该函数的最大值处对应的参数<span class="math inline">\(\theta_2\)</span></p>
+<p>不断进行迭代找到最优解</p>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>贝叶斯决策理论</title>
     <url>/2022/09/13/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%86%B3%E7%AD%96%E7%90%86%E8%AE%BA/</url>
     <content><![CDATA[<style>
@@ -2312,114 +2420,6 @@ R(\alpha_i|x) = \sum_{j=1}^{c} \lambda(\alpha_i|\omega_j)P(\omega_j | x)
 = \sum_{j{\neq}i} P(\omega_j | x) = 1-P(\omega_i | x)
 \]</span>
 需要风险最小化，由上述式子可知需要后验概率最大化，选择后验概率最大的即可</p>
-]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>聚类</title>
-    <url>/2022/09/28/%E8%81%9A%E7%B1%BB/</url>
-    <content><![CDATA[<style> 
-    .markdown-body {
-      font-family: Microsoft JhengHei, SimHei;
-      font-size: 16px;
-    }
-</style>
-<h1 align="center">
-聚类
-</h1>
-<h2 id="简介">1.简介</h2>
-<p><code>Cluster</code>: A collection of data objects</p>
-<p><code>Clustering</code>: <font color="red">Finding similarities</font>
-between data according to the characteristics found in the data and
-<font color="red">grouping</font> similar data objects into clusters</p>
-<p>采用的方法：<strong>Unsupervised Learning</strong></p>
-<p>一些典型的应用：</p>
-<ul>
-<li>作为独立的工具，用作图像分割、新闻分类等</li>
-<li>作为其他算法的预处理步骤</li>
-</ul>
-<h2 id="k-means算法">2.K-Means算法</h2>
-<p>对于给定的K，该算法步骤如下：</p>
-<ul>
-<li><p>随机选取<span class="math inline">\(K\)</span>个数据点作为每个类别的聚类中心<span class="math inline">\(\mu_k\)</span></p></li>
-<li><p>对每一个点计算到每一个聚类中心的距离，并将其归类于最近的一个聚类中心同种类别
-<span class="math display">\[
-z_i = arg \space \underset{k}{min} ||\pmb{x}_i - \pmb{\mu} _k||^2
-\]</span></p></li>
-<li><p>对于每一个聚类依据如下公式重新计算聚类中心(即质心) <span class="math display">\[
-\mu_k = \frac{1}{N_k} \sum_{i=1}^{N_k}\pmb{x}_i^{(k)}
-\]</span></p></li>
-<li><p>重复上述过程直到收敛</p></li>
-</ul>
-<p>一些细节：</p>
-<blockquote>
-<p>初始的<span class="math inline">\(\mu_k\)</span>不一定需要选取真实的数据点</p>
-</blockquote>
-<blockquote>
-<p>可能会有空的聚类出现</p>
-</blockquote>
-<blockquote>
-<p>算法时间复杂度<span class="math inline">\(O(tNKd)\)</span>,其中
-t为递归次数，d为点的维数</p>
-</blockquote>
-<p><img src="/2022/09/28/%E8%81%9A%E7%B1%BB/1.png" alt="1" style="zoom:50%;"></p>
-<p>损失函数： <span class="math display">\[
-\mathcal{L}_{TSD}(\pmb{z},\pmb{\mu}) = \sum_{i=1}^{N}||\pmb{x}_i -
-\pmb{\mu}_{z_i}||^2
-\]</span> 贪心算法最终得到的是一个<font color="red">局部最优解</font></p>
-<h2 id="k-medoids算法pam">3.K-Medoids算法(PAM)</h2>
-<p>由于K-Means算法容易受到个别<font color="red">极端点</font>的影响，于是加以改进</p>
-<p>不再选用质心作为中心点，而选取同一聚类中其他所有点到该点距离和最小的点为中心点
-<span class="math display">\[
-\pmb{\mu} = arg \space \underset{\pmb{x}_k}{min}\sum_j ||\pmb{x}_j -
-\pmb{x}_k||^2
-\]</span></p>
-<h2 id="gaussian-mixture-modelgmm">4.Gaussian Mixture Model(GMM)</h2>
-<p><img src="/2022/09/28/%E8%81%9A%E7%B1%BB/3.png" alt="3" style="zoom:67%;"> <span class="math display">\[
-p(\pmb{x};\pmb{\Theta})
-=  \sum_{k=1}^{K}p(k)p(\pmb{x}|k)=\sum_{k=1}^{K}\pi_kp_k(\pmb{x};\pmb{\theta_k})
-\]</span></p>
-<p><span class="math display">\[
-其中\pi_k是概率p(k),\sum_{k=1}^{K}\pi_k = 1
-\]</span></p>
-<p><span class="math display">\[
-其中p_k(\pmb{x};\pmb{\theta_k})即为p(\pmb{x}|k),符合多维正态\mathcal{N}(\pmb{x};\pmb{\mu}_k,\pmb{\Sigma}_k)
-\]</span></p>
-<p>log-likelihood function: <span class="math display">\[
-log \prod_{i=1}^{N}p(\pmb{x}^{(i)};\Theta) =
-\sum_{i=1}^{N}log(\sum_{k=1}^{K}\pi_k
-\mathcal{N}(\pmb{x}^{(i)};\pmb{\mu}_k,\pmb{\Sigma}_k))
-\]</span></p>
-<p>需要估计的参数有：<span class="math inline">\(\pi_k,\pmb{\mu}_k,\pmb{\Sigma}_k\)</span></p>
-<h2 id="expectation-maximization算法em">5.Expectation
-Maximization算法(EM)</h2>
-<p>凸函数(Convex Functions)： <span class="math display">\[
-f(\theta x + (1-\theta)y) \le \theta f(x) + (1-\theta ) f(y)
-\]</span> <img src="/2022/09/28/%E8%81%9A%E7%B1%BB/4.png" alt="4" style="zoom:50%;"></p>
-<p>Jensen’s inequality: <span class="math display">\[
-f(\sum_{i=1}^{n}\lambda_i x_i) \le \sum_{i=1}^{n}\lambda_if(x_i) \space
-\space \space \space \lambda_i \ge 0, \sum_i \lambda_i = 1
-\]</span></p>
-<p><span class="math display">\[
-f(E(X)) \le E[f(X)]
-\]</span></p>
-<p>EM algorithm</p>
-<p>每次EM算法的迭代包含两个步骤<code>Expectation-step</code> 和
-<code>Maximization-step</code></p>
-<ol type="1">
-<li>E步骤：根据参数的假设值，给出未知变量的期望估计，应用于缺失值。</li>
-<li>M步骤：根据未知变量的估计值，给出当前的参数的极大似然估计。</li>
-</ol>
-<p>根据图直观理解：</p>
-<p><img src="/2022/09/28/%E8%81%9A%E7%B1%BB/5.png" alt="5" style="zoom: 50%;"></p>
-<p>E: 根据参数<span class="math inline">\(\theta_1\)</span>给出估计，即图中小的凹函数</p>
-<p>M: 进行极大似然估计，找到该函数的最大值处对应的参数<span class="math inline">\(\theta_2\)</span></p>
-<p>不断进行迭代找到最优解</p>
 ]]></content>
       <categories>
         <category>机器学习</category>
