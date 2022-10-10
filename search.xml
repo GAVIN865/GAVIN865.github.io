@@ -232,77 +232,6 @@ for \space \epsilon &lt; \frac{1}{2}L,\space lower \space bound = \space
       </tags>
   </entry>
   <entry>
-    <title>Introduction to Operating System</title>
-    <url>/2022/09/21/Introduction-to-Operating-System/</url>
-    <content><![CDATA[<style> 
-    .markdown-body {
-      font-family: Microsoft JhengHei, SimHei;
-      font-size: 16px;
-    }
-</style>
-<h1 align="center">
-Introduction to Operating System
-</h1>
-<h2 id="what-operating-systems-do">1.What Operating Systems Do</h2>
-<p>A computer system can be divided roughly into four components:</p>
-<ul>
-<li>the <font color="red"><strong>hardware</strong></font></li>
-<li>the <font color="red"><strong>operating system</strong></font></li>
-<li>the <font color="red"><strong>application
-programs</strong></font></li>
-<li>a <font color="red"><strong>user</strong></font></li>
-</ul>
-<p><img src="/2022/09/21/Introduction-to-Operating-System/1.png" alt="1" style="zoom: 67%;"></p>
-<p>The operating system <font color="red"><strong>controls the
-hardware</strong></font> <br>and <font color="red"><strong>coordinates
-its use among the various application programs</strong></font> <br>for
-the various users.</p>
-<p>For Users:</p>
-<ul>
-<li>the operating system is designed mostly for
-<font color="red"><strong>ease of use</strong></font>,<br>with some
-attention paid to <font color="red"><strong>performance and
-security</strong></font></li>
-</ul>
-<p>For System:</p>
-<ul>
-<li>we can view an operating system as a
-<font color="red"><strong>resource allocator</strong></font></li>
-</ul>
-<h2 id="computer-system-organization">2.Computer System
-Organization</h2>
-<p>Computer System consists of:<br><font color="red"><strong>one or more
-CPUs</strong></font> and <font color="red"><strong>a number of device
-controllers</strong></font><br>connected through
-<font color="red"><strong>a commom bus</strong></font><br>that provides
-access between components and shared memory</p>
-<p><img src="/2022/09/21/Introduction-to-Operating-System/2.png" alt="2" style="zoom:67%;"></p>
-<p><strong>Device Driver</strong>:</p>
-<ul>
-<li>unserstands the device controller.</li>
-<li>provides the rest of the operating system with
-<font color="red"><strong>a uniform interface</strong></font> to the
-device.</li>
-</ul>
-<p><strong>Interrupts</strong>:</p>
-<p>When the CPU is interrupted, it stops what it is doing and
-immediately transfers execution to a fixed location.</p>
-<h2 id="computer-system-architecture">3.Computer System
-Architecture</h2>
-<ul>
-<li>Single-Processor Systems</li>
-<li>Multiprocessor Systems</li>
-<li>Clustered Systems</li>
-</ul>
-]]></content>
-      <categories>
-        <category>操作系统</category>
-      </categories>
-      <tags>
-        <tag>操作系统</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Convex Function</title>
     <url>/2022/10/06/Convex-Function/</url>
     <content><![CDATA[<style> 
@@ -484,6 +413,272 @@ for <span class="math inline">\(\forall x \in R^n\)</span> we have <span class="
       </tags>
   </entry>
   <entry>
+    <title>Deterministic Finite Automata</title>
+    <url>/2022/10/10/Deterministic-Finite-Automata/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+Deterministic Finite Automata
+</h1>
+<h2 id="structure-of-dfa">1.Structure of DFA</h2>
+<figure>
+<img src="/2022/10/10/Deterministic-Finite-Automata/1.png" alt="1">
+<figcaption aria-hidden="true">1</figcaption>
+</figure>
+<ul>
+<li>Input tape</li>
+<li>Reading head</li>
+<li>Finite control (with initial state)</li>
+</ul>
+<hr>
+<p>Definition 2.1.1: A DFA is a quintuple <span class="math inline">\(M=(K,\Sigma,\delta,s,F)\)</span> where</p>
+<ul>
+<li><span class="math inline">\(K\)</span> is a finite set of
+<font color="orange">states</font></li>
+<li><span class="math inline">\(\Sigma\)</span> is an
+<font color="orange">alphabet</font></li>
+<li><span class="math inline">\(s \in K\)</span> is the
+<font color="orange">initial state</font></li>
+<li><span class="math inline">\(F \subseteq K\)</span> is the set of
+<font color="orange">final states</font></li>
+<li><span class="math inline">\(\delta\)</span> is the
+<font color="orange">transition function</font>, a function from <span class="math inline">\(K \times \Sigma\)</span> to <span class="math inline">\(K\)</span></li>
+</ul>
+<hr>
+<h2 id="binary-relation-vdash_m">2.Binary Relation <span class="math inline">\(\vdash_M\)</span></h2>
+<p>If <span class="math inline">\((q,w)\)</span> and <span class="math inline">\((q&#39;,w&#39;)\)</span> are two configurations of
+<span class="math inline">\(M\)</span>, then <span class="math inline">\(\textcolor{orange}{(q,w) \vdash_M
+(q&#39;,w&#39;)}\)</span> if and only if <span class="math inline">\(w =
+aw&#39;\)</span> for some symbol <span class="math inline">\(\textcolor{orange}{a \in \Sigma}\)</span>, and
+<span class="math inline">\(\textcolor{orange}{\delta(q,a) =
+q&#39;}\)</span>.</p>
+<p>In this case we say that <span class="math inline">\((q,w)\)</span>
+<font color="orange">yields</font> <span class="math inline">\((q&#39;,w&#39;)\)</span> <font color="orange">in one
+step</font>.</p>
+<p>In fact <span class="math inline">\(\vdash_M\)</span> is a function
+from <span class="math inline">\(K \times \Sigma^+\)</span> to <span class="math inline">\(K \times \Sigma^*\)</span>.</p>
+<p>If <span class="math inline">\(\vdash_M\)</span> is
+<font color="orange">reflexive</font>, <font color="orange">tansitive</font>
+closure; we denote it by <span class="math inline">\(\vdash_M^*\)</span>.</p>
+<p>If there is a state <span class="math inline">\(q\in F\)</span> such
+that <span class="math inline">\((s,w) \vdash_M^*
+(q,\textcolor{orange}{e})\)</span>. We say <font color="orange">the
+language accepted by</font> <span class="math inline">\(M\)</span>.
+<span class="math inline">\(L(M)\)</span> is the set of all strings
+accepted by <span class="math inline">\(M\)</span>.</p>
+<h2 id="example-2.1.1">3.Example 2.1.1</h2>
+<p>Let <span class="math inline">\(M\)</span> be the DFA <span class="math inline">\((K,\Sigma,\delta,s,F)\)</span>,<br>where <span class="math display">\[
+\begin{aligned}
+K &amp;= \{q_0,q_1\},\\
+\Sigma &amp;= \{ a,b \},\\
+s &amp;= q_0,\\
+F &amp;= \{q_0\},
+\end{aligned}
+\]</span> and <span class="math inline">\(\delta\)</span> is the funtion
+below.</p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(q\)</span></th>
+<th><span class="math inline">\(\sigma\)</span></th>
+<th><span class="math inline">\(\delta(q,\sigma)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(q_0\)</span></td>
+<td>a</td>
+<td><span class="math inline">\(q_0\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(q_0\)</span></td>
+<td>b</td>
+<td><span class="math inline">\(q_1\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(q_1\)</span></td>
+<td>a</td>
+<td><span class="math inline">\(q_1\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(q_1\)</span></td>
+<td>b</td>
+<td><span class="math inline">\(q_0\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>If <span class="math inline">\(M\)</span> is given the input <span class="math inline">\(aabba\)</span>, its initial configuration is <span class="math inline">\((q_0,aabba)\)</span>. Then <span class="math display">\[
+\begin{aligned}
+(q_0,aabba) &amp;\vdash_M (q_0,abba)\\
+&amp;\vdash_M (q_0,bba)\\
+&amp;\vdash_M (q_1,ba)\\
+&amp;\vdash_M (q_0,a)\\
+&amp;\vdash_M (q_0,e)
+\end{aligned}
+\]</span> Therefore <span class="math inline">\((q_0,aabba)
+\vdash_M^*(q_0,e)\)</span>, and so <span class="math inline">\(aabba\)</span> is accepted by <span class="math inline">\(M\)</span>.</p>
+<hr>
+<p>To be clearer, a more convenient graphical representation called
+<font color="orange">state diagram</font> is used.</p>
+<figure>
+<img src="/2022/10/10/Deterministic-Finite-Automata/2.png" alt="2">
+<figcaption aria-hidden="true">2</figcaption>
+</figure>
+<hr>
+<h2 id="example-2.1.2">4.Example 2.1.2</h2>
+<p>Lets us design a deterministic finite automaton <span class="math inline">\(M\)</span> that accepts language <span class="math inline">\(L(M)=\{w\in\{a,b\}^*:w \; does \; not \; contain
+\; three \; consecutive \; b&#39;s\}\)</span>.</p>
+<p>Let <span class="math inline">\(M\)</span> be the DFA <span class="math inline">\((K,\Sigma,\delta,s,F)\)</span>,<br>where <span class="math display">\[
+\begin{aligned}
+K &amp;= \{q_0,q_1,q_2,q_3\},\\
+\Sigma &amp;= \{ a,b \},\\
+s &amp;= q_0,\\
+F &amp;= \{q_0,q_1,q_2\},
+\end{aligned}
+\]</span> and <span class="math inline">\(\delta\)</span> is the funtion
+below.</p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(q\)</span></th>
+<th><span class="math inline">\(\sigma\)</span></th>
+<th><span class="math inline">\(\delta(q,\sigma)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(q_0\)</span></td>
+<td><span class="math inline">\(a\)</span></td>
+<td><span class="math inline">\(q_0\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(q_0\)</span></td>
+<td><span class="math inline">\(b\)</span></td>
+<td><span class="math inline">\(q_1\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(q_1\)</span></td>
+<td><span class="math inline">\(a\)</span></td>
+<td><span class="math inline">\(q_0\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(q_1\)</span></td>
+<td><span class="math inline">\(b\)</span></td>
+<td><span class="math inline">\(q_2\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(q_2\)</span></td>
+<td><span class="math inline">\(a\)</span></td>
+<td><span class="math inline">\(q_0\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(q_2\)</span></td>
+<td><span class="math inline">\(b\)</span></td>
+<td><span class="math inline">\(q_3\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(q_3\)</span></td>
+<td><span class="math inline">\(a\)</span></td>
+<td><span class="math inline">\(q_3\)</span></td>
+</tr>
+<tr class="even">
+<td>$q_3 $</td>
+<td><span class="math inline">\(b\)</span></td>
+<td><span class="math inline">\(q_3\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>state diagram:</p>
+<figure>
+<img src="/2022/10/10/Deterministic-Finite-Automata/3.png" alt="3">
+<figcaption aria-hidden="true">3</figcaption>
+</figure>
+<p><span class="math inline">\(q_3\)</span> is not final state, is said
+to be a <font color="orange">dead state</font>.</p>
+]]></content>
+      <categories>
+        <category>计算理论</category>
+      </categories>
+      <tags>
+        <tag>计算理论</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Introduction to Operating System</title>
+    <url>/2022/09/21/Introduction-to-Operating-System/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+Introduction to Operating System
+</h1>
+<h2 id="what-operating-systems-do">1.What Operating Systems Do</h2>
+<p>A computer system can be divided roughly into four components:</p>
+<ul>
+<li>the <font color="red"><strong>hardware</strong></font></li>
+<li>the <font color="red"><strong>operating system</strong></font></li>
+<li>the <font color="red"><strong>application
+programs</strong></font></li>
+<li>a <font color="red"><strong>user</strong></font></li>
+</ul>
+<p><img src="/2022/09/21/Introduction-to-Operating-System/1.png" alt="1" style="zoom: 67%;"></p>
+<p>The operating system <font color="red"><strong>controls the
+hardware</strong></font> <br>and <font color="red"><strong>coordinates
+its use among the various application programs</strong></font> <br>for
+the various users.</p>
+<p>For Users:</p>
+<ul>
+<li>the operating system is designed mostly for
+<font color="red"><strong>ease of use</strong></font>,<br>with some
+attention paid to <font color="red"><strong>performance and
+security</strong></font></li>
+</ul>
+<p>For System:</p>
+<ul>
+<li>we can view an operating system as a
+<font color="red"><strong>resource allocator</strong></font></li>
+</ul>
+<h2 id="computer-system-organization">2.Computer System
+Organization</h2>
+<p>Computer System consists of:<br><font color="red"><strong>one or more
+CPUs</strong></font> and <font color="red"><strong>a number of device
+controllers</strong></font><br>connected through
+<font color="red"><strong>a commom bus</strong></font><br>that provides
+access between components and shared memory</p>
+<p><img src="/2022/09/21/Introduction-to-Operating-System/2.png" alt="2" style="zoom:67%;"></p>
+<p><strong>Device Driver</strong>:</p>
+<ul>
+<li>unserstands the device controller.</li>
+<li>provides the rest of the operating system with
+<font color="red"><strong>a uniform interface</strong></font> to the
+device.</li>
+</ul>
+<p><strong>Interrupts</strong>:</p>
+<p>When the CPU is interrupted, it stops what it is doing and
+immediately transfers execution to a fixed location.</p>
+<h2 id="computer-system-architecture">3.Computer System
+Architecture</h2>
+<ul>
+<li>Single-Processor Systems</li>
+<li>Multiprocessor Systems</li>
+<li>Clustered Systems</li>
+</ul>
+]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LaTex符号对照表</title>
     <url>/2022/09/26/LaTex%E7%AC%A6%E5%8F%B7%E5%AF%B9%E7%85%A7%E8%A1%A8/</url>
     <content><![CDATA[<style> 
@@ -536,230 +731,6 @@ LaTex符号对照表
       </categories>
       <tags>
         <tag>LaTex</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Processes</title>
-    <url>/2022/09/30/Processes/</url>
-    <content><![CDATA[<style> 
-    .markdown-body {
-      font-family: Microsoft JhengHei, SimHei;
-      font-size: 16px;
-    }
-</style>
-<h1 align="center">
-Processes
-</h1>
-<h2 id="process-concept">1.Process Concept</h2>
-<p><font color="red">A process is a program in execution</font></p>
-<ul>
-<li><code>program</code>: bytes stored on <font color="red">disk</font> as
-part of an executable file</li>
-<li>becomes a process when it’s loaded in
-<font color="red">memory</font></li>
-<li>a unit of <font color="red">resource allocation and
-protection</font></li>
-</ul>
-<p>Process =</p>
-<ul>
-<li><font color="red">code</font> (also called the
-<font color="red">text</font>)</li>
-<li><font color="red">data section</font> (global variables)</li>
-<li><font color="red">program counter</font> (points to the next
-instruction to execute)</li>
-<li>content of the processor’s <font color="red">registers</font></li>
-<li>a <font color="red">stack</font></li>
-<li>a <font color="red">heap</font></li>
-</ul>
-<p>Process Address Space</p>
-<p><img src="/2022/09/30/Processes/1.png" alt="1" style="zoom:50%;"></p>
-<p>Memory Layout of a C Program</p>
-<figure>
-<img src="/2022/09/30/Processes/2.png" alt="2">
-<figcaption aria-hidden="true">2</figcaption>
-</figure>
-<h2 id="process-state">2.Process State</h2>
-<p>Some states:</p>
-<ul>
-<li><code>New</code>: The process is being created</li>
-<li><code>Running</code>: Instructions are being executed</li>
-<li><code>Waiting</code>: The process is waiting for some events to
-occur</li>
-<li><code>Ready</code>: The process is waiting to be assigned to a
-processor</li>
-<li><code>Terminated</code>: The process has finished execution</li>
-</ul>
-<figure>
-<img src="/2022/09/30/Processes/3.png" alt="3">
-<figcaption aria-hidden="true">3</figcaption>
-</figure>
-<h2 id="process-control-block-pcb">3.Process Control Block (PCB)</h2>
-<p><font color="red">Each process has and only has a PCB</font></p>
-<ul>
-<li>Allocate a PCB on new process creation</li>
-<li>free the PCB on process termination</li>
-</ul>
-<p><img src="/2022/09/30/Processes/4.png" alt="4" style="zoom:50%;"></p>
-<h2 id="process-creation">4.Process Creation</h2>
-<ul>
-<li><p>A process may create new processes, in which case it becomes a
-parent</p></li>
-<li><p>We obtain a tree of processes</p></li>
-<li><p>Each process has a pid</p>
-<blockquote>
-<p>ppid refers to the parent’s pid</p>
-</blockquote></li>
-</ul>
-<p>Example tree:</p>
-<figure>
-<img src="/2022/09/30/Processes/5.png" alt="5">
-<figcaption aria-hidden="true">5</figcaption>
-</figure>
-<ul>
-<li><p>The child may inherit/share some of the resources of its parent,
-or may have entirely new ones</p></li>
-<li><p>A parent can also pass input to a child</p></li>
-<li><p>Upon creation of a child, the parent can either</p>
-<blockquote>
-<p>continue execution, or</p>
-<p>wait for the child’s completion</p>
-</blockquote></li>
-<li><p>The child could be either</p>
-<blockquote>
-<p>a clone of the parent (i.e., have a copy of the address space),
-or</p>
-<p>be an entirely new program</p>
-</blockquote></li>
-</ul>
-<p>The <code>fork()</code> System Call</p>
-<ul>
-<li><p><code>fork()</code> creates a new process</p></li>
-<li><p>The child is is a copy of the parent, but...</p>
-<blockquote>
-<p>It has a different pid (and thus ppid)</p>
-<p>Its resource utilization (so far) is set to 0</p>
-</blockquote></li>
-<li><p><code>fork()</code> returns the child’s pid to the parent, and 0
-to the child</p>
-<blockquote>
-<p>Each process can find its own pid with the getpid() call, and its
-ppid with the getppid() call</p>
-</blockquote></li>
-<li><p>Both processes continue execution after the call to
-<code>fork()</code></p></li>
-</ul>
-<p>A Typical Example</p>
-<figure>
-<img src="/2022/09/30/Processes/6.png" alt="6">
-<figcaption aria-hidden="true">6</figcaption>
-</figure>
-<figure>
-<img src="/2022/09/30/Processes/7.png" alt="7">
-<figcaption aria-hidden="true">7</figcaption>
-</figure>
-<figure>
-<img src="/2022/09/30/Processes/8.png" alt="8">
-<figcaption aria-hidden="true">8</figcaption>
-</figure>
-<figure>
-<img src="/2022/09/30/Processes/9.png" alt="9">
-<figcaption aria-hidden="true">9</figcaption>
-</figure>
-<figure>
-<img src="/2022/09/30/Processes/10.png" alt="10">
-<figcaption aria-hidden="true">10</figcaption>
-</figure>
-<figure>
-<img src="/2022/09/30/Processes/11.png" alt="11">
-<figcaption aria-hidden="true">11</figcaption>
-</figure>
-<figure>
-<img src="/2022/09/30/Processes/12.png" alt="12">
-<figcaption aria-hidden="true">12</figcaption>
-</figure>
-<hr>
-<p>(Cont.)</p>
-<ul>
-<li><p>Address space</p>
-<blockquote>
-<p>Child duplicate of parent</p>
-<p>Child has a program loaded into it</p>
-</blockquote></li>
-<li><p>UNIX examples</p>
-<blockquote>
-<p><code>fork()</code> system call creates new process</p>
-<p><code>exec()</code> system call used after a fork() to replace the
-process’ memory space with a new program</p>
-<p>Parent process calls <code>wait()</code> for the child to
-terminate</p>
-</blockquote></li>
-</ul>
-<h2 id="process-terminations">5.Process Terminations</h2>
-<ul>
-<li><p>A process terminates itself with the <code>exit()</code> system
-call</p>
-<blockquote>
-<p>This call takes as argument an integer that is called the process’
-exit/return/error code</p>
-</blockquote></li>
-<li><p>All resources of a process are deallocated by the OS</p>
-<blockquote>
-<p>physical and virtual memory, open files, I/O buffers, ...</p>
-</blockquote></li>
-<li><p>A process can cause the termination of another process</p>
-<blockquote>
-<p>Using something called “signals” and the <code>kill()</code> system
-call</p>
-</blockquote></li>
-</ul>
-<h2 id="processes-and-signals">6.Processes and Signals</h2>
-<ul>
-<li><p>A process can receive signals, i.e., <font color="red">software
-interrupts</font></p>
-<blockquote>
-<p>It is an asynchronous event that the program must act upon, in some
-way</p>
-</blockquote></li>
-<li><p>Signals have many usages, including process synchronization</p>
-<blockquote>
-<p>We’ll see other, more powerful and flexible process synchronization
-tools</p>
-</blockquote></li>
-<li><p>The OS defines a number of signals, each with a name and a
-number, and some meaning</p></li>
-<li><p>Signals happen for various reasons</p>
-<blockquote>
-<p>^C on the command-line sends a SIGINT signal to the running
-command</p>
-<p>A segmentation violation sends a SIGBUS signal to the running
-process</p>
-<p>A process sends a SIGKILL signal to another</p>
-</blockquote></li>
-</ul>
-<p>Kill Command</p>
-<figure>
-<img src="/2022/09/30/Processes/13.png" alt="13">
-<figcaption aria-hidden="true">13</figcaption>
-</figure>
-<h2 id="process-scheduling">7.Process Scheduling</h2>
-<ul>
-<li><p>Maximize CPU use, quickly switch processes onto CPU core</p></li>
-<li><p><font color="red">Process scheduler</font> selects among
-<font color="red">ready processes</font> for next execution on CPU
-core</p></li>
-<li><p>Maintains <font color="red">scheduling queues</font> of
-processes</p>
-<blockquote>
-<p>Ready queue</p>
-<p>Wait queues</p>
-</blockquote></li>
-</ul>
-]]></content>
-      <categories>
-        <category>操作系统</category>
-      </categories>
-      <tags>
-        <tag>操作系统</tag>
       </tags>
   </entry>
   <entry>
@@ -1038,27 +1009,228 @@ Format)</h2>
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/08/18/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
-first post. Check <a href="https://hexo.io/docs/">documentation</a> for
-more info. If you get any problems when using Hexo, you can find the
-answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
-you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <title>Processes</title>
+    <url>/2022/09/30/Processes/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+Processes
+</h1>
+<h2 id="process-concept">1.Process Concept</h2>
+<p><font color="red">A process is a program in execution</font></p>
+<ul>
+<li><code>program</code>: bytes stored on <font color="red">disk</font> as
+part of an executable file</li>
+<li>becomes a process when it’s loaded in
+<font color="red">memory</font></li>
+<li>a unit of <font color="red">resource allocation and
+protection</font></li>
+</ul>
+<p>Process =</p>
+<ul>
+<li><font color="red">code</font> (also called the
+<font color="red">text</font>)</li>
+<li><font color="red">data section</font> (global variables)</li>
+<li><font color="red">program counter</font> (points to the next
+instruction to execute)</li>
+<li>content of the processor’s <font color="red">registers</font></li>
+<li>a <font color="red">stack</font></li>
+<li>a <font color="red">heap</font></li>
+</ul>
+<p>Process Address Space</p>
+<p><img src="/2022/09/30/Processes/1.png" alt="1" style="zoom:50%;"></p>
+<p>Memory Layout of a C Program</p>
+<figure>
+<img src="/2022/09/30/Processes/2.png" alt="2">
+<figcaption aria-hidden="true">2</figcaption>
+</figure>
+<h2 id="process-state">2.Process State</h2>
+<p>Some states:</p>
+<ul>
+<li><code>New</code>: The process is being created</li>
+<li><code>Running</code>: Instructions are being executed</li>
+<li><code>Waiting</code>: The process is waiting for some events to
+occur</li>
+<li><code>Ready</code>: The process is waiting to be assigned to a
+processor</li>
+<li><code>Terminated</code>: The process has finished execution</li>
+</ul>
+<figure>
+<img src="/2022/09/30/Processes/3.png" alt="3">
+<figcaption aria-hidden="true">3</figcaption>
+</figure>
+<h2 id="process-control-block-pcb">3.Process Control Block (PCB)</h2>
+<p><font color="red">Each process has and only has a PCB</font></p>
+<ul>
+<li>Allocate a PCB on new process creation</li>
+<li>free the PCB on process termination</li>
+</ul>
+<p><img src="/2022/09/30/Processes/4.png" alt="4" style="zoom:50%;"></p>
+<h2 id="process-creation">4.Process Creation</h2>
+<ul>
+<li><p>A process may create new processes, in which case it becomes a
+parent</p></li>
+<li><p>We obtain a tree of processes</p></li>
+<li><p>Each process has a pid</p>
+<blockquote>
+<p>ppid refers to the parent’s pid</p>
+</blockquote></li>
+</ul>
+<p>Example tree:</p>
+<figure>
+<img src="/2022/09/30/Processes/5.png" alt="5">
+<figcaption aria-hidden="true">5</figcaption>
+</figure>
+<ul>
+<li><p>The child may inherit/share some of the resources of its parent,
+or may have entirely new ones</p></li>
+<li><p>A parent can also pass input to a child</p></li>
+<li><p>Upon creation of a child, the parent can either</p>
+<blockquote>
+<p>continue execution, or</p>
+<p>wait for the child’s completion</p>
+</blockquote></li>
+<li><p>The child could be either</p>
+<blockquote>
+<p>a clone of the parent (i.e., have a copy of the address space),
+or</p>
+<p>be an entirely new program</p>
+</blockquote></li>
+</ul>
+<p>The <code>fork()</code> System Call</p>
+<ul>
+<li><p><code>fork()</code> creates a new process</p></li>
+<li><p>The child is is a copy of the parent, but...</p>
+<blockquote>
+<p>It has a different pid (and thus ppid)</p>
+<p>Its resource utilization (so far) is set to 0</p>
+</blockquote></li>
+<li><p><code>fork()</code> returns the child’s pid to the parent, and 0
+to the child</p>
+<blockquote>
+<p>Each process can find its own pid with the getpid() call, and its
+ppid with the getppid() call</p>
+</blockquote></li>
+<li><p>Both processes continue execution after the call to
+<code>fork()</code></p></li>
+</ul>
+<p>A Typical Example</p>
+<figure>
+<img src="/2022/09/30/Processes/6.png" alt="6">
+<figcaption aria-hidden="true">6</figcaption>
+</figure>
+<figure>
+<img src="/2022/09/30/Processes/7.png" alt="7">
+<figcaption aria-hidden="true">7</figcaption>
+</figure>
+<figure>
+<img src="/2022/09/30/Processes/8.png" alt="8">
+<figcaption aria-hidden="true">8</figcaption>
+</figure>
+<figure>
+<img src="/2022/09/30/Processes/9.png" alt="9">
+<figcaption aria-hidden="true">9</figcaption>
+</figure>
+<figure>
+<img src="/2022/09/30/Processes/10.png" alt="10">
+<figcaption aria-hidden="true">10</figcaption>
+</figure>
+<figure>
+<img src="/2022/09/30/Processes/11.png" alt="11">
+<figcaption aria-hidden="true">11</figcaption>
+</figure>
+<figure>
+<img src="/2022/09/30/Processes/12.png" alt="12">
+<figcaption aria-hidden="true">12</figcaption>
+</figure>
+<hr>
+<p>(Cont.)</p>
+<ul>
+<li><p>Address space</p>
+<blockquote>
+<p>Child duplicate of parent</p>
+<p>Child has a program loaded into it</p>
+</blockquote></li>
+<li><p>UNIX examples</p>
+<blockquote>
+<p><code>fork()</code> system call creates new process</p>
+<p><code>exec()</code> system call used after a fork() to replace the
+process’ memory space with a new program</p>
+<p>Parent process calls <code>wait()</code> for the child to
+terminate</p>
+</blockquote></li>
+</ul>
+<h2 id="process-terminations">5.Process Terminations</h2>
+<ul>
+<li><p>A process terminates itself with the <code>exit()</code> system
+call</p>
+<blockquote>
+<p>This call takes as argument an integer that is called the process’
+exit/return/error code</p>
+</blockquote></li>
+<li><p>All resources of a process are deallocated by the OS</p>
+<blockquote>
+<p>physical and virtual memory, open files, I/O buffers, ...</p>
+</blockquote></li>
+<li><p>A process can cause the termination of another process</p>
+<blockquote>
+<p>Using something called “signals” and the <code>kill()</code> system
+call</p>
+</blockquote></li>
+</ul>
+<h2 id="processes-and-signals">6.Processes and Signals</h2>
+<ul>
+<li><p>A process can receive signals, i.e., <font color="red">software
+interrupts</font></p>
+<blockquote>
+<p>It is an asynchronous event that the program must act upon, in some
+way</p>
+</blockquote></li>
+<li><p>Signals have many usages, including process synchronization</p>
+<blockquote>
+<p>We’ll see other, more powerful and flexible process synchronization
+tools</p>
+</blockquote></li>
+<li><p>The OS defines a number of signals, each with a name and a
+number, and some meaning</p></li>
+<li><p>Signals happen for various reasons</p>
+<blockquote>
+<p>^C on the command-line sends a SIGINT signal to the running
+command</p>
+<p>A segmentation violation sends a SIGBUS signal to the running
+process</p>
+<p>A process sends a SIGKILL signal to another</p>
+</blockquote></li>
+</ul>
+<p>Kill Command</p>
+<figure>
+<img src="/2022/09/30/Processes/13.png" alt="13">
+<figcaption aria-hidden="true">13</figcaption>
+</figure>
+<h2 id="process-scheduling">7.Process Scheduling</h2>
+<ul>
+<li><p>Maximize CPU use, quickly switch processes onto CPU core</p></li>
+<li><p><font color="red">Process scheduler</font> selects among
+<font color="red">ready processes</font> for next execution on CPU
+core</p></li>
+<li><p>Maintains <font color="red">scheduling queues</font> of
+processes</p>
+<blockquote>
+<p>Ready queue</p>
+<p>Wait queues</p>
+</blockquote></li>
+</ul>
 ]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>操作系统</tag>
+      </tags>
   </entry>
   <entry>
     <title>Relaxation and approximation</title>
@@ -1165,6 +1337,29 @@ f&#39;(x^*) = 0, \space \space \space    f&#39;&#39;(x^*) \succeq  0.
       <tags>
         <tag>凸优化</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/08/18/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
+first post. Check <a href="https://hexo.io/docs/">documentation</a> for
+more info. If you get any problems when using Hexo, you can find the
+answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
+you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>transformation</title>
