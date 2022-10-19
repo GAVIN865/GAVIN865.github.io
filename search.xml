@@ -232,6 +232,187 @@ for \space \epsilon &lt; \frac{1}{2}L,\space lower \space bound = \space
       </tags>
   </entry>
   <entry>
+    <title>Convex Function</title>
+    <url>/2022/10/06/Convex-Function/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+Convex Function
+</h1>
+<h2 id="definition">1.Definition</h2>
+<p>Definition 15:</p>
+<p>A set <span class="math inline">\(\mathcal{Q} \subseteq
+\mathbb{R}^n\)</span> is called <font color="orange">convex</font> if for
+any <span class="math inline">\(\pmb{x},\pmb{y} \in \mathcal{Q}\)</span>
+and <span class="math inline">\(\alpha\)</span> from [0,1] we have <span class="math display">\[
+\alpha \pmb{x} + (1 - \alpha) \pmb{y} \in \mathcal{Q} \tag{10}
+\]</span></p>
+<hr>
+<p>Definition 16:</p>
+<p>A continuously differentiable function <span class="math inline">\(f
+(·)\)</span> is called <font color="orange">convex</font> on a convex set
+<span class="math inline">\(\mathcal{Q}\)</span> (notation <span class="math inline">\(f \in \mathcal{F}^1(\mathcal{Q}^n )\)</span> if
+for any <span class="math inline">\(x, y \in \mathcal{Q}\)</span> we
+have <span class="math display">\[
+f(\pmb{y}) \ge f(\pmb{x}) + \langle \nabla
+f(\pmb{x}),\pmb{y}-\pmb{x}\rangle \tag{11}
+\]</span> if <span class="math inline">\(-f(\pmb{x})\)</span> is convex,
+we call <span class="math inline">\(f(\pmb{x})\)</span>
+<font color="orange">concave</font>.</p>
+<hr>
+<h2 id="properties-of-the-convex-function">2.Properties of the Convex
+Function</h2>
+<p>Lemma 18:</p>
+<p>if <span class="math inline">\(f_1\)</span> and <span class="math inline">\(f_2\)</span> belong to <span class="math inline">\(\mathcal{F}^1(\mathbb{R}^n)\)</span>, and <span class="math inline">\(\alpha , \beta \ge 0\)</span>, then the function
+<span class="math inline">\(f = \alpha f_1 + \beta f_2\)</span> also
+belong to <span class="math inline">\(\mathcal{F}^1(\mathbb{R}^n
+)\)</span>.</p>
+<hr>
+<p>Proof.</p>
+<p>for any <span class="math inline">\(\pmb{x} ,\pmb{y} \in
+\mathbb{R}^n\)</span>, we have <span class="math display">\[
+f_1(\pmb{y}) \ge f_1(\pmb{x}) + \langle \nabla
+f_1(\pmb{x}),\pmb{y}-\pmb{x}\rangle \tag{①}
+\]</span></p>
+<p><span class="math display">\[
+f_2(\pmb{y}) \ge f_2(\pmb{x}) + \langle \nabla
+f_2(\pmb{x}),\pmb{y}-\pmb{x}\rangle \tag{②}
+\]</span></p>
+<p>then <span class="math inline">\(\alpha \cdot\)</span>① + <span class="math inline">\(\beta \cdot\)</span>② .</p>
+<hr>
+<p>Lemma 19:</p>
+<p>if <span class="math inline">\(f \in
+\mathcal{F}^1(\mathbb{R}^n)\)</span>. <span class="math inline">\(b \in
+\mathbb{R}^m\)</span>, and <span class="math inline">\(A : \mathbb{R}^n
+\rightarrow \mathbb{R}^m\)</span>, then <span class="math display">\[
+\phi(\pmb{x}) = f(A\pmb{x}+\pmb{b}) \in \mathcal{F}^1(\mathbb{R}^n)
+\]</span></p>
+<hr>
+<p>Proof.</p>
+<p>Define <span class="math inline">\(\overline{\pmb{x}} =
+A\pmb{x}+\pmb{b}\)</span>, <span class="math inline">\(\overline{\pmb{y}} = A\pmb{y}+\pmb{b}\)</span>.
+since <span class="math inline">\(\phi&#39;(\pmb{x}) = A^T \nabla
+f(A\pmb{x}+\pmb{b})\)</span>, we have <span class="math display">\[
+\begin{aligned}
+\phi(\pmb{y}) = f(\overline{\pmb{y}}) &amp;\ge f(\overline{\pmb{x}}) +
+\langle \nabla
+f(\overline{\pmb{x}}),\overline{\pmb{y}}-\overline{\pmb{x}}\rangle \\
+&amp; = \phi(\pmb{x}) + \langle \nabla
+f(\overline{\pmb{x}}),A(\pmb{y}-\pmb{x})\rangle \\
+&amp; = \phi(\pmb{x}) + \langle A^T \nabla
+f(\overline{\pmb{x}}),(\pmb{y}-\pmb{x})\rangle \\
+&amp; =\phi(\pmb{x}) + \langle \phi(\pmb{x}),(\pmb{y}-\pmb{x})\rangle
+\end{aligned}
+\]</span></p>
+<hr>
+<p>Lemma 20:</p>
+<p>If <span class="math inline">\(f_i(\pmb{x})\)</span>, <span class="math inline">\(i \in I\)</span>, are convex, then <span class="math display">\[
+g(\pmb{x}) = \underset{i \in I}{max}f_i(\pmb{x})
+\]</span> is also convex.</p>
+<hr>
+<p>Lemma 21:</p>
+<ul>
+<li><p>If <span class="math inline">\(f\)</span> is a convex function on
+<span class="math inline">\(\mathbb{R}^n\)</span> and <span class="math inline">\(F (·)\)</span> is a convex and
+<font color="orange">non­-decreasing</font> function on <span class="math inline">\(\mathbb{R}\)</span>, then <span class="math inline">\(g (x) = F (f (x))\)</span> is convex.</p></li>
+<li><p>If <span class="math inline">\(f_i , i = 1, . . . , m\)</span>
+are convex functions on <span class="math inline">\(\mathbb{R}^n\)</span> and <span class="math inline">\(F (y_1 , . . . , y_m )\)</span> is convex and
+<font color="orange">non-­decreasing</font> (component­wise) in each
+argument, then <span class="math display">\[
+g(\pmb{x}) = F(f_1(\pmb{x}),...,f_m(\pmb{x}))
+\]</span> is convex.</p></li>
+</ul>
+<hr>
+<p>Lemma 22:</p>
+<p>If <span class="math inline">\(f(\pmb{x},\pmb{y})\)</span> is convex
+in <span class="math inline">\((\pmb{x},\pmb{y}) \in
+\mathbb{R}^n\)</span> and <span class="math inline">\(Y\)</span> is a
+convex set, then <span class="math display">\[
+g(\pmb{x}) = \underset{\pmb{y} \in Y}{\rm{inf}} \space
+f(\pmb{x},\pmb{y})
+\]</span> is convex.</p>
+<hr>
+<h2 id="equivalent-definitions">3.Equivalent Definitions</h2>
+<p>Theorem 23</p>
+<p>A continuously <font color="orange">differentiable</font> function
+<span class="math inline">\(f\)</span> belongs to the class <span class="math inline">\(\mathcal{F}^1(\mathbb{R}^n)\)</span> if and only
+if for any <span class="math inline">\(\pmb{x},\pmb{y} \in
+\mathbb{R}^n\)</span> and <span class="math inline">\(\alpha \in
+[0,1]\)</span> we have <span class="math display">\[
+f(\alpha \pmb{x} + (1 - \alpha)\pmb{y}) \le \alpha f(\pmb{x}) + (1 -
+\alpha) f(\pmb{y}) \tag{12}
+\]</span></p>
+<hr>
+<p>Theorem 24</p>
+<p>A continuously <font color="orange">differentiable</font> function
+<span class="math inline">\(f\)</span> belongs to the class <span class="math inline">\(\mathcal{F}^1(\mathbb{R}^n)\)</span> if and only
+if for any <span class="math inline">\(\pmb{x},\pmb{y} \in
+\mathbb{R}^n\)</span> we have</p>
+<p><span class="math display">\[
+\langle \nabla f(\pmb{x}) - \nabla f(\pmb{y}),\pmb{x} - \pmb{y} \rangle
+\ge 0 \tag{13}
+\]</span></p>
+<hr>
+<p>Theorem 25</p>
+<p>A twice continuously <font color="orange">differentiable</font>
+function <span class="math inline">\(f\)</span> belongs to the class
+<span class="math inline">\(\mathcal{F}^2 (\mathbb{R}^n )\)</span> if
+and only if for any <span class="math inline">\(x \in
+\mathbb{R}^n\)</span> we have <span class="math display">\[
+\nabla ^2 f(\pmb{x}) \succeq 0 \tag{14}
+\]</span></p>
+<hr>
+<h2 id="necessary-and-sufficient-conditions-for-the-class-mathcalf11_lmathbbrn">4.Necessary
+and Sufficient Conditions for The Class <span class="math inline">\(\mathcal{F}^{1,1}_{L}(\mathbb{R}^n)\)</span></h2>
+<p>Theorem 2.1.5</p>
+<p>All conditions below, holding for all <span class="math inline">\(x,y
+\in R^n\)</span> and <span class="math inline">\(\alpha\)</span> from
+<span class="math inline">\([0,1]\)</span>, are equivalent to inclusion
+<span class="math inline">\(f \in \mathcal{F}^{1,1}_{L}(R^n)\)</span>
+<span class="math display">\[
+0 \le f(y)-f(x)-\langle f&#39;(x),y-x \rangle \le \frac{L}{2} ||x-y||^2
+\tag{2.1.6}
+\]</span></p>
+<p><span class="math display">\[
+f(x) + \langle f&#39;(x),y-x \rangle +
+\frac{1}{2L}||f&#39;(x)-f&#39;(y)||^2 \le f(y) \tag{2.1.7}
+\]</span></p>
+<p><span class="math display">\[
+\frac{1}{L}||f&#39;(x)-f&#39;(y)||^2 \le \langle f&#39;(x)-f&#39;(y)
+,x-y \rangle \tag{2.1.8}
+\]</span></p>
+<p><span class="math display">\[
+\langle f&#39;(x)-f&#39;(y),x-y \rangle \le L||x-y||^2 \tag{2.1.9}
+\]</span></p>
+<p><span class="math display">\[
+\alpha f(x) + (1-\alpha) f(y) \ge f(\alpha x +
+(1-\alpha)y)+\frac{\alpha(1-\alpha)}{2L}||f&#39;(x)-f&#39;(y)||^2
+\tag{2.1.10}
+\]</span></p>
+<p><span class="math display">\[
+\alpha f(x) + (1-\alpha) f(y) \le f(\alpha x +(1-\alpha)y) +
+\alpha(1-\alpha)\frac{L}{2}||x-y||^2 \tag{2.1.11}
+\]</span></p>
+<h2 id="necessary-and-sufficient-conditions-for-the-class-mathcalf21_lmathbbrn">5.Necessary
+and Sufficient Conditions for The Class <span class="math inline">\(\mathcal{F}^{2,1}_{L}(\mathbb{R}^n)\)</span></h2>
+<p>Theorem 2.1.6</p>
+<p>Two times continuously differentiable function $f $ belongs to <span class="math inline">\(\mathcal{F}^{2,1}_{L}(R^n)\)</span> if and only
+for <span class="math inline">\(\forall x \in R^n\)</span> we have <span class="math display">\[
+0 \preceq f&#39;&#39;(x) \preceq LI_n \tag{2.1.12}
+\]</span></p>
+]]></content>
+      <categories>
+        <category>凸优化</category>
+      </categories>
+      <tags>
+        <tag>凸优化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Deterministic Finite Automata</title>
     <url>/2022/10/10/Deterministic-Finite-Automata/</url>
     <content><![CDATA[<style> 
@@ -424,187 +605,6 @@ to be a <font color="orange">dead state</font>.</p>
       </categories>
       <tags>
         <tag>计算理论</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Convex Function</title>
-    <url>/2022/10/06/Convex-Function/</url>
-    <content><![CDATA[<style> 
-    .markdown-body {
-      font-family: Microsoft JhengHei, SimHei;
-      font-size: 16px;
-    }
-</style>
-<h1 align="center">
-Convex Function
-</h1>
-<h2 id="definition">1.Definition</h2>
-<p>Definition 15:</p>
-<p>A set <span class="math inline">\(\mathcal{Q} \subseteq
-\mathbb{R}^n\)</span> is called <font color="orange">convex</font> if for
-any <span class="math inline">\(\pmb{x},\pmb{y} \in \mathcal{Q}\)</span>
-and <span class="math inline">\(\alpha\)</span> from [0,1] we have <span class="math display">\[
-\alpha \pmb{x} + (1 - \alpha) \pmb{y} \in \mathcal{Q} \tag{10}
-\]</span></p>
-<hr>
-<p>Definition 16:</p>
-<p>A continuously differentiable function <span class="math inline">\(f
-(·)\)</span> is called <font color="orange">convex</font> on a convex set
-<span class="math inline">\(\mathcal{Q}\)</span> (notation <span class="math inline">\(f \in \mathcal{F}^1(\mathcal{Q}^n )\)</span> if
-for any <span class="math inline">\(x, y \in \mathcal{Q}\)</span> we
-have <span class="math display">\[
-f(\pmb{y}) \ge f(\pmb{x}) + \langle \nabla
-f(\pmb{x}),\pmb{y}-\pmb{x}\rangle \tag{11}
-\]</span> if <span class="math inline">\(-f(\pmb{x})\)</span> is convex,
-we call <span class="math inline">\(f(\pmb{x})\)</span>
-<font color="orange">concave</font>.</p>
-<hr>
-<h2 id="properties-of-the-convex-function">2.Properties of the Convex
-Function</h2>
-<p>Lemma 18:</p>
-<p>if <span class="math inline">\(f_1\)</span> and <span class="math inline">\(f_2\)</span> belong to <span class="math inline">\(\mathcal{F}^1(\mathbb{R}^n)\)</span>, and <span class="math inline">\(\alpha , \beta \ge 0\)</span>, then the function
-<span class="math inline">\(f = \alpha f_1 + \beta f_2\)</span> also
-belong to <span class="math inline">\(\mathcal{F}^1(\mathbb{R}^n
-)\)</span>.</p>
-<hr>
-<p>Proof.</p>
-<p>for any <span class="math inline">\(\pmb{x} ,\pmb{y} \in
-\mathbb{R}^n\)</span>, we have <span class="math display">\[
-f_1(\pmb{y}) \ge f_1(\pmb{x}) + \langle \nabla
-f_1(\pmb{x}),\pmb{y}-\pmb{x}\rangle \tag{①}
-\]</span></p>
-<p><span class="math display">\[
-f_2(\pmb{y}) \ge f_2(\pmb{x}) + \langle \nabla
-f_2(\pmb{x}),\pmb{y}-\pmb{x}\rangle \tag{②}
-\]</span></p>
-<p>then <span class="math inline">\(\alpha \cdot\)</span>① + <span class="math inline">\(\beta \cdot\)</span>② .</p>
-<hr>
-<p>Lemma 19:</p>
-<p>if <span class="math inline">\(f \in
-\mathcal{F}^1(\mathbb{R}^n)\)</span>. <span class="math inline">\(b \in
-\mathbb{R}^m\)</span>, and <span class="math inline">\(A : \mathbb{R}^n
-\rightarrow \mathbb{R}^m\)</span>, then <span class="math display">\[
-\phi(\pmb{x}) = f(A\pmb{x}+\pmb{b}) \in \mathcal{F}^1(\mathbb{R}^n)
-\]</span></p>
-<hr>
-<p>Proof.</p>
-<p>Define <span class="math inline">\(\overline{\pmb{x}} =
-A\pmb{x}+\pmb{b}\)</span>, <span class="math inline">\(\overline{\pmb{y}} = A\pmb{y}+\pmb{b}\)</span>.
-since <span class="math inline">\(\phi&#39;(\pmb{x}) = A^T \nabla
-f(A\pmb{x}+\pmb{b})\)</span>, we have <span class="math display">\[
-\begin{aligned}
-\phi(\pmb{y}) = f(\overline{\pmb{y}}) &amp;\ge f(\overline{\pmb{x}}) +
-\langle \nabla
-f(\overline{\pmb{x}}),\overline{\pmb{y}}-\overline{\pmb{x}}\rangle \\
-&amp; = \phi(\pmb{x}) + \langle \nabla
-f(\overline{\pmb{x}}),A(\pmb{y}-\pmb{x})\rangle \\
-&amp; = \phi(\pmb{x}) + \langle A^T \nabla
-f(\overline{\pmb{x}}),(\pmb{y}-\pmb{x})\rangle \\
-&amp; =\phi(\pmb{x}) + \langle \phi(\pmb{x}),(\pmb{y}-\pmb{x})\rangle
-\end{aligned}
-\]</span></p>
-<hr>
-<p>Lemma 20:</p>
-<p>If <span class="math inline">\(f_i(\pmb{x})\)</span>, <span class="math inline">\(i \in I\)</span>, are convex, then <span class="math display">\[
-g(\pmb{x}) = \underset{i \in I}{max}f_i(\pmb{x})
-\]</span> is also convex.</p>
-<hr>
-<p>Lemma 21:</p>
-<ul>
-<li><p>If <span class="math inline">\(f\)</span> is a convex function on
-<span class="math inline">\(\mathbb{R}^n\)</span> and <span class="math inline">\(F (·)\)</span> is a convex and
-<font color="orange">non­-decreasing</font> function on <span class="math inline">\(\mathbb{R}\)</span>, then <span class="math inline">\(g (x) = F (f (x))\)</span> is convex.</p></li>
-<li><p>If <span class="math inline">\(f_i , i = 1, . . . , m\)</span>
-are convex functions on <span class="math inline">\(\mathbb{R}^n\)</span> and <span class="math inline">\(F (y_1 , . . . , y_m )\)</span> is convex and
-<font color="orange">non-­decreasing</font> (component­wise) in each
-argument, then <span class="math display">\[
-g(\pmb{x}) = F(f_1(\pmb{x}),...,f_m(\pmb{x}))
-\]</span> is convex.</p></li>
-</ul>
-<hr>
-<p>Lemma 22:</p>
-<p>If <span class="math inline">\(f(\pmb{x},\pmb{y})\)</span> is convex
-in <span class="math inline">\((\pmb{x},\pmb{y}) \in
-\mathbb{R}^n\)</span> and <span class="math inline">\(Y\)</span> is a
-convex set, then <span class="math display">\[
-g(\pmb{x}) = \underset{\pmb{y} \in Y}{\rm{inf}} \space
-f(\pmb{x},\pmb{y})
-\]</span> is convex.</p>
-<hr>
-<h2 id="equivalent-definitions">3.Equivalent Definitions</h2>
-<p>Theorem 23</p>
-<p>A continuously <font color="orange">differentiable</font> function
-<span class="math inline">\(f\)</span> belongs to the class <span class="math inline">\(\mathcal{F}^1(\mathbb{R}^n)\)</span> if and only
-if for any <span class="math inline">\(\pmb{x},\pmb{y} \in
-\mathbb{R}^n\)</span> and <span class="math inline">\(\alpha \in
-[0,1]\)</span> we have <span class="math display">\[
-f(\alpha \pmb{x} + (1 - \alpha)\pmb{y}) \le \alpha f(\pmb{x}) + (1 -
-\alpha) f(\pmb{y}) \tag{12}
-\]</span></p>
-<hr>
-<p>Theorem 24</p>
-<p>A continuously <font color="orange">differentiable</font> function
-<span class="math inline">\(f\)</span> belongs to the class <span class="math inline">\(\mathcal{F}^1(\mathbb{R}^n)\)</span> if and only
-if for any <span class="math inline">\(\pmb{x},\pmb{y} \in
-\mathbb{R}^n\)</span> we have</p>
-<p><span class="math display">\[
-\langle \nabla f(\pmb{x}) - \nabla f(\pmb{y}),\pmb{x} - \pmb{y} \rangle
-\ge 0 \tag{13}
-\]</span></p>
-<hr>
-<p>Theorem 25</p>
-<p>A twice continuously <font color="orange">differentiable</font>
-function <span class="math inline">\(f\)</span> belongs to the class
-<span class="math inline">\(\mathcal{F}^2 (\mathbb{R}^n )\)</span> if
-and only if for any <span class="math inline">\(x \in
-\mathbb{R}^n\)</span> we have <span class="math display">\[
-\nabla ^2 f(\pmb{x}) \succeq 0 \tag{14}
-\]</span></p>
-<hr>
-<h2 id="necessary-and-sufficient-conditions-for-the-class-mathcalf11_lmathbbrn">4.Necessary
-and Sufficient Conditions for The Class <span class="math inline">\(\mathcal{F}^{1,1}_{L}(\mathbb{R}^n)\)</span></h2>
-<p>Theorem 2.1.5</p>
-<p>All conditions below, holding for all <span class="math inline">\(x,y
-\in R^n\)</span> and <span class="math inline">\(\alpha\)</span> from
-<span class="math inline">\([0,1]\)</span>, are equivalent to inclusion
-<span class="math inline">\(f \in \mathcal{F}^{1,1}_{L}(R^n)\)</span>
-<span class="math display">\[
-0 \le f(y)-f(x)-\langle f&#39;(x),y-x \rangle \le \frac{L}{2} ||x-y||^2
-\tag{2.1.6}
-\]</span></p>
-<p><span class="math display">\[
-f(x) + \langle f&#39;(x),y-x \rangle +
-\frac{1}{2L}||f&#39;(x)-f&#39;(y)||^2 \le f(y) \tag{2.1.7}
-\]</span></p>
-<p><span class="math display">\[
-\frac{1}{L}||f&#39;(x)-f&#39;(y)||^2 \le \langle f&#39;(x)-f&#39;(y)
-,x-y \rangle \tag{2.1.8}
-\]</span></p>
-<p><span class="math display">\[
-\langle f&#39;(x)-f&#39;(y),x-y \rangle \le L||x-y||^2 \tag{2.1.9}
-\]</span></p>
-<p><span class="math display">\[
-\alpha f(x) + (1-\alpha) f(y) \ge f(\alpha x +
-(1-\alpha)y)+\frac{\alpha(1-\alpha)}{2L}||f&#39;(x)-f&#39;(y)||^2
-\tag{2.1.10}
-\]</span></p>
-<p><span class="math display">\[
-\alpha f(x) + (1-\alpha) f(y) \le f(\alpha x +(1-\alpha)y) +
-\alpha(1-\alpha)\frac{L}{2}||x-y||^2 \tag{2.1.11}
-\]</span></p>
-<h2 id="necessary-and-sufficient-conditions-for-the-class-mathcalf21_lmathbbrn">5.Necessary
-and Sufficient Conditions for The Class <span class="math inline">\(\mathcal{F}^{2,1}_{L}(\mathbb{R}^n)\)</span></h2>
-<p>Theorem 2.1.6</p>
-<p>Two times continuously differentiable function $f $ belongs to <span class="math inline">\(\mathcal{F}^{2,1}_{L}(R^n)\)</span> if and only
-for <span class="math inline">\(\forall x \in R^n\)</span> we have <span class="math display">\[
-0 \preceq f&#39;&#39;(x) \preceq LI_n \tag{2.1.12}
-\]</span></p>
-]]></content>
-      <categories>
-        <category>凸优化</category>
-      </categories>
-      <tags>
-        <tag>凸优化</tag>
       </tags>
   </entry>
   <entry>
@@ -1233,112 +1233,6 @@ processes</p>
       </tags>
   </entry>
   <entry>
-    <title>Relaxation and approximation</title>
-    <url>/2022/09/23/Relaxation-and-approximation/</url>
-    <content><![CDATA[<style> 
-    .markdown-body {
-      font-family: Microsoft JhengHei, SimHei;
-      font-size: 16px;
-    }
-</style>
-<h1 align="center">
-Relaxation and approximation
-</h1>
-<h2 id="relaxation松弛">1.Relaxation(松弛)</h2>
-<p>定义relaxation sequence:</p>
-<blockquote>
-<p>We call the sequence <span class="math inline">\(\{a_k
-\}^{\infty}_{k=0}\)</span> a relaxation sequence if</p>
-<p>​ <span class="math inline">\(a_{k+1} \le a_k\)</span> <span class="math inline">\(\forall k \ge 0\)</span></p>
-</blockquote>
-<h2 id="approximation近似">2.Approximation(近似)</h2>
-<p>用简单的去替代复杂的，并保持原来相似的性质</p>
-<p>令<span class="math inline">\(f(x)\)</span>在<span class="math inline">\(\bar{x}\)</span>处可微，于是对于<span class="math inline">\(y \in
-R^n\)</span>我们有(<font color="red">泰勒展开</font>) <span class="math display">\[
-f(y)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y-\bar{x} \rangle +
-o(||y-\bar{x}||)
-\]</span> 其中<span class="math inline">\(o(r)\)</span>对于<span class="math inline">\(r \ge 0\)</span>有 <span class="math display">\[
-\underset{r \rightarrow 0}{lim} \frac{1}{r} o(r) = 0 , \space \space
-\space o(0)=0.
-\]</span> 同时给出<span class="math inline">\(|| \cdot
-||\)</span>在<span class="math inline">\(R^n\)</span>的欧几里得定义:
-<span class="math display">\[
-||x|| = [\sum_{i=1}^{n}(x^{(i)})^2]^{1/2}
-\]</span> 其中的<span class="math inline">\(f^{&#39;}(x)\)</span>是函数<span class="math inline">\(f\)</span>在<span class="math inline">\(x\)</span>处的梯度(gradient) <span class="math display">\[
-f&#39;(x) = (\frac{\partial f(x)}{\partial x^{(1)}},...,\frac{\partial
-f(x)}{\partial x^{(n)}})^T
-\]</span></p>
-<h2 id="引理1.2.1">3.引理1.2.1</h2>
-<p>定义level set为<span class="math inline">\(\mathscr{L}_f(\alpha)\)</span>: <span class="math display">\[
-\mathscr{L}_f(\alpha) = \{ x \in R^n | f(x) \le \alpha \}
-\]</span> 同时定义与<span class="math inline">\(\mathscr{L}_f(f(\bar{x}))\)</span>在<span class="math inline">\(\bar{x}\)</span>处<font color="red">相切</font>的方向向量集合:
-<span class="math display">\[
-S_f(\bar{x}) = \{s \in R^n | s = \underset{f(y_k) =
-f(\bar{x})}{\underset{y_k \rightarrow \bar{x}}{lim}}
-\frac{y_k-\bar{x}}{||y_k-\bar{x}||} \}
-\]</span></p>
-<p><font color="red">引理1.2.1</font>: 如果<span class="math inline">\(s
-\in S_f(\bar{x})\)</span>,那么<span class="math inline">\(\langle
-f&#39;(\bar{x}),s \rangle = 0\)</span>.</p>
-<p>证明: 由于<span class="math inline">\(f(y_k) =
-f(\bar{x})\)</span>,我们有 <span class="math display">\[
-f(y_k)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y_k-\bar{x} \rangle +
-o(||y_k-\bar{x}||) = f(\bar{x})
-\]</span> 因此只需证明<span class="math inline">\(\langle
-f^{&#39;}(\bar{x}),y_k-\bar{x} \rangle + o(||y_k-\bar{x}||) =
-0\)</span>即可</p>
-<p>取极限<span class="math inline">\(y_k \rightarrow
-\bar{x}\)</span>时即可得证</p>
-<h2 id="证明梯度反方向为局部下降最快方向">4.证明梯度反方向为局部下降最快方向</h2>
-<p>令<span class="math inline">\(s\)</span>为<span class="math inline">\(R^n\)</span>中的方向向量，<span class="math inline">\(||s|| = 1\)</span>，局部减小量为 <span class="math display">\[
-\Delta(s) = \underset{a \rightarrow 0}{lim} \frac{1}{\alpha}
-[f(\bar{x}+\alpha s)-f(\bar{x})]
-\]</span> 利用近似(泰勒展开)可以得到<span class="math inline">\(f(\bar{x}+\alpha s)-f(\bar{x})=\alpha \langle
-f&#39;(\bar{x}),s \rangle + o(\alpha)\)</span>.因此有 <span class="math display">\[
-\Delta (s) = \langle f&#39;(\bar{x}),s \rangle
-\]</span> ps: 柯西不等式 <span class="math display">\[
--||x|| \cdot ||y|| \le \langle x,y \rangle \le ||x|| \cdot ||y||
-\]</span> 从而有<span class="math inline">\(\Delta(s) = \langle
-f&#39;(\bar{x}),s \rangle \ge -||f&#39;(\bar{x})||\)</span>.取 <span class="math display">\[
-\bar{s} = -f&#39;(\bar{x}) / ||f&#39;(\bar{x})||
-\]</span> 这时能够取到不等式的等号： <span class="math display">\[
-\Delta(\bar{s}) = - \langle f&#39;(\bar{x}),f&#39;(\bar{x}) \rangle /
-||f&#39;(\bar{x})|| = -||f&#39;(\bar{x})||
-\]</span> 因此方向<span class="math inline">\(-f&#39;(\bar{x})\)</span>(antigradient)是局部<font color="red">下降最快</font>的方向</p>
-<h2 id="定理1.2.1first-order-optimality-condition">5.定理1.2.1(First-order
-optimality condition)</h2>
-<p><font color="red">定理1.2.1</font>: 令<span class="math inline">\(x^*\)</span>是局部最小值对应向量，则 <span class="math display">\[
-f&#39;(x^*) = 0
-\]</span></p>
-<h2 id="定理1.2.2second-order-optimality-condition">6.定理1.2.2(Second-order
-optimality condition)</h2>
-<p>二阶近似 <span class="math display">\[
-f(y)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y-\bar{x} \rangle +
-\frac{1}{2}\langle  f^{&#39;&#39;}(\bar{x})(y-\bar{x}),y-\bar{x}
-\rangle   + o(||y-\bar{x}||^2)
-\]</span> 其中<span class="math inline">\(n \times n\)</span>矩阵<span class="math inline">\(f&#39;&#39;(x)\)</span>称为<font color="red">黑塞矩阵</font>(Hessian)：
-<span class="math display">\[
-(f&#39;&#39;(x))^{(i,j)} =
-\frac{\partial^2f(x)}{\partial{x}^{(i)}\partial{x}^{(j)}}
-\]</span> 黑塞矩阵是对称矩阵: <span class="math display">\[
-f&#39;&#39;(x) = [f&#39;&#39;(x)]^T
-\]</span> 对称矩阵A是<font color="red">半正定</font>的: <span class="math display">\[
-\langle Ax,x \rangle \ge 0 \space \space \space \forall x \in R^n
-\]</span> 符号记为 <span class="math display">\[
-A \succeq 0
-\]</span></p>
-<p><font color="red">定理1.2.2</font>: 令<span class="math inline">\(x^*\)</span>是局部最小值对应向量，则 <span class="math display">\[
-f&#39;(x^*) = 0, \space \space \space    f&#39;&#39;(x^*) \succeq  0.
-\]</span></p>
-]]></content>
-      <categories>
-        <category>凸优化</category>
-      </categories>
-      <tags>
-        <tag>凸优化</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2022/08/18/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
@@ -1869,6 +1763,112 @@ n &amp; 0 &amp; 0 &amp; 0 \\
       </tags>
   </entry>
   <entry>
+    <title>Relaxation and approximation</title>
+    <url>/2022/09/23/Relaxation-and-approximation/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+Relaxation and approximation
+</h1>
+<h2 id="relaxation松弛">1.Relaxation(松弛)</h2>
+<p>定义relaxation sequence:</p>
+<blockquote>
+<p>We call the sequence <span class="math inline">\(\{a_k
+\}^{\infty}_{k=0}\)</span> a relaxation sequence if</p>
+<p>​ <span class="math inline">\(a_{k+1} \le a_k\)</span> <span class="math inline">\(\forall k \ge 0\)</span></p>
+</blockquote>
+<h2 id="approximation近似">2.Approximation(近似)</h2>
+<p>用简单的去替代复杂的，并保持原来相似的性质</p>
+<p>令<span class="math inline">\(f(x)\)</span>在<span class="math inline">\(\bar{x}\)</span>处可微，于是对于<span class="math inline">\(y \in
+R^n\)</span>我们有(<font color="red">泰勒展开</font>) <span class="math display">\[
+f(y)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y-\bar{x} \rangle +
+o(||y-\bar{x}||)
+\]</span> 其中<span class="math inline">\(o(r)\)</span>对于<span class="math inline">\(r \ge 0\)</span>有 <span class="math display">\[
+\underset{r \rightarrow 0}{lim} \frac{1}{r} o(r) = 0 , \space \space
+\space o(0)=0.
+\]</span> 同时给出<span class="math inline">\(|| \cdot
+||\)</span>在<span class="math inline">\(R^n\)</span>的欧几里得定义:
+<span class="math display">\[
+||x|| = [\sum_{i=1}^{n}(x^{(i)})^2]^{1/2}
+\]</span> 其中的<span class="math inline">\(f^{&#39;}(x)\)</span>是函数<span class="math inline">\(f\)</span>在<span class="math inline">\(x\)</span>处的梯度(gradient) <span class="math display">\[
+f&#39;(x) = (\frac{\partial f(x)}{\partial x^{(1)}},...,\frac{\partial
+f(x)}{\partial x^{(n)}})^T
+\]</span></p>
+<h2 id="引理1.2.1">3.引理1.2.1</h2>
+<p>定义level set为<span class="math inline">\(\mathscr{L}_f(\alpha)\)</span>: <span class="math display">\[
+\mathscr{L}_f(\alpha) = \{ x \in R^n | f(x) \le \alpha \}
+\]</span> 同时定义与<span class="math inline">\(\mathscr{L}_f(f(\bar{x}))\)</span>在<span class="math inline">\(\bar{x}\)</span>处<font color="red">相切</font>的方向向量集合:
+<span class="math display">\[
+S_f(\bar{x}) = \{s \in R^n | s = \underset{f(y_k) =
+f(\bar{x})}{\underset{y_k \rightarrow \bar{x}}{lim}}
+\frac{y_k-\bar{x}}{||y_k-\bar{x}||} \}
+\]</span></p>
+<p><font color="red">引理1.2.1</font>: 如果<span class="math inline">\(s
+\in S_f(\bar{x})\)</span>,那么<span class="math inline">\(\langle
+f&#39;(\bar{x}),s \rangle = 0\)</span>.</p>
+<p>证明: 由于<span class="math inline">\(f(y_k) =
+f(\bar{x})\)</span>,我们有 <span class="math display">\[
+f(y_k)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y_k-\bar{x} \rangle +
+o(||y_k-\bar{x}||) = f(\bar{x})
+\]</span> 因此只需证明<span class="math inline">\(\langle
+f^{&#39;}(\bar{x}),y_k-\bar{x} \rangle + o(||y_k-\bar{x}||) =
+0\)</span>即可</p>
+<p>取极限<span class="math inline">\(y_k \rightarrow
+\bar{x}\)</span>时即可得证</p>
+<h2 id="证明梯度反方向为局部下降最快方向">4.证明梯度反方向为局部下降最快方向</h2>
+<p>令<span class="math inline">\(s\)</span>为<span class="math inline">\(R^n\)</span>中的方向向量，<span class="math inline">\(||s|| = 1\)</span>，局部减小量为 <span class="math display">\[
+\Delta(s) = \underset{a \rightarrow 0}{lim} \frac{1}{\alpha}
+[f(\bar{x}+\alpha s)-f(\bar{x})]
+\]</span> 利用近似(泰勒展开)可以得到<span class="math inline">\(f(\bar{x}+\alpha s)-f(\bar{x})=\alpha \langle
+f&#39;(\bar{x}),s \rangle + o(\alpha)\)</span>.因此有 <span class="math display">\[
+\Delta (s) = \langle f&#39;(\bar{x}),s \rangle
+\]</span> ps: 柯西不等式 <span class="math display">\[
+-||x|| \cdot ||y|| \le \langle x,y \rangle \le ||x|| \cdot ||y||
+\]</span> 从而有<span class="math inline">\(\Delta(s) = \langle
+f&#39;(\bar{x}),s \rangle \ge -||f&#39;(\bar{x})||\)</span>.取 <span class="math display">\[
+\bar{s} = -f&#39;(\bar{x}) / ||f&#39;(\bar{x})||
+\]</span> 这时能够取到不等式的等号： <span class="math display">\[
+\Delta(\bar{s}) = - \langle f&#39;(\bar{x}),f&#39;(\bar{x}) \rangle /
+||f&#39;(\bar{x})|| = -||f&#39;(\bar{x})||
+\]</span> 因此方向<span class="math inline">\(-f&#39;(\bar{x})\)</span>(antigradient)是局部<font color="red">下降最快</font>的方向</p>
+<h2 id="定理1.2.1first-order-optimality-condition">5.定理1.2.1(First-order
+optimality condition)</h2>
+<p><font color="red">定理1.2.1</font>: 令<span class="math inline">\(x^*\)</span>是局部最小值对应向量，则 <span class="math display">\[
+f&#39;(x^*) = 0
+\]</span></p>
+<h2 id="定理1.2.2second-order-optimality-condition">6.定理1.2.2(Second-order
+optimality condition)</h2>
+<p>二阶近似 <span class="math display">\[
+f(y)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y-\bar{x} \rangle +
+\frac{1}{2}\langle  f^{&#39;&#39;}(\bar{x})(y-\bar{x}),y-\bar{x}
+\rangle   + o(||y-\bar{x}||^2)
+\]</span> 其中<span class="math inline">\(n \times n\)</span>矩阵<span class="math inline">\(f&#39;&#39;(x)\)</span>称为<font color="red">黑塞矩阵</font>(Hessian)：
+<span class="math display">\[
+(f&#39;&#39;(x))^{(i,j)} =
+\frac{\partial^2f(x)}{\partial{x}^{(i)}\partial{x}^{(j)}}
+\]</span> 黑塞矩阵是对称矩阵: <span class="math display">\[
+f&#39;&#39;(x) = [f&#39;&#39;(x)]^T
+\]</span> 对称矩阵A是<font color="red">半正定</font>的: <span class="math display">\[
+\langle Ax,x \rangle \ge 0 \space \space \space \forall x \in R^n
+\]</span> 符号记为 <span class="math display">\[
+A \succeq 0
+\]</span></p>
+<p><font color="red">定理1.2.2</font>: 令<span class="math inline">\(x^*\)</span>是局部最小值对应向量，则 <span class="math display">\[
+f&#39;(x^*) = 0, \space \space \space    f&#39;&#39;(x^*) \succeq  0.
+\]</span></p>
+]]></content>
+      <categories>
+        <category>凸优化</category>
+      </categories>
+      <tags>
+        <tag>凸优化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>waitKey</title>
     <url>/2022/10/04/waitKey/</url>
     <content><![CDATA[<style> 
@@ -2327,6 +2327,62 @@ R = R(4,5,5) = R(4,5,3) = a^*b(a\cup ba^*ba^*b)^*
       </tags>
   </entry>
   <entry>
+    <title>正则语言与非正则语言</title>
+    <url>/2022/10/19/%E6%AD%A3%E5%88%99%E8%AF%AD%E8%A8%80%E4%B8%8E%E9%9D%9E%E6%AD%A3%E5%88%99%E8%AF%AD%E8%A8%80/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+正则语言与非正则语言
+</h1>
+<h2 id="定理2.4.1">定理2.4.1</h2>
+<p><font color="orange">设<span class="math inline">\(L\)</span>是一个正则语言，则存在正整数<span class="math inline">\(n \ge 1\)</span>使得任一字符串<span class="math inline">\(w \in L\)</span></font></p>
+<p><font color="orange">只要<span class="math inline">\(|w| \ge
+n\)</span>就可以写成<span class="math inline">\(w =
+xyz\)</span>,</font></p>
+<p><font color="orange">其中<span class="math inline">\(y \neq
+e\)</span>,<span class="math inline">\(|xy| \le
+n\)</span>且对每一个<span class="math inline">\(i \ge 0\)</span>,<span class="math inline">\(xy^iz \in L\)</span>.</font></p>
+<hr>
+<p>证明：</p>
+<p>由于<span class="math inline">\(L\)</span>是正则的,它能够被一台确定型有穷自动机<span class="math inline">\(M\)</span>接受.</p>
+<p>设<span class="math inline">\(M\)</span>有<span class="math inline">\(n\)</span>个状态,<span class="math inline">\(w \in
+L\)</span>是一个长度大于等于<span class="math inline">\(n\)</span>的字符串.考虑<span class="math inline">\(M\)</span>的前<span class="math inline">\(n\)</span>步计算： <span class="math display">\[
+(q_0,w_1 w_2 \cdots w_n) \vdash_M (q_1,w_2 \cdots w_n) \vdash_M \cdots
+\vdash_M(q_n , e)
+\]</span> 由于自动机只有<span class="math inline">\(n\)</span>个状态,但是却有<span class="math inline">\(n+1\)</span>个格局<span class="math inline">\((q_i,w_{i+1}\cdots
+w_n)\)</span>,根据<font color="red">鸽巢原理</font>,必然存在i和j<span class="math inline">\(0 \le i &lt; j \le n\)</span>使得<span class="math inline">\(q_i = q_j\)</span> .即字符串<span class="math inline">\(y = w_{i+1} \cdots w_n\)</span>从状态<span class="math inline">\(q_i\)</span>回到本身<span class="math inline">\(q_i\)</span>.</p>
+<p>于是删去<span class="math inline">\(y\)</span>或者重复任意次<span class="math inline">\(y\)</span>都不影响字符串被<span class="math inline">\(M\)</span>接受</p>
+<h2 id="例2.4.2">例2.4.2</h2>
+<p>语言<span class="math inline">\(L = \{a^i b^i :i \ge 0
+\}\)</span>不是正则的.</p>
+<p>现假设<span class="math inline">\(L\)</span>是正则的,运用上述定理,<span class="math inline">\(w = a^n b^n \in L\)</span> .</p>
+<p>于是<span class="math inline">\(y = a^i\)</span>,若<span class="math inline">\(L\)</span>是正则的,那么删去<span class="math inline">\(y\)</span>后的语言应当仍然被自动机接受,仍然包含于语言<span class="math inline">\(L\)</span>中.</p>
+<p>但是,<span class="math inline">\(xz = a^{n-i} b^{n} \notin
+L\)</span>,矛盾.</p>
+<h2 id="例2.4.3">例2.4.3</h2>
+<p>语言<span class="math inline">\(L = \{a^n :n是素数
+\}\)</span>不是正则的.</p>
+<p>同理,我们先假设<span class="math inline">\(L\)</span>是正则的,运用定理</p>
+<p>令<span class="math inline">\(x = a^p, y = a^q , z =
+a^r\)</span>,其中<span class="math inline">\(p,r \ge 0\)</span>且<span class="math inline">\(q &gt; 0\)</span>.</p>
+<p>由于<span class="math inline">\(xy^nz \in L\)</span>对于任意<span class="math inline">\(n \ge 0\)</span>.那么<span class="math inline">\(p+nq+r\)</span>也是素数</p>
+<p>取<span class="math inline">\(n = p + 2q +r +2\)</span>,</p>
+<p>那么<span class="math inline">\(p+nq+r = (q+1) \cdot
+(p+2q+r)\)</span>,</p>
+<p>可见并非素数,产生矛盾</p>
+]]></content>
+      <categories>
+        <category>计算理论</category>
+      </categories>
+      <tags>
+        <tag>计算理论</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>白夜行</title>
     <url>/2022/09/04/%E7%99%BD%E5%A4%9C%E8%A1%8C/</url>
     <content><![CDATA[<style>
@@ -2541,235 +2597,6 @@ Neural Networks)</h2>
       </tags>
   </entry>
   <entry>
-    <title>聚类</title>
-    <url>/2022/09/28/%E8%81%9A%E7%B1%BB/</url>
-    <content><![CDATA[<style> 
-    .markdown-body {
-      font-family: Microsoft JhengHei, SimHei;
-      font-size: 16px;
-    }
-</style>
-<h1 align="center">
-聚类
-</h1>
-<h2 id="简介">1.简介</h2>
-<p><code>Cluster</code>: A collection of data objects</p>
-<p><code>Clustering</code>: <font color="red">Finding similarities</font>
-between data according to the characteristics found in the data and
-<font color="red">grouping</font> similar data objects into clusters</p>
-<p>采用的方法：<strong>Unsupervised Learning</strong></p>
-<p>一些典型的应用：</p>
-<ul>
-<li>作为独立的工具，用作图像分割、新闻分类等</li>
-<li>作为其他算法的预处理步骤</li>
-</ul>
-<h2 id="k-means算法">2.K-Means算法</h2>
-<p>对于给定的K，该算法步骤如下：</p>
-<ul>
-<li><p>随机选取<span class="math inline">\(K\)</span>个数据点作为每个类别的聚类中心<span class="math inline">\(\mu_k\)</span></p></li>
-<li><p>对每一个点计算到每一个聚类中心的距离，并将其归类于最近的一个聚类中心同种类别
-<span class="math display">\[
-z_i = arg \space \underset{k}{min} ||\pmb{x}_i - \pmb{\mu} _k||^2
-\]</span></p></li>
-<li><p>对于每一个聚类依据如下公式重新计算聚类中心(即质心) <span class="math display">\[
-\mu_k = \frac{1}{N_k} \sum_{i=1}^{N_k}\pmb{x}_i^{(k)}
-\]</span></p></li>
-<li><p>重复上述过程直到收敛</p></li>
-</ul>
-<p>一些细节：</p>
-<blockquote>
-<p>初始的<span class="math inline">\(\mu_k\)</span>不一定需要选取真实的数据点</p>
-</blockquote>
-<blockquote>
-<p>可能会有空的聚类出现</p>
-</blockquote>
-<blockquote>
-<p>算法时间复杂度<span class="math inline">\(O(tNKd)\)</span>,其中
-t为递归次数，d为点的维数</p>
-</blockquote>
-<p><img src="/2022/09/28/%E8%81%9A%E7%B1%BB/1.png" alt="1" style="zoom:50%;"></p>
-<p>损失函数： <span class="math display">\[
-\mathcal{L}_{TSD}(\pmb{z},\pmb{\mu}) = \sum_{i=1}^{N}||\pmb{x}_i -
-\pmb{\mu}_{z_i}||^2
-\]</span> 贪心算法最终得到的是一个<font color="red">局部最优解</font></p>
-<h2 id="k-medoids算法pam">3.K-Medoids算法(PAM)</h2>
-<p>由于K-Means算法容易受到个别<font color="red">极端点</font>的影响，于是加以改进</p>
-<p>不再选用质心作为中心点，而选取同一聚类中其他所有点到该点距离和最小的点为中心点
-<span class="math display">\[
-\pmb{\mu} = arg \space \underset{\pmb{x}_k}{min}\sum_j ||\pmb{x}_j -
-\pmb{x}_k||^2
-\]</span></p>
-<h2 id="gaussian-mixture-modelgmm">4.Gaussian Mixture Model(GMM)</h2>
-<p><img src="/2022/09/28/%E8%81%9A%E7%B1%BB/3.png" alt="3" style="zoom:67%;"> <span class="math display">\[
-p(\pmb{x};\pmb{\Theta})
-=  \sum_{k=1}^{K}p(k)p(\pmb{x}|k)=\sum_{k=1}^{K}\pi_kp_k(\pmb{x};\pmb{\theta_k})
-\]</span></p>
-<p><span class="math display">\[
-其中\pi_k是概率p(k),\sum_{k=1}^{K}\pi_k = 1
-\]</span></p>
-<p><span class="math display">\[
-其中p_k(\pmb{x};\pmb{\theta_k})即为p(\pmb{x}|k),符合多维正态\mathcal{N}(\pmb{x};\pmb{\mu}_k,\pmb{\Sigma}_k)
-\]</span></p>
-<p>log-likelihood function: <span class="math display">\[
-log \prod_{i=1}^{N}p(\pmb{x}^{(i)};\Theta) =
-\sum_{i=1}^{N}log(\sum_{k=1}^{K}\pi_k
-\mathcal{N}(\pmb{x}^{(i)};\pmb{\mu}_k,\pmb{\Sigma}_k))
-\]</span></p>
-<p>需要估计的参数有：<span class="math inline">\(\pi_k,\pmb{\mu}_k,\pmb{\Sigma}_k\)</span></p>
-<h2 id="expectation-maximization算法em">5.Expectation
-Maximization算法(EM)</h2>
-<p>凸函数(Convex Functions)： <span class="math display">\[
-f(\theta x + (1-\theta)y) \le \theta f(x) + (1-\theta ) f(y)
-\]</span> <img src="/2022/09/28/%E8%81%9A%E7%B1%BB/4.png" alt="4" style="zoom:50%;"></p>
-<p>Jensen’s inequality: <span class="math display">\[
-f(\sum_{i=1}^{n}\lambda_i x_i) \le \sum_{i=1}^{n}\lambda_if(x_i) \space
-\space \space \space \lambda_i \ge 0, \sum_i \lambda_i = 1
-\]</span></p>
-<p><span class="math display">\[
-f(E(X)) \le E[f(X)]
-\]</span></p>
-<p>EM algorithm</p>
-<p>每次EM算法的迭代包含两个步骤<code>Expectation-step</code> 和
-<code>Maximization-step</code></p>
-<ol type="1">
-<li>E步骤：根据参数的假设值，给出未知变量的期望估计，应用于缺失值。</li>
-<li>M步骤：根据未知变量的估计值，给出当前的参数的极大似然估计。</li>
-</ol>
-<p>根据图直观理解：</p>
-<p><img src="/2022/09/28/%E8%81%9A%E7%B1%BB/5.png" alt="5" style="zoom: 50%;"></p>
-<p>E: 根据参数<span class="math inline">\(\theta_1\)</span>给出估计，即图中小的凹函数</p>
-<p>M: 进行极大似然估计，找到该函数的最大值处对应的参数<span class="math inline">\(\theta_2\)</span></p>
-<p>不断进行迭代找到最优解</p>
-]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>贝叶斯决策理论</title>
-    <url>/2022/09/13/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%86%B3%E7%AD%96%E7%90%86%E8%AE%BA/</url>
-    <content><![CDATA[<style>
-  .markdown-body {
-    font-family: Microsoft JhengHei, SimHei;
-    font-size: 16px;
-  }
-</style>
-<h1 align="center">
-贝叶斯决策理论
-</h1>
-<h2 id="basics-of-probability概率论基础知识">1. Basics of
-Probability(概率论基础知识)</h2>
-<ul>
-<li>$ A独立于B时,P(A|B) = P(A) $</li>
-<li>$ P(A|B)= $</li>
-<li>$ A、B相互独立 当且仅当 P(A,B)=P(A)P(B) $</li>
-</ul>
-<h2 id="bayes-theorem贝叶斯理论">2. Bayes' Theorem(贝叶斯理论)</h2>
-<p><span class="math display">\[
-P(\omega|x) = \frac{p(x|\omega)p(\omega)}{p(x)}\\
-Posterior = (Likelihood \times Prior) / Evidence\\
-p(x) = \sum_{i=1}^{k}p(x|\omega_i)p(\omega_i)
-\]</span></p>
-<ul>
-<li><span class="math inline">\(P(\omega|x)\)</span> :
-posterior,后验概率,<font color="red">已发生事件</font>出于某种因素引发的概率</li>
-<li><span class="math inline">\(p(x|\omega)\)</span> :
-likelihood,似然,数据符合<font color="red">某种分布</font>的概率大小</li>
-<li><span class="math inline">\(p(\omega)\)</span> :
-prior,先验概率,<font color="red">未发生事件</font>依据以往经验得知的概率</li>
-<li><span class="math inline">\(p(x)\)</span> :
-evidence,往往作为一个<font color="red">常数</font></li>
-</ul>
-<blockquote>
-<p>其中 x为样本</p>
-</blockquote>
-<h2 id="optimal-bayes-decision-rule最优贝叶斯决策规则">3. Optimal Bayes
-Decision Rule(最优贝叶斯决策规则)</h2>
-<p><strong>一个物体选择后验概率大的作为其分类可以最小化决策误差</strong></p>
-<p><span class="math inline">\(P(\omega_1|x) &gt;
-P(\omega_2|x)\)</span>时认为它是<span class="math inline">\(\omega_1\)</span></p>
-<p><span class="math inline">\(P(\omega_1|x) &lt;
-P(\omega_2|x)\)</span>时认为它是<span class="math inline">\(\omega_2\)</span></p>
-<blockquote>
-<p>同理或者选择风险R小的</p>
-</blockquote>
-<p>特殊情况：</p>
-<ul>
-<li><p><span class="math inline">\(p(\omega_1)=p(\omega_2)\)</span> :
-<span class="math inline">\(p(x|\omega_1)&gt;p(x|\omega_2)\)</span>时认为是<span class="math inline">\({\omega}_1\)</span></p>
-<blockquote>
-<p>最大似然决策法</p>
-<p>本质上和一般情况没有区别，只是先验概率相同可以同时约去，不加入比较，直接比较似然度</p>
-</blockquote></li>
-<li><p><span class="math inline">\(p(x|\omega_1)=p(x|\omega_2)\)</span>
-: <span class="math inline">\(p(\omega_1)&gt;p(\omega_2)\)</span>时认为是<span class="math inline">\({\omega}_1\)</span></p>
-<blockquote>
-<p>同上</p>
-</blockquote></li>
-</ul>
-<h2 id="bayes-risk">4. Bayes Risk</h2>
-<p>Conditional Risk <span class="math display">\[
-R(\alpha_i|x)=\sum_{j=1}^{c}\lambda(\alpha_i|\omega_j)P(\omega_j|x)
-\]</span></p>
-<blockquote>
-<p><span class="math inline">\(\alpha\)</span> 代表 采取的行为</p>
-</blockquote>
-<p>Overall Risk <span class="math display">\[
-R = \int R(\alpha_i|x)p(x)dx
-\]</span> Bayes Risk</p>
-<ul>
-<li>风险最小时的R</li>
-</ul>
-<h2 id="example-1two-category-classification">Example 1：Two-category
-classification</h2>
-<p>给定： <span class="math display">\[
-\alpha_1 = deciding \space \omega_1 \\
-\alpha_2 = deciding \space \omega_2 \\
-\lambda_{ij} = \lambda(\alpha_i | \omega_j)
-\]</span> 于是条件风险： <span class="math display">\[
-R(\alpha_1 | x) = \lambda_{11}P(\omega_1 | x) + \lambda_{12}P(\omega_2 |
-x) \\
-R(\alpha_2 | x) = \lambda_{21}P(\omega_1 | x) + \lambda_{22}P(\omega_2 |
-x)
-\]</span> 如何找到贝叶斯风险？？？</p>
-<p>认为是<span class="math inline">\({\omega}_1\)</span>当 <span class="math display">\[
-R(\alpha_1 | x) &lt; R(\alpha_2 | x)
-\]</span> 展开并移项化简得到(认为是<span class="math inline">\({\omega}_1\)</span>的情况) <span class="math display">\[
-\frac{P(x|\omega_1)}{P(x|\omega_2)} &gt;
-\frac{\lambda_{12}-\lambda_{22}}{\lambda_{21}-\lambda_{11}} \times
-\frac{P(\omega_2)}{P(\omega_1)}
-\]</span></p>
-<h2 id="example-2-minimum-error-rate-classification">Example 2:
-Minimum-Error-Rate Classification</h2>
-<p>给定</p>
-<ul>
-<li>对于动作<span class="math inline">\(\alpha_i\)</span>和事实上的类别<span class="math inline">\(\omega_j\)</span> ,如果<span class="math inline">\(i=j\)</span>就是正确的，否则错误</li>
-</ul>
-<p>找到最小损失的分类</p>
-<p>写出损失函数(Zero-one loss function): <span class="math display">\[
-\lambda(\alpha_i | \omega_j) =
-\begin{cases}
-0&amp; \text{i = j}\\
-1&amp; \text{i} \neq \text{j}
-\end{cases}
-\]</span> 于是可以计算条件风险 <span class="math display">\[
-R(\alpha_i|x) = \sum_{j=1}^{c} \lambda(\alpha_i|\omega_j)P(\omega_j | x)
-\\
-= \sum_{j{\neq}i} P(\omega_j | x) = 1-P(\omega_i | x)
-\]</span>
-需要风险最小化，由上述式子可知需要后验概率最大化，选择后验概率最大的即可</p>
-]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>线性回归</title>
     <url>/2022/09/19/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1/</url>
     <content><![CDATA[<style> 
@@ -2933,6 +2760,114 @@ w^* = argmin\sum_{i=1}^{n}(y_i-\pmb{x}_i^T\pmb{w})^2  \textcolor{red}{ +
 <p>其对参数的限制方式为: <span class="math display">\[
 \textcolor{red}{\sum^{p}_{j=1}|w_j| \le t}
 \]</span></p>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>聚类</title>
+    <url>/2022/09/28/%E8%81%9A%E7%B1%BB/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+聚类
+</h1>
+<h2 id="简介">1.简介</h2>
+<p><code>Cluster</code>: A collection of data objects</p>
+<p><code>Clustering</code>: <font color="red">Finding similarities</font>
+between data according to the characteristics found in the data and
+<font color="red">grouping</font> similar data objects into clusters</p>
+<p>采用的方法：<strong>Unsupervised Learning</strong></p>
+<p>一些典型的应用：</p>
+<ul>
+<li>作为独立的工具，用作图像分割、新闻分类等</li>
+<li>作为其他算法的预处理步骤</li>
+</ul>
+<h2 id="k-means算法">2.K-Means算法</h2>
+<p>对于给定的K，该算法步骤如下：</p>
+<ul>
+<li><p>随机选取<span class="math inline">\(K\)</span>个数据点作为每个类别的聚类中心<span class="math inline">\(\mu_k\)</span></p></li>
+<li><p>对每一个点计算到每一个聚类中心的距离，并将其归类于最近的一个聚类中心同种类别
+<span class="math display">\[
+z_i = arg \space \underset{k}{min} ||\pmb{x}_i - \pmb{\mu} _k||^2
+\]</span></p></li>
+<li><p>对于每一个聚类依据如下公式重新计算聚类中心(即质心) <span class="math display">\[
+\mu_k = \frac{1}{N_k} \sum_{i=1}^{N_k}\pmb{x}_i^{(k)}
+\]</span></p></li>
+<li><p>重复上述过程直到收敛</p></li>
+</ul>
+<p>一些细节：</p>
+<blockquote>
+<p>初始的<span class="math inline">\(\mu_k\)</span>不一定需要选取真实的数据点</p>
+</blockquote>
+<blockquote>
+<p>可能会有空的聚类出现</p>
+</blockquote>
+<blockquote>
+<p>算法时间复杂度<span class="math inline">\(O(tNKd)\)</span>,其中
+t为递归次数，d为点的维数</p>
+</blockquote>
+<p><img src="/2022/09/28/%E8%81%9A%E7%B1%BB/1.png" alt="1" style="zoom:50%;"></p>
+<p>损失函数： <span class="math display">\[
+\mathcal{L}_{TSD}(\pmb{z},\pmb{\mu}) = \sum_{i=1}^{N}||\pmb{x}_i -
+\pmb{\mu}_{z_i}||^2
+\]</span> 贪心算法最终得到的是一个<font color="red">局部最优解</font></p>
+<h2 id="k-medoids算法pam">3.K-Medoids算法(PAM)</h2>
+<p>由于K-Means算法容易受到个别<font color="red">极端点</font>的影响，于是加以改进</p>
+<p>不再选用质心作为中心点，而选取同一聚类中其他所有点到该点距离和最小的点为中心点
+<span class="math display">\[
+\pmb{\mu} = arg \space \underset{\pmb{x}_k}{min}\sum_j ||\pmb{x}_j -
+\pmb{x}_k||^2
+\]</span></p>
+<h2 id="gaussian-mixture-modelgmm">4.Gaussian Mixture Model(GMM)</h2>
+<p><img src="/2022/09/28/%E8%81%9A%E7%B1%BB/3.png" alt="3" style="zoom:67%;"> <span class="math display">\[
+p(\pmb{x};\pmb{\Theta})
+=  \sum_{k=1}^{K}p(k)p(\pmb{x}|k)=\sum_{k=1}^{K}\pi_kp_k(\pmb{x};\pmb{\theta_k})
+\]</span></p>
+<p><span class="math display">\[
+其中\pi_k是概率p(k),\sum_{k=1}^{K}\pi_k = 1
+\]</span></p>
+<p><span class="math display">\[
+其中p_k(\pmb{x};\pmb{\theta_k})即为p(\pmb{x}|k),符合多维正态\mathcal{N}(\pmb{x};\pmb{\mu}_k,\pmb{\Sigma}_k)
+\]</span></p>
+<p>log-likelihood function: <span class="math display">\[
+log \prod_{i=1}^{N}p(\pmb{x}^{(i)};\Theta) =
+\sum_{i=1}^{N}log(\sum_{k=1}^{K}\pi_k
+\mathcal{N}(\pmb{x}^{(i)};\pmb{\mu}_k,\pmb{\Sigma}_k))
+\]</span></p>
+<p>需要估计的参数有：<span class="math inline">\(\pi_k,\pmb{\mu}_k,\pmb{\Sigma}_k\)</span></p>
+<h2 id="expectation-maximization算法em">5.Expectation
+Maximization算法(EM)</h2>
+<p>凸函数(Convex Functions)： <span class="math display">\[
+f(\theta x + (1-\theta)y) \le \theta f(x) + (1-\theta ) f(y)
+\]</span> <img src="/2022/09/28/%E8%81%9A%E7%B1%BB/4.png" alt="4" style="zoom:50%;"></p>
+<p>Jensen’s inequality: <span class="math display">\[
+f(\sum_{i=1}^{n}\lambda_i x_i) \le \sum_{i=1}^{n}\lambda_if(x_i) \space
+\space \space \space \lambda_i \ge 0, \sum_i \lambda_i = 1
+\]</span></p>
+<p><span class="math display">\[
+f(E(X)) \le E[f(X)]
+\]</span></p>
+<p>EM algorithm</p>
+<p>每次EM算法的迭代包含两个步骤<code>Expectation-step</code> 和
+<code>Maximization-step</code></p>
+<ol type="1">
+<li>E步骤：根据参数的假设值，给出未知变量的期望估计，应用于缺失值。</li>
+<li>M步骤：根据未知变量的估计值，给出当前的参数的极大似然估计。</li>
+</ol>
+<p>根据图直观理解：</p>
+<p><img src="/2022/09/28/%E8%81%9A%E7%B1%BB/5.png" alt="5" style="zoom: 50%;"></p>
+<p>E: 根据参数<span class="math inline">\(\theta_1\)</span>给出估计，即图中小的凹函数</p>
+<p>M: 进行极大似然估计，找到该函数的最大值处对应的参数<span class="math inline">\(\theta_2\)</span></p>
+<p>不断进行迭代找到最优解</p>
 ]]></content>
       <categories>
         <category>机器学习</category>
@@ -3177,6 +3112,127 @@ min \frac{\pmb{a}^T XWX^T \pmb{a}}{\pmb{a}^T XDX^T \pmb{a}}
 <p><span class="math display">\[
 \pmb{a}^T XWX^T \pmb{a} = \lambda \pmb{a}^T XDX^T \pmb{a}
 \]</span></p>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>贝叶斯决策理论</title>
+    <url>/2022/09/13/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%86%B3%E7%AD%96%E7%90%86%E8%AE%BA/</url>
+    <content><![CDATA[<style>
+  .markdown-body {
+    font-family: Microsoft JhengHei, SimHei;
+    font-size: 16px;
+  }
+</style>
+<h1 align="center">
+贝叶斯决策理论
+</h1>
+<h2 id="basics-of-probability概率论基础知识">1. Basics of
+Probability(概率论基础知识)</h2>
+<ul>
+<li>$ A独立于B时,P(A|B) = P(A) $</li>
+<li>$ P(A|B)= $</li>
+<li>$ A、B相互独立 当且仅当 P(A,B)=P(A)P(B) $</li>
+</ul>
+<h2 id="bayes-theorem贝叶斯理论">2. Bayes' Theorem(贝叶斯理论)</h2>
+<p><span class="math display">\[
+P(\omega|x) = \frac{p(x|\omega)p(\omega)}{p(x)}\\
+Posterior = (Likelihood \times Prior) / Evidence\\
+p(x) = \sum_{i=1}^{k}p(x|\omega_i)p(\omega_i)
+\]</span></p>
+<ul>
+<li><span class="math inline">\(P(\omega|x)\)</span> :
+posterior,后验概率,<font color="red">已发生事件</font>出于某种因素引发的概率</li>
+<li><span class="math inline">\(p(x|\omega)\)</span> :
+likelihood,似然,数据符合<font color="red">某种分布</font>的概率大小</li>
+<li><span class="math inline">\(p(\omega)\)</span> :
+prior,先验概率,<font color="red">未发生事件</font>依据以往经验得知的概率</li>
+<li><span class="math inline">\(p(x)\)</span> :
+evidence,往往作为一个<font color="red">常数</font></li>
+</ul>
+<blockquote>
+<p>其中 x为样本</p>
+</blockquote>
+<h2 id="optimal-bayes-decision-rule最优贝叶斯决策规则">3. Optimal Bayes
+Decision Rule(最优贝叶斯决策规则)</h2>
+<p><strong>一个物体选择后验概率大的作为其分类可以最小化决策误差</strong></p>
+<p><span class="math inline">\(P(\omega_1|x) &gt;
+P(\omega_2|x)\)</span>时认为它是<span class="math inline">\(\omega_1\)</span></p>
+<p><span class="math inline">\(P(\omega_1|x) &lt;
+P(\omega_2|x)\)</span>时认为它是<span class="math inline">\(\omega_2\)</span></p>
+<blockquote>
+<p>同理或者选择风险R小的</p>
+</blockquote>
+<p>特殊情况：</p>
+<ul>
+<li><p><span class="math inline">\(p(\omega_1)=p(\omega_2)\)</span> :
+<span class="math inline">\(p(x|\omega_1)&gt;p(x|\omega_2)\)</span>时认为是<span class="math inline">\({\omega}_1\)</span></p>
+<blockquote>
+<p>最大似然决策法</p>
+<p>本质上和一般情况没有区别，只是先验概率相同可以同时约去，不加入比较，直接比较似然度</p>
+</blockquote></li>
+<li><p><span class="math inline">\(p(x|\omega_1)=p(x|\omega_2)\)</span>
+: <span class="math inline">\(p(\omega_1)&gt;p(\omega_2)\)</span>时认为是<span class="math inline">\({\omega}_1\)</span></p>
+<blockquote>
+<p>同上</p>
+</blockquote></li>
+</ul>
+<h2 id="bayes-risk">4. Bayes Risk</h2>
+<p>Conditional Risk <span class="math display">\[
+R(\alpha_i|x)=\sum_{j=1}^{c}\lambda(\alpha_i|\omega_j)P(\omega_j|x)
+\]</span></p>
+<blockquote>
+<p><span class="math inline">\(\alpha\)</span> 代表 采取的行为</p>
+</blockquote>
+<p>Overall Risk <span class="math display">\[
+R = \int R(\alpha_i|x)p(x)dx
+\]</span> Bayes Risk</p>
+<ul>
+<li>风险最小时的R</li>
+</ul>
+<h2 id="example-1two-category-classification">Example 1：Two-category
+classification</h2>
+<p>给定： <span class="math display">\[
+\alpha_1 = deciding \space \omega_1 \\
+\alpha_2 = deciding \space \omega_2 \\
+\lambda_{ij} = \lambda(\alpha_i | \omega_j)
+\]</span> 于是条件风险： <span class="math display">\[
+R(\alpha_1 | x) = \lambda_{11}P(\omega_1 | x) + \lambda_{12}P(\omega_2 |
+x) \\
+R(\alpha_2 | x) = \lambda_{21}P(\omega_1 | x) + \lambda_{22}P(\omega_2 |
+x)
+\]</span> 如何找到贝叶斯风险？？？</p>
+<p>认为是<span class="math inline">\({\omega}_1\)</span>当 <span class="math display">\[
+R(\alpha_1 | x) &lt; R(\alpha_2 | x)
+\]</span> 展开并移项化简得到(认为是<span class="math inline">\({\omega}_1\)</span>的情况) <span class="math display">\[
+\frac{P(x|\omega_1)}{P(x|\omega_2)} &gt;
+\frac{\lambda_{12}-\lambda_{22}}{\lambda_{21}-\lambda_{11}} \times
+\frac{P(\omega_2)}{P(\omega_1)}
+\]</span></p>
+<h2 id="example-2-minimum-error-rate-classification">Example 2:
+Minimum-Error-Rate Classification</h2>
+<p>给定</p>
+<ul>
+<li>对于动作<span class="math inline">\(\alpha_i\)</span>和事实上的类别<span class="math inline">\(\omega_j\)</span> ,如果<span class="math inline">\(i=j\)</span>就是正确的，否则错误</li>
+</ul>
+<p>找到最小损失的分类</p>
+<p>写出损失函数(Zero-one loss function): <span class="math display">\[
+\lambda(\alpha_i | \omega_j) =
+\begin{cases}
+0&amp; \text{i = j}\\
+1&amp; \text{i} \neq \text{j}
+\end{cases}
+\]</span> 于是可以计算条件风险 <span class="math display">\[
+R(\alpha_i|x) = \sum_{j=1}^{c} \lambda(\alpha_i|\omega_j)P(\omega_j | x)
+\\
+= \sum_{j{\neq}i} P(\omega_j | x) = 1-P(\omega_i | x)
+\]</span>
+需要风险最小化，由上述式子可知需要后验概率最大化，选择后验概率最大的即可</p>
 ]]></content>
       <categories>
         <category>机器学习</category>

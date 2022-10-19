@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>正则语言与非正则语言</title>
+    <link href="/2022/10/19/%E6%AD%A3%E5%88%99%E8%AF%AD%E8%A8%80%E4%B8%8E%E9%9D%9E%E6%AD%A3%E5%88%99%E8%AF%AD%E8%A8%80/"/>
+    <url>/2022/10/19/%E6%AD%A3%E5%88%99%E8%AF%AD%E8%A8%80%E4%B8%8E%E9%9D%9E%E6%AD%A3%E5%88%99%E8%AF%AD%E8%A8%80/</url>
+    
+    <content type="html"><![CDATA[<style>     .markdown-body {      font-family: Microsoft JhengHei, SimHei;      font-size: 16px;    }</style><h1 align="center">正则语言与非正则语言</h1><h2 id="定理2.4.1">定理2.4.1</h2><p><font color="orange">设<span class="math inline">\(L\)</span>是一个正则语言，则存在正整数<span class="math inline">\(n \ge 1\)</span>使得任一字符串<span class="math inline">\(w \in L\)</span></font></p><p><font color="orange">只要<span class="math inline">\(|w| \gen\)</span>就可以写成<span class="math inline">\(w =xyz\)</span>,</font></p><p><font color="orange">其中<span class="math inline">\(y \neqe\)</span>,<span class="math inline">\(|xy| \len\)</span>且对每一个<span class="math inline">\(i \ge 0\)</span>,<span class="math inline">\(xy^iz \in L\)</span>.</font></p><hr><p>证明：</p><p>由于<span class="math inline">\(L\)</span>是正则的,它能够被一台确定型有穷自动机<span class="math inline">\(M\)</span>接受.</p><p>设<span class="math inline">\(M\)</span>有<span class="math inline">\(n\)</span>个状态,<span class="math inline">\(w \inL\)</span>是一个长度大于等于<span class="math inline">\(n\)</span>的字符串.考虑<span class="math inline">\(M\)</span>的前<span class="math inline">\(n\)</span>步计算： <span class="math display">\[(q_0,w_1 w_2 \cdots w_n) \vdash_M (q_1,w_2 \cdots w_n) \vdash_M \cdots\vdash_M(q_n , e)\]</span> 由于自动机只有<span class="math inline">\(n\)</span>个状态,但是却有<span class="math inline">\(n+1\)</span>个格局<span class="math inline">\((q_i,w_{i+1}\cdotsw_n)\)</span>,根据<font color="red">鸽巢原理</font>,必然存在i和j<span class="math inline">\(0 \le i &lt; j \le n\)</span>使得<span class="math inline">\(q_i = q_j\)</span> .即字符串<span class="math inline">\(y = w_{i+1} \cdots w_n\)</span>从状态<span class="math inline">\(q_i\)</span>回到本身<span class="math inline">\(q_i\)</span>.</p><p>于是删去<span class="math inline">\(y\)</span>或者重复任意次<span class="math inline">\(y\)</span>都不影响字符串被<span class="math inline">\(M\)</span>接受</p><h2 id="例2.4.2">例2.4.2</h2><p>语言<span class="math inline">\(L = \{a^i b^i :i \ge 0\}\)</span>不是正则的.</p><p>现假设<span class="math inline">\(L\)</span>是正则的,运用上述定理,<span class="math inline">\(w = a^n b^n \in L\)</span> .</p><p>于是<span class="math inline">\(y = a^i\)</span>,若<span class="math inline">\(L\)</span>是正则的,那么删去<span class="math inline">\(y\)</span>后的语言应当仍然被自动机接受,仍然包含于语言<span class="math inline">\(L\)</span>中.</p><p>但是,<span class="math inline">\(xz = a^{n-i} b^{n} \notinL\)</span>,矛盾.</p><h2 id="例2.4.3">例2.4.3</h2><p>语言<span class="math inline">\(L = \{a^n :n是素数\}\)</span>不是正则的.</p><p>同理,我们先假设<span class="math inline">\(L\)</span>是正则的,运用定理</p><p>令<span class="math inline">\(x = a^p, y = a^q , z =a^r\)</span>,其中<span class="math inline">\(p,r \ge 0\)</span>且<span class="math inline">\(q &gt; 0\)</span>.</p><p>由于<span class="math inline">\(xy^nz \in L\)</span>对于任意<span class="math inline">\(n \ge 0\)</span>.那么<span class="math inline">\(p+nq+r\)</span>也是素数</p><p>取<span class="math inline">\(n = p + 2q +r +2\)</span>,</p><p>那么<span class="math inline">\(p+nq+r = (q+1) \cdot(p+2q+r)\)</span>,</p><p>可见并非素数,产生矛盾</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>计算理论</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>计算理论</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>有穷自动机与正则表达式</title>
     <link href="/2022/10/19/%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA%E4%B8%8E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     <url>/2022/10/19/%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA%E4%B8%8E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
