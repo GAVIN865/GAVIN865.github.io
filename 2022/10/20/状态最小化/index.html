@@ -16,26 +16,26 @@
   <meta name="author" content="Gavin">
   <meta name="keywords" content="">
   
-    <meta name="description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   正则语言与非正则语言  定理2.4.1 设\(L\)是一个正则语言，则存在正整数\(n \ge 1\)使得任一字符串\(w \in L\) 只要\(|w| \ge n\)就可">
+    <meta name="description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   状态最小化  定义2.5.1 设\(L \subseteq \Sigma^*\)是一个语言,\(x,y \in \Sigma^*\). 如果对所有的\(z \in \Sig">
 <meta property="og:type" content="article">
-<meta property="og:title" content="正则语言与非正则语言">
-<meta property="og:url" content="http://gavinbowl.top/2022/10/19/%E6%AD%A3%E5%88%99%E8%AF%AD%E8%A8%80%E4%B8%8E%E9%9D%9E%E6%AD%A3%E5%88%99%E8%AF%AD%E8%A8%80/index.html">
+<meta property="og:title" content="状态最小化">
+<meta property="og:url" content="http://gavinbowl.top/2022/10/20/%E7%8A%B6%E6%80%81%E6%9C%80%E5%B0%8F%E5%8C%96/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   正则语言与非正则语言  定理2.4.1 设\(L\)是一个正则语言，则存在正整数\(n \ge 1\)使得任一字符串\(w \in L\) 只要\(|w| \ge n\)就可">
+<meta property="og:description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   状态最小化  定义2.5.1 设\(L \subseteq \Sigma^*\)是一个语言,\(x,y \in \Sigma^*\). 如果对所有的\(z \in \Sig">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://gavinbowl.top/img/22.jpg">
-<meta property="article:published_time" content="2022-10-19T06:31:05.000Z">
-<meta property="article:modified_time" content="2022-10-19T16:19:14.692Z">
+<meta property="og:image" content="http://gavinbowl.top/img/23.jpg">
+<meta property="article:published_time" content="2022-10-19T16:18:44.000Z">
+<meta property="article:modified_time" content="2022-10-19T17:22:35.494Z">
 <meta property="article:author" content="Gavin">
 <meta property="article:tag" content="计算理论">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://gavinbowl.top/img/22.jpg">
+<meta name="twitter:image" content="http://gavinbowl.top/img/23.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>正则语言与非正则语言 - 0</title>
+  <title>状态最小化 - 0</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -212,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="正则语言与非正则语言"></span>
+            <span id="subtitle" data-typed-text="状态最小化"></span>
           
         </div>
 
@@ -223,8 +223,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-10-19 14:31" pubdate>
-          2022年10月19日 下午
+        <time datetime="2022-10-20 00:18" pubdate>
+          2022年10月20日 凌晨
         </time>
       </span>
     
@@ -235,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          951 字
+          1.7k 字
         
       </span>
     
@@ -246,7 +246,7 @@
         
         
         
-          8 分钟
+          14 分钟
         
       </span>
     
@@ -292,7 +292,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">正则语言与非正则语言</h1>
+            <h1 style="display: none">状态最小化</h1>
             
             
               <div class="markdown-body">
@@ -304,44 +304,93 @@
     }
 </style>
 <h1 align="center">
-正则语言与非正则语言
+状态最小化
 </h1>
-<h2 id="定理2.4.1">定理2.4.1</h2>
-<p><font color="orange">设<span class="math inline">\(L\)</span>是一个正则语言，则存在正整数<span class="math inline">\(n \ge 1\)</span>使得任一字符串<span class="math inline">\(w \in L\)</span></font></p>
-<p><font color="orange">只要<span class="math inline">\(|w| \ge
-n\)</span>就可以写成<span class="math inline">\(w =
-xyz\)</span>,</font></p>
-<p><font color="orange">其中<span class="math inline">\(y \neq
-e\)</span>,<span class="math inline">\(|xy| \le
-n\)</span>且对每一个<span class="math inline">\(i \ge 0\)</span>,<span class="math inline">\(xy^iz \in L\)</span>.</font></p>
+<h2 id="定义2.5.1">定义2.5.1</h2>
+<p>设<span class="math inline">\(L \subseteq
+\Sigma^*\)</span>是一个语言,<span class="math inline">\(x,y \in
+\Sigma^*\)</span>.</p>
+<p>如果对所有的<span class="math inline">\(z \in \Sigma^*\)</span>,<span class="math inline">\(xz \in L\)</span>当且仅当<span class="math inline">\(yz \in L\)</span>,</p>
+<p>则称<font color="red"><span class="math inline">\(x\)</span>与<span class="math inline">\(y\)</span>相对于<span class="math inline">\(L\)</span>是等价的</font>,记作<span class="math inline">\(x \approx_L y\)</span>.</p>
 <hr>
-<p>证明：</p>
-<p>由于<span class="math inline">\(L\)</span>是正则的,它能够被一台确定型有穷自动机<span class="math inline">\(M\)</span>接受.</p>
-<p>设<span class="math inline">\(M\)</span>有<span class="math inline">\(n\)</span>个状态,<span class="math inline">\(w \in
-L\)</span>是一个长度大于等于<span class="math inline">\(n\)</span>的字符串.考虑<span class="math inline">\(M\)</span>的前<span class="math inline">\(n\)</span>步计算： <span class="math display">\[
-(q_0,w_1 w_2 \cdots w_n) \vdash_M (q_1,w_2 \cdots w_n) \vdash_M \cdots
-\vdash_M(q_n , e)
-\]</span> 由于自动机只有<span class="math inline">\(n\)</span>个状态,但是却有<span class="math inline">\(n+1\)</span>个格局<span class="math inline">\((q_i,w_{i+1}\cdots
-w_n)\)</span>,根据<font color="red">鸽巢原理</font>,必然存在i和j<span class="math inline">\(0 \le i &lt; j \le n\)</span>使得<span class="math inline">\(q_i = q_j\)</span> .即字符串<span class="math inline">\(y = w_{i+1} \cdots w_n\)</span>从状态<span class="math inline">\(q_i\)</span>回到本身<span class="math inline">\(q_i\)</span>.</p>
-<p>于是删去<span class="math inline">\(y\)</span>或者重复任意次<span class="math inline">\(y\)</span>都不影响字符串被<span class="math inline">\(M\)</span>接受</p>
-<h2 id="例2.4.2">例2.4.2</h2>
-<p>语言<span class="math inline">\(L = \{a^i b^i :i \ge 0
-\}\)</span>不是正则的.</p>
-<p>现假设<span class="math inline">\(L\)</span>是正则的,运用上述定理,<span class="math inline">\(w = a^n b^n \in L\)</span> .</p>
-<p>于是<span class="math inline">\(y = a^i\)</span>,若<span class="math inline">\(L\)</span>是正则的,那么删去<span class="math inline">\(y\)</span>后的语言应当仍然被自动机接受,仍然包含于语言<span class="math inline">\(L\)</span>中.</p>
-<p>但是,<span class="math inline">\(xz = a^{n-i} b^{n} \notin
-L\)</span>,矛盾.</p>
-<h2 id="例2.4.3">例2.4.3</h2>
-<p>语言<span class="math inline">\(L = \{a^n :n是素数
-\}\)</span>不是正则的.</p>
-<p>同理,我们先假设<span class="math inline">\(L\)</span>是正则的,运用定理</p>
-<p>令<span class="math inline">\(x = a^p, y = a^q , z =
-a^r\)</span>,其中<span class="math inline">\(p,r \ge 0\)</span>且<span class="math inline">\(q &gt; 0\)</span>.</p>
-<p>由于<span class="math inline">\(xy^nz \in L\)</span>对于任意<span class="math inline">\(n \ge 0\)</span>.那么<span class="math inline">\(p+nq+r\)</span>也是素数</p>
-<p>取<span class="math inline">\(n = p + 2q +r +2\)</span>,</p>
-<p>那么<span class="math inline">\(p+nq+r = (q+1) \cdot
-(p+2q+r)\)</span>,</p>
-<p>可见并非素数,产生矛盾</p>
+<figure>
+<img src="/2022/10/20/%E7%8A%B6%E6%80%81%E6%9C%80%E5%B0%8F%E5%8C%96/1.png" srcset="/img/loading.gif" lazyload alt="1">
+<figcaption aria-hidden="true">1</figcaption>
+</figure>
+<h2 id="例2.5.1">例2.5.1</h2>
+<p>设<span class="math inline">\(x\)</span>是一个字符串.用<span class="math inline">\([x]\)</span>表示这种<span class="math inline">\(x\)</span>所在的相对于<span class="math inline">\(L\)</span>的等价类.</p>
+<p>例如,对于图2-20中的自动机接受的语言<span class="math inline">\(L =
+(ab \cup ba)^*\)</span>存在4个等价类</p>
+<ul>
+<li><span class="math inline">\([e] = L\)</span></li>
+<li><span class="math inline">\([a]=La\)</span></li>
+<li><span class="math inline">\([b]=Lb\)</span></li>
+<li><span class="math inline">\([aa] = L(aa \cup
+bb)\Sigma^*\)</span></li>
+</ul>
+<hr>
+<h2 id="定义2.5.2">定义2.5.2</h2>
+<p>设<span class="math inline">\(M =
+(K,\Sigma,\delta,s,F)\)</span>是一台确定型有穷自动机.</p>
+<p>直观上，如果两个字符串<span class="math inline">\(x,y \in
+\Sigma^*\)</span>把<span class="math inline">\(M\)</span>从<span class="math inline">\(s\)</span>带到同一个状态,</p>
+<p>则称<font color="red"><span class="math inline">\(x\)</span>与<span class="math inline">\(y\)</span>是相对于<span class="math inline">\(M\)</span>等价的</font>,记作<span class="math inline">\(x \sim_M y\)</span>.</p>
+<p>即<span class="math inline">\(x \sim_M
+y\)</span>当且仅当存在状态<span class="math inline">\(q\)</span>使得<span class="math inline">\((s,x)\vdash_M^*(q,e)\)</span>和<span class="math inline">\((s,y)\vdash_M^*(q,e)\)</span>.</p>
+<hr>
+<h2 id="例2.5.1续">例2.5.1(续)</h2>
+<p>对于图2-20自动机<span class="math inline">\(\sim_M\)</span>等价类为</p>
+<ul>
+<li><span class="math inline">\(E_{q_1} = (ba)^*\)</span></li>
+<li><span class="math inline">\(E_{q_2} = La\)</span></li>
+<li><span class="math inline">\(E_{q_3}=(ba)^*abL\)</span></li>
+<li><span class="math inline">\(E_{q_4} = b(ab)^*\)</span></li>
+<li><span class="math inline">\(E_{q_5} = L(bb \cup
+aa)\Sigma^*\)</span></li>
+<li><span class="math inline">\(E_{q_6} = (ba)^*abLb\)</span></li>
+</ul>
+<p>其中<span class="math inline">\(L = (ab \cup ba)^*\)</span>.</p>
+<hr>
+<h2 id="定理2.5.1">定理2.5.1</h2>
+<p>对于任意的确定型有穷自动机<span class="math inline">\(M =
+(K,\Sigma,\delta,s,F)\)</span>和任意字符串<span class="math inline">\(x,y \in \Sigma^*\)</span>,</p>
+<p>如果<span class="math inline">\(x \sim_M y\)</span>,那么<span class="math inline">\(x \approx_{L(M)} y\)</span>.</p>
+<p>直观地说,<span class="math inline">\(\sim_M\)</span>是<span class="math inline">\(\approx_{L(M)}\)</span>的一个细化.</p>
+<hr>
+<h2 id="例2.5.1续-1">例2.5.1(续)</h2>
+<p>对于图2-20自动机,</p>
+<p>例如<span class="math inline">\(E_{q_5}\)</span>和<span class="math inline">\([aa]\)</span>重合,<span class="math inline">\([e]\)</span>是<span class="math inline">\(E_{q_1}\)</span>和<span class="math inline">\(E_{q_3}\)</span>的并.(细化)</p>
+<hr>
+<h2 id="定理2.5.2myhill-nerode定理">定理2.5.2(Myhill-Nerode定理)</h2>
+<p>设<span class="math inline">\(L\subseteq
+\Sigma^*\)</span>是一个正则语言,</p>
+<p>则有一台接受<span class="math inline">\(L\)</span>的确定型有穷自动机,它的状态恰好与<span class="math inline">\(\approx_L\)</span>的等价类一样多</p>
+<hr>
+<h2 id="推论">推论</h2>
+<p>语言<span class="math inline">\(L\)</span>是正则的当且仅当<span class="math inline">\(\approx_L\)</span>有有穷个等价类</p>
+<hr>
+<h2 id="定义">定义</h2>
+<p>对于任意的<span class="math inline">\(z\in\Sigma^*\)</span>,若<span class="math inline">\(p\)</span>能被<span class="math inline">\(z\)</span>带到终结状态,当且仅当<span class="math inline">\(q\)</span>能被<span class="math inline">\(z\)</span>带到终结状态.</p>
+<p>则称状态<span class="math inline">\(p\)</span>和<span class="math inline">\(q\)</span>是等价的.记作<span class="math inline">\(\equiv\)</span>.</p>
+<p>其中<span class="math inline">\(\equiv_n\)</span>表示在长度不超过<span class="math inline">\(n\)</span>的字符串驱动下能够到达终结状态.</p>
+<hr>
+<h2 id="引理2.5.1">引理2.5.1</h2>
+<p><span class="math inline">\(q \equiv_n p\)</span></p>
+<p>当且仅当</p>
+<p><span class="math inline">\(q \equiv_{n-1} p\)</span> 且 <span class="math inline">\(\forall a \in \Sigma,\delta(q,a) \equiv_{n-1}
+\delta(p,a)\)</span></p>
+<hr>
+<p>于是给出算法如下</p>
+<p>initially <span class="math inline">\(\equiv_0\)</span>
+的等价类是<span class="math inline">\(F\)</span> 与 <span class="math inline">\(K-F\)</span>;</p>
+<p>​ repeat for n <span class="math inline">\(:=\)</span> 1,2,<span class="math inline">\(\cdots\)</span></p>
+<p>​ 由<span class="math inline">\(\equiv_{n-1}\)</span>的等价类计算<span class="math inline">\(\equiv_{n}\)</span>的等价类</p>
+<p>​ until <span class="math inline">\(\equiv_{n-1}\)</span>与 <span class="math inline">\(\equiv_{n}\)</span> 相同</p>
+<hr>
+<p>比如图2-20中的自动机</p>
+<p>开始时为<span class="math inline">\(\{q_1,q_3\}\)</span>和<span class="math inline">\(\{q_2,q_4,q_5,q_6\}\)</span></p>
+<p>第一次迭代后<span class="math inline">\(\{q_1,q_3\}\)</span>,<span class="math inline">\(\{q_2\}\)</span>,<span class="math inline">\(\{q_4,q_6\}\)</span>,<span class="math inline">\(\{q_5\}\)</span></p>
+<p>......</p>
 
                 
               </div>
@@ -387,8 +436,8 @@ a^r\)</span>,其中<span class="math inline">\(p,r \ge 0\)</span>且<span class=
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>正则语言与非正则语言</div>
-      <div>http://gavinbowl.top/2022/10/19/正则语言与非正则语言/</div>
+      <div>状态最小化</div>
+      <div>http://gavinbowl.top/2022/10/20/状态最小化/</div>
     </div>
     <div class="license-meta">
       
@@ -400,7 +449,7 @@ a^r\)</span>,其中<span class="math inline">\(p,r \ge 0\)</span>且<span class=
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年10月19日</div>
+          <div>2022年10月20日</div>
         </div>
       
       
@@ -430,18 +479,12 @@ a^r\)</span>,其中<span class="math inline">\(p,r \ge 0\)</span>且<span class=
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/10/20/%E7%8A%B6%E6%80%81%E6%9C%80%E5%B0%8F%E5%8C%96/" title="状态最小化">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">状态最小化</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/10/19/%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA%E4%B8%8E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="有穷自动机与正则表达式">
-                        <span class="hidden-mobile">有穷自动机与正则表达式</span>
+                      <a href="/2022/10/19/%E6%AD%A3%E5%88%99%E8%AF%AD%E8%A8%80%E4%B8%8E%E9%9D%9E%E6%AD%A3%E5%88%99%E8%AF%AD%E8%A8%80/" title="正则语言与非正则语言">
+                        <span class="hidden-mobile">正则语言与非正则语言</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -462,7 +505,7 @@ a^r\)</span>,其中<span class="math inline">\(p,r \ge 0\)</span>且<span class=
         var options = Object.assign(
           {"clientID":"4d9ed24c845ff8d68ff4","clientSecret":"b24a20f67727cff018c72f5025855b17b65e5bd7","repo":"GAVIN865.github.io","owner":"GAVIN865","admin":["GAVIN865"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
           {
-            id: '43bea1117a1d7c6c8e3c70f2ecce978c'
+            id: '95c316f55083ef6a1e5a32db6817d7dd'
           }
         )
         var gitalk = new Gitalk(options);

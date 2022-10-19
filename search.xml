@@ -608,6 +608,61 @@ to be a <font color="orange">dead state</font>.</p>
       </tags>
   </entry>
   <entry>
+    <title>LaTex符号对照表</title>
+    <url>/2022/09/26/LaTex%E7%AC%A6%E5%8F%B7%E5%AF%B9%E7%85%A7%E8%A1%A8/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+LaTex符号对照表
+</h1>
+<h2 id="不同字体">1.不同字体</h2>
+<table>
+<thead>
+<tr class="header">
+<th>字体</th>
+<th>代码</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\mathscr{L}\)</span></td>
+<td>\<span class="math inline">\(mathscr\{\}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mathbb{L}\)</span></td>
+<td>\<span class="math inline">\(mathbb\{\}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mathcal{L}\)</span></td>
+<td>\<span class="math inline">\(mathcal \{\}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\rm{L}\)</span></td>
+<td>\<span class="math inline">\(rm\{\}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mathfrak{L}\)</span></td>
+<td>\<span class="math inline">\(mathfrak\{\}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mathbf{L}\)</span></td>
+<td>\<span class="math inline">\(mathbf\{\}\)</span></td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <categories>
+        <category>LaTex</category>
+      </categories>
+      <tags>
+        <tag>LaTex</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Introduction to Operating System</title>
     <url>/2022/09/21/Introduction-to-Operating-System/</url>
     <content><![CDATA[<style> 
@@ -676,61 +731,6 @@ Architecture</h2>
       </categories>
       <tags>
         <tag>操作系统</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LaTex符号对照表</title>
-    <url>/2022/09/26/LaTex%E7%AC%A6%E5%8F%B7%E5%AF%B9%E7%85%A7%E8%A1%A8/</url>
-    <content><![CDATA[<style> 
-    .markdown-body {
-      font-family: Microsoft JhengHei, SimHei;
-      font-size: 16px;
-    }
-</style>
-<h1 align="center">
-LaTex符号对照表
-</h1>
-<h2 id="不同字体">1.不同字体</h2>
-<table>
-<thead>
-<tr class="header">
-<th>字体</th>
-<th>代码</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">\(\mathscr{L}\)</span></td>
-<td>\<span class="math inline">\(mathscr\{\}\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(\mathbb{L}\)</span></td>
-<td>\<span class="math inline">\(mathbb\{\}\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(\mathcal{L}\)</span></td>
-<td>\<span class="math inline">\(mathcal \{\}\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(\rm{L}\)</span></td>
-<td>\<span class="math inline">\(rm\{\}\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(\mathfrak{L}\)</span></td>
-<td>\<span class="math inline">\(mathfrak\{\}\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(\mathbf{L}\)</span></td>
-<td>\<span class="math inline">\(mathbf\{\}\)</span></td>
-</tr>
-</tbody>
-</table>
-]]></content>
-      <categories>
-        <category>LaTex</category>
-      </categories>
-      <tags>
-        <tag>LaTex</tag>
       </tags>
   </entry>
   <entry>
@@ -1256,6 +1256,112 @@ you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p
 ]]></content>
   </entry>
   <entry>
+    <title>Relaxation and approximation</title>
+    <url>/2022/09/23/Relaxation-and-approximation/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+Relaxation and approximation
+</h1>
+<h2 id="relaxation松弛">1.Relaxation(松弛)</h2>
+<p>定义relaxation sequence:</p>
+<blockquote>
+<p>We call the sequence <span class="math inline">\(\{a_k
+\}^{\infty}_{k=0}\)</span> a relaxation sequence if</p>
+<p>​ <span class="math inline">\(a_{k+1} \le a_k\)</span> <span class="math inline">\(\forall k \ge 0\)</span></p>
+</blockquote>
+<h2 id="approximation近似">2.Approximation(近似)</h2>
+<p>用简单的去替代复杂的，并保持原来相似的性质</p>
+<p>令<span class="math inline">\(f(x)\)</span>在<span class="math inline">\(\bar{x}\)</span>处可微，于是对于<span class="math inline">\(y \in
+R^n\)</span>我们有(<font color="red">泰勒展开</font>) <span class="math display">\[
+f(y)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y-\bar{x} \rangle +
+o(||y-\bar{x}||)
+\]</span> 其中<span class="math inline">\(o(r)\)</span>对于<span class="math inline">\(r \ge 0\)</span>有 <span class="math display">\[
+\underset{r \rightarrow 0}{lim} \frac{1}{r} o(r) = 0 , \space \space
+\space o(0)=0.
+\]</span> 同时给出<span class="math inline">\(|| \cdot
+||\)</span>在<span class="math inline">\(R^n\)</span>的欧几里得定义:
+<span class="math display">\[
+||x|| = [\sum_{i=1}^{n}(x^{(i)})^2]^{1/2}
+\]</span> 其中的<span class="math inline">\(f^{&#39;}(x)\)</span>是函数<span class="math inline">\(f\)</span>在<span class="math inline">\(x\)</span>处的梯度(gradient) <span class="math display">\[
+f&#39;(x) = (\frac{\partial f(x)}{\partial x^{(1)}},...,\frac{\partial
+f(x)}{\partial x^{(n)}})^T
+\]</span></p>
+<h2 id="引理1.2.1">3.引理1.2.1</h2>
+<p>定义level set为<span class="math inline">\(\mathscr{L}_f(\alpha)\)</span>: <span class="math display">\[
+\mathscr{L}_f(\alpha) = \{ x \in R^n | f(x) \le \alpha \}
+\]</span> 同时定义与<span class="math inline">\(\mathscr{L}_f(f(\bar{x}))\)</span>在<span class="math inline">\(\bar{x}\)</span>处<font color="red">相切</font>的方向向量集合:
+<span class="math display">\[
+S_f(\bar{x}) = \{s \in R^n | s = \underset{f(y_k) =
+f(\bar{x})}{\underset{y_k \rightarrow \bar{x}}{lim}}
+\frac{y_k-\bar{x}}{||y_k-\bar{x}||} \}
+\]</span></p>
+<p><font color="red">引理1.2.1</font>: 如果<span class="math inline">\(s
+\in S_f(\bar{x})\)</span>,那么<span class="math inline">\(\langle
+f&#39;(\bar{x}),s \rangle = 0\)</span>.</p>
+<p>证明: 由于<span class="math inline">\(f(y_k) =
+f(\bar{x})\)</span>,我们有 <span class="math display">\[
+f(y_k)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y_k-\bar{x} \rangle +
+o(||y_k-\bar{x}||) = f(\bar{x})
+\]</span> 因此只需证明<span class="math inline">\(\langle
+f^{&#39;}(\bar{x}),y_k-\bar{x} \rangle + o(||y_k-\bar{x}||) =
+0\)</span>即可</p>
+<p>取极限<span class="math inline">\(y_k \rightarrow
+\bar{x}\)</span>时即可得证</p>
+<h2 id="证明梯度反方向为局部下降最快方向">4.证明梯度反方向为局部下降最快方向</h2>
+<p>令<span class="math inline">\(s\)</span>为<span class="math inline">\(R^n\)</span>中的方向向量，<span class="math inline">\(||s|| = 1\)</span>，局部减小量为 <span class="math display">\[
+\Delta(s) = \underset{a \rightarrow 0}{lim} \frac{1}{\alpha}
+[f(\bar{x}+\alpha s)-f(\bar{x})]
+\]</span> 利用近似(泰勒展开)可以得到<span class="math inline">\(f(\bar{x}+\alpha s)-f(\bar{x})=\alpha \langle
+f&#39;(\bar{x}),s \rangle + o(\alpha)\)</span>.因此有 <span class="math display">\[
+\Delta (s) = \langle f&#39;(\bar{x}),s \rangle
+\]</span> ps: 柯西不等式 <span class="math display">\[
+-||x|| \cdot ||y|| \le \langle x,y \rangle \le ||x|| \cdot ||y||
+\]</span> 从而有<span class="math inline">\(\Delta(s) = \langle
+f&#39;(\bar{x}),s \rangle \ge -||f&#39;(\bar{x})||\)</span>.取 <span class="math display">\[
+\bar{s} = -f&#39;(\bar{x}) / ||f&#39;(\bar{x})||
+\]</span> 这时能够取到不等式的等号： <span class="math display">\[
+\Delta(\bar{s}) = - \langle f&#39;(\bar{x}),f&#39;(\bar{x}) \rangle /
+||f&#39;(\bar{x})|| = -||f&#39;(\bar{x})||
+\]</span> 因此方向<span class="math inline">\(-f&#39;(\bar{x})\)</span>(antigradient)是局部<font color="red">下降最快</font>的方向</p>
+<h2 id="定理1.2.1first-order-optimality-condition">5.定理1.2.1(First-order
+optimality condition)</h2>
+<p><font color="red">定理1.2.1</font>: 令<span class="math inline">\(x^*\)</span>是局部最小值对应向量，则 <span class="math display">\[
+f&#39;(x^*) = 0
+\]</span></p>
+<h2 id="定理1.2.2second-order-optimality-condition">6.定理1.2.2(Second-order
+optimality condition)</h2>
+<p>二阶近似 <span class="math display">\[
+f(y)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y-\bar{x} \rangle +
+\frac{1}{2}\langle  f^{&#39;&#39;}(\bar{x})(y-\bar{x}),y-\bar{x}
+\rangle   + o(||y-\bar{x}||^2)
+\]</span> 其中<span class="math inline">\(n \times n\)</span>矩阵<span class="math inline">\(f&#39;&#39;(x)\)</span>称为<font color="red">黑塞矩阵</font>(Hessian)：
+<span class="math display">\[
+(f&#39;&#39;(x))^{(i,j)} =
+\frac{\partial^2f(x)}{\partial{x}^{(i)}\partial{x}^{(j)}}
+\]</span> 黑塞矩阵是对称矩阵: <span class="math display">\[
+f&#39;&#39;(x) = [f&#39;&#39;(x)]^T
+\]</span> 对称矩阵A是<font color="red">半正定</font>的: <span class="math display">\[
+\langle Ax,x \rangle \ge 0 \space \space \space \forall x \in R^n
+\]</span> 符号记为 <span class="math display">\[
+A \succeq 0
+\]</span></p>
+<p><font color="red">定理1.2.2</font>: 令<span class="math inline">\(x^*\)</span>是局部最小值对应向量，则 <span class="math display">\[
+f&#39;(x^*) = 0, \space \space \space    f&#39;&#39;(x^*) \succeq  0.
+\]</span></p>
+]]></content>
+      <categories>
+        <category>凸优化</category>
+      </categories>
+      <tags>
+        <tag>凸优化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>transformation</title>
     <url>/2022/10/03/transformation/</url>
     <content><![CDATA[<style> 
@@ -1760,112 +1866,6 @@ n &amp; 0 &amp; 0 &amp; 0 \\
       </categories>
       <tags>
         <tag>GAMES101</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Relaxation and approximation</title>
-    <url>/2022/09/23/Relaxation-and-approximation/</url>
-    <content><![CDATA[<style> 
-    .markdown-body {
-      font-family: Microsoft JhengHei, SimHei;
-      font-size: 16px;
-    }
-</style>
-<h1 align="center">
-Relaxation and approximation
-</h1>
-<h2 id="relaxation松弛">1.Relaxation(松弛)</h2>
-<p>定义relaxation sequence:</p>
-<blockquote>
-<p>We call the sequence <span class="math inline">\(\{a_k
-\}^{\infty}_{k=0}\)</span> a relaxation sequence if</p>
-<p>​ <span class="math inline">\(a_{k+1} \le a_k\)</span> <span class="math inline">\(\forall k \ge 0\)</span></p>
-</blockquote>
-<h2 id="approximation近似">2.Approximation(近似)</h2>
-<p>用简单的去替代复杂的，并保持原来相似的性质</p>
-<p>令<span class="math inline">\(f(x)\)</span>在<span class="math inline">\(\bar{x}\)</span>处可微，于是对于<span class="math inline">\(y \in
-R^n\)</span>我们有(<font color="red">泰勒展开</font>) <span class="math display">\[
-f(y)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y-\bar{x} \rangle +
-o(||y-\bar{x}||)
-\]</span> 其中<span class="math inline">\(o(r)\)</span>对于<span class="math inline">\(r \ge 0\)</span>有 <span class="math display">\[
-\underset{r \rightarrow 0}{lim} \frac{1}{r} o(r) = 0 , \space \space
-\space o(0)=0.
-\]</span> 同时给出<span class="math inline">\(|| \cdot
-||\)</span>在<span class="math inline">\(R^n\)</span>的欧几里得定义:
-<span class="math display">\[
-||x|| = [\sum_{i=1}^{n}(x^{(i)})^2]^{1/2}
-\]</span> 其中的<span class="math inline">\(f^{&#39;}(x)\)</span>是函数<span class="math inline">\(f\)</span>在<span class="math inline">\(x\)</span>处的梯度(gradient) <span class="math display">\[
-f&#39;(x) = (\frac{\partial f(x)}{\partial x^{(1)}},...,\frac{\partial
-f(x)}{\partial x^{(n)}})^T
-\]</span></p>
-<h2 id="引理1.2.1">3.引理1.2.1</h2>
-<p>定义level set为<span class="math inline">\(\mathscr{L}_f(\alpha)\)</span>: <span class="math display">\[
-\mathscr{L}_f(\alpha) = \{ x \in R^n | f(x) \le \alpha \}
-\]</span> 同时定义与<span class="math inline">\(\mathscr{L}_f(f(\bar{x}))\)</span>在<span class="math inline">\(\bar{x}\)</span>处<font color="red">相切</font>的方向向量集合:
-<span class="math display">\[
-S_f(\bar{x}) = \{s \in R^n | s = \underset{f(y_k) =
-f(\bar{x})}{\underset{y_k \rightarrow \bar{x}}{lim}}
-\frac{y_k-\bar{x}}{||y_k-\bar{x}||} \}
-\]</span></p>
-<p><font color="red">引理1.2.1</font>: 如果<span class="math inline">\(s
-\in S_f(\bar{x})\)</span>,那么<span class="math inline">\(\langle
-f&#39;(\bar{x}),s \rangle = 0\)</span>.</p>
-<p>证明: 由于<span class="math inline">\(f(y_k) =
-f(\bar{x})\)</span>,我们有 <span class="math display">\[
-f(y_k)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y_k-\bar{x} \rangle +
-o(||y_k-\bar{x}||) = f(\bar{x})
-\]</span> 因此只需证明<span class="math inline">\(\langle
-f^{&#39;}(\bar{x}),y_k-\bar{x} \rangle + o(||y_k-\bar{x}||) =
-0\)</span>即可</p>
-<p>取极限<span class="math inline">\(y_k \rightarrow
-\bar{x}\)</span>时即可得证</p>
-<h2 id="证明梯度反方向为局部下降最快方向">4.证明梯度反方向为局部下降最快方向</h2>
-<p>令<span class="math inline">\(s\)</span>为<span class="math inline">\(R^n\)</span>中的方向向量，<span class="math inline">\(||s|| = 1\)</span>，局部减小量为 <span class="math display">\[
-\Delta(s) = \underset{a \rightarrow 0}{lim} \frac{1}{\alpha}
-[f(\bar{x}+\alpha s)-f(\bar{x})]
-\]</span> 利用近似(泰勒展开)可以得到<span class="math inline">\(f(\bar{x}+\alpha s)-f(\bar{x})=\alpha \langle
-f&#39;(\bar{x}),s \rangle + o(\alpha)\)</span>.因此有 <span class="math display">\[
-\Delta (s) = \langle f&#39;(\bar{x}),s \rangle
-\]</span> ps: 柯西不等式 <span class="math display">\[
--||x|| \cdot ||y|| \le \langle x,y \rangle \le ||x|| \cdot ||y||
-\]</span> 从而有<span class="math inline">\(\Delta(s) = \langle
-f&#39;(\bar{x}),s \rangle \ge -||f&#39;(\bar{x})||\)</span>.取 <span class="math display">\[
-\bar{s} = -f&#39;(\bar{x}) / ||f&#39;(\bar{x})||
-\]</span> 这时能够取到不等式的等号： <span class="math display">\[
-\Delta(\bar{s}) = - \langle f&#39;(\bar{x}),f&#39;(\bar{x}) \rangle /
-||f&#39;(\bar{x})|| = -||f&#39;(\bar{x})||
-\]</span> 因此方向<span class="math inline">\(-f&#39;(\bar{x})\)</span>(antigradient)是局部<font color="red">下降最快</font>的方向</p>
-<h2 id="定理1.2.1first-order-optimality-condition">5.定理1.2.1(First-order
-optimality condition)</h2>
-<p><font color="red">定理1.2.1</font>: 令<span class="math inline">\(x^*\)</span>是局部最小值对应向量，则 <span class="math display">\[
-f&#39;(x^*) = 0
-\]</span></p>
-<h2 id="定理1.2.2second-order-optimality-condition">6.定理1.2.2(Second-order
-optimality condition)</h2>
-<p>二阶近似 <span class="math display">\[
-f(y)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y-\bar{x} \rangle +
-\frac{1}{2}\langle  f^{&#39;&#39;}(\bar{x})(y-\bar{x}),y-\bar{x}
-\rangle   + o(||y-\bar{x}||^2)
-\]</span> 其中<span class="math inline">\(n \times n\)</span>矩阵<span class="math inline">\(f&#39;&#39;(x)\)</span>称为<font color="red">黑塞矩阵</font>(Hessian)：
-<span class="math display">\[
-(f&#39;&#39;(x))^{(i,j)} =
-\frac{\partial^2f(x)}{\partial{x}^{(i)}\partial{x}^{(j)}}
-\]</span> 黑塞矩阵是对称矩阵: <span class="math display">\[
-f&#39;&#39;(x) = [f&#39;&#39;(x)]^T
-\]</span> 对称矩阵A是<font color="red">半正定</font>的: <span class="math display">\[
-\langle Ax,x \rangle \ge 0 \space \space \space \forall x \in R^n
-\]</span> 符号记为 <span class="math display">\[
-A \succeq 0
-\]</span></p>
-<p><font color="red">定理1.2.2</font>: 令<span class="math inline">\(x^*\)</span>是局部最小值对应向量，则 <span class="math display">\[
-f&#39;(x^*) = 0, \space \space \space    f&#39;&#39;(x^*) \succeq  0.
-\]</span></p>
-]]></content>
-      <categories>
-        <category>凸优化</category>
-      </categories>
-      <tags>
-        <tag>凸优化</tag>
       </tags>
   </entry>
   <entry>
@@ -2383,6 +2383,111 @@ a^r\)</span>,其中<span class="math inline">\(p,r \ge 0\)</span>且<span class=
       </tags>
   </entry>
   <entry>
+    <title>状态最小化</title>
+    <url>/2022/10/20/%E7%8A%B6%E6%80%81%E6%9C%80%E5%B0%8F%E5%8C%96/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+状态最小化
+</h1>
+<h2 id="定义2.5.1">定义2.5.1</h2>
+<p>设<span class="math inline">\(L \subseteq
+\Sigma^*\)</span>是一个语言,<span class="math inline">\(x,y \in
+\Sigma^*\)</span>.</p>
+<p>如果对所有的<span class="math inline">\(z \in \Sigma^*\)</span>,<span class="math inline">\(xz \in L\)</span>当且仅当<span class="math inline">\(yz \in L\)</span>,</p>
+<p>则称<font color="red"><span class="math inline">\(x\)</span>与<span class="math inline">\(y\)</span>相对于<span class="math inline">\(L\)</span>是等价的</font>,记作<span class="math inline">\(x \approx_L y\)</span>.</p>
+<hr>
+<figure>
+<img src="/2022/10/20/%E7%8A%B6%E6%80%81%E6%9C%80%E5%B0%8F%E5%8C%96/1.png" alt="1">
+<figcaption aria-hidden="true">1</figcaption>
+</figure>
+<h2 id="例2.5.1">例2.5.1</h2>
+<p>设<span class="math inline">\(x\)</span>是一个字符串.用<span class="math inline">\([x]\)</span>表示这种<span class="math inline">\(x\)</span>所在的相对于<span class="math inline">\(L\)</span>的等价类.</p>
+<p>例如,对于图2-20中的自动机接受的语言<span class="math inline">\(L =
+(ab \cup ba)^*\)</span>存在4个等价类</p>
+<ul>
+<li><span class="math inline">\([e] = L\)</span></li>
+<li><span class="math inline">\([a]=La\)</span></li>
+<li><span class="math inline">\([b]=Lb\)</span></li>
+<li><span class="math inline">\([aa] = L(aa \cup
+bb)\Sigma^*\)</span></li>
+</ul>
+<hr>
+<h2 id="定义2.5.2">定义2.5.2</h2>
+<p>设<span class="math inline">\(M =
+(K,\Sigma,\delta,s,F)\)</span>是一台确定型有穷自动机.</p>
+<p>直观上，如果两个字符串<span class="math inline">\(x,y \in
+\Sigma^*\)</span>把<span class="math inline">\(M\)</span>从<span class="math inline">\(s\)</span>带到同一个状态,</p>
+<p>则称<font color="red"><span class="math inline">\(x\)</span>与<span class="math inline">\(y\)</span>是相对于<span class="math inline">\(M\)</span>等价的</font>,记作<span class="math inline">\(x \sim_M y\)</span>.</p>
+<p>即<span class="math inline">\(x \sim_M
+y\)</span>当且仅当存在状态<span class="math inline">\(q\)</span>使得<span class="math inline">\((s,x)\vdash_M^*(q,e)\)</span>和<span class="math inline">\((s,y)\vdash_M^*(q,e)\)</span>.</p>
+<hr>
+<h2 id="例2.5.1续">例2.5.1(续)</h2>
+<p>对于图2-20自动机<span class="math inline">\(\sim_M\)</span>等价类为</p>
+<ul>
+<li><span class="math inline">\(E_{q_1} = (ba)^*\)</span></li>
+<li><span class="math inline">\(E_{q_2} = La\)</span></li>
+<li><span class="math inline">\(E_{q_3}=(ba)^*abL\)</span></li>
+<li><span class="math inline">\(E_{q_4} = b(ab)^*\)</span></li>
+<li><span class="math inline">\(E_{q_5} = L(bb \cup
+aa)\Sigma^*\)</span></li>
+<li><span class="math inline">\(E_{q_6} = (ba)^*abLb\)</span></li>
+</ul>
+<p>其中<span class="math inline">\(L = (ab \cup ba)^*\)</span>.</p>
+<hr>
+<h2 id="定理2.5.1">定理2.5.1</h2>
+<p>对于任意的确定型有穷自动机<span class="math inline">\(M =
+(K,\Sigma,\delta,s,F)\)</span>和任意字符串<span class="math inline">\(x,y \in \Sigma^*\)</span>,</p>
+<p>如果<span class="math inline">\(x \sim_M y\)</span>,那么<span class="math inline">\(x \approx_{L(M)} y\)</span>.</p>
+<p>直观地说,<span class="math inline">\(\sim_M\)</span>是<span class="math inline">\(\approx_{L(M)}\)</span>的一个细化.</p>
+<hr>
+<h2 id="例2.5.1续-1">例2.5.1(续)</h2>
+<p>对于图2-20自动机,</p>
+<p>例如<span class="math inline">\(E_{q_5}\)</span>和<span class="math inline">\([aa]\)</span>重合,<span class="math inline">\([e]\)</span>是<span class="math inline">\(E_{q_1}\)</span>和<span class="math inline">\(E_{q_3}\)</span>的并.(细化)</p>
+<hr>
+<h2 id="定理2.5.2myhill-nerode定理">定理2.5.2(Myhill-Nerode定理)</h2>
+<p>设<span class="math inline">\(L\subseteq
+\Sigma^*\)</span>是一个正则语言,</p>
+<p>则有一台接受<span class="math inline">\(L\)</span>的确定型有穷自动机,它的状态恰好与<span class="math inline">\(\approx_L\)</span>的等价类一样多</p>
+<hr>
+<h2 id="推论">推论</h2>
+<p>语言<span class="math inline">\(L\)</span>是正则的当且仅当<span class="math inline">\(\approx_L\)</span>有有穷个等价类</p>
+<hr>
+<h2 id="定义">定义</h2>
+<p>对于任意的<span class="math inline">\(z\in\Sigma^*\)</span>,若<span class="math inline">\(p\)</span>能被<span class="math inline">\(z\)</span>带到终结状态,当且仅当<span class="math inline">\(q\)</span>能被<span class="math inline">\(z\)</span>带到终结状态.</p>
+<p>则称状态<span class="math inline">\(p\)</span>和<span class="math inline">\(q\)</span>是等价的.记作<span class="math inline">\(\equiv\)</span>.</p>
+<p>其中<span class="math inline">\(\equiv_n\)</span>表示在长度不超过<span class="math inline">\(n\)</span>的字符串驱动下能够到达终结状态.</p>
+<hr>
+<h2 id="引理2.5.1">引理2.5.1</h2>
+<p><span class="math inline">\(q \equiv_n p\)</span></p>
+<p>当且仅当</p>
+<p><span class="math inline">\(q \equiv_{n-1} p\)</span> 且 <span class="math inline">\(\forall a \in \Sigma,\delta(q,a) \equiv_{n-1}
+\delta(p,a)\)</span></p>
+<hr>
+<p>于是给出算法如下</p>
+<p>initially <span class="math inline">\(\equiv_0\)</span>
+的等价类是<span class="math inline">\(F\)</span> 与 <span class="math inline">\(K-F\)</span>;</p>
+<p>​ repeat for n <span class="math inline">\(:=\)</span> 1,2,<span class="math inline">\(\cdots\)</span></p>
+<p>​ 由<span class="math inline">\(\equiv_{n-1}\)</span>的等价类计算<span class="math inline">\(\equiv_{n}\)</span>的等价类</p>
+<p>​ until <span class="math inline">\(\equiv_{n-1}\)</span>与 <span class="math inline">\(\equiv_{n}\)</span> 相同</p>
+<hr>
+<p>比如图2-20中的自动机</p>
+<p>开始时为<span class="math inline">\(\{q_1,q_3\}\)</span>和<span class="math inline">\(\{q_2,q_4,q_5,q_6\}\)</span></p>
+<p>第一次迭代后<span class="math inline">\(\{q_1,q_3\}\)</span>,<span class="math inline">\(\{q_2\}\)</span>,<span class="math inline">\(\{q_4,q_6\}\)</span>,<span class="math inline">\(\{q_5\}\)</span></p>
+<p>......</p>
+]]></content>
+      <categories>
+        <category>计算理论</category>
+      </categories>
+      <tags>
+        <tag>计算理论</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>白夜行</title>
     <url>/2022/09/04/%E7%99%BD%E5%A4%9C%E8%A1%8C/</url>
     <content><![CDATA[<style>
@@ -2414,6 +2519,371 @@ a^r\)</span>,其中<span class="math inline">\(p,r \ge 0\)</span>且<span class=
       </categories>
       <tags>
         <tag>阅读</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>贝叶斯决策理论</title>
+    <url>/2022/09/13/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%86%B3%E7%AD%96%E7%90%86%E8%AE%BA/</url>
+    <content><![CDATA[<style>
+  .markdown-body {
+    font-family: Microsoft JhengHei, SimHei;
+    font-size: 16px;
+  }
+</style>
+<h1 align="center">
+贝叶斯决策理论
+</h1>
+<h2 id="basics-of-probability概率论基础知识">1. Basics of
+Probability(概率论基础知识)</h2>
+<ul>
+<li>$ A独立于B时,P(A|B) = P(A) $</li>
+<li>$ P(A|B)= $</li>
+<li>$ A、B相互独立 当且仅当 P(A,B)=P(A)P(B) $</li>
+</ul>
+<h2 id="bayes-theorem贝叶斯理论">2. Bayes' Theorem(贝叶斯理论)</h2>
+<p><span class="math display">\[
+P(\omega|x) = \frac{p(x|\omega)p(\omega)}{p(x)}\\
+Posterior = (Likelihood \times Prior) / Evidence\\
+p(x) = \sum_{i=1}^{k}p(x|\omega_i)p(\omega_i)
+\]</span></p>
+<ul>
+<li><span class="math inline">\(P(\omega|x)\)</span> :
+posterior,后验概率,<font color="red">已发生事件</font>出于某种因素引发的概率</li>
+<li><span class="math inline">\(p(x|\omega)\)</span> :
+likelihood,似然,数据符合<font color="red">某种分布</font>的概率大小</li>
+<li><span class="math inline">\(p(\omega)\)</span> :
+prior,先验概率,<font color="red">未发生事件</font>依据以往经验得知的概率</li>
+<li><span class="math inline">\(p(x)\)</span> :
+evidence,往往作为一个<font color="red">常数</font></li>
+</ul>
+<blockquote>
+<p>其中 x为样本</p>
+</blockquote>
+<h2 id="optimal-bayes-decision-rule最优贝叶斯决策规则">3. Optimal Bayes
+Decision Rule(最优贝叶斯决策规则)</h2>
+<p><strong>一个物体选择后验概率大的作为其分类可以最小化决策误差</strong></p>
+<p><span class="math inline">\(P(\omega_1|x) &gt;
+P(\omega_2|x)\)</span>时认为它是<span class="math inline">\(\omega_1\)</span></p>
+<p><span class="math inline">\(P(\omega_1|x) &lt;
+P(\omega_2|x)\)</span>时认为它是<span class="math inline">\(\omega_2\)</span></p>
+<blockquote>
+<p>同理或者选择风险R小的</p>
+</blockquote>
+<p>特殊情况：</p>
+<ul>
+<li><p><span class="math inline">\(p(\omega_1)=p(\omega_2)\)</span> :
+<span class="math inline">\(p(x|\omega_1)&gt;p(x|\omega_2)\)</span>时认为是<span class="math inline">\({\omega}_1\)</span></p>
+<blockquote>
+<p>最大似然决策法</p>
+<p>本质上和一般情况没有区别，只是先验概率相同可以同时约去，不加入比较，直接比较似然度</p>
+</blockquote></li>
+<li><p><span class="math inline">\(p(x|\omega_1)=p(x|\omega_2)\)</span>
+: <span class="math inline">\(p(\omega_1)&gt;p(\omega_2)\)</span>时认为是<span class="math inline">\({\omega}_1\)</span></p>
+<blockquote>
+<p>同上</p>
+</blockquote></li>
+</ul>
+<h2 id="bayes-risk">4. Bayes Risk</h2>
+<p>Conditional Risk <span class="math display">\[
+R(\alpha_i|x)=\sum_{j=1}^{c}\lambda(\alpha_i|\omega_j)P(\omega_j|x)
+\]</span></p>
+<blockquote>
+<p><span class="math inline">\(\alpha\)</span> 代表 采取的行为</p>
+</blockquote>
+<p>Overall Risk <span class="math display">\[
+R = \int R(\alpha_i|x)p(x)dx
+\]</span> Bayes Risk</p>
+<ul>
+<li>风险最小时的R</li>
+</ul>
+<h2 id="example-1two-category-classification">Example 1：Two-category
+classification</h2>
+<p>给定： <span class="math display">\[
+\alpha_1 = deciding \space \omega_1 \\
+\alpha_2 = deciding \space \omega_2 \\
+\lambda_{ij} = \lambda(\alpha_i | \omega_j)
+\]</span> 于是条件风险： <span class="math display">\[
+R(\alpha_1 | x) = \lambda_{11}P(\omega_1 | x) + \lambda_{12}P(\omega_2 |
+x) \\
+R(\alpha_2 | x) = \lambda_{21}P(\omega_1 | x) + \lambda_{22}P(\omega_2 |
+x)
+\]</span> 如何找到贝叶斯风险？？？</p>
+<p>认为是<span class="math inline">\({\omega}_1\)</span>当 <span class="math display">\[
+R(\alpha_1 | x) &lt; R(\alpha_2 | x)
+\]</span> 展开并移项化简得到(认为是<span class="math inline">\({\omega}_1\)</span>的情况) <span class="math display">\[
+\frac{P(x|\omega_1)}{P(x|\omega_2)} &gt;
+\frac{\lambda_{12}-\lambda_{22}}{\lambda_{21}-\lambda_{11}} \times
+\frac{P(\omega_2)}{P(\omega_1)}
+\]</span></p>
+<h2 id="example-2-minimum-error-rate-classification">Example 2:
+Minimum-Error-Rate Classification</h2>
+<p>给定</p>
+<ul>
+<li>对于动作<span class="math inline">\(\alpha_i\)</span>和事实上的类别<span class="math inline">\(\omega_j\)</span> ,如果<span class="math inline">\(i=j\)</span>就是正确的，否则错误</li>
+</ul>
+<p>找到最小损失的分类</p>
+<p>写出损失函数(Zero-one loss function): <span class="math display">\[
+\lambda(\alpha_i | \omega_j) =
+\begin{cases}
+0&amp; \text{i = j}\\
+1&amp; \text{i} \neq \text{j}
+\end{cases}
+\]</span> 于是可以计算条件风险 <span class="math display">\[
+R(\alpha_i|x) = \sum_{j=1}^{c} \lambda(\alpha_i|\omega_j)P(\omega_j | x)
+\\
+= \sum_{j{\neq}i} P(\omega_j | x) = 1-P(\omega_i | x)
+\]</span>
+需要风险最小化，由上述式子可知需要后验概率最大化，选择后验概率最大的即可</p>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>降维</title>
+    <url>/2022/10/12/%E9%99%8D%E7%BB%B4/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+降维
+</h1>
+<h2 id="特征表示">1.特征表示</h2>
+<p>对于所有机器学习任务，不论是监督学习还是无监督学习，我们都需要参数<span class="math inline">\(\pmb{x}\)</span></p>
+<p>更好的参数表达可以让学习更加简单</p>
+<p><span class="math inline">\(\pmb{x}\)</span>应当包含相关的特征，包含尽可能多的特征</p>
+<p>为了让学习更加简便高效，我们对变量<span class="math inline">\(\pmb{x}\)</span>进行降维操作</p>
+<h2 id="什么是降维dimensionality-reductiondr">2.什么是降维(Dimensionality
+Reduction,DR)</h2>
+<p>问题抽象为——将<span class="math inline">\(\pmb{x}\)</span>
+映射到<span class="math inline">\(\pmb{z}\)</span></p>
+<p>其中<span class="math inline">\(\pmb{x}\)</span>是原始的表示，通常具有较高的维度</p>
+<p>变换后得到的<span class="math inline">\(\pmb{z}\)</span>
+<font color="orange">通常</font>比<span class="math inline">\(\pmb{x}\)</span>具有更低的维度</p>
+<h2 id="降维方式线性与非线性">3.降维方式(线性与非线性)</h2>
+<p>降维过程通用表示 <span class="math display">\[
+\mathcal{F}(\pmb{x} \in R^p) = \pmb{z} \in R^d
+\]</span> 其中<span class="math inline">\(\mathcal{F}\)</span>的作用是将<span class="math inline">\(p\)</span>维向量映射到<span class="math inline">\(d\)</span>维上</p>
+<p>对<span class="math inline">\(\mathcal{F}\)</span>函数可以进一步分解</p>
+<p><span class="math inline">\(f_1(\pmb{x}) = z_1\)</span> <span class="math inline">\(f_2(\pmb{x}) = z_2\)</span> <span class="math inline">\(f_d(\pmb{x}) = z_d\)</span></p>
+<p>其中的每个小<span class="math inline">\(f\)</span>函数都是将<span class="math inline">\(p\)</span>维向量映射到<span class="math inline">\(1\)</span>维上</p>
+<p>如果<span class="math inline">\(f\)</span>是线性的，降维过程可以借用矩阵表示：</p>
+<p><span class="math inline">\(\pmb{a}_1^T \pmb{x} = z_1\)</span> ...
+<span class="math inline">\(\pmb{a}_i^T \pmb{x} = z_i\)</span></p>
+<p><span class="math inline">\(A \triangleq [\pmb{a}_1 ,...,
+\pmb{a}_d]\)</span> <span class="math inline">\((A \in
+\mathcal{R}^{p\times d})\)</span> <span class="math inline">\(A^T
+\pmb{x} = \pmb{z}\)</span></p>
+<h2 id="特征提取与特征选择">4.特征提取与特征选择</h2>
+<p>特征选择(Feature Selection)：</p>
+<blockquote>
+<p>从p维的原向量中选择一个d维的子集向量作为结果</p>
+</blockquote>
+<p><span class="math inline">\(A \in [0,1]^{p \times
+d}\)</span>,矩阵的每一列有且仅有一个1</p>
+<p>特征提取(Feature Extraction)：</p>
+<blockquote>
+<p>对原来p维的向量应用线性或非线性的变换得到一个新的d维向量</p>
+</blockquote>
+<p><span class="math inline">\(A \in \mathcal{R}^{p \times
+d}\)</span></p>
+<h2 id="降维算法">5.降维算法</h2>
+<p>无监督学习：</p>
+<ul>
+<li>主成分分析(Principal Component Analysis, PCA)</li>
+</ul>
+<p>监督学习：</p>
+<ul>
+<li>线性判别分析(Linear Discriminant Analysis, LDA)</li>
+</ul>
+<p>半监督学习：</p>
+<ul>
+<li>半监督判别分析(Semi-supervised Discriminant Analysis, SDA)</li>
+</ul>
+<hr>
+<p>线性：</p>
+<ul>
+<li>主成分分析(Principal Component Analysis, PCA)</li>
+<li>线性判别分析(Linear Discriminant Analysis, LDA)</li>
+<li>局部保留投影(Locality Preserving Projections, LPP)</li>
+<li>基于图的降维方法</li>
+</ul>
+<p>非线性：</p>
+<ul>
+<li>“核化”</li>
+<li>流形学习(Manifold Learning)
+<ul>
+<li>ISOMAP</li>
+<li>Locally Linear Embedding</li>
+<li>Laplacian Eigenmap</li>
+</ul></li>
+</ul>
+<hr>
+<h2 id="主成分分析pca">6.主成分分析(PCA)</h2>
+<p>定义主成分的第一个分量 <span class="math display">\[
+z_i^{(1)} = \pmb{a}_1^T \pmb{x}_i, \; \; \; \;i =1,...,n
+\]</span> 使得<span class="math inline">\(\textcolor{red}{\mathcal{var}(z^{(1)})}\)</span>最大</p>
+<p><span class="math display">\[
+\begin{aligned}
+var(z^{(1)}) &amp;= E((z^{(1)} - \overline{z}^{(1)})^2) \\
+             &amp;=
+\frac{1}{n}\sum^{n}_{i=1}(\pmb{a}_i^T\pmb{x}_i-\pmb{a}_i^T\pmb{\overline{x}})^2
+\\
+             &amp;=
+\frac{1}{n}\sum^{n}_{i=1}\pmb{a}_1^T(\pmb{x}_i-\pmb{\overline{x}})\pmb{a}_1^T(\pmb{x}_i-\pmb{\overline{x}})
+\\
+             &amp;=
+\frac{1}{n}\sum^{n}_{i=1}\pmb{a}_1^T(\pmb{x}_i-\pmb{\overline{x}})(\pmb{x}_i-\pmb{\overline{x}})^T\pmb{a}_1
+\\
+             &amp;= \pmb{a}_1^TS\pmb{a}_1
+\end{aligned}
+\]</span> 其中<span class="math inline">\(S =
+\frac{1}{n}\sum^{n}_{i=1}(\pmb{x}_i-\pmb{\overline{x}})(\pmb{x}_i-\pmb{\overline{x}})^T\)</span>
+是<font color="orange">协方差矩阵</font></p>
+<p>问题简化为如下: <span class="math display">\[
+\underset{\pmb{a}_1}{max}\pmb{a}_1^T S \pmb{a}_1
+\]</span></p>
+<p><span class="math display">\[
+\textcolor{red}{s.t. \; \; \pmb{a}_1^T \pmb{a}_1 = 1}
+\]</span></p>
+<p>令<span class="math inline">\(\lambda\)</span>为拉格朗日乘数 <span class="math display">\[
+L = \pmb{a}_1^T S \pmb{a}_1 - \lambda(\textcolor{orange}{\pmb{a}_1^T
+\pmb{a}_1 - 1})
+\]</span></p>
+<p><span class="math display">\[
+\frac{\partial L}{\partial \pmb{a}_1} = 2S\pmb{a}_1 - 2\lambda \pmb{a}_1
+= 0
+\]</span></p>
+<p><span class="math display">\[
+S\pmb{a}_1 = \lambda \pmb{a}_1
+\]</span></p>
+<p>于是<span class="math inline">\(\pmb{a}_1\)</span>是<span class="math inline">\(S\)</span>对应的<font color="red">最大</font>特征值<span class="math inline">\(\lambda = \lambda_1\)</span>的特征向量</p>
+<p><span class="math inline">\(z^{(2)}\)</span>同<span class="math inline">\(z^{(1)}\)</span>独立，故协方差为0 <span class="math display">\[
+\underset{\pmb{a}_2}{max}\pmb{a}_2^T S \pmb{a}_2 \\
+s.t. \; \; \pmb{a}_2^T \pmb{a}_2 = 1, \;
+\textcolor{red}{cov(z^{(2)},z^{(1)}) = 0}
+\]</span></p>
+<p><span class="math display">\[
+cov(z^{(2)},z^{(1)}) = \pmb{a}_2^T S \pmb{a}_1 = \lambda \pmb{a}_2^T
+\pmb{a}_1 = 0
+\]</span></p>
+<p><span class="math display">\[
+S \pmb{a}_2 = \lambda \pmb{a}_2
+\]</span></p>
+<p>于是<span class="math inline">\(\pmb{a}_2\)</span>是<span class="math inline">\(S\)</span>对应<font color="red">第二大</font>特征值<span class="math inline">\(\lambda = \lambda_2\)</span>的特征向量</p>
+<p>以此类推 <span class="math display">\[
+var(z^{(k)}) = \pmb{a}_k^T S \pmb{a}_k = \lambda_k
+\]</span></p>
+<p>于是计算主成分(PC)的步骤如下：</p>
+<ul>
+<li>得到协方差矩阵<span class="math inline">\(S\)</span></li>
+<li>计算其特征向量<span class="math inline">\(\{\pmb{a}_i\}^p_{i=1}\)</span></li>
+<li>使用最大的<span class="math inline">\(d\)</span>个特征向量<span class="math inline">\(\{\pmb{a}_i\}^d_{i=1}\)</span>得到主成分</li>
+<li>变换矩阵<span class="math inline">\(A\)</span>为<span class="math inline">\(A = [\pmb{a}_1,...,\pmb{a}_d]\)</span></li>
+</ul>
+<p>PCA在图像压缩上的应用</p>
+<figure>
+<img src="/2022/10/12/%E9%99%8D%E7%BB%B4/1.png" alt="1">
+<figcaption aria-hidden="true">1</figcaption>
+</figure>
+<h2 id="线性判别分析lda">7.线性判别分析(LDA)</h2>
+<p>在降维的同时尽可能保留更多维度的信息</p>
+<p>找到不同类别最佳分开的方向</p>
+<p>尽可能多地考虑类内分布以及类间分散</p>
+<p><font color="red">让投影降维后类内方差尽可能小，类间方差尽可能大</font></p>
+<p>给定两类<span class="math inline">\(\omega_1 , \omega_2\)</span></p>
+<p>定义 <span class="math display">\[
+\pmb{\mu}_i = \frac{1}{n_i}\sum_{x \in \omega_i} \pmb{x}
+\]</span> 可以理解为变换前的中心位置</p>
+<p>定义 <span class="math display">\[
+\tilde{\mu}_i = \frac{1}{n_i}\sum_{z\in\omega_i}z
+\]</span> 可以理解为投影后第<span class="math inline">\(i\)</span>类的中心点位置</p>
+<p>定义 <span class="math display">\[
+\tilde{s}^2_i = \sum_{z \in \omega_i}(z - \tilde{\mu}_i)^2
+\]</span> 可以理解为类内方差</p>
+<p>于是可以定义一个函数 <span class="math display">\[
+J(\pmb{a}) = \frac{(\tilde{\mu}_1-\tilde{\mu}_2)^2}{\tilde{s}^2_1 +
+\tilde{s}^2_2}
+\]</span>
+优化的目标便是<font color="red">最大化此函数</font>(类内方差尽可能小，类间方差尽可能大)</p>
+<p>类内散度矩阵<span class="math inline">\(S_W\)</span> <span class="math display">\[
+S_W = (\pmb{x}-\pmb{\mu}_i)(\pmb{x}-\pmb{\mu}_i)^T
+\]</span> 类间散度矩阵<span class="math inline">\(S_B\)</span> <span class="math display">\[
+S_B = (\pmb{\mu}_1-\pmb{\mu}_2)(\pmb{\mu}_1-\pmb{\mu}_2)^T
+\]</span></p>
+<p>于是有 <span class="math display">\[
+J(\pmb{a}) = \frac{\pmb{a}^T S_B \pmb{a}}{\pmb{a}^T S_W \pmb{a}}
+\]</span> 其中 <span class="math display">\[
+S_B \pmb{a} = \lambda S_W \pmb{a}
+\]</span> 利用<span class="math inline">\(S_B \pmb{a} = \lambda
+(\pmb{\mu}_1 - \pmb{\mu}_2)\)</span>解得 <span class="math display">\[
+\pmb{a}^* = S_W^{-1}(\pmb{\mu}_1 - \pmb{\mu}_2)
+\]</span></p>
+<p>多类情形下： <span class="math display">\[
+S_T = S_W + S_B
+\]</span></p>
+<p><span class="math display">\[
+J(\pmb{a}) = \frac{\pmb{a}^T S_W \pmb{a}}{\pmb{a}^T S_T \pmb{a}}
+\]</span></p>
+<p><span class="math display">\[
+S_B \pmb{a} = \lambda S_T \pmb{a}
+\]</span></p>
+<p>主要的步骤：</p>
+<ul>
+<li>找到散度矩阵<span class="math inline">\(S_B\)</span>和<span class="math inline">\(S_W\)</span></li>
+<li>利用<span class="math inline">\(S_B \pmb{a} = \lambda S_W
+\pmb{a}\)</span> 或<span class="math inline">\(S_B \pmb{a} = \lambda S_T
+\pmb{a}\)</span>计算特征向量<span class="math inline">\(\{\pmb{a}_i\}^{c-1}_{i=1}\)</span>,其中c为类别的数量</li>
+<li>变换矩阵<span class="math inline">\(A\)</span> 为<span class="math inline">\(A = [\pmb{a}_1,...,\pmb{a}_{c-1}]\)</span></li>
+</ul>
+<h2 id="局部保留投影lpp">8.局部保留投影(LPP)</h2>
+<p>定义矩阵<span class="math inline">\(W \in \mathcal{R}^{n \times
+n}\)</span> <span class="math display">\[
+w_{ij}=
+\begin{cases}
+1&amp; \text{第i个向量和第j个向量相邻}\\
+0&amp; \text{其它情况}
+\end{cases}
+\]</span></p>
+<p>目标： <span class="math display">\[
+\begin{aligned}
+min\sum_{ij}w_{ij}(z_i - z_j)^2 &amp;=
+min\sum_{ij}w_{ij}(\pmb{a}^T\pmb{x}_i - \pmb{a}^T\pmb{x}_j)^2 \\
+&amp;= min\sum_{ij}w_{ij}\pmb{a}^T(\pmb{x}_i - \pmb{x}_j)(\pmb{x}_i -
+\pmb{x}_j)^T\pmb{a} \\
+&amp;=min\pmb{a}^T\sum_{ij}w_{ij}(\pmb{x}_i\pmb{x}_i^T -
+\pmb{x}_i\pmb{x}_j^T-\pmb{x}_j\pmb{x}_i^T + \pmb{x}_j\pmb{x}_j^T)\pmb{a}
+\\
+&amp;=min(\pmb{a}^T\sum_{ij}w_{ij}(-
+\pmb{x}_i\pmb{x}_j^T-\pmb{x}_j\pmb{x}_i^T)\pmb{a} +
+\pmb{a}^T\sum_{ij}w_{ij}(\pmb{x}_i\pmb{x}_i^T +
+\pmb{x}_j\pmb{x}_j^T)\pmb{a} ) \\
+&amp;= min \pmb{a}^T((-2XWX^T)+(2XDW^T)) \pmb{a} \\
+&amp;= min 2\pmb{a}^T(-W + D) \pmb{a} \\
+&amp;= min 2\pmb{a}^T L \pmb{a}
+\end{aligned}
+\]</span> 其中<span class="math inline">\(D = \begin{bmatrix} d_{11}
+&amp; \cdots &amp; 0 \\ \vdots
+&amp;\ddots&amp;\vdots\\0&amp;\cdots&amp;d_{nn} \end{bmatrix}\)</span>,
+<span class="math inline">\(d_{ii} = \sum_j w_{ij}\)</span></p>
+<p><span class="math display">\[
+min \frac{\pmb{a}^T XWX^T \pmb{a}}{\pmb{a}^T XDX^T \pmb{a}}
+\]</span></p>
+<p><span class="math display">\[
+\pmb{a}^T XWX^T \pmb{a} = \lambda \pmb{a}^T XDX^T \pmb{a}
+\]</span></p>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -2868,371 +3338,6 @@ f(E(X)) \le E[f(X)]
 <p>E: 根据参数<span class="math inline">\(\theta_1\)</span>给出估计，即图中小的凹函数</p>
 <p>M: 进行极大似然估计，找到该函数的最大值处对应的参数<span class="math inline">\(\theta_2\)</span></p>
 <p>不断进行迭代找到最优解</p>
-]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>降维</title>
-    <url>/2022/10/12/%E9%99%8D%E7%BB%B4/</url>
-    <content><![CDATA[<style> 
-    .markdown-body {
-      font-family: Microsoft JhengHei, SimHei;
-      font-size: 16px;
-    }
-</style>
-<h1 align="center">
-降维
-</h1>
-<h2 id="特征表示">1.特征表示</h2>
-<p>对于所有机器学习任务，不论是监督学习还是无监督学习，我们都需要参数<span class="math inline">\(\pmb{x}\)</span></p>
-<p>更好的参数表达可以让学习更加简单</p>
-<p><span class="math inline">\(\pmb{x}\)</span>应当包含相关的特征，包含尽可能多的特征</p>
-<p>为了让学习更加简便高效，我们对变量<span class="math inline">\(\pmb{x}\)</span>进行降维操作</p>
-<h2 id="什么是降维dimensionality-reductiondr">2.什么是降维(Dimensionality
-Reduction,DR)</h2>
-<p>问题抽象为——将<span class="math inline">\(\pmb{x}\)</span>
-映射到<span class="math inline">\(\pmb{z}\)</span></p>
-<p>其中<span class="math inline">\(\pmb{x}\)</span>是原始的表示，通常具有较高的维度</p>
-<p>变换后得到的<span class="math inline">\(\pmb{z}\)</span>
-<font color="orange">通常</font>比<span class="math inline">\(\pmb{x}\)</span>具有更低的维度</p>
-<h2 id="降维方式线性与非线性">3.降维方式(线性与非线性)</h2>
-<p>降维过程通用表示 <span class="math display">\[
-\mathcal{F}(\pmb{x} \in R^p) = \pmb{z} \in R^d
-\]</span> 其中<span class="math inline">\(\mathcal{F}\)</span>的作用是将<span class="math inline">\(p\)</span>维向量映射到<span class="math inline">\(d\)</span>维上</p>
-<p>对<span class="math inline">\(\mathcal{F}\)</span>函数可以进一步分解</p>
-<p><span class="math inline">\(f_1(\pmb{x}) = z_1\)</span> <span class="math inline">\(f_2(\pmb{x}) = z_2\)</span> <span class="math inline">\(f_d(\pmb{x}) = z_d\)</span></p>
-<p>其中的每个小<span class="math inline">\(f\)</span>函数都是将<span class="math inline">\(p\)</span>维向量映射到<span class="math inline">\(1\)</span>维上</p>
-<p>如果<span class="math inline">\(f\)</span>是线性的，降维过程可以借用矩阵表示：</p>
-<p><span class="math inline">\(\pmb{a}_1^T \pmb{x} = z_1\)</span> ...
-<span class="math inline">\(\pmb{a}_i^T \pmb{x} = z_i\)</span></p>
-<p><span class="math inline">\(A \triangleq [\pmb{a}_1 ,...,
-\pmb{a}_d]\)</span> <span class="math inline">\((A \in
-\mathcal{R}^{p\times d})\)</span> <span class="math inline">\(A^T
-\pmb{x} = \pmb{z}\)</span></p>
-<h2 id="特征提取与特征选择">4.特征提取与特征选择</h2>
-<p>特征选择(Feature Selection)：</p>
-<blockquote>
-<p>从p维的原向量中选择一个d维的子集向量作为结果</p>
-</blockquote>
-<p><span class="math inline">\(A \in [0,1]^{p \times
-d}\)</span>,矩阵的每一列有且仅有一个1</p>
-<p>特征提取(Feature Extraction)：</p>
-<blockquote>
-<p>对原来p维的向量应用线性或非线性的变换得到一个新的d维向量</p>
-</blockquote>
-<p><span class="math inline">\(A \in \mathcal{R}^{p \times
-d}\)</span></p>
-<h2 id="降维算法">5.降维算法</h2>
-<p>无监督学习：</p>
-<ul>
-<li>主成分分析(Principal Component Analysis, PCA)</li>
-</ul>
-<p>监督学习：</p>
-<ul>
-<li>线性判别分析(Linear Discriminant Analysis, LDA)</li>
-</ul>
-<p>半监督学习：</p>
-<ul>
-<li>半监督判别分析(Semi-supervised Discriminant Analysis, SDA)</li>
-</ul>
-<hr>
-<p>线性：</p>
-<ul>
-<li>主成分分析(Principal Component Analysis, PCA)</li>
-<li>线性判别分析(Linear Discriminant Analysis, LDA)</li>
-<li>局部保留投影(Locality Preserving Projections, LPP)</li>
-<li>基于图的降维方法</li>
-</ul>
-<p>非线性：</p>
-<ul>
-<li>“核化”</li>
-<li>流形学习(Manifold Learning)
-<ul>
-<li>ISOMAP</li>
-<li>Locally Linear Embedding</li>
-<li>Laplacian Eigenmap</li>
-</ul></li>
-</ul>
-<hr>
-<h2 id="主成分分析pca">6.主成分分析(PCA)</h2>
-<p>定义主成分的第一个分量 <span class="math display">\[
-z_i^{(1)} = \pmb{a}_1^T \pmb{x}_i, \; \; \; \;i =1,...,n
-\]</span> 使得<span class="math inline">\(\textcolor{red}{\mathcal{var}(z^{(1)})}\)</span>最大</p>
-<p><span class="math display">\[
-\begin{aligned}
-var(z^{(1)}) &amp;= E((z^{(1)} - \overline{z}^{(1)})^2) \\
-             &amp;=
-\frac{1}{n}\sum^{n}_{i=1}(\pmb{a}_i^T\pmb{x}_i-\pmb{a}_i^T\pmb{\overline{x}})^2
-\\
-             &amp;=
-\frac{1}{n}\sum^{n}_{i=1}\pmb{a}_1^T(\pmb{x}_i-\pmb{\overline{x}})\pmb{a}_1^T(\pmb{x}_i-\pmb{\overline{x}})
-\\
-             &amp;=
-\frac{1}{n}\sum^{n}_{i=1}\pmb{a}_1^T(\pmb{x}_i-\pmb{\overline{x}})(\pmb{x}_i-\pmb{\overline{x}})^T\pmb{a}_1
-\\
-             &amp;= \pmb{a}_1^TS\pmb{a}_1
-\end{aligned}
-\]</span> 其中<span class="math inline">\(S =
-\frac{1}{n}\sum^{n}_{i=1}(\pmb{x}_i-\pmb{\overline{x}})(\pmb{x}_i-\pmb{\overline{x}})^T\)</span>
-是<font color="orange">协方差矩阵</font></p>
-<p>问题简化为如下: <span class="math display">\[
-\underset{\pmb{a}_1}{max}\pmb{a}_1^T S \pmb{a}_1
-\]</span></p>
-<p><span class="math display">\[
-\textcolor{red}{s.t. \; \; \pmb{a}_1^T \pmb{a}_1 = 1}
-\]</span></p>
-<p>令<span class="math inline">\(\lambda\)</span>为拉格朗日乘数 <span class="math display">\[
-L = \pmb{a}_1^T S \pmb{a}_1 - \lambda(\textcolor{orange}{\pmb{a}_1^T
-\pmb{a}_1 - 1})
-\]</span></p>
-<p><span class="math display">\[
-\frac{\partial L}{\partial \pmb{a}_1} = 2S\pmb{a}_1 - 2\lambda \pmb{a}_1
-= 0
-\]</span></p>
-<p><span class="math display">\[
-S\pmb{a}_1 = \lambda \pmb{a}_1
-\]</span></p>
-<p>于是<span class="math inline">\(\pmb{a}_1\)</span>是<span class="math inline">\(S\)</span>对应的<font color="red">最大</font>特征值<span class="math inline">\(\lambda = \lambda_1\)</span>的特征向量</p>
-<p><span class="math inline">\(z^{(2)}\)</span>同<span class="math inline">\(z^{(1)}\)</span>独立，故协方差为0 <span class="math display">\[
-\underset{\pmb{a}_2}{max}\pmb{a}_2^T S \pmb{a}_2 \\
-s.t. \; \; \pmb{a}_2^T \pmb{a}_2 = 1, \;
-\textcolor{red}{cov(z^{(2)},z^{(1)}) = 0}
-\]</span></p>
-<p><span class="math display">\[
-cov(z^{(2)},z^{(1)}) = \pmb{a}_2^T S \pmb{a}_1 = \lambda \pmb{a}_2^T
-\pmb{a}_1 = 0
-\]</span></p>
-<p><span class="math display">\[
-S \pmb{a}_2 = \lambda \pmb{a}_2
-\]</span></p>
-<p>于是<span class="math inline">\(\pmb{a}_2\)</span>是<span class="math inline">\(S\)</span>对应<font color="red">第二大</font>特征值<span class="math inline">\(\lambda = \lambda_2\)</span>的特征向量</p>
-<p>以此类推 <span class="math display">\[
-var(z^{(k)}) = \pmb{a}_k^T S \pmb{a}_k = \lambda_k
-\]</span></p>
-<p>于是计算主成分(PC)的步骤如下：</p>
-<ul>
-<li>得到协方差矩阵<span class="math inline">\(S\)</span></li>
-<li>计算其特征向量<span class="math inline">\(\{\pmb{a}_i\}^p_{i=1}\)</span></li>
-<li>使用最大的<span class="math inline">\(d\)</span>个特征向量<span class="math inline">\(\{\pmb{a}_i\}^d_{i=1}\)</span>得到主成分</li>
-<li>变换矩阵<span class="math inline">\(A\)</span>为<span class="math inline">\(A = [\pmb{a}_1,...,\pmb{a}_d]\)</span></li>
-</ul>
-<p>PCA在图像压缩上的应用</p>
-<figure>
-<img src="/2022/10/12/%E9%99%8D%E7%BB%B4/1.png" alt="1">
-<figcaption aria-hidden="true">1</figcaption>
-</figure>
-<h2 id="线性判别分析lda">7.线性判别分析(LDA)</h2>
-<p>在降维的同时尽可能保留更多维度的信息</p>
-<p>找到不同类别最佳分开的方向</p>
-<p>尽可能多地考虑类内分布以及类间分散</p>
-<p><font color="red">让投影降维后类内方差尽可能小，类间方差尽可能大</font></p>
-<p>给定两类<span class="math inline">\(\omega_1 , \omega_2\)</span></p>
-<p>定义 <span class="math display">\[
-\pmb{\mu}_i = \frac{1}{n_i}\sum_{x \in \omega_i} \pmb{x}
-\]</span> 可以理解为变换前的中心位置</p>
-<p>定义 <span class="math display">\[
-\tilde{\mu}_i = \frac{1}{n_i}\sum_{z\in\omega_i}z
-\]</span> 可以理解为投影后第<span class="math inline">\(i\)</span>类的中心点位置</p>
-<p>定义 <span class="math display">\[
-\tilde{s}^2_i = \sum_{z \in \omega_i}(z - \tilde{\mu}_i)^2
-\]</span> 可以理解为类内方差</p>
-<p>于是可以定义一个函数 <span class="math display">\[
-J(\pmb{a}) = \frac{(\tilde{\mu}_1-\tilde{\mu}_2)^2}{\tilde{s}^2_1 +
-\tilde{s}^2_2}
-\]</span>
-优化的目标便是<font color="red">最大化此函数</font>(类内方差尽可能小，类间方差尽可能大)</p>
-<p>类内散度矩阵<span class="math inline">\(S_W\)</span> <span class="math display">\[
-S_W = (\pmb{x}-\pmb{\mu}_i)(\pmb{x}-\pmb{\mu}_i)^T
-\]</span> 类间散度矩阵<span class="math inline">\(S_B\)</span> <span class="math display">\[
-S_B = (\pmb{\mu}_1-\pmb{\mu}_2)(\pmb{\mu}_1-\pmb{\mu}_2)^T
-\]</span></p>
-<p>于是有 <span class="math display">\[
-J(\pmb{a}) = \frac{\pmb{a}^T S_B \pmb{a}}{\pmb{a}^T S_W \pmb{a}}
-\]</span> 其中 <span class="math display">\[
-S_B \pmb{a} = \lambda S_W \pmb{a}
-\]</span> 利用<span class="math inline">\(S_B \pmb{a} = \lambda
-(\pmb{\mu}_1 - \pmb{\mu}_2)\)</span>解得 <span class="math display">\[
-\pmb{a}^* = S_W^{-1}(\pmb{\mu}_1 - \pmb{\mu}_2)
-\]</span></p>
-<p>多类情形下： <span class="math display">\[
-S_T = S_W + S_B
-\]</span></p>
-<p><span class="math display">\[
-J(\pmb{a}) = \frac{\pmb{a}^T S_W \pmb{a}}{\pmb{a}^T S_T \pmb{a}}
-\]</span></p>
-<p><span class="math display">\[
-S_B \pmb{a} = \lambda S_T \pmb{a}
-\]</span></p>
-<p>主要的步骤：</p>
-<ul>
-<li>找到散度矩阵<span class="math inline">\(S_B\)</span>和<span class="math inline">\(S_W\)</span></li>
-<li>利用<span class="math inline">\(S_B \pmb{a} = \lambda S_W
-\pmb{a}\)</span> 或<span class="math inline">\(S_B \pmb{a} = \lambda S_T
-\pmb{a}\)</span>计算特征向量<span class="math inline">\(\{\pmb{a}_i\}^{c-1}_{i=1}\)</span>,其中c为类别的数量</li>
-<li>变换矩阵<span class="math inline">\(A\)</span> 为<span class="math inline">\(A = [\pmb{a}_1,...,\pmb{a}_{c-1}]\)</span></li>
-</ul>
-<h2 id="局部保留投影lpp">8.局部保留投影(LPP)</h2>
-<p>定义矩阵<span class="math inline">\(W \in \mathcal{R}^{n \times
-n}\)</span> <span class="math display">\[
-w_{ij}=
-\begin{cases}
-1&amp; \text{第i个向量和第j个向量相邻}\\
-0&amp; \text{其它情况}
-\end{cases}
-\]</span></p>
-<p>目标： <span class="math display">\[
-\begin{aligned}
-min\sum_{ij}w_{ij}(z_i - z_j)^2 &amp;=
-min\sum_{ij}w_{ij}(\pmb{a}^T\pmb{x}_i - \pmb{a}^T\pmb{x}_j)^2 \\
-&amp;= min\sum_{ij}w_{ij}\pmb{a}^T(\pmb{x}_i - \pmb{x}_j)(\pmb{x}_i -
-\pmb{x}_j)^T\pmb{a} \\
-&amp;=min\pmb{a}^T\sum_{ij}w_{ij}(\pmb{x}_i\pmb{x}_i^T -
-\pmb{x}_i\pmb{x}_j^T-\pmb{x}_j\pmb{x}_i^T + \pmb{x}_j\pmb{x}_j^T)\pmb{a}
-\\
-&amp;=min(\pmb{a}^T\sum_{ij}w_{ij}(-
-\pmb{x}_i\pmb{x}_j^T-\pmb{x}_j\pmb{x}_i^T)\pmb{a} +
-\pmb{a}^T\sum_{ij}w_{ij}(\pmb{x}_i\pmb{x}_i^T +
-\pmb{x}_j\pmb{x}_j^T)\pmb{a} ) \\
-&amp;= min \pmb{a}^T((-2XWX^T)+(2XDW^T)) \pmb{a} \\
-&amp;= min 2\pmb{a}^T(-W + D) \pmb{a} \\
-&amp;= min 2\pmb{a}^T L \pmb{a}
-\end{aligned}
-\]</span> 其中<span class="math inline">\(D = \begin{bmatrix} d_{11}
-&amp; \cdots &amp; 0 \\ \vdots
-&amp;\ddots&amp;\vdots\\0&amp;\cdots&amp;d_{nn} \end{bmatrix}\)</span>,
-<span class="math inline">\(d_{ii} = \sum_j w_{ij}\)</span></p>
-<p><span class="math display">\[
-min \frac{\pmb{a}^T XWX^T \pmb{a}}{\pmb{a}^T XDX^T \pmb{a}}
-\]</span></p>
-<p><span class="math display">\[
-\pmb{a}^T XWX^T \pmb{a} = \lambda \pmb{a}^T XDX^T \pmb{a}
-\]</span></p>
-]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>贝叶斯决策理论</title>
-    <url>/2022/09/13/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%86%B3%E7%AD%96%E7%90%86%E8%AE%BA/</url>
-    <content><![CDATA[<style>
-  .markdown-body {
-    font-family: Microsoft JhengHei, SimHei;
-    font-size: 16px;
-  }
-</style>
-<h1 align="center">
-贝叶斯决策理论
-</h1>
-<h2 id="basics-of-probability概率论基础知识">1. Basics of
-Probability(概率论基础知识)</h2>
-<ul>
-<li>$ A独立于B时,P(A|B) = P(A) $</li>
-<li>$ P(A|B)= $</li>
-<li>$ A、B相互独立 当且仅当 P(A,B)=P(A)P(B) $</li>
-</ul>
-<h2 id="bayes-theorem贝叶斯理论">2. Bayes' Theorem(贝叶斯理论)</h2>
-<p><span class="math display">\[
-P(\omega|x) = \frac{p(x|\omega)p(\omega)}{p(x)}\\
-Posterior = (Likelihood \times Prior) / Evidence\\
-p(x) = \sum_{i=1}^{k}p(x|\omega_i)p(\omega_i)
-\]</span></p>
-<ul>
-<li><span class="math inline">\(P(\omega|x)\)</span> :
-posterior,后验概率,<font color="red">已发生事件</font>出于某种因素引发的概率</li>
-<li><span class="math inline">\(p(x|\omega)\)</span> :
-likelihood,似然,数据符合<font color="red">某种分布</font>的概率大小</li>
-<li><span class="math inline">\(p(\omega)\)</span> :
-prior,先验概率,<font color="red">未发生事件</font>依据以往经验得知的概率</li>
-<li><span class="math inline">\(p(x)\)</span> :
-evidence,往往作为一个<font color="red">常数</font></li>
-</ul>
-<blockquote>
-<p>其中 x为样本</p>
-</blockquote>
-<h2 id="optimal-bayes-decision-rule最优贝叶斯决策规则">3. Optimal Bayes
-Decision Rule(最优贝叶斯决策规则)</h2>
-<p><strong>一个物体选择后验概率大的作为其分类可以最小化决策误差</strong></p>
-<p><span class="math inline">\(P(\omega_1|x) &gt;
-P(\omega_2|x)\)</span>时认为它是<span class="math inline">\(\omega_1\)</span></p>
-<p><span class="math inline">\(P(\omega_1|x) &lt;
-P(\omega_2|x)\)</span>时认为它是<span class="math inline">\(\omega_2\)</span></p>
-<blockquote>
-<p>同理或者选择风险R小的</p>
-</blockquote>
-<p>特殊情况：</p>
-<ul>
-<li><p><span class="math inline">\(p(\omega_1)=p(\omega_2)\)</span> :
-<span class="math inline">\(p(x|\omega_1)&gt;p(x|\omega_2)\)</span>时认为是<span class="math inline">\({\omega}_1\)</span></p>
-<blockquote>
-<p>最大似然决策法</p>
-<p>本质上和一般情况没有区别，只是先验概率相同可以同时约去，不加入比较，直接比较似然度</p>
-</blockquote></li>
-<li><p><span class="math inline">\(p(x|\omega_1)=p(x|\omega_2)\)</span>
-: <span class="math inline">\(p(\omega_1)&gt;p(\omega_2)\)</span>时认为是<span class="math inline">\({\omega}_1\)</span></p>
-<blockquote>
-<p>同上</p>
-</blockquote></li>
-</ul>
-<h2 id="bayes-risk">4. Bayes Risk</h2>
-<p>Conditional Risk <span class="math display">\[
-R(\alpha_i|x)=\sum_{j=1}^{c}\lambda(\alpha_i|\omega_j)P(\omega_j|x)
-\]</span></p>
-<blockquote>
-<p><span class="math inline">\(\alpha\)</span> 代表 采取的行为</p>
-</blockquote>
-<p>Overall Risk <span class="math display">\[
-R = \int R(\alpha_i|x)p(x)dx
-\]</span> Bayes Risk</p>
-<ul>
-<li>风险最小时的R</li>
-</ul>
-<h2 id="example-1two-category-classification">Example 1：Two-category
-classification</h2>
-<p>给定： <span class="math display">\[
-\alpha_1 = deciding \space \omega_1 \\
-\alpha_2 = deciding \space \omega_2 \\
-\lambda_{ij} = \lambda(\alpha_i | \omega_j)
-\]</span> 于是条件风险： <span class="math display">\[
-R(\alpha_1 | x) = \lambda_{11}P(\omega_1 | x) + \lambda_{12}P(\omega_2 |
-x) \\
-R(\alpha_2 | x) = \lambda_{21}P(\omega_1 | x) + \lambda_{22}P(\omega_2 |
-x)
-\]</span> 如何找到贝叶斯风险？？？</p>
-<p>认为是<span class="math inline">\({\omega}_1\)</span>当 <span class="math display">\[
-R(\alpha_1 | x) &lt; R(\alpha_2 | x)
-\]</span> 展开并移项化简得到(认为是<span class="math inline">\({\omega}_1\)</span>的情况) <span class="math display">\[
-\frac{P(x|\omega_1)}{P(x|\omega_2)} &gt;
-\frac{\lambda_{12}-\lambda_{22}}{\lambda_{21}-\lambda_{11}} \times
-\frac{P(\omega_2)}{P(\omega_1)}
-\]</span></p>
-<h2 id="example-2-minimum-error-rate-classification">Example 2:
-Minimum-Error-Rate Classification</h2>
-<p>给定</p>
-<ul>
-<li>对于动作<span class="math inline">\(\alpha_i\)</span>和事实上的类别<span class="math inline">\(\omega_j\)</span> ,如果<span class="math inline">\(i=j\)</span>就是正确的，否则错误</li>
-</ul>
-<p>找到最小损失的分类</p>
-<p>写出损失函数(Zero-one loss function): <span class="math display">\[
-\lambda(\alpha_i | \omega_j) =
-\begin{cases}
-0&amp; \text{i = j}\\
-1&amp; \text{i} \neq \text{j}
-\end{cases}
-\]</span> 于是可以计算条件风险 <span class="math display">\[
-R(\alpha_i|x) = \sum_{j=1}^{c} \lambda(\alpha_i|\omega_j)P(\omega_j | x)
-\\
-= \sum_{j{\neq}i} P(\omega_j | x) = 1-P(\omega_i | x)
-\]</span>
-需要风险最小化，由上述式子可知需要后验概率最大化，选择后验概率最大的即可</p>
 ]]></content>
       <categories>
         <category>机器学习</category>
