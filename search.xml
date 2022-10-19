@@ -128,6 +128,110 @@ f&#39;&#39;(x)-M||y-x||I_n \preceq f&#39;&#39;(y) \preceq f&#39;&#39;(x)
       </tags>
   </entry>
   <entry>
+    <title>Complexity bounds for global optimization</title>
+    <url>/2022/09/22/Complexity-bounds-for-global-optimization/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+Complexity bounds for global optimization
+</h1>
+<h2 id="提出问题">1.提出问题</h2>
+<p>一个约束最小化问题： <span class="math display">\[
+\underset{x \in B_n}{min} f(x)
+\]</span> 其中： <span class="math display">\[
+B_n = \{ x \in R^n | 0 \le x^{(i)} \le1,i=1 ... n \}
+\]</span> <span class="math inline">\(x\)</span>为<span class="math inline">\(n\)</span>维向量，<span class="math inline">\(x^{(i)}\)</span>为<span class="math inline">\(x\)</span>向量中的每一个分量</p>
+<p>给出以下记号： <span class="math display">\[
+||x||_{\infty} = \underset{1 \le i \le n}{max}|x^{(i)}|
+\]</span></p>
+<h2 id="利普希茨连续lipschitz-continuity">2.<strong>利普希茨连续</strong>(Lipschitz
+continuity)</h2>
+<p>一个函数是利普希茨连续的时有 <span class="math display">\[
+|f(x)-f(y)| \le L ||x-y||_{\infty} \space \space \space \space \space
+\space \space \space \forall x,y \in B_n
+\]</span> 其中<span class="math inline">\(L\)</span>为利普希茨常数(Lipschitz constant)</p>
+<h2 id="均格法uniform-grid-method解决">3.均格法(uniform grid
+method)解决</h2>
+<p><span class="math display">\[
+Method \space \space  \mathscr{G}(p)
+\]</span></p>
+<ul>
+<li>构造<span class="math inline">\((p+1)^n\)</span>个点</li>
+</ul>
+<p><span class="math display">\[
+x_{(i_1,...,i_n)} = (\frac{i_1}{p},\frac{i_2}{p},...,\frac{i_n}{p})^T
+\]</span></p>
+<p>​ 其中<span class="math inline">\((i_1,...,i_n) \in \{0,...,p
+\}^n\)</span></p>
+<ul>
+<li>在所有的点中找到一个点<span class="math inline">\(\bar{x}\)</span>,其对应的目标函数的值最小</li>
+<li>返回<span class="math inline">\((\bar{x},f(\bar{x}))\)</span>作为结果</li>
+</ul>
+<p><font color="red">该方法找到的是近似解(approximate
+solution)!!!</font></p>
+<h2 id="评估结果">4.评估结果</h2>
+<p><font color="red">定理</font>： 令<span class="math inline">\(f^*\)</span>作为该问题的<font color="red">全局最优解</font>,于是
+<span class="math display">\[
+f(\bar{x})  - f^* \le \frac{L}{2p}
+\]</span></p>
+<p><font color="red">直观理解</font>：</p>
+<p>这些点均匀分布于边长为1的空间中，任意相邻两点之间距离为<span class="math inline">\(\frac{1}{p}\)</span>,于是全局最优解坐标距离近似解不超过<span class="math inline">\(\frac{1}{2p}\)</span>,对应到值域乘上一个斜率系数<span class="math inline">\(L\)</span>即可。</p>
+<p><font color="red">严格证明</font>：</p>
+<p>令<span class="math inline">\(x_*\)</span>为全局最优解对应的点，于是存在 <span class="math display">\[
+x \equiv x_{(i_1,...,i_n)} \le x_* \le x_{(i_1+1,...,i_n+1)} \equiv y
+\]</span></p>
+<blockquote>
+<p>ps: 对于n维向量，当且仅当任意<span class="math inline">\(x^{(i)} \le
+y^{(i)}\)</span>时，写作<span class="math inline">\(x \le y\)</span></p>
+</blockquote>
+<p>其中<span class="math inline">\(y^{(i)} - x^{(i)} =
+\frac{1}{p}\)</span>且 <span class="math display">\[
+x_*^{(i)} \in [x^{(i)},y^{(i)}]
+\]</span> 令<span class="math inline">\(\hat{x} =
+(x+y)/2\)</span>.构造一个点<span class="math inline">\(\tilde{x}\)</span>如下： <span class="math display">\[
+\tilde{x}^{(i)} =  \begin{cases}  y^{(i)} &amp; if \space
+\tilde{x}^{(i)} \le x_*^{(i)} \\ x^{(i)} &amp; otherwise\end{cases}
+\]</span> 显然<span class="math inline">\(|\tilde{x}^{(i)}-x_*^{(i)}|\le
+\frac{1}{2p}\)</span>,因此 <span class="math display">\[
+||\tilde{x}-x_*||_{\infty} = \underset{1\le i \le
+n}{max}|\tilde{x}^{(i)}-x_*^{(i)}|\le \frac{1}{2p}
+\]</span> 由于<span class="math inline">\(\tilde{x}\)</span>属于网格，于是 <span class="math display">\[
+f(\bar{x})-f(x_*) \le f(\tilde{x})-f(x_*) \le
+L||\tilde{x}-x_*||_{\infty} \le \frac{L}{2p}
+\]</span> 得证！</p>
+<p>于是可以写作 <span class="math display">\[
+Find \space \bar{x} \in B_n : f(\bar{x}) - f^* \le \epsilon
+\]</span></p>
+<h2 id="推论">5.推论</h2>
+<p><span class="math inline">\(Method \mathscr{G}\)</span>的复杂度为
+<span class="math display">\[
+\mathscr{A}(\mathscr{G}) = (\lfloor \frac{L}{2\epsilon} \rfloor+2)^n
+\]</span> 证明：</p>
+<p>当<span class="math inline">\(p\)</span>取<span class="math inline">\(\lfloor \frac{L}{2\epsilon}
+\rfloor+1\)</span>时，有<span class="math inline">\(p \ge
+\frac{L}{2\epsilon}\)</span>，此时满足<span class="math inline">\(f(\bar{x}) - f^* \le \frac{L}{2p} \le
+\epsilon\)</span></p>
+<p>于是由<span class="math inline">\((p+1)^n\)</span> 可以得出 <span class="math inline">\((\lfloor \frac{L}{2\epsilon} \rfloor+2)^n\)</span>
+.</p>
+<p>这就是上界(upper complexity
+bound),仅代表最坏情况下的性能，无法展现更优情况下的性能，无法反映这是否是最优算法</p>
+<p>由此引出下界(lower complexity bound) <span class="math display">\[
+for \space \epsilon &lt; \frac{1}{2}L,\space lower \space bound = \space
+(\lfloor \frac{L}{2\epsilon} \rfloor)^n
+\]</span></p>
+]]></content>
+      <categories>
+        <category>凸优化</category>
+      </categories>
+      <tags>
+        <tag>凸优化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Deterministic Finite Automata</title>
     <url>/2022/10/10/Deterministic-Finite-Automata/</url>
     <content><![CDATA[<style> 
@@ -323,110 +427,6 @@ to be a <font color="orange">dead state</font>.</p>
       </tags>
   </entry>
   <entry>
-    <title>Complexity bounds for global optimization</title>
-    <url>/2022/09/22/Complexity-bounds-for-global-optimization/</url>
-    <content><![CDATA[<style> 
-    .markdown-body {
-      font-family: Microsoft JhengHei, SimHei;
-      font-size: 16px;
-    }
-</style>
-<h1 align="center">
-Complexity bounds for global optimization
-</h1>
-<h2 id="提出问题">1.提出问题</h2>
-<p>一个约束最小化问题： <span class="math display">\[
-\underset{x \in B_n}{min} f(x)
-\]</span> 其中： <span class="math display">\[
-B_n = \{ x \in R^n | 0 \le x^{(i)} \le1,i=1 ... n \}
-\]</span> <span class="math inline">\(x\)</span>为<span class="math inline">\(n\)</span>维向量，<span class="math inline">\(x^{(i)}\)</span>为<span class="math inline">\(x\)</span>向量中的每一个分量</p>
-<p>给出以下记号： <span class="math display">\[
-||x||_{\infty} = \underset{1 \le i \le n}{max}|x^{(i)}|
-\]</span></p>
-<h2 id="利普希茨连续lipschitz-continuity">2.<strong>利普希茨连续</strong>(Lipschitz
-continuity)</h2>
-<p>一个函数是利普希茨连续的时有 <span class="math display">\[
-|f(x)-f(y)| \le L ||x-y||_{\infty} \space \space \space \space \space
-\space \space \space \forall x,y \in B_n
-\]</span> 其中<span class="math inline">\(L\)</span>为利普希茨常数(Lipschitz constant)</p>
-<h2 id="均格法uniform-grid-method解决">3.均格法(uniform grid
-method)解决</h2>
-<p><span class="math display">\[
-Method \space \space  \mathscr{G}(p)
-\]</span></p>
-<ul>
-<li>构造<span class="math inline">\((p+1)^n\)</span>个点</li>
-</ul>
-<p><span class="math display">\[
-x_{(i_1,...,i_n)} = (\frac{i_1}{p},\frac{i_2}{p},...,\frac{i_n}{p})^T
-\]</span></p>
-<p>​ 其中<span class="math inline">\((i_1,...,i_n) \in \{0,...,p
-\}^n\)</span></p>
-<ul>
-<li>在所有的点中找到一个点<span class="math inline">\(\bar{x}\)</span>,其对应的目标函数的值最小</li>
-<li>返回<span class="math inline">\((\bar{x},f(\bar{x}))\)</span>作为结果</li>
-</ul>
-<p><font color="red">该方法找到的是近似解(approximate
-solution)!!!</font></p>
-<h2 id="评估结果">4.评估结果</h2>
-<p><font color="red">定理</font>： 令<span class="math inline">\(f^*\)</span>作为该问题的<font color="red">全局最优解</font>,于是
-<span class="math display">\[
-f(\bar{x})  - f^* \le \frac{L}{2p}
-\]</span></p>
-<p><font color="red">直观理解</font>：</p>
-<p>这些点均匀分布于边长为1的空间中，任意相邻两点之间距离为<span class="math inline">\(\frac{1}{p}\)</span>,于是全局最优解坐标距离近似解不超过<span class="math inline">\(\frac{1}{2p}\)</span>,对应到值域乘上一个斜率系数<span class="math inline">\(L\)</span>即可。</p>
-<p><font color="red">严格证明</font>：</p>
-<p>令<span class="math inline">\(x_*\)</span>为全局最优解对应的点，于是存在 <span class="math display">\[
-x \equiv x_{(i_1,...,i_n)} \le x_* \le x_{(i_1+1,...,i_n+1)} \equiv y
-\]</span></p>
-<blockquote>
-<p>ps: 对于n维向量，当且仅当任意<span class="math inline">\(x^{(i)} \le
-y^{(i)}\)</span>时，写作<span class="math inline">\(x \le y\)</span></p>
-</blockquote>
-<p>其中<span class="math inline">\(y^{(i)} - x^{(i)} =
-\frac{1}{p}\)</span>且 <span class="math display">\[
-x_*^{(i)} \in [x^{(i)},y^{(i)}]
-\]</span> 令<span class="math inline">\(\hat{x} =
-(x+y)/2\)</span>.构造一个点<span class="math inline">\(\tilde{x}\)</span>如下： <span class="math display">\[
-\tilde{x}^{(i)} =  \begin{cases}  y^{(i)} &amp; if \space
-\tilde{x}^{(i)} \le x_*^{(i)} \\ x^{(i)} &amp; otherwise\end{cases}
-\]</span> 显然<span class="math inline">\(|\tilde{x}^{(i)}-x_*^{(i)}|\le
-\frac{1}{2p}\)</span>,因此 <span class="math display">\[
-||\tilde{x}-x_*||_{\infty} = \underset{1\le i \le
-n}{max}|\tilde{x}^{(i)}-x_*^{(i)}|\le \frac{1}{2p}
-\]</span> 由于<span class="math inline">\(\tilde{x}\)</span>属于网格，于是 <span class="math display">\[
-f(\bar{x})-f(x_*) \le f(\tilde{x})-f(x_*) \le
-L||\tilde{x}-x_*||_{\infty} \le \frac{L}{2p}
-\]</span> 得证！</p>
-<p>于是可以写作 <span class="math display">\[
-Find \space \bar{x} \in B_n : f(\bar{x}) - f^* \le \epsilon
-\]</span></p>
-<h2 id="推论">5.推论</h2>
-<p><span class="math inline">\(Method \mathscr{G}\)</span>的复杂度为
-<span class="math display">\[
-\mathscr{A}(\mathscr{G}) = (\lfloor \frac{L}{2\epsilon} \rfloor+2)^n
-\]</span> 证明：</p>
-<p>当<span class="math inline">\(p\)</span>取<span class="math inline">\(\lfloor \frac{L}{2\epsilon}
-\rfloor+1\)</span>时，有<span class="math inline">\(p \ge
-\frac{L}{2\epsilon}\)</span>，此时满足<span class="math inline">\(f(\bar{x}) - f^* \le \frac{L}{2p} \le
-\epsilon\)</span></p>
-<p>于是由<span class="math inline">\((p+1)^n\)</span> 可以得出 <span class="math inline">\((\lfloor \frac{L}{2\epsilon} \rfloor+2)^n\)</span>
-.</p>
-<p>这就是上界(upper complexity
-bound),仅代表最坏情况下的性能，无法展现更优情况下的性能，无法反映这是否是最优算法</p>
-<p>由此引出下界(lower complexity bound) <span class="math display">\[
-for \space \epsilon &lt; \frac{1}{2}L,\space lower \space bound = \space
-(\lfloor \frac{L}{2\epsilon} \rfloor)^n
-\]</span></p>
-]]></content>
-      <categories>
-        <category>凸优化</category>
-      </categories>
-      <tags>
-        <tag>凸优化</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Convex Function</title>
     <url>/2022/10/06/Convex-Function/</url>
     <content><![CDATA[<style> 
@@ -608,61 +608,6 @@ for <span class="math inline">\(\forall x \in R^n\)</span> we have <span class="
       </tags>
   </entry>
   <entry>
-    <title>LaTex符号对照表</title>
-    <url>/2022/09/26/LaTex%E7%AC%A6%E5%8F%B7%E5%AF%B9%E7%85%A7%E8%A1%A8/</url>
-    <content><![CDATA[<style> 
-    .markdown-body {
-      font-family: Microsoft JhengHei, SimHei;
-      font-size: 16px;
-    }
-</style>
-<h1 align="center">
-LaTex符号对照表
-</h1>
-<h2 id="不同字体">1.不同字体</h2>
-<table>
-<thead>
-<tr class="header">
-<th>字体</th>
-<th>代码</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">\(\mathscr{L}\)</span></td>
-<td>\<span class="math inline">\(mathscr\{\}\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(\mathbb{L}\)</span></td>
-<td>\<span class="math inline">\(mathbb\{\}\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(\mathcal{L}\)</span></td>
-<td>\<span class="math inline">\(mathcal \{\}\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(\rm{L}\)</span></td>
-<td>\<span class="math inline">\(rm\{\}\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(\mathfrak{L}\)</span></td>
-<td>\<span class="math inline">\(mathfrak\{\}\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(\mathbf{L}\)</span></td>
-<td>\<span class="math inline">\(mathbf\{\}\)</span></td>
-</tr>
-</tbody>
-</table>
-]]></content>
-      <categories>
-        <category>LaTex</category>
-      </categories>
-      <tags>
-        <tag>LaTex</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Introduction to Operating System</title>
     <url>/2022/09/21/Introduction-to-Operating-System/</url>
     <content><![CDATA[<style> 
@@ -731,6 +676,61 @@ Architecture</h2>
       </categories>
       <tags>
         <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LaTex符号对照表</title>
+    <url>/2022/09/26/LaTex%E7%AC%A6%E5%8F%B7%E5%AF%B9%E7%85%A7%E8%A1%A8/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+LaTex符号对照表
+</h1>
+<h2 id="不同字体">1.不同字体</h2>
+<table>
+<thead>
+<tr class="header">
+<th>字体</th>
+<th>代码</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\mathscr{L}\)</span></td>
+<td>\<span class="math inline">\(mathscr\{\}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mathbb{L}\)</span></td>
+<td>\<span class="math inline">\(mathbb\{\}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mathcal{L}\)</span></td>
+<td>\<span class="math inline">\(mathcal \{\}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\rm{L}\)</span></td>
+<td>\<span class="math inline">\(rm\{\}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mathfrak{L}\)</span></td>
+<td>\<span class="math inline">\(mathfrak\{\}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mathbf{L}\)</span></td>
+<td>\<span class="math inline">\(mathbf\{\}\)</span></td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <categories>
+        <category>LaTex</category>
+      </categories>
+      <tags>
+        <tag>LaTex</tag>
       </tags>
   </entry>
   <entry>
@@ -1009,112 +1009,6 @@ Format)</h2>
       </tags>
   </entry>
   <entry>
-    <title>Relaxation and approximation</title>
-    <url>/2022/09/23/Relaxation-and-approximation/</url>
-    <content><![CDATA[<style> 
-    .markdown-body {
-      font-family: Microsoft JhengHei, SimHei;
-      font-size: 16px;
-    }
-</style>
-<h1 align="center">
-Relaxation and approximation
-</h1>
-<h2 id="relaxation松弛">1.Relaxation(松弛)</h2>
-<p>定义relaxation sequence:</p>
-<blockquote>
-<p>We call the sequence <span class="math inline">\(\{a_k
-\}^{\infty}_{k=0}\)</span> a relaxation sequence if</p>
-<p>​ <span class="math inline">\(a_{k+1} \le a_k\)</span> <span class="math inline">\(\forall k \ge 0\)</span></p>
-</blockquote>
-<h2 id="approximation近似">2.Approximation(近似)</h2>
-<p>用简单的去替代复杂的，并保持原来相似的性质</p>
-<p>令<span class="math inline">\(f(x)\)</span>在<span class="math inline">\(\bar{x}\)</span>处可微，于是对于<span class="math inline">\(y \in
-R^n\)</span>我们有(<font color="red">泰勒展开</font>) <span class="math display">\[
-f(y)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y-\bar{x} \rangle +
-o(||y-\bar{x}||)
-\]</span> 其中<span class="math inline">\(o(r)\)</span>对于<span class="math inline">\(r \ge 0\)</span>有 <span class="math display">\[
-\underset{r \rightarrow 0}{lim} \frac{1}{r} o(r) = 0 , \space \space
-\space o(0)=0.
-\]</span> 同时给出<span class="math inline">\(|| \cdot
-||\)</span>在<span class="math inline">\(R^n\)</span>的欧几里得定义:
-<span class="math display">\[
-||x|| = [\sum_{i=1}^{n}(x^{(i)})^2]^{1/2}
-\]</span> 其中的<span class="math inline">\(f^{&#39;}(x)\)</span>是函数<span class="math inline">\(f\)</span>在<span class="math inline">\(x\)</span>处的梯度(gradient) <span class="math display">\[
-f&#39;(x) = (\frac{\partial f(x)}{\partial x^{(1)}},...,\frac{\partial
-f(x)}{\partial x^{(n)}})^T
-\]</span></p>
-<h2 id="引理1.2.1">3.引理1.2.1</h2>
-<p>定义level set为<span class="math inline">\(\mathscr{L}_f(\alpha)\)</span>: <span class="math display">\[
-\mathscr{L}_f(\alpha) = \{ x \in R^n | f(x) \le \alpha \}
-\]</span> 同时定义与<span class="math inline">\(\mathscr{L}_f(f(\bar{x}))\)</span>在<span class="math inline">\(\bar{x}\)</span>处<font color="red">相切</font>的方向向量集合:
-<span class="math display">\[
-S_f(\bar{x}) = \{s \in R^n | s = \underset{f(y_k) =
-f(\bar{x})}{\underset{y_k \rightarrow \bar{x}}{lim}}
-\frac{y_k-\bar{x}}{||y_k-\bar{x}||} \}
-\]</span></p>
-<p><font color="red">引理1.2.1</font>: 如果<span class="math inline">\(s
-\in S_f(\bar{x})\)</span>,那么<span class="math inline">\(\langle
-f&#39;(\bar{x}),s \rangle = 0\)</span>.</p>
-<p>证明: 由于<span class="math inline">\(f(y_k) =
-f(\bar{x})\)</span>,我们有 <span class="math display">\[
-f(y_k)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y_k-\bar{x} \rangle +
-o(||y_k-\bar{x}||) = f(\bar{x})
-\]</span> 因此只需证明<span class="math inline">\(\langle
-f^{&#39;}(\bar{x}),y_k-\bar{x} \rangle + o(||y_k-\bar{x}||) =
-0\)</span>即可</p>
-<p>取极限<span class="math inline">\(y_k \rightarrow
-\bar{x}\)</span>时即可得证</p>
-<h2 id="证明梯度反方向为局部下降最快方向">4.证明梯度反方向为局部下降最快方向</h2>
-<p>令<span class="math inline">\(s\)</span>为<span class="math inline">\(R^n\)</span>中的方向向量，<span class="math inline">\(||s|| = 1\)</span>，局部减小量为 <span class="math display">\[
-\Delta(s) = \underset{a \rightarrow 0}{lim} \frac{1}{\alpha}
-[f(\bar{x}+\alpha s)-f(\bar{x})]
-\]</span> 利用近似(泰勒展开)可以得到<span class="math inline">\(f(\bar{x}+\alpha s)-f(\bar{x})=\alpha \langle
-f&#39;(\bar{x}),s \rangle + o(\alpha)\)</span>.因此有 <span class="math display">\[
-\Delta (s) = \langle f&#39;(\bar{x}),s \rangle
-\]</span> ps: 柯西不等式 <span class="math display">\[
--||x|| \cdot ||y|| \le \langle x,y \rangle \le ||x|| \cdot ||y||
-\]</span> 从而有<span class="math inline">\(\Delta(s) = \langle
-f&#39;(\bar{x}),s \rangle \ge -||f&#39;(\bar{x})||\)</span>.取 <span class="math display">\[
-\bar{s} = -f&#39;(\bar{x}) / ||f&#39;(\bar{x})||
-\]</span> 这时能够取到不等式的等号： <span class="math display">\[
-\Delta(\bar{s}) = - \langle f&#39;(\bar{x}),f&#39;(\bar{x}) \rangle /
-||f&#39;(\bar{x})|| = -||f&#39;(\bar{x})||
-\]</span> 因此方向<span class="math inline">\(-f&#39;(\bar{x})\)</span>(antigradient)是局部<font color="red">下降最快</font>的方向</p>
-<h2 id="定理1.2.1first-order-optimality-condition">5.定理1.2.1(First-order
-optimality condition)</h2>
-<p><font color="red">定理1.2.1</font>: 令<span class="math inline">\(x^*\)</span>是局部最小值对应向量，则 <span class="math display">\[
-f&#39;(x^*) = 0
-\]</span></p>
-<h2 id="定理1.2.2second-order-optimality-condition">6.定理1.2.2(Second-order
-optimality condition)</h2>
-<p>二阶近似 <span class="math display">\[
-f(y)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y-\bar{x} \rangle +
-\frac{1}{2}\langle  f^{&#39;&#39;}(\bar{x})(y-\bar{x}),y-\bar{x}
-\rangle   + o(||y-\bar{x}||^2)
-\]</span> 其中<span class="math inline">\(n \times n\)</span>矩阵<span class="math inline">\(f&#39;&#39;(x)\)</span>称为<font color="red">黑塞矩阵</font>(Hessian)：
-<span class="math display">\[
-(f&#39;&#39;(x))^{(i,j)} =
-\frac{\partial^2f(x)}{\partial{x}^{(i)}\partial{x}^{(j)}}
-\]</span> 黑塞矩阵是对称矩阵: <span class="math display">\[
-f&#39;&#39;(x) = [f&#39;&#39;(x)]^T
-\]</span> 对称矩阵A是<font color="red">半正定</font>的: <span class="math display">\[
-\langle Ax,x \rangle \ge 0 \space \space \space \forall x \in R^n
-\]</span> 符号记为 <span class="math display">\[
-A \succeq 0
-\]</span></p>
-<p><font color="red">定理1.2.2</font>: 令<span class="math inline">\(x^*\)</span>是局部最小值对应向量，则 <span class="math display">\[
-f&#39;(x^*) = 0, \space \space \space    f&#39;&#39;(x^*) \succeq  0.
-\]</span></p>
-]]></content>
-      <categories>
-        <category>凸优化</category>
-      </categories>
-      <tags>
-        <tag>凸优化</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Processes</title>
     <url>/2022/09/30/Processes/</url>
     <content><![CDATA[<style> 
@@ -1339,6 +1233,112 @@ processes</p>
       </tags>
   </entry>
   <entry>
+    <title>Relaxation and approximation</title>
+    <url>/2022/09/23/Relaxation-and-approximation/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+Relaxation and approximation
+</h1>
+<h2 id="relaxation松弛">1.Relaxation(松弛)</h2>
+<p>定义relaxation sequence:</p>
+<blockquote>
+<p>We call the sequence <span class="math inline">\(\{a_k
+\}^{\infty}_{k=0}\)</span> a relaxation sequence if</p>
+<p>​ <span class="math inline">\(a_{k+1} \le a_k\)</span> <span class="math inline">\(\forall k \ge 0\)</span></p>
+</blockquote>
+<h2 id="approximation近似">2.Approximation(近似)</h2>
+<p>用简单的去替代复杂的，并保持原来相似的性质</p>
+<p>令<span class="math inline">\(f(x)\)</span>在<span class="math inline">\(\bar{x}\)</span>处可微，于是对于<span class="math inline">\(y \in
+R^n\)</span>我们有(<font color="red">泰勒展开</font>) <span class="math display">\[
+f(y)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y-\bar{x} \rangle +
+o(||y-\bar{x}||)
+\]</span> 其中<span class="math inline">\(o(r)\)</span>对于<span class="math inline">\(r \ge 0\)</span>有 <span class="math display">\[
+\underset{r \rightarrow 0}{lim} \frac{1}{r} o(r) = 0 , \space \space
+\space o(0)=0.
+\]</span> 同时给出<span class="math inline">\(|| \cdot
+||\)</span>在<span class="math inline">\(R^n\)</span>的欧几里得定义:
+<span class="math display">\[
+||x|| = [\sum_{i=1}^{n}(x^{(i)})^2]^{1/2}
+\]</span> 其中的<span class="math inline">\(f^{&#39;}(x)\)</span>是函数<span class="math inline">\(f\)</span>在<span class="math inline">\(x\)</span>处的梯度(gradient) <span class="math display">\[
+f&#39;(x) = (\frac{\partial f(x)}{\partial x^{(1)}},...,\frac{\partial
+f(x)}{\partial x^{(n)}})^T
+\]</span></p>
+<h2 id="引理1.2.1">3.引理1.2.1</h2>
+<p>定义level set为<span class="math inline">\(\mathscr{L}_f(\alpha)\)</span>: <span class="math display">\[
+\mathscr{L}_f(\alpha) = \{ x \in R^n | f(x) \le \alpha \}
+\]</span> 同时定义与<span class="math inline">\(\mathscr{L}_f(f(\bar{x}))\)</span>在<span class="math inline">\(\bar{x}\)</span>处<font color="red">相切</font>的方向向量集合:
+<span class="math display">\[
+S_f(\bar{x}) = \{s \in R^n | s = \underset{f(y_k) =
+f(\bar{x})}{\underset{y_k \rightarrow \bar{x}}{lim}}
+\frac{y_k-\bar{x}}{||y_k-\bar{x}||} \}
+\]</span></p>
+<p><font color="red">引理1.2.1</font>: 如果<span class="math inline">\(s
+\in S_f(\bar{x})\)</span>,那么<span class="math inline">\(\langle
+f&#39;(\bar{x}),s \rangle = 0\)</span>.</p>
+<p>证明: 由于<span class="math inline">\(f(y_k) =
+f(\bar{x})\)</span>,我们有 <span class="math display">\[
+f(y_k)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y_k-\bar{x} \rangle +
+o(||y_k-\bar{x}||) = f(\bar{x})
+\]</span> 因此只需证明<span class="math inline">\(\langle
+f^{&#39;}(\bar{x}),y_k-\bar{x} \rangle + o(||y_k-\bar{x}||) =
+0\)</span>即可</p>
+<p>取极限<span class="math inline">\(y_k \rightarrow
+\bar{x}\)</span>时即可得证</p>
+<h2 id="证明梯度反方向为局部下降最快方向">4.证明梯度反方向为局部下降最快方向</h2>
+<p>令<span class="math inline">\(s\)</span>为<span class="math inline">\(R^n\)</span>中的方向向量，<span class="math inline">\(||s|| = 1\)</span>，局部减小量为 <span class="math display">\[
+\Delta(s) = \underset{a \rightarrow 0}{lim} \frac{1}{\alpha}
+[f(\bar{x}+\alpha s)-f(\bar{x})]
+\]</span> 利用近似(泰勒展开)可以得到<span class="math inline">\(f(\bar{x}+\alpha s)-f(\bar{x})=\alpha \langle
+f&#39;(\bar{x}),s \rangle + o(\alpha)\)</span>.因此有 <span class="math display">\[
+\Delta (s) = \langle f&#39;(\bar{x}),s \rangle
+\]</span> ps: 柯西不等式 <span class="math display">\[
+-||x|| \cdot ||y|| \le \langle x,y \rangle \le ||x|| \cdot ||y||
+\]</span> 从而有<span class="math inline">\(\Delta(s) = \langle
+f&#39;(\bar{x}),s \rangle \ge -||f&#39;(\bar{x})||\)</span>.取 <span class="math display">\[
+\bar{s} = -f&#39;(\bar{x}) / ||f&#39;(\bar{x})||
+\]</span> 这时能够取到不等式的等号： <span class="math display">\[
+\Delta(\bar{s}) = - \langle f&#39;(\bar{x}),f&#39;(\bar{x}) \rangle /
+||f&#39;(\bar{x})|| = -||f&#39;(\bar{x})||
+\]</span> 因此方向<span class="math inline">\(-f&#39;(\bar{x})\)</span>(antigradient)是局部<font color="red">下降最快</font>的方向</p>
+<h2 id="定理1.2.1first-order-optimality-condition">5.定理1.2.1(First-order
+optimality condition)</h2>
+<p><font color="red">定理1.2.1</font>: 令<span class="math inline">\(x^*\)</span>是局部最小值对应向量，则 <span class="math display">\[
+f&#39;(x^*) = 0
+\]</span></p>
+<h2 id="定理1.2.2second-order-optimality-condition">6.定理1.2.2(Second-order
+optimality condition)</h2>
+<p>二阶近似 <span class="math display">\[
+f(y)=f(\bar{x})+\langle  f^{&#39;}(\bar{x}),y-\bar{x} \rangle +
+\frac{1}{2}\langle  f^{&#39;&#39;}(\bar{x})(y-\bar{x}),y-\bar{x}
+\rangle   + o(||y-\bar{x}||^2)
+\]</span> 其中<span class="math inline">\(n \times n\)</span>矩阵<span class="math inline">\(f&#39;&#39;(x)\)</span>称为<font color="red">黑塞矩阵</font>(Hessian)：
+<span class="math display">\[
+(f&#39;&#39;(x))^{(i,j)} =
+\frac{\partial^2f(x)}{\partial{x}^{(i)}\partial{x}^{(j)}}
+\]</span> 黑塞矩阵是对称矩阵: <span class="math display">\[
+f&#39;&#39;(x) = [f&#39;&#39;(x)]^T
+\]</span> 对称矩阵A是<font color="red">半正定</font>的: <span class="math display">\[
+\langle Ax,x \rangle \ge 0 \space \space \space \forall x \in R^n
+\]</span> 符号记为 <span class="math display">\[
+A \succeq 0
+\]</span></p>
+<p><font color="red">定理1.2.2</font>: 令<span class="math inline">\(x^*\)</span>是局部最小值对应向量，则 <span class="math display">\[
+f&#39;(x^*) = 0, \space \space \space    f&#39;&#39;(x^*) \succeq  0.
+\]</span></p>
+]]></content>
+      <categories>
+        <category>凸优化</category>
+      </categories>
+      <tags>
+        <tag>凸优化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2022/08/18/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
@@ -1360,42 +1360,6 @@ you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p
 <figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>waitKey</title>
-    <url>/2022/10/04/waitKey/</url>
-    <content><![CDATA[<style> 
-    .markdown-body {
-      font-family: Microsoft JhengHei, SimHei;
-      font-size: 16px;
-    }
-</style>
-<h1 align="center">
-Visual Studio中cv::waitKey无法读取键盘输入问题
-</h1>
-<h2 id="问题">1.问题</h2>
-<p>在Visual Studio
-2022中运行c++项目时，opencv库中的<code>cv::waitKey()</code>函数一直无法读取键盘的输入。</p>
-<h2 id="原因">2.原因</h2>
-<figure>
-<img src="/2022/10/04/waitKey/1.png" alt="1">
-<figcaption aria-hidden="true">1</figcaption>
-</figure>
-<p>在Debug模式中动态链接库选择<font color="orange">含有d</font>的.lib文件</p>
-<p>同理Release模式对应<font color="orange">不含d</font>的.lib文件</p>
-<h2 id="解决方案">3.解决方案</h2>
-<p>在工程<code>属性</code>--&gt;<code>链接器</code>--&gt;<code>输入</code>--&gt;<code>附加依赖项</code>中仅保留相关的含d的.lib文件即可</p>
-<figure>
-<img src="/2022/10/04/waitKey/2.png" alt="2">
-<figcaption aria-hidden="true">2</figcaption>
-</figure>
-]]></content>
-      <categories>
-        <category>踩坑记录</category>
-      </categories>
-      <tags>
-        <tag>踩坑记录</tag>
-      </tags>
   </entry>
   <entry>
     <title>transformation</title>
@@ -1905,6 +1869,42 @@ n &amp; 0 &amp; 0 &amp; 0 \\
       </tags>
   </entry>
   <entry>
+    <title>waitKey</title>
+    <url>/2022/10/04/waitKey/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+Visual Studio中cv::waitKey无法读取键盘输入问题
+</h1>
+<h2 id="问题">1.问题</h2>
+<p>在Visual Studio
+2022中运行c++项目时，opencv库中的<code>cv::waitKey()</code>函数一直无法读取键盘的输入。</p>
+<h2 id="原因">2.原因</h2>
+<figure>
+<img src="/2022/10/04/waitKey/1.png" alt="1">
+<figcaption aria-hidden="true">1</figcaption>
+</figure>
+<p>在Debug模式中动态链接库选择<font color="orange">含有d</font>的.lib文件</p>
+<p>同理Release模式对应<font color="orange">不含d</font>的.lib文件</p>
+<h2 id="解决方案">3.解决方案</h2>
+<p>在工程<code>属性</code>--&gt;<code>链接器</code>--&gt;<code>输入</code>--&gt;<code>附加依赖项</code>中仅保留相关的含d的.lib文件即可</p>
+<figure>
+<img src="/2022/10/04/waitKey/2.png" alt="2">
+<figcaption aria-hidden="true">2</figcaption>
+</figure>
+]]></content>
+      <categories>
+        <category>踩坑记录</category>
+      </categories>
+      <tags>
+        <tag>踩坑记录</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>图像匹配</title>
     <url>/2022/10/18/%E5%9B%BE%E5%83%8F%E5%8C%B9%E9%85%8D/</url>
     <content><![CDATA[<style> 
@@ -2228,6 +2228,105 @@ y_i(\pmb{w}^T \pmb{x}_i+b) \ge 1 \textcolor{red}{-\xi_i}
       </tags>
   </entry>
   <entry>
+    <title>有穷自动机与正则表达式</title>
+    <url>/2022/10/19/%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA%E4%B8%8E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+有穷自动机与正则表达式
+</h1>
+<h2 id="定理2.3.1">定理2.3.1</h2>
+<p><font color="orange">有穷自动机接受的语言类在下述运算下是封闭的：</font></p>
+<p><font color="orange">（a）并</font></p>
+<p><font color="orange">（b）连接</font></p>
+<p><font color="orange">（c）Kleeene星号</font></p>
+<p><font color="orange">（d）补</font></p>
+<p><font color="orange">（e）交</font></p>
+<hr>
+<p>证明：给定两台自动机<span class="math inline">\(M_1\)</span>和<span class="math inline">\(M_2\)</span>构建所需语言的自动机<span class="math inline">\(M\)</span></p>
+<p>（a）如下图构建，基本思想为利用非确定性猜想输入在<span class="math inline">\(L(M_1)\)</span>中还是<span class="math inline">\(L(M_2)\)</span>中</p>
+<figure>
+<img src="/2022/10/19/%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA%E4%B8%8E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/1.png" alt="1">
+<figcaption aria-hidden="true">1</figcaption>
+</figure>
+<p>（b）基本思想，先模拟<span class="math inline">\(M_1\)</span>，再从<span class="math inline">\(M_1\)</span>的终结状态跳转到<span class="math inline">\(M_2\)</span>的初始状态，随后继续模拟<span class="math inline">\(M_2\)</span>即可</p>
+<figure>
+<img src="/2022/10/19/%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA%E4%B8%8E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/2.png" alt="2">
+<figcaption aria-hidden="true">2</figcaption>
+</figure>
+<p>（c）构建<span class="math inline">\(M_1\)</span>中每一个终结状态到<span class="math inline">\(M_1\)</span>初始状态的转移，如此便能多次模拟<span class="math inline">\(M_1\)</span>的运行了</p>
+<figure>
+<img src="/2022/10/19/%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA%E4%B8%8E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/3.png" alt="3">
+<figcaption aria-hidden="true">3</figcaption>
+</figure>
+<p>（d）补语言与原来的区别仅仅在于交换终结状态与非终结状态</p>
+<p>（e）由于交运算可以写作 <span class="math display">\[
+L_1 \cap L_2 = \Sigma^* - ((\Sigma^* - L_1) \cup (\Sigma^* - L_2))
+\]</span> 于是由（a）和（d）可以得到交的封闭性</p>
+<h2 id="定理2.3.2">定理2.3.2</h2>
+<p><font color="orange">一个语言是正则的当且仅当它被有穷自动机接受</font></p>
+<hr>
+<p>证明：</p>
+<p><span class="math inline">\(\Rightarrow\)</span>:</p>
+<p>正则语言类是包括空集<span class="math inline">\(\varnothing\)</span>和单元集<span class="math inline">\(\{a\}\)</span>在并、连接和Kleene星号下封闭的最小语言类，其中a是一个符号。于是根据<a href="#定理2.3.1">定理2.3.1</a>的证明可以得出。</p>
+<p><span class="math inline">\(\Leftarrow\)</span>:</p>
+<p>设<span class="math inline">\(M =
+(K,\Sigma,\Delta,s,F)\)</span>是一台有穷自动机，我们需要构造一个正则表达式使得<span class="math inline">\(L(R) = L(M)\)</span></p>
+<p>首先将<span class="math inline">\(L(M)\)</span>表示成有穷个简单语言的并</p>
+<p>假设<span class="math inline">\(K = \{q_1,\cdots ,q_n\}\)</span> 且
+<span class="math inline">\(s = q_1\)</span>.对于<span class="math inline">\(i,j = 1, \cdots , n\)</span>和 <span class="math inline">\(k = 0,\cdots,n\)</span>.<font color="orange">令<span class="math inline">\(R(i,j,k)\)</span>为<span class="math inline">\(\Sigma^*\)</span>中可以使<span class="math inline">\(M\)</span>从状态<span class="math inline">\(q_i\)</span>到<span class="math inline">\(q_j\)</span>且不经过编号大于<span class="math inline">\(k\)</span>的中间状态的所有字符串，两端的状态<span class="math inline">\(q_i\)</span>和<span class="math inline">\(q_j\)</span>可以大于<span class="math inline">\(k\)</span>.</font></p>
+<p>于是当<span class="math inline">\(k=n\)</span>时，有 <span class="math display">\[
+R(i,j,n) = \{ w \in \Sigma^* : (q_i,w)\vdash^*_M (q_j,e) \}
+\]</span> 因此 <span class="math display">\[
+L(M) = \bigcup \{ R(i,j,n):q_j \in F \}
+\]</span> 关键是要证明所有这些集合<span class="math inline">\(R(i,j,k)\)</span>是正则的，从而<span class="math inline">\(L(M)\)</span>是正则的</p>
+<p>对<span class="math inline">\(k\)</span>作归纳，首先考虑<span class="math inline">\(k=0\)</span>的情形，当<span class="math inline">\(i \neq j\)</span>时<span class="math inline">\(R(i,j,k)\)</span>为</p>
+<p><span class="math inline">\(\{ a \in \Sigma \cup \{e\} :
+(q_i,a,q_j)\in \Delta \}\)</span>，当<span class="math inline">\(i =
+j\)</span>时为<span class="math inline">\(\{e\} \cup \{ a \in \Sigma :
+(q_i,a,q_i)\in \Delta \}\)</span></p>
+<p><font color="orange">这些集合都是有穷的，进而推出是正则的</font></p>
+<p>再进行归纳的递推 <span class="math display">\[
+R(i,j,k) = R(i,j,k-1) \cup R(i,k,k-1)R(k,k,k-1)^*R(k,j,k-1)
+\]</span> 上述递推式表示两种可能</p>
+<ul>
+<li>从<span class="math inline">\(q_i\)</span>到<span class="math inline">\(q_j\)</span>不经过编号大于<span class="math inline">\(k-1\)</span>的中间状态</li>
+<li>从<span class="math inline">\(q_i\)</span>到<span class="math inline">\(q_k\)</span>，再从<span class="math inline">\(q_k\)</span>到<span class="math inline">\(q_k\)</span>若干次，最后从<span class="math inline">\(q_k\)</span>到<span class="math inline">\(q_j\)</span>，每次都不经过编号大于<span class="math inline">\(k-1\)</span>的中间状态</li>
+</ul>
+<p>于是<span class="math inline">\(R(i,j,k)\)</span>是正则的</p>
+<h2 id="例2.3.2">例2.3.2</h2>
+<p>构造2-15图中确定型有穷自动机接受的语言的正则表达式，该自动机接受语言
+<span class="math display">\[
+\{ w \in \{a,b\}^* : w 有 3k+1个b,k\in N \}
+\]</span> <img src="/2022/10/19/%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA%E4%B8%8E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/4.png" alt="4"></p>
+<p>解：</p>
+<p>直接依据定理2.3.2构建<span class="math inline">\(R(i,j,k)\)</span>会十分繁琐，我们假定两条性质，简化问题</p>
+<ul>
+<li>自动机有唯一的终结状态，<span class="math inline">\(F =
+\{f\}\)</span></li>
+<li>没有进入初始状态和离开终结状态的转移</li>
+</ul>
+<p>基本思路为在原自动机的基础上添加两个状态，随后依次去除原有的所有状态</p>
+<figure>
+<img src="/2022/10/19/%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA%E4%B8%8E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/5.png" alt="5">
+<figcaption aria-hidden="true">5</figcaption>
+</figure>
+<p>于是得到结果语言的正则表达式为 <span class="math display">\[
+R = R(4,5,5) = R(4,5,3) = a^*b(a\cup ba^*ba^*b)^*
+\]</span></p>
+]]></content>
+      <categories>
+        <category>计算理论</category>
+      </categories>
+      <tags>
+        <tag>计算理论</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>白夜行</title>
     <url>/2022/09/04/%E7%99%BD%E5%A4%9C%E8%A1%8C/</url>
     <content><![CDATA[<style>
@@ -2433,178 +2532,6 @@ Neural Networks)</h2>
 <figcaption aria-hidden="true">15</figcaption>
 </figure>
 <p>取每个区域内的最大值作为新的值</p>
-]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>线性回归</title>
-    <url>/2022/09/19/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1/</url>
-    <content><![CDATA[<style> 
-    .markdown-body {
-      font-family: Microsoft JhengHei, SimHei;
-      font-size: 16px;
-    }
-</style>
-<h1 align="center">
-线性回归
-</h1>
-<h2 id="分类classification与回归regression">1.分类(Classification)与回归(Regression)</h2>
-<p>共同点：</p>
-<ul>
-<li>学习一个从<code>输入x</code>到<code>输出y</code>的<font color="red">映射</font></li>
-</ul>
-<p>分类：</p>
-<ul>
-<li>y是一个分类变量</li>
-</ul>
-<p>回归：</p>
-<ul>
-<li>y是一个实际的数值</li>
-</ul>
-<h2 id="线性模型linear-model">2.线性模型(Linear Model)</h2>
-<p>Linear Function: <span class="math display">\[
-f(x) = \pmb{w}^T\pmb{x} + b
-\]</span></p>
-<blockquote>
-<p><span class="math inline">\(\pmb{x} = [x_1,x_2,...,x_d]^T \in
-R^d\)</span></p>
-<p><span class="math inline">\(\pmb{w} = [w_1,w_2,...,w_d]^T \in
-R^d\)</span></p>
-</blockquote>
-<p>进一步简化表示为： <span class="math display">\[
-f(x) = \pmb{w}^T\pmb{x}
-\]</span></p>
-<blockquote>
-<p><span class="math inline">\(\pmb{x} = [x_1,x_2,...,x_d,1]^T \in
-R^{d+1}\)</span></p>
-<p><span class="math inline">\(\pmb{w} = [w_1,w_2,...,w_d,b]^T \in
-R^{d+1}\)</span></p>
-</blockquote>
-<h2 id="多项式曲线拟合polynomial-curve-fitting">3.多项式曲线拟合(Polynomial
-Curve Fitting)</h2>
-<p>用多项式去拟合若干给定的数据点</p>
-<figure>
-<img src="/2022/09/19/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1/1.png" alt="1">
-<figcaption aria-hidden="true">1</figcaption>
-</figure>
-<p><span class="math display">\[
-f(x,\pmb{w}) = w_0 + w_1x + w_2x + ... +w_Mx^M = \sum_{j=0}^{M}w_jx^j
-\]</span></p>
-<p>一些例子:</p>
-<p><span class="math inline">\(0^{th} Order Polynomial\)</span></p>
-<figure>
-<img src="/2022/09/19/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1/2.png" alt="2">
-<figcaption aria-hidden="true">2</figcaption>
-</figure>
-<p><span class="math inline">\(1^{st} Order Polynomial\)</span></p>
-<figure>
-<img src="/2022/09/19/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1/3.png" alt="3">
-<figcaption aria-hidden="true">3</figcaption>
-</figure>
-<p><span class="math inline">\(3^{rd} Order Polynomial\)</span></p>
-<figure>
-<img src="/2022/09/19/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1/4.png" alt="4">
-<figcaption aria-hidden="true">4</figcaption>
-</figure>
-<p>多项式拟合是一种线性模型</p>
-<blockquote>
-<p><span class="math inline">\(\pmb{x} =
-[1,x,x^2,...,x^M]^T\)</span></p>
-<p><span class="math inline">\(\pmb{w} =
-[w_1,w_2,...,w_M]^T\)</span></p>
-<p><span class="math inline">\(f(x,\pmb{w}) =
-\pmb{w}^T\pmb{x}\)</span></p>
-</blockquote>
-<h2 id="损失函数error-function">4.损失函数(Error Function)</h2>
-<figure>
-<img src="/2022/09/19/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1/5.png" alt="5">
-<figcaption aria-hidden="true">5</figcaption>
-</figure>
-<blockquote>
-<p>空心点为训练数据(training data)</p>
-<p>实线为训练所得函数 <span class="math inline">\(f(x) = y\)</span></p>
-</blockquote>
-<p>均方差损失函数(MSE,Mean Square Error) <span class="math display">\[
-MSE(\pmb{w})=\frac{1}{n}\sum_{i=1}^{n}(y_i-f(x_i,\pmb{w}))^2
-\]</span> 用来评价训练所得函数与训练数据的吻合程度</p>
-<p>训练目标是<font color="red">最小化</font>均方差损失(n可以看作一个常数暂时抛开不看)</p>
-<p>化简得： <span class="math display">\[
-J_n = \sum_{i=1}^{n}(y_i - \pmb{w}^T\pmb{x}_i)^2
-\]</span> 使用矩阵相关记号:</p>
-<blockquote>
-<p><span class="math inline">\(X =
-[\pmb{x}_1,...,\pmb{x}_n]\)</span></p>
-<p><span class="math inline">\(y =
-[\pmb{y}_1,...,\pmb{y}_n]^T\)</span></p>
-</blockquote>
-<p><span class="math display">\[
-J_n(\pmb{w})=(\pmb{y}-X^T\pmb{w})^T(\pmb{y}-X^T\pmb{w})
-\]</span></p>
-<p>梯度为0时损失值下降最快</p>
-<p>先计算梯度： <span class="math display">\[
-\nabla J_n = -2X(\pmb{y}-X^T\pmb{w})
-\]</span> 令梯度为0： <span class="math display">\[
-XX^T \pmb{w} = X \pmb{y} \\
-\pmb{w} = (XX^T)^{-1}X\pmb{y}
-\]</span> 于是得到了参数<span class="math inline">\(\pmb{w}\)</span>的修正后的数值</p>
-<h2 id="统计模型statistical-model">5.统计模型(Statistical Model)</h2>
-<p>给定一个生成模型: <span class="math display">\[
-y = f(\pmb{x},\pmb{w}) + \epsilon
-\]</span> 假设: <span class="math display">\[
-\epsilon  \sim N(0,\sigma^2)
-\]</span> 于是: <span class="math display">\[
-p(y|\pmb{x},\pmb{w},\sigma) = \frac{1}{\sigma \sqrt{2\pi}}
-e^{-\frac{1}{2\sigma^2}}(y-f(\pmb{x},\pmb{w}))^2
-\]</span></p>
-<p>先介绍一下argmax函数</p>
-<blockquote>
-<p>有一个函数 <span class="math inline">\(y = f(x)\)</span> 时</p>
-<p>若有 <span class="math inline">\(x_0 = argmax(f(x))\)</span></p>
-<p>则表示当 <span class="math inline">\(x = x_0\)</span> 时，函数 <span class="math inline">\(f(x)\)</span> 取到最大值</p>
-</blockquote>
-<p>极大似然估计(Maximum Likelihood Estimation) <span class="math display">\[
-L(\pmb{D},\pmb{w},\sigma)=\prod_{i=1}^{n}
-p(y_i|\pmb{x}_i,\pmb{w},\sigma) \\
-\pmb{w}^* = argmax \prod_{i=1}^{n} p(y_i|\pmb{x}_i,\pmb{w},\sigma)
-\]</span> 由于log函数单调不影响结果,于是取对数为Log-likelihood <span class="math display">\[
-l(\pmb{D},\pmb{w},\sigma) = log(L(\pmb{D},\pmb{w},\sigma)) =
-log\prod_{i=1}^{n} p(y_i|\pmb{x}_i,\pmb{w},\sigma) \\
-=\sum_{i=1}^{n}log \space p(y_i|\pmb{x}_i,\pmb{w},\sigma)\\
-= -\frac{1}{2\sigma^2}\sum_{i=1}^{n}(y-f(\pmb{x,\pmb{w}}))^2+c(\sigma)
-\]</span> 忽略常数后得到: <span class="math display">\[
-RSS(f) = \sum_{i=1}^{n}(y_i-f(\pmb{x}_i,\pmb{w}))^2
-\]</span></p>
-<p><strong>线性回归模型 <span class="math inline">\(\Leftrightarrow\)</span>
-具有高斯噪声的生成模型的极大似然估计</strong></p>
-<hr>
-<p>为了解决模型过拟合(Over-fitting)的问题，在原来基础上加入惩罚项，参数越多(模型越复杂)惩罚越大。</p>
-<hr>
-<h2 id="岭回归ridge-regressionl2正则化">6.岭回归(Ridge
-Regression)(L2正则化)</h2>
-<p><span class="math display">\[
-w^* = argmin\sum_{i=1}^{n}(y_i-\pmb{x}_i^T\pmb{w})^2  \textcolor{red}{ +
-\lambda\sum^{p}_{j=1}w_j^2}
-\]</span></p>
-<p>其对参数的限制方式可以表示为: <span class="math display">\[
-\textcolor{red}{\sum^{p}_{j=1}w_j^2 \le t}
-\]</span></p>
-<p>经过矩阵表示、梯度计算、化简等步骤后得到: <span class="math display">\[
-\pmb{w}^* = (XX^T+\lambda\pmb{I})^{-1}X\pmb{y}
-\]</span> 可以人为调节<span class="math inline">\(\lambda\)</span>的大小来得到更好效果的模型参数</p>
-<h2 id="lasso回归least-absolute-selection-and-shrinkage-operatorl1正则化">7.LASSO回归(Least
-Absolute Selection and Shrinkage Operator)(L1正则化)</h2>
-<p><span class="math display">\[
-w^* = argmin\sum_{i=1}^{n}(y_i-\pmb{x}_i^T\pmb{w})^2  \textcolor{red}{ +
-\lambda\sum^{p}_{j=1}|w_j|}
-\]</span></p>
-<p>其对参数的限制方式为: <span class="math display">\[
-\textcolor{red}{\sum^{p}_{j=1}|w_j| \le t}
-\]</span></p>
 ]]></content>
       <categories>
         <category>机器学习</category>
@@ -2834,6 +2761,178 @@ R(\alpha_i|x) = \sum_{j=1}^{c} \lambda(\alpha_i|\omega_j)P(\omega_j | x)
 = \sum_{j{\neq}i} P(\omega_j | x) = 1-P(\omega_i | x)
 \]</span>
 需要风险最小化，由上述式子可知需要后验概率最大化，选择后验概率最大的即可</p>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>线性回归</title>
+    <url>/2022/09/19/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1/</url>
+    <content><![CDATA[<style> 
+    .markdown-body {
+      font-family: Microsoft JhengHei, SimHei;
+      font-size: 16px;
+    }
+</style>
+<h1 align="center">
+线性回归
+</h1>
+<h2 id="分类classification与回归regression">1.分类(Classification)与回归(Regression)</h2>
+<p>共同点：</p>
+<ul>
+<li>学习一个从<code>输入x</code>到<code>输出y</code>的<font color="red">映射</font></li>
+</ul>
+<p>分类：</p>
+<ul>
+<li>y是一个分类变量</li>
+</ul>
+<p>回归：</p>
+<ul>
+<li>y是一个实际的数值</li>
+</ul>
+<h2 id="线性模型linear-model">2.线性模型(Linear Model)</h2>
+<p>Linear Function: <span class="math display">\[
+f(x) = \pmb{w}^T\pmb{x} + b
+\]</span></p>
+<blockquote>
+<p><span class="math inline">\(\pmb{x} = [x_1,x_2,...,x_d]^T \in
+R^d\)</span></p>
+<p><span class="math inline">\(\pmb{w} = [w_1,w_2,...,w_d]^T \in
+R^d\)</span></p>
+</blockquote>
+<p>进一步简化表示为： <span class="math display">\[
+f(x) = \pmb{w}^T\pmb{x}
+\]</span></p>
+<blockquote>
+<p><span class="math inline">\(\pmb{x} = [x_1,x_2,...,x_d,1]^T \in
+R^{d+1}\)</span></p>
+<p><span class="math inline">\(\pmb{w} = [w_1,w_2,...,w_d,b]^T \in
+R^{d+1}\)</span></p>
+</blockquote>
+<h2 id="多项式曲线拟合polynomial-curve-fitting">3.多项式曲线拟合(Polynomial
+Curve Fitting)</h2>
+<p>用多项式去拟合若干给定的数据点</p>
+<figure>
+<img src="/2022/09/19/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1/1.png" alt="1">
+<figcaption aria-hidden="true">1</figcaption>
+</figure>
+<p><span class="math display">\[
+f(x,\pmb{w}) = w_0 + w_1x + w_2x + ... +w_Mx^M = \sum_{j=0}^{M}w_jx^j
+\]</span></p>
+<p>一些例子:</p>
+<p><span class="math inline">\(0^{th} Order Polynomial\)</span></p>
+<figure>
+<img src="/2022/09/19/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1/2.png" alt="2">
+<figcaption aria-hidden="true">2</figcaption>
+</figure>
+<p><span class="math inline">\(1^{st} Order Polynomial\)</span></p>
+<figure>
+<img src="/2022/09/19/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1/3.png" alt="3">
+<figcaption aria-hidden="true">3</figcaption>
+</figure>
+<p><span class="math inline">\(3^{rd} Order Polynomial\)</span></p>
+<figure>
+<img src="/2022/09/19/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1/4.png" alt="4">
+<figcaption aria-hidden="true">4</figcaption>
+</figure>
+<p>多项式拟合是一种线性模型</p>
+<blockquote>
+<p><span class="math inline">\(\pmb{x} =
+[1,x,x^2,...,x^M]^T\)</span></p>
+<p><span class="math inline">\(\pmb{w} =
+[w_1,w_2,...,w_M]^T\)</span></p>
+<p><span class="math inline">\(f(x,\pmb{w}) =
+\pmb{w}^T\pmb{x}\)</span></p>
+</blockquote>
+<h2 id="损失函数error-function">4.损失函数(Error Function)</h2>
+<figure>
+<img src="/2022/09/19/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1/5.png" alt="5">
+<figcaption aria-hidden="true">5</figcaption>
+</figure>
+<blockquote>
+<p>空心点为训练数据(training data)</p>
+<p>实线为训练所得函数 <span class="math inline">\(f(x) = y\)</span></p>
+</blockquote>
+<p>均方差损失函数(MSE,Mean Square Error) <span class="math display">\[
+MSE(\pmb{w})=\frac{1}{n}\sum_{i=1}^{n}(y_i-f(x_i,\pmb{w}))^2
+\]</span> 用来评价训练所得函数与训练数据的吻合程度</p>
+<p>训练目标是<font color="red">最小化</font>均方差损失(n可以看作一个常数暂时抛开不看)</p>
+<p>化简得： <span class="math display">\[
+J_n = \sum_{i=1}^{n}(y_i - \pmb{w}^T\pmb{x}_i)^2
+\]</span> 使用矩阵相关记号:</p>
+<blockquote>
+<p><span class="math inline">\(X =
+[\pmb{x}_1,...,\pmb{x}_n]\)</span></p>
+<p><span class="math inline">\(y =
+[\pmb{y}_1,...,\pmb{y}_n]^T\)</span></p>
+</blockquote>
+<p><span class="math display">\[
+J_n(\pmb{w})=(\pmb{y}-X^T\pmb{w})^T(\pmb{y}-X^T\pmb{w})
+\]</span></p>
+<p>梯度为0时损失值下降最快</p>
+<p>先计算梯度： <span class="math display">\[
+\nabla J_n = -2X(\pmb{y}-X^T\pmb{w})
+\]</span> 令梯度为0： <span class="math display">\[
+XX^T \pmb{w} = X \pmb{y} \\
+\pmb{w} = (XX^T)^{-1}X\pmb{y}
+\]</span> 于是得到了参数<span class="math inline">\(\pmb{w}\)</span>的修正后的数值</p>
+<h2 id="统计模型statistical-model">5.统计模型(Statistical Model)</h2>
+<p>给定一个生成模型: <span class="math display">\[
+y = f(\pmb{x},\pmb{w}) + \epsilon
+\]</span> 假设: <span class="math display">\[
+\epsilon  \sim N(0,\sigma^2)
+\]</span> 于是: <span class="math display">\[
+p(y|\pmb{x},\pmb{w},\sigma) = \frac{1}{\sigma \sqrt{2\pi}}
+e^{-\frac{1}{2\sigma^2}}(y-f(\pmb{x},\pmb{w}))^2
+\]</span></p>
+<p>先介绍一下argmax函数</p>
+<blockquote>
+<p>有一个函数 <span class="math inline">\(y = f(x)\)</span> 时</p>
+<p>若有 <span class="math inline">\(x_0 = argmax(f(x))\)</span></p>
+<p>则表示当 <span class="math inline">\(x = x_0\)</span> 时，函数 <span class="math inline">\(f(x)\)</span> 取到最大值</p>
+</blockquote>
+<p>极大似然估计(Maximum Likelihood Estimation) <span class="math display">\[
+L(\pmb{D},\pmb{w},\sigma)=\prod_{i=1}^{n}
+p(y_i|\pmb{x}_i,\pmb{w},\sigma) \\
+\pmb{w}^* = argmax \prod_{i=1}^{n} p(y_i|\pmb{x}_i,\pmb{w},\sigma)
+\]</span> 由于log函数单调不影响结果,于是取对数为Log-likelihood <span class="math display">\[
+l(\pmb{D},\pmb{w},\sigma) = log(L(\pmb{D},\pmb{w},\sigma)) =
+log\prod_{i=1}^{n} p(y_i|\pmb{x}_i,\pmb{w},\sigma) \\
+=\sum_{i=1}^{n}log \space p(y_i|\pmb{x}_i,\pmb{w},\sigma)\\
+= -\frac{1}{2\sigma^2}\sum_{i=1}^{n}(y-f(\pmb{x,\pmb{w}}))^2+c(\sigma)
+\]</span> 忽略常数后得到: <span class="math display">\[
+RSS(f) = \sum_{i=1}^{n}(y_i-f(\pmb{x}_i,\pmb{w}))^2
+\]</span></p>
+<p><strong>线性回归模型 <span class="math inline">\(\Leftrightarrow\)</span>
+具有高斯噪声的生成模型的极大似然估计</strong></p>
+<hr>
+<p>为了解决模型过拟合(Over-fitting)的问题，在原来基础上加入惩罚项，参数越多(模型越复杂)惩罚越大。</p>
+<hr>
+<h2 id="岭回归ridge-regressionl2正则化">6.岭回归(Ridge
+Regression)(L2正则化)</h2>
+<p><span class="math display">\[
+w^* = argmin\sum_{i=1}^{n}(y_i-\pmb{x}_i^T\pmb{w})^2  \textcolor{red}{ +
+\lambda\sum^{p}_{j=1}w_j^2}
+\]</span></p>
+<p>其对参数的限制方式可以表示为: <span class="math display">\[
+\textcolor{red}{\sum^{p}_{j=1}w_j^2 \le t}
+\]</span></p>
+<p>经过矩阵表示、梯度计算、化简等步骤后得到: <span class="math display">\[
+\pmb{w}^* = (XX^T+\lambda\pmb{I})^{-1}X\pmb{y}
+\]</span> 可以人为调节<span class="math inline">\(\lambda\)</span>的大小来得到更好效果的模型参数</p>
+<h2 id="lasso回归least-absolute-selection-and-shrinkage-operatorl1正则化">7.LASSO回归(Least
+Absolute Selection and Shrinkage Operator)(L1正则化)</h2>
+<p><span class="math display">\[
+w^* = argmin\sum_{i=1}^{n}(y_i-\pmb{x}_i^T\pmb{w})^2  \textcolor{red}{ +
+\lambda\sum^{p}_{j=1}|w_j|}
+\]</span></p>
+<p>其对参数的限制方式为: <span class="math display">\[
+\textcolor{red}{\sum^{p}_{j=1}|w_j| \le t}
+\]</span></p>
 ]]></content>
       <categories>
         <category>机器学习</category>

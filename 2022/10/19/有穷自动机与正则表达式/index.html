@@ -16,26 +16,26 @@
   <meta name="author" content="Gavin">
   <meta name="keywords" content="">
   
-    <meta name="description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   图像匹配  1.图像检测 1.1特征点(Feature Points)&#x2F;兴趣点(Interest Points)   1  现在我们需要对给定的这两张图片进行匹配，应">
+    <meta name="description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   有穷自动机与正则表达式  定理2.3.1 有穷自动机接受的语言类在下述运算下是封闭的： （a）并 （b）连接 （c）Kleeene星号 （d）补 （e）交  证明：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="图像匹配">
-<meta property="og:url" content="http://gavinbowl.top/2022/10/18/%E5%9B%BE%E5%83%8F%E5%8C%B9%E9%85%8D/index.html">
+<meta property="og:title" content="有穷自动机与正则表达式">
+<meta property="og:url" content="http://gavinbowl.top/2022/10/19/%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA%E4%B8%8E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   图像匹配  1.图像检测 1.1特征点(Feature Points)&#x2F;兴趣点(Interest Points)   1  现在我们需要对给定的这两张图片进行匹配，应">
+<meta property="og:description" content=".markdown-body {       font-family: Microsoft JhengHei, SimHei;       font-size: 16px;     }   有穷自动机与正则表达式  定理2.3.1 有穷自动机接受的语言类在下述运算下是封闭的： （a）并 （b）连接 （c）Kleeene星号 （d）补 （e）交  证明：">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://gavinbowl.top/img/20.jpg">
-<meta property="article:published_time" content="2022-10-18T03:04:08.000Z">
-<meta property="article:modified_time" content="2022-10-19T01:32:48.251Z">
+<meta property="og:image" content="http://gavinbowl.top/img/21.jpg">
+<meta property="article:published_time" content="2022-10-19T01:31:37.000Z">
+<meta property="article:modified_time" content="2022-10-19T02:29:30.083Z">
 <meta property="article:author" content="Gavin">
-<meta property="article:tag" content="计算机视觉">
+<meta property="article:tag" content="计算理论">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://gavinbowl.top/img/20.jpg">
+<meta name="twitter:image" content="http://gavinbowl.top/img/21.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>图像匹配 - 0</title>
+  <title>有穷自动机与正则表达式 - 0</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -212,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="图像匹配"></span>
+            <span id="subtitle" data-typed-text="有穷自动机与正则表达式"></span>
           
         </div>
 
@@ -223,8 +223,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-10-18 11:04" pubdate>
-          2022年10月18日 上午
+        <time datetime="2022-10-19 09:31" pubdate>
+          2022年10月19日 上午
         </time>
       </span>
     
@@ -235,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.2k 字
+          1.7k 字
         
       </span>
     
@@ -246,7 +246,7 @@
         
         
         
-          19 分钟
+          15 分钟
         
       </span>
     
@@ -292,7 +292,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">图像匹配</h1>
+            <h1 style="display: none">有穷自动机与正则表达式</h1>
             
             
               <div class="markdown-body">
@@ -304,169 +304,87 @@
     }
 </style>
 <h1 align="center">
-图像匹配
+有穷自动机与正则表达式
 </h1>
-<h2 id="图像检测">1.图像检测</h2>
-<h3 id="特征点feature-points兴趣点interest-points">1.1特征点(Feature
-Points)/兴趣点(Interest Points)</h3>
+<h2 id="定理2.3.1">定理2.3.1</h2>
+<p><font color="orange">有穷自动机接受的语言类在下述运算下是封闭的：</font></p>
+<p><font color="orange">（a）并</font></p>
+<p><font color="orange">（b）连接</font></p>
+<p><font color="orange">（c）Kleeene星号</font></p>
+<p><font color="orange">（d）补</font></p>
+<p><font color="orange">（e）交</font></p>
+<hr>
+<p>证明：给定两台自动机<span class="math inline">\(M_1\)</span>和<span class="math inline">\(M_2\)</span>构建所需语言的自动机<span class="math inline">\(M\)</span></p>
+<p>（a）如下图构建，基本思想为利用非确定性猜想输入在<span class="math inline">\(L(M_1)\)</span>中还是<span class="math inline">\(L(M_2)\)</span>中</p>
 <figure>
-<img src="/2022/10/18/%E5%9B%BE%E5%83%8F%E5%8C%B9%E9%85%8D/1.png" srcset="/img/loading.gif" lazyload alt="1">
+<img src="/2022/10/19/%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA%E4%B8%8E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/1.png" srcset="/img/loading.gif" lazyload alt="1">
 <figcaption aria-hidden="true">1</figcaption>
 </figure>
-<p>现在我们需要对给定的这两张图片进行匹配，应该选取哪些点？</p>
-<p>应当选取<font color="orange">独一无二(uniqueness)</font>的点</p>
-<p>如何选取独一无二的点？</p>
-<p>先考虑在图片上放置一个能够覆盖若干像素点的小窗口</p>
+<p>（b）基本思想，先模拟<span class="math inline">\(M_1\)</span>，再从<span class="math inline">\(M_1\)</span>的终结状态跳转到<span class="math inline">\(M_2\)</span>的初始状态，随后继续模拟<span class="math inline">\(M_2\)</span>即可</p>
 <figure>
-<img src="/2022/10/18/%E5%9B%BE%E5%83%8F%E5%8C%B9%E9%85%8D/2.png" srcset="/img/loading.gif" lazyload alt="2">
+<img src="/2022/10/19/%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA%E4%B8%8E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/2.png" srcset="/img/loading.gif" lazyload alt="2">
 <figcaption aria-hidden="true">2</figcaption>
 </figure>
-<p>那么如何定义这个小窗口是独一无二的？</p>
-<p>当朝任何方向移动这个小窗口，窗口中像素的内容均发生较大变化，即可认为独一无二</p>
+<p>（c）构建<span class="math inline">\(M_1\)</span>中每一个终结状态到<span class="math inline">\(M_1\)</span>初始状态的转移，如此便能多次模拟<span class="math inline">\(M_1\)</span>的运行了</p>
 <figure>
-<img src="/2022/10/18/%E5%9B%BE%E5%83%8F%E5%8C%B9%E9%85%8D/3.png" srcset="/img/loading.gif" lazyload alt="3">
+<img src="/2022/10/19/%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA%E4%B8%8E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/3.png" srcset="/img/loading.gif" lazyload alt="3">
 <figcaption aria-hidden="true">3</figcaption>
 </figure>
-<p>可以发现，在图像边缘的角落处(corner)能够满足这样的定义</p>
+<p>（d）补语言与原来的区别仅仅在于交换终结状态与非终结状态</p>
+<p>（e）由于交运算可以写作 <span class="math display">\[
+L_1 \cap L_2 = \Sigma^* - ((\Sigma^* - L_1) \cup (\Sigma^* - L_2))
+\]</span> 于是由（a）和（d）可以得到交的封闭性</p>
+<h2 id="定理2.3.2">定理2.3.2</h2>
+<p><font color="orange">一个语言是正则的当且仅当它被有穷自动机接受</font></p>
+<hr>
+<p>证明：</p>
+<p><span class="math inline">\(\Rightarrow\)</span>:</p>
+<p>正则语言类是包括空集<span class="math inline">\(\varnothing\)</span>和单元集<span class="math inline">\(\{a\}\)</span>在并、连接和Kleene星号下封闭的最小语言类，其中a是一个符号。于是根据<a href="#定理2.3.1">定理2.3.1</a>的证明可以得出。</p>
+<p><span class="math inline">\(\Leftarrow\)</span>:</p>
+<p>设<span class="math inline">\(M =
+(K,\Sigma,\Delta,s,F)\)</span>是一台有穷自动机，我们需要构造一个正则表达式使得<span class="math inline">\(L(R) = L(M)\)</span></p>
+<p>首先将<span class="math inline">\(L(M)\)</span>表示成有穷个简单语言的并</p>
+<p>假设<span class="math inline">\(K = \{q_1,\cdots ,q_n\}\)</span> 且
+<span class="math inline">\(s = q_1\)</span>.对于<span class="math inline">\(i,j = 1, \cdots , n\)</span>和 <span class="math inline">\(k = 0,\cdots,n\)</span>.<font color="orange">令<span class="math inline">\(R(i,j,k)\)</span>为<span class="math inline">\(\Sigma^*\)</span>中可以使<span class="math inline">\(M\)</span>从状态<span class="math inline">\(q_i\)</span>到<span class="math inline">\(q_j\)</span>且不经过编号大于<span class="math inline">\(k\)</span>的中间状态的所有字符串，两端的状态<span class="math inline">\(q_i\)</span>和<span class="math inline">\(q_j\)</span>可以大于<span class="math inline">\(k\)</span>.</font></p>
+<p>于是当<span class="math inline">\(k=n\)</span>时，有 <span class="math display">\[
+R(i,j,n) = \{ w \in \Sigma^* : (q_i,w)\vdash^*_M (q_j,e) \}
+\]</span> 因此 <span class="math display">\[
+L(M) = \bigcup \{ R(i,j,n):q_j \in F \}
+\]</span> 关键是要证明所有这些集合<span class="math inline">\(R(i,j,k)\)</span>是正则的，从而<span class="math inline">\(L(M)\)</span>是正则的</p>
+<p>对<span class="math inline">\(k\)</span>作归纳，首先考虑<span class="math inline">\(k=0\)</span>的情形，当<span class="math inline">\(i \neq j\)</span>时<span class="math inline">\(R(i,j,k)\)</span>为</p>
+<p><span class="math inline">\(\{ a \in \Sigma \cup \{e\} :
+(q_i,a,q_j)\in \Delta \}\)</span>，当<span class="math inline">\(i =
+j\)</span>时为<span class="math inline">\(\{e\} \cup \{ a \in \Sigma :
+(q_i,a,q_i)\in \Delta \}\)</span></p>
+<p><font color="orange">这些集合都是有穷的，进而推出是正则的</font></p>
+<p>再进行归纳的递推 <span class="math display">\[
+R(i,j,k) = R(i,j,k-1) \cup R(i,k,k-1)R(k,k,k-1)^*R(k,j,k-1)
+\]</span> 上述递推式表示两种可能</p>
+<ul>
+<li>从<span class="math inline">\(q_i\)</span>到<span class="math inline">\(q_j\)</span>不经过编号大于<span class="math inline">\(k-1\)</span>的中间状态</li>
+<li>从<span class="math inline">\(q_i\)</span>到<span class="math inline">\(q_k\)</span>，再从<span class="math inline">\(q_k\)</span>到<span class="math inline">\(q_k\)</span>若干次，最后从<span class="math inline">\(q_k\)</span>到<span class="math inline">\(q_j\)</span>，每次都不经过编号大于<span class="math inline">\(k-1\)</span>的中间状态</li>
+</ul>
+<p>于是<span class="math inline">\(R(i,j,k)\)</span>是正则的</p>
+<h2 id="例2.3.2">例2.3.2</h2>
+<p>构造2-15图中确定型有穷自动机接受的语言的正则表达式，该自动机接受语言
+<span class="math display">\[
+\{ w \in \{a,b\}^* : w 有 3k+1个b,k\in N \}
+\]</span> <img src="/2022/10/19/%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA%E4%B8%8E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/4.png" srcset="/img/loading.gif" lazyload alt="4"></p>
+<p>解：</p>
+<p>直接依据定理2.3.2构建<span class="math inline">\(R(i,j,k)\)</span>会十分繁琐，我们假定两条性质，简化问题</p>
+<ul>
+<li>自动机有唯一的终结状态，<span class="math inline">\(F =
+\{f\}\)</span></li>
+<li>没有进入初始状态和离开终结状态的转移</li>
+</ul>
+<p>基本思路为在原自动机的基础上添加两个状态，随后依次去除原有的所有状态</p>
 <figure>
-<img src="/2022/10/18/%E5%9B%BE%E5%83%8F%E5%8C%B9%E9%85%8D/4.png" srcset="/img/loading.gif" lazyload alt="4">
-<figcaption aria-hidden="true">4</figcaption>
-</figure>
-<p>先来查看一下图像的梯度分布情况(计算窗口内每个点两个方向的梯度，并以此为坐标放置在平面直角坐标系上)</p>
-<figure>
-<img src="/2022/10/18/%E5%9B%BE%E5%83%8F%E5%8C%B9%E9%85%8D/5.png" srcset="/img/loading.gif" lazyload alt="5">
+<img src="/2022/10/19/%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA%E4%B8%8E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/5.png" srcset="/img/loading.gif" lazyload alt="5">
 <figcaption aria-hidden="true">5</figcaption>
 </figure>
-<h3 id="主成分分析">1.2主成分分析</h3>
-<p>此处借用主成分分析(PCA)的方法</p>
-<p>第一主成分(<span class="math inline">\(1^{st} \; principal \;
-conponent\)</span>)对应的方向向量上进行投影后具有最大方差</p>
-<p>第二主成分(<span class="math inline">\(2^{nd} \; principal \;
-conponent\)</span>)与第一主成分相关系数为0，同时在此前提下具有最大方差的方向</p>
-<p>……</p>
-<figure>
-<img src="/2022/10/18/%E5%9B%BE%E5%83%8F%E5%8C%B9%E9%85%8D/6.png" srcset="/img/loading.gif" lazyload alt="6">
-<figcaption aria-hidden="true">6</figcaption>
-</figure>
-<p>计算主成分的步骤：</p>
-<ul>
-<li>将所有数据点减去平均值</li>
-<li>计算协方差矩阵<span class="math inline">\(H\)</span></li>
-<li>计算对应的特征值和特征向量<span class="math inline">\(H x = \lambda
-x\)</span></li>
-<li>主成分是依特征值大小排序对应的特征向量</li>
-</ul>
-<p>此处为二维的情形</p>
-<p>于是<span class="math inline">\(H = \begin{bmatrix}a &amp; b \\ c
-&amp; d \end{bmatrix}\)</span>, <span class="math inline">\(\lambda_{\pm} = \frac{1}{2}((a+d) \pm \sqrt{4bc +
-(c-d)^2})\)</span></p>
-<figure>
-<img src="/2022/10/18/%E5%9B%BE%E5%83%8F%E5%8C%B9%E9%85%8D/7.png" srcset="/img/loading.gif" lazyload alt="7">
-<figcaption aria-hidden="true">7</figcaption>
-</figure>
-<p>当两个特征值都很大时为角落点</p>
-<h3 id="harris算子">1.3 Harris算子</h3>
-<p><span class="math display">\[
-f = \frac{\lambda_1 \lambda_2}{\lambda_1 + \lambda_2} =
-\frac{ad-bc}{a+d} = \frac{det(H)}{trace(H)}
+<p>于是得到结果语言的正则表达式为 <span class="math display">\[
+R = R(4,5,5) = R(4,5,3) = a^*b(a\cup ba^*ba^*b)^*
 \]</span></p>
-<p><span class="math inline">\(f\)</span>称为响应函数</p>
-<p>随着图像平移、旋转，<span class="math inline">\(f\)</span><font color="red">保持不变</font></p>
-<p>随着图像缩放，<span class="math inline">\(f\)</span><font color="red">无法保持不变</font></p>
-<p>如何匹配缩放变化后的图像？</p>
-<p>在两张图上使用不同大小的窗口</p>
-<p>如何定义两边窗口的大小？</p>
-<p>采用不同大小的窗口进行计算<span class="math inline">\(f\)</span>值，采用<font color="orange">局部最大值</font>对应的窗口大小</p>
-<figure>
-<img src="/2022/10/18/%E5%9B%BE%E5%83%8F%E5%8C%B9%E9%85%8D/8.png" srcset="/img/loading.gif" lazyload alt="8">
-<figcaption aria-hidden="true">8</figcaption>
-</figure>
-<h3 id="斑点blob检测">1.4 斑点(blob)检测</h3>
-<p>斑点是很好的特征</p>
-<figure>
-<img src="/2022/10/18/%E5%9B%BE%E5%83%8F%E5%8C%B9%E9%85%8D/9.png" srcset="/img/loading.gif" lazyload alt="9">
-<figcaption aria-hidden="true">9</figcaption>
-</figure>
-<p>那么如何找到图像中的斑点呢？</p>
-<p><font color="orange">斑点在图像强度上具有较大的二阶导数</font></p>
-<p>对图像进行<span class="math inline">\(Laplacian\)</span>滤波</p>
-<figure>
-<img src="/2022/10/18/%E5%9B%BE%E5%83%8F%E5%8C%B9%E9%85%8D/10.png" srcset="/img/loading.gif" lazyload alt="10">
-<figcaption aria-hidden="true">10</figcaption>
-</figure>
-<h3 id="laplacian算子">1.5<span class="math inline">\(Laplacian\)</span>算子</h3>
-<p><span class="math display">\[
-\nabla ^2 = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial
-y^2}
-\]</span></p>
-<p>对离散的像素点进行求导 <span class="math display">\[
-\begin{aligned}
-\frac{\partial^2 f}{\partial x^2} &amp;= f&#39;(x+0.5) - f&#39;(x-0.5)
-\\
-&amp;=(f(x+1) - f(x)) - (f(x) - f(x-1)) \\
-&amp;=f(x+1) + f(x-1) - 2f(x)
-\end{aligned}
-\]</span> 于是得到<span class="math inline">\(x \; kernel =
-\begin{bmatrix} 1 &amp; -2 &amp;1 \end{bmatrix}\)</span></p>
-<p>同理 <span class="math display">\[
-\begin{aligned}
-\frac{\partial^2 f}{\partial y^2} &amp;= f&#39;(y+0.5) - f&#39;(y-0.5)
-\\
-&amp;=(f(y+1) - f(y)) - (f(y) - f(y-1)) \\
-&amp;=f(y+1) + f(y-1) - 2f(y)
-\end{aligned}
-\]</span> 于是得到<span class="math inline">\(y \; kernel =
-\begin{bmatrix} 1 \\ -2 \\ 1 \end{bmatrix}\)</span></p>
-<p>合成后的卷积核为<span class="math inline">\(\begin{bmatrix}0&amp;0&amp;0 \\ 1&amp;-2&amp;1 \\
-0&amp;0&amp;0 \end{bmatrix} + \begin{bmatrix}0&amp;1&amp;0 \\
-0&amp;-2&amp;0 \\ 0&amp;1&amp;0 \end{bmatrix} =
-\begin{bmatrix}0&amp;1&amp;0 \\ 1&amp;-4&amp;1 \\ 0&amp;1&amp;0
-\end{bmatrix}\)</span></p>
-<h3 id="log滤波">1.6 LoG滤波</h3>
-<p>由于<span class="math inline">\(Laplacian\)</span>滤波容易受到噪声干扰，进一步考虑<span class="math inline">\(LoG\)</span>滤波(Laplacian of Gaussian)</p>
-<ul>
-<li>先对图像高斯滤波</li>
-<li>再应用<span class="math inline">\(Laplacian\)</span></li>
-</ul>
-<h3 id="dog滤波">1.7 DoG滤波</h3>
-<p>LoG滤波结果可以由两个高斯滤波的<font color="red">结果之差</font>来近似</p>
-<p>比如</p>
-<figure>
-<img src="/2022/10/18/%E5%9B%BE%E5%83%8F%E5%8C%B9%E9%85%8D/11.png" srcset="/img/loading.gif" lazyload alt="11">
-<figcaption aria-hidden="true">11</figcaption>
-</figure>
-<figure>
-<img src="/2022/10/18/%E5%9B%BE%E5%83%8F%E5%8C%B9%E9%85%8D/12.png" srcset="/img/loading.gif" lazyload alt="12">
-<figcaption aria-hidden="true">12</figcaption>
-</figure>
-<h2 id="图像描述">2.图像描述</h2>
-<p>当我们检测到好的特征点之后，我们要如何去匹配它们？</p>
-<figure>
-<img src="/2022/10/18/%E5%9B%BE%E5%83%8F%E5%8C%B9%E9%85%8D/13.png" srcset="/img/loading.gif" lazyload alt="13">
-<figcaption aria-hidden="true">13</figcaption>
-</figure>
-<p>SIFT descriptor</p>
-<p>Scale Invariant Feature Transform</p>
-<figure>
-<img src="/2022/10/18/%E5%9B%BE%E5%83%8F%E5%8C%B9%E9%85%8D/14.png" srcset="/img/loading.gif" lazyload alt="14">
-<figcaption aria-hidden="true">14</figcaption>
-</figure>
-<p>找到特征点周围像素点的梯度方向，并形成一个直方图，并平移直方图使得数量最多方向位于起始位置</p>
-<h2 id="图像匹配">3.图像匹配</h2>
-<p>对于给定图1中的特征点如何匹配到图2中的对应特征点</p>
-<figure>
-<img src="/2022/10/18/%E5%9B%BE%E5%83%8F%E5%8C%B9%E9%85%8D/15.png" srcset="/img/loading.gif" lazyload alt="15">
-<figcaption aria-hidden="true">15</figcaption>
-</figure>
-<p>可以检测图2中的所有特征点，找到“距离”最小的特征点连接</p>
-<p>如何定义“距离”？</p>
-<p>可以采用<span class="math inline">\(L_2\)</span>距离<span class="math inline">\(||f_1 - f_2||\)</span></p>
-<p>对于<span class="math inline">\(f_1\)</span>找到图2中的<span class="math inline">\(f_2\)</span>特征点，再根据<span class="math inline">\(f_2\)</span>从图1中寻找，若找到仍为<span class="math inline">\(f_1\)</span>，则相互匹配</p>
-<p>例子</p>
-<figure>
-<img src="/2022/10/18/%E5%9B%BE%E5%83%8F%E5%8C%B9%E9%85%8D/16.png" srcset="/img/loading.gif" lazyload alt="16">
-<figcaption aria-hidden="true">16</figcaption>
-</figure>
 
                 
               </div>
@@ -485,7 +403,7 @@ y^2}
     
       <span class="category-chain">
         
-  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/" class="category-chain-item">计算机视觉</a>
+  <a href="/categories/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/" class="category-chain-item">计算理论</a>
   
   
 
@@ -500,7 +418,7 @@ y^2}
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">#计算机视觉</a>
+        <a href="/tags/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/">#计算理论</a>
       
     </div>
   
@@ -512,8 +430,8 @@ y^2}
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>图像匹配</div>
-      <div>http://gavinbowl.top/2022/10/18/图像匹配/</div>
+      <div>有穷自动机与正则表达式</div>
+      <div>http://gavinbowl.top/2022/10/19/有穷自动机与正则表达式/</div>
     </div>
     <div class="license-meta">
       
@@ -525,7 +443,7 @@ y^2}
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年10月18日</div>
+          <div>2022年10月19日</div>
         </div>
       
       
@@ -555,18 +473,12 @@ y^2}
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/10/19/%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA%E4%B8%8E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="有穷自动机与正则表达式">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">有穷自动机与正则表达式</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/10/12/%E9%99%8D%E7%BB%B4/" title="降维">
-                        <span class="hidden-mobile">降维</span>
+                      <a href="/2022/10/18/%E5%9B%BE%E5%83%8F%E5%8C%B9%E9%85%8D/" title="图像匹配">
+                        <span class="hidden-mobile">图像匹配</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -587,7 +499,7 @@ y^2}
         var options = Object.assign(
           {"clientID":"4d9ed24c845ff8d68ff4","clientSecret":"b24a20f67727cff018c72f5025855b17b65e5bd7","repo":"GAVIN865.github.io","owner":"GAVIN865","admin":["GAVIN865"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
           {
-            id: 'fa6f1fc1b3d26a09661d875f7843708a'
+            id: '6c4159018efd598a4a4e782a89c671e3'
           }
         )
         var gitalk = new Gitalk(options);

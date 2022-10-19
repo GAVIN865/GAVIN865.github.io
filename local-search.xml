@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>有穷自动机与正则表达式</title>
+    <link href="/2022/10/19/%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA%E4%B8%8E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    <url>/2022/10/19/%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA%E4%B8%8E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
+    
+    <content type="html"><![CDATA[<style>     .markdown-body {      font-family: Microsoft JhengHei, SimHei;      font-size: 16px;    }</style><h1 align="center">有穷自动机与正则表达式</h1><h2 id="定理2.3.1">定理2.3.1</h2><p><font color="orange">有穷自动机接受的语言类在下述运算下是封闭的：</font></p><p><font color="orange">（a）并</font></p><p><font color="orange">（b）连接</font></p><p><font color="orange">（c）Kleeene星号</font></p><p><font color="orange">（d）补</font></p><p><font color="orange">（e）交</font></p><hr><p>证明：给定两台自动机<span class="math inline">\(M_1\)</span>和<span class="math inline">\(M_2\)</span>构建所需语言的自动机<span class="math inline">\(M\)</span></p><p>（a）如下图构建，基本思想为利用非确定性猜想输入在<span class="math inline">\(L(M_1)\)</span>中还是<span class="math inline">\(L(M_2)\)</span>中</p><figure><img src="/2022/10/19/%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA%E4%B8%8E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/1.png" alt="1"><figcaption aria-hidden="true">1</figcaption></figure><p>（b）基本思想，先模拟<span class="math inline">\(M_1\)</span>，再从<span class="math inline">\(M_1\)</span>的终结状态跳转到<span class="math inline">\(M_2\)</span>的初始状态，随后继续模拟<span class="math inline">\(M_2\)</span>即可</p><figure><img src="/2022/10/19/%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA%E4%B8%8E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/2.png" alt="2"><figcaption aria-hidden="true">2</figcaption></figure><p>（c）构建<span class="math inline">\(M_1\)</span>中每一个终结状态到<span class="math inline">\(M_1\)</span>初始状态的转移，如此便能多次模拟<span class="math inline">\(M_1\)</span>的运行了</p><figure><img src="/2022/10/19/%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA%E4%B8%8E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/3.png" alt="3"><figcaption aria-hidden="true">3</figcaption></figure><p>（d）补语言与原来的区别仅仅在于交换终结状态与非终结状态</p><p>（e）由于交运算可以写作 <span class="math display">\[L_1 \cap L_2 = \Sigma^* - ((\Sigma^* - L_1) \cup (\Sigma^* - L_2))\]</span> 于是由（a）和（d）可以得到交的封闭性</p><h2 id="定理2.3.2">定理2.3.2</h2><p><font color="orange">一个语言是正则的当且仅当它被有穷自动机接受</font></p><hr><p>证明：</p><p><span class="math inline">\(\Rightarrow\)</span>:</p><p>正则语言类是包括空集<span class="math inline">\(\varnothing\)</span>和单元集<span class="math inline">\(\{a\}\)</span>在并、连接和Kleene星号下封闭的最小语言类，其中a是一个符号。于是根据<a href="#定理2.3.1">定理2.3.1</a>的证明可以得出。</p><p><span class="math inline">\(\Leftarrow\)</span>:</p><p>设<span class="math inline">\(M =(K,\Sigma,\Delta,s,F)\)</span>是一台有穷自动机，我们需要构造一个正则表达式使得<span class="math inline">\(L(R) = L(M)\)</span></p><p>首先将<span class="math inline">\(L(M)\)</span>表示成有穷个简单语言的并</p><p>假设<span class="math inline">\(K = \{q_1,\cdots ,q_n\}\)</span> 且<span class="math inline">\(s = q_1\)</span>.对于<span class="math inline">\(i,j = 1, \cdots , n\)</span>和 <span class="math inline">\(k = 0,\cdots,n\)</span>.<font color="orange">令<span class="math inline">\(R(i,j,k)\)</span>为<span class="math inline">\(\Sigma^*\)</span>中可以使<span class="math inline">\(M\)</span>从状态<span class="math inline">\(q_i\)</span>到<span class="math inline">\(q_j\)</span>且不经过编号大于<span class="math inline">\(k\)</span>的中间状态的所有字符串，两端的状态<span class="math inline">\(q_i\)</span>和<span class="math inline">\(q_j\)</span>可以大于<span class="math inline">\(k\)</span>.</font></p><p>于是当<span class="math inline">\(k=n\)</span>时，有 <span class="math display">\[R(i,j,n) = \{ w \in \Sigma^* : (q_i,w)\vdash^*_M (q_j,e) \}\]</span> 因此 <span class="math display">\[L(M) = \bigcup \{ R(i,j,n):q_j \in F \}\]</span> 关键是要证明所有这些集合<span class="math inline">\(R(i,j,k)\)</span>是正则的，从而<span class="math inline">\(L(M)\)</span>是正则的</p><p>对<span class="math inline">\(k\)</span>作归纳，首先考虑<span class="math inline">\(k=0\)</span>的情形，当<span class="math inline">\(i \neq j\)</span>时<span class="math inline">\(R(i,j,k)\)</span>为</p><p><span class="math inline">\(\{ a \in \Sigma \cup \{e\} :(q_i,a,q_j)\in \Delta \}\)</span>，当<span class="math inline">\(i =j\)</span>时为<span class="math inline">\(\{e\} \cup \{ a \in \Sigma :(q_i,a,q_i)\in \Delta \}\)</span></p><p><font color="orange">这些集合都是有穷的，进而推出是正则的</font></p><p>再进行归纳的递推 <span class="math display">\[R(i,j,k) = R(i,j,k-1) \cup R(i,k,k-1)R(k,k,k-1)^*R(k,j,k-1)\]</span> 上述递推式表示两种可能</p><ul><li>从<span class="math inline">\(q_i\)</span>到<span class="math inline">\(q_j\)</span>不经过编号大于<span class="math inline">\(k-1\)</span>的中间状态</li><li>从<span class="math inline">\(q_i\)</span>到<span class="math inline">\(q_k\)</span>，再从<span class="math inline">\(q_k\)</span>到<span class="math inline">\(q_k\)</span>若干次，最后从<span class="math inline">\(q_k\)</span>到<span class="math inline">\(q_j\)</span>，每次都不经过编号大于<span class="math inline">\(k-1\)</span>的中间状态</li></ul><p>于是<span class="math inline">\(R(i,j,k)\)</span>是正则的</p><h2 id="例2.3.2">例2.3.2</h2><p>构造2-15图中确定型有穷自动机接受的语言的正则表达式，该自动机接受语言<span class="math display">\[\{ w \in \{a,b\}^* : w 有 3k+1个b,k\in N \}\]</span> <img src="/2022/10/19/%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA%E4%B8%8E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/4.png" alt="4"></p><p>解：</p><p>直接依据定理2.3.2构建<span class="math inline">\(R(i,j,k)\)</span>会十分繁琐，我们假定两条性质，简化问题</p><ul><li>自动机有唯一的终结状态，<span class="math inline">\(F =\{f\}\)</span></li><li>没有进入初始状态和离开终结状态的转移</li></ul><p>基本思路为在原自动机的基础上添加两个状态，随后依次去除原有的所有状态</p><figure><img src="/2022/10/19/%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA%E4%B8%8E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/5.png" alt="5"><figcaption aria-hidden="true">5</figcaption></figure><p>于是得到结果语言的正则表达式为 <span class="math display">\[R = R(4,5,5) = R(4,5,3) = a^*b(a\cup ba^*ba^*b)^*\]</span></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>计算理论</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>计算理论</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>图像匹配</title>
     <link href="/2022/10/18/%E5%9B%BE%E5%83%8F%E5%8C%B9%E9%85%8D/"/>
     <url>/2022/10/18/%E5%9B%BE%E5%83%8F%E5%8C%B9%E9%85%8D/</url>
